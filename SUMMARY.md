@@ -35,6 +35,7 @@
 * [HTTP Clients](debug-devices/http-clients.md)
 * [Docker](debug-devices/docker.md)
 * [ElectronJS](debug-devices/electronjs.md)
+* [NextJS (fetch)](debug-devices/nextjs-fetch.md)
 
 ## Automatic Setup
 

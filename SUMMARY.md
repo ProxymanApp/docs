@@ -30,6 +30,7 @@
 * [Ruby](debug-devices/ruby.md)
 * [NodeJS](debug-devices/nodejs.md)
 * [Rust](debug-devices/rust.md)
+* [Golang](debug-devices/golang.md)
 * [React Native](debug-devices/react-native.md)
 * [Flutter](debug-devices/flutter.md)
 * [HTTP Clients](debug-devices/http-clients.md)

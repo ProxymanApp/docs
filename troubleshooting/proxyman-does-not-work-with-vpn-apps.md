@@ -98,6 +98,19 @@ Sample Configure:
 #viscosity proxy-https localhost 9090
 ```
 
+Alternative Solution for Viscosity VPN
+
+1. Under Advanced Tab in the Setting -> Add this to the Connection Setting:
+
+```
+dhcp-option HTTPPROXY 127.0.0.1:9090
+dhcp-option HTTPSPROXY 127.0.0.1:9090
+```
+
+2. Start Proxyman -> Done
+
+Reference: [https://stackoverflow.com/a/42515317/3127477](https://stackoverflow.com/a/42515317/3127477)
+
 #### 6. Cisco VPN
 
 1. Disconnect your VPN

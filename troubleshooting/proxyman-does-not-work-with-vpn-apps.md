@@ -8,7 +8,7 @@ This troubleshooting would describe what VPN services that work and do not work 
 
 Proxyman could not capture any HTTP/HTTPS Traffic when you're using  VPN apps.
 
-### How to fix in general
+## How to fix it in general
 
 Basically, the VPN app would force all traffic that goes through the VPN Server instead of the Proxyman Local Server (127.0.0.1:9090). Therefore, Proxyman could not capture the traffic.
 
@@ -22,20 +22,20 @@ Then, Proxyman can capture and works with your VPN app.
 
 ## List of VPNs that work with Proxyman/CharlesProxy/Fiddler
 
-#### 1. Tunnelblick
+### 1. Tunnelblick
 
 Works fine without any configuration.
 
-#### 2. FortiClient
+### 2. FortiClient
 
 Work fine if set HTTP Proxy to Proxyman. Please follow this guideline [https://docs.fortinet.com/document/forticlient/6.2.0/xml-reference-guide/179671/proxy-settings](https://docs.fortinet.com/document/forticlient/6.2.0/xml-reference-guide/179671/proxy-settings)
 
-#### 3. AnyConnect
+### 3. AnyConnect
 
 * Try to set HTTP Proxy if it's available in AnyConnect's Preference
 * Enter your host in "Bypass proxy settings for these Hosts & Domains" in section in System Preferences -> Network -> Wi-Fi > Advanced -> Proxies (Ref: [https://github.com/ProxymanApp/Proxyman/issues/264#issuecomment-816093447](https://github.com/ProxymanApp/Proxyman/issues/264#issuecomment-816093447))
 
-#### 4. Pulse Secure and Global Protect VPN
+### 4. Pulse Secure and Global Protect VPN
 
 **Solution 1:**
 
@@ -87,7 +87,7 @@ It might work if we follow the following process:
 
 Credit: @AddictiveColors
 
-#### 5. **Viscosity**
+### 5. **Viscosity**
 
 1. Follow the documentation to [override the http-https proxy ](https://www.sparklabs.com/support/kb/article/advanced-configuration-commands/#proxy-http)on Viscosity VPN app.
 
@@ -111,7 +111,7 @@ dhcp-option HTTPSPROXY 127.0.0.1:9090
 
 Reference: [https://stackoverflow.com/a/42515317/3127477](https://stackoverflow.com/a/42515317/3127477)
 
-#### 6. Cisco VPN
+### 6. Cisco VPN
 
 1. Disconnect your VPN
 2. Open Proxyman
@@ -120,6 +120,15 @@ Reference: [https://stackoverflow.com/a/42515317/3127477](https://stackoverflow.
 5. Connect your VPN now
 
 Reference: [https://github.com/ProxymanApp/Proxyman/issues/264#issuecomment-2317101771](https://github.com/ProxymanApp/Proxyman/issues/264#issuecomment-2317101771)
+
+### Nord VPN
+
+* For NordVPN you can use the below to set up a local http/https proxy that will router through NordVPN and then use that proxy server as an external proxy in Proxyman
+* [https://github.com/edgd1er/nordlynx-proxy](https://github.com/edgd1er/nordlynx-proxy)
+
+Credit to @seidnerj from [https://github.com/ProxymanApp/Proxyman/issues/264#issuecomment-2416373960](https://github.com/ProxymanApp/Proxyman/issues/264#issuecomment-2416373960)
+
+
 
 ## List of VPNs that do not work with Proxyman/CharlesProxy/Fiddler
 

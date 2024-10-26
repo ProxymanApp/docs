@@ -1,5 +1,7 @@
 ---
-description: Prevent caching HTTP Content
+description: >-
+  Prevent caching HTTP Content and tell Proxyman to fetch your up-to-date
+  content from servers.
 ---
 
 # No Caching

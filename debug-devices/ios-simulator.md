@@ -1,5 +1,7 @@
 ---
-description: How to install Proxyman Certificate to iOS Simulators
+description: >-
+  How to set up iOS / iPad Simulator with Proxyman to capture HTTP/HTTPS
+  Requests/Response
 ---
 
 # iOS Simulator

@@ -1,5 +1,7 @@
 ---
-description: How to install Proxyman Certificate on iOS Devices (iPhone, iPad)
+description: >-
+  How to set up iOS/iPad Devices with Proxyman, to capture and decrypt HTTPS
+  request/response
 ---
 
 # iOS Device

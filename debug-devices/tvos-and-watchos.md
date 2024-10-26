@@ -1,3 +1,9 @@
+---
+description: >-
+  How to set up tvOS and watchOS Simulator or real devices with Proxyman to
+  capture HTTP/HTTPS Requests/Response
+---
+
 # tvOS & watchOS
 
 Proxyman can capture and intercept HTTP/HTTPS traffic from tvOS and watchOS.

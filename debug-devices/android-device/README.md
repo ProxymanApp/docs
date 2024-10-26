@@ -1,5 +1,7 @@
 ---
-description: How to install Proxyman Certificate on Android Devices
+description: >-
+  How to set up Android Device or Emulator with Proxyman to capture HTTP/HTTPS
+  Requests/Response
 ---
 
 # Android Device & Emulator

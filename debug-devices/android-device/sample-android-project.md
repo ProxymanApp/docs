@@ -1,3 +1,7 @@
+---
+description: A Sample Android Project to demonstrate on how to use Proxyman with Android
+---
+
 # Sample Android Project
 
 ## 1. What's it?

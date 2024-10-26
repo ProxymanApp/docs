@@ -1,3 +1,9 @@
+---
+description: >-
+  How to set up Android Emulator with Proxyman to capture HTTP/HTTPS
+  Requests/Response by using the Automatic Script.
+---
+
 # Automatic Script for Android Emulator
 
 ## 1. What's it?

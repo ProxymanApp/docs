@@ -1,3 +1,7 @@
+---
+description: Release notes of Proxyman app, including macOS, Windows and Linux app
+---
+
 # Changelog
 
 You can see the changelog and download an old version at:

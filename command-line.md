@@ -1,3 +1,7 @@
+---
+description: Interact with Proxyman via Command Line.
+---
+
 # Command-line
 
 Proxyman provides a useful command-line tool to enhance your onboarding experience ✅.

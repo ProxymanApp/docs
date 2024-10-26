@@ -1,5 +1,7 @@
 ---
-description: How License works in Proxyman
+description: >-
+  How License works in Proxyman and what is the benefits of using Proxyman PRO
+  Versions
 ---
 
 # License

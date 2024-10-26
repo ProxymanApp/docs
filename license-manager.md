@@ -1,3 +1,9 @@
+---
+description: >-
+  How to use Proxyman License Manager to manage the license key remotely. Able
+  to add/remove/revoke old devices
+---
+
 # License Manager
 
 License Manager is an easier way to manage your license, which allows you to:

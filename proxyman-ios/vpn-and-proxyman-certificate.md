@@ -1,3 +1,9 @@
+---
+description: >-
+  Instruction to set up iOS/iPad Devices with Proxyman to capture HTTP(s)
+  traffic
+---
+
 # Proxyman for iOS
 
 ## 1. Proxyman for iOS

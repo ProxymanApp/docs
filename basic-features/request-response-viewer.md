@@ -1,5 +1,7 @@
 ---
-description: See the content of HTTP Message
+description: >-
+  Display the Request/Response body with multiple formats, such as JSON, Tree
+  View, Raw, ...
 ---
 
 # Request / Response Previewer

@@ -1,3 +1,9 @@
+---
+description: >-
+  Troubleshooting why Proxyman doesn't work with some VPN app, and how to fix it
+  if possible
+---
+
 # Proxyman does not work with VPN apps
 
 In general, VPN apps might conflict with all Web Debugging Proxy apps, includes Proxyman, Charles Proxy, Fiddler, and Wireshark.

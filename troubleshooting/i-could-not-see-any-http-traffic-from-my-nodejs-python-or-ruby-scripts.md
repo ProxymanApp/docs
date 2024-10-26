@@ -1,3 +1,9 @@
+---
+description: >-
+  Solution to capture HTTP/HTTPS Requests/Responses from Python, NodeJS and Ruby
+  with Proxyman
+---
+
 # I could not see any HTTP traffic from my NodeJS, Python, or Ruby scripts
 
 ## 1. Problem:

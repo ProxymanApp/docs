@@ -1,3 +1,7 @@
+---
+description: Instruction to recover a lost data when upgrading Proxyman app
+---
+
 # Lost data after updating Proxyman app?
 
 ### Problem

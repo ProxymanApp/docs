@@ -1,5 +1,7 @@
 ---
-description: Quick filter the URLs
+description: >-
+  Quick filter the URLs with many criteria, such as URL, Header, Body, Status
+  Code by contains, not contains, prefix, suffix, and regex.
 ---
 
 # Content Filter

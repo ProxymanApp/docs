@@ -1,3 +1,7 @@
+---
+description: Fix why localhost request/response doesn't appear on Proxyman
+---
+
 # I could not see any requests from my localhost server
 
 ## 1. Problem: I develop a local NodeJS, Ruby, or Python Backend at **http://localhost:3000**, but when I visit **http://localhost:3000** from Google Chrome, Safari  -> There is no traffic on the Proxyman app.

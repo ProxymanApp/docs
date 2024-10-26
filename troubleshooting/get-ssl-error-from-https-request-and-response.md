@@ -1,3 +1,7 @@
+---
+description: Explain why you get SSL Errors
+---
+
 # SSL Error from HTTPS Request/Response
 
 ## 1. Problems

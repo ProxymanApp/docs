@@ -1,3 +1,7 @@
+---
+description: Solution to change the Proxyman app icon
+---
+
 # Could not change Proxyman App Icons
 
 ### 1. Problems?

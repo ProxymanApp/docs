@@ -1,5 +1,7 @@
 ---
-description: Capture and intercept the HTTPS message
+description: >-
+  How to set up SSL Proxying to tell Proxyman to capture/decrypt HTTPS data from
+  a certain websites by Host name, Regex, ...
 ---
 
 # SSL Proxying

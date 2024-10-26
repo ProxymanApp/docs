@@ -1,3 +1,7 @@
+---
+description: 'How to use Breakpoint Templates features: Create a Breakpoint Template'
+---
+
 # Breakpoint Templates
 
 ## 1. What's it?

@@ -1,3 +1,9 @@
+---
+description: >-
+  A troubleshooting page to show how to make iOS/Android device to connect to
+  Proxyman
+---
+
 # My Remote Devices (iOS/Android) could not connect to Proxyman?
 
 ### **1.** Problems

@@ -1,3 +1,7 @@
+---
+description: Explain why iOS 16 and iOS 17 issues when set a HTTP Proxy
+---
+
 # iOS 16 and iOS 17 issues
 
 ### 1. Problem

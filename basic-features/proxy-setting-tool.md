@@ -1,3 +1,7 @@
+---
+description: Explain what Proxyman Proxy Helper Tool is.
+---
+
 # Proxyman Proxy Helper Tool
 
 ## Proxyman Proxy Helper Tool

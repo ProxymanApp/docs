@@ -1,3 +1,7 @@
+---
+description: Capture and decrypt WS/WSS with Proxyman
+---
+
 # WebSocket
 
 ## 1. What's it?

@@ -1,3 +1,7 @@
+---
+description: Capture GraphQL HTTP Request with Proxyman
+---
+
 # GraphQL
 
 ## 1. Use Debugging Tools with GraphQL Requests&#x20;

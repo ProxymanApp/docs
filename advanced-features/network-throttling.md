@@ -1,5 +1,5 @@
 ---
-description: Network Condition or Network Throttling
+description: Simulate slow network with various network profiles. Useful for testing
 ---
 
 # Network Conditions

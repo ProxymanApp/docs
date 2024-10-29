@@ -1,3 +1,7 @@
+---
+description: Capture HTTPS Traffic from Ruby, Python or NodeJS with Proxyman
+---
+
 # Manual Setup
 
 ## 1. Problems

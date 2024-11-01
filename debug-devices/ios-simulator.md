@@ -50,11 +50,17 @@ You can read more at: [https://github.com/ProxymanApp/Proxyman/issues/1568#issue
 
 In Proxyman v4.16.0 or later, you can manually install the certificate to your iOS Simulator in case the Automatic Solution doesn't work.
 
-1. Certificate Menu -> Install for iOS -> Simulator
-2. In Step 2, click on the ↓ button -> Install Manually…
+1. Certificate Menu -> Install Certificates for iOS -> Simulators
+2. In Step 2, click on the ↓ button (Next to the Prepare Simulators button) -> Install Manually…
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-01 at 20.14.39.jpg" alt=""><figcaption><p>Install certificate manually</p></figcaption></figure>
+
 3. Drag and drop the certificate to your iOS Simulator
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-01-07 at 14.43.13.png" alt="" width="563"><figcaption><p>Manually Install the certificate</p></figcaption></figure>
+
+4. Open your iOS Simulator -> Setting app -> General -> About -> Certificate Trust Setting -> Find Proxyman CA Certificate and switch it ON
+5. Done
 
 ## 2. Troubleshooting
 
@@ -84,7 +90,7 @@ Solution:&#x20;
 * Disable the cache mechanism on URLSession or Alamofre.
 * Use the [No Caching Tool](../advanced-features/no-caching.md) (⌥⌘N)
 
-## Manually Install the Certificate
+## Manually Install the Certificate by exporting the certificate
 
 If you cannot install the certificate, you can **manually** do it:
 

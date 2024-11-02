@@ -4,6 +4,7 @@
 * [Changelog](changelog.md)
 * [License](license.md)
 * [License Manager](license-manager.md)
+* [Raycast](raycast.md)
 * [Command-line](command-line.md)
 
 ## Proxyman iOS

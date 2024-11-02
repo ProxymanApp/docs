@@ -8,7 +8,7 @@ Proxyman provides a useful command-line tool to enhance your onboarding experien
 
 You can access the tool at `/Applications/Proxyman.app/Contents/MacOS/proxyman-cli`
 
-### 1. Export Proxyman config
+## 1. Export Proxyman config
 
 Export all debugging tools rules, such as SSL Proxying List, Breakpoint, Map Local, Scripting, Block List, Allow List, Reverse Proxy, and Network Conditions.
 
@@ -29,7 +29,7 @@ OPTIONS:
 ```
 
 {% hint style="info" %}
-By default, the `export` command would export all rules. To exclude particular rules, please uncheck the "Enabled" column in each debugging tool and use the `-m  enabledRules`
+By default, the `export` command will export all rules. To exclude particular rules, please uncheck the "Enabled" column in each debugging tool and use the `-m  enabledRules`
 {% endhint %}
 
 #### For example:
@@ -42,7 +42,7 @@ By default, the `export` command would export all rules. To exclude particular r
 
 `$ /Applications/Proxyman.app/Contents/MacOS/proxyman-cli export -m enabledRules -o ~/Desktop/data.json`
 
-### 2. Import Proxyman config
+## 2. Import Proxyman config
 
 Import Proxyman debugging tools rules that you have exported by the export command.
 
@@ -70,13 +70,25 @@ By default, new imported rules will be appended to the existing debugging rules.
 
 * Import all debugging rules by appending them:
 
-`$ /Applications/Proxyman.app/Contents/MacOS/proxyman-cli import -i ~/Desktop/data.json`
+{% code overflow="wrap" %}
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli import -i ~/Desktop/data.json
+```
+{% endcode %}
+
+
 
 * Import, but override all my existing rules:
 
-`$ /Applications/Proxyman.app/Contents/MacOS/proxyman-cli import -m override -i ~/Desktop/data.json`
+{% code overflow="wrap" %}
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli import -m override -i ~/Desktop/data.json
+```
+{% endcode %}
 
-### 3. Activate/Unlink License
+
+
+## 3. Activate/Unlink License
 
 Please check out the command for activating and unlinking a license.
 
@@ -84,18 +96,18 @@ Please check out the command for activating and unlinking a license.
 [license.md](license.md)
 {% endcontent-ref %}
 
-### 4. Toggle HTTP System Proxy
+## 4. Toggle HTTP System Proxy
 
 From Proxyman 4.8.0 and later, we can toggle the Proxy System by command line. It's useful for Raycast Extension
 
-```
+```bash
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli proxy on
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli proxy off
 ```
 
 Reference: [https://github.com/ProxymanApp/Proxyman/issues/1626#issuecomment-1545862020](https://github.com/ProxymanApp/Proxyman/issues/1626#issuecomment-1545862020)
 
-### 5. Clear Session
+## 5. Clear Session
 
 * We can clear the current Session from the command line. Available for Proxyman 4.12.0 and later.
 
@@ -103,11 +115,11 @@ Reference: [https://github.com/ProxymanApp/Proxyman/issues/1626#issuecomment-154
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli clear-session
 ```
 
-### 6. Toggle Tools
+## 6. Toggle Debugging Tools
 
 * Toggle Breakpoint, Map Local, and Scripting Tool by command line. Available for Proxyman 4.12.0 and later.
 
-```
+```bash
 # Scripting
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli scripting on
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli scripting off
@@ -121,10 +133,33 @@ Reference: [https://github.com/ProxymanApp/Proxyman/issues/1626#issuecomment-154
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli breakpoint off
 ```
 
-### 7. Install the Proxy Helper Tool by command line
+## 7. Install the Proxy Helper Tool by command line
 
 From macOS 4.12.0 or later, you can install the Helper Tool without GUI.
 
-```
+{% code overflow="wrap" %}
+```bash
 sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-components
 ```
+{% endcode %}
+
+## Export Proxyman Log
+
+Proxyman macOS v5.11.0 now supports:
+
+* Export all (ProxymanSession)
+
+{% code overflow="wrap" %}
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m all -o "~/desktop/all"
+```
+{% endcode %}
+
+* Export certain domains (Only Host, no scheme, no port, no paths, and no Query)
+
+{% code overflow="wrap" %}
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/twitterlog" --domains 'api.twitter.com' --domains 'www.producthunt.com'
+```
+{% endcode %}
+

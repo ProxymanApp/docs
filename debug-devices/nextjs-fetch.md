@@ -1,3 +1,9 @@
+---
+description: >-
+  how to capture HTTPS Request Response from NextJS with Server Side Rendering
+  (fetch)
+---
+
 # NextJS (fetch)
 
 ## 1. Problem

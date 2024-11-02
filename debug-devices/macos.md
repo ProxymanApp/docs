@@ -1,5 +1,7 @@
 ---
-description: How to install Certificate and debug HTTPS contents in macOS device.
+description: >-
+  How to install Certificate and decrypt HTTPS Request/response in macOS device.
+  Support Automatic and Manual steps
 ---
 
 # macOS

@@ -1,3 +1,7 @@
+---
+description: How to install and trust Proxyman certificate to Windows 10 / 11
+---
+
 # Install Certificate
 
 ## Install Certificates on Windows

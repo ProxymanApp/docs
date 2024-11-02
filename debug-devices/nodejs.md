@@ -1,5 +1,5 @@
 ---
-description: Capture HTTP/HTTPS traffic from NodeJS
+description: Capture HTTP/HTTPS traffic from NodeJS with Proxyman
 ---
 
 # NodeJS

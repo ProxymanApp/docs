@@ -1,8 +1,15 @@
+---
+description: >-
+  Capture HTTPS Traffic from React Native app with Proxyman. Worked with iOS and
+  Android devices/simulators
+---
+
 # React Native
 
 ## 1. React Native - iOS
 
-If you're using React Native for the iOS app, you can simply follow the iOS Guidelines. There is no difference from the iOS native app.
+* If you're using React Native for the iOS app, you can simply follow the iOS Guidelines. There is no difference from the iOS native app.
+* Works with Expo or Metro bundler
 
 {% content-ref url="ios-device.md" %}
 [ios-device.md](ios-device.md)
@@ -14,7 +21,7 @@ If you're using React Native for the iOS app, you can simply follow the iOS Guid
 
 ## 2. React Native - Android
 
-Basically, To capture HTTP/HTTPS traffic from React Native for Android apps, it's similar to the native Android app. Please follow Android Setup Guide:
+Basically, To capture HTTP/HTTPS traffic from React Native for Android apps, it's similar to the native Android app. Please follow the Android Setup Guide:
 
 * [Android Physical Device](android-device/)
 * [Android Emulator](react-native.md#android-emulator)

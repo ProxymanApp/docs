@@ -1,5 +1,7 @@
 ---
-description: Explain why you get SSL Errors
+description: >-
+  Explain why you get SSL Errors in Proxyman. Problems can be Your certificate
+  isn't installed or trusted on your device
 ---
 
 # SSL Error from HTTPS Request/Response

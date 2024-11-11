@@ -1,3 +1,9 @@
+---
+description: >-
+  How to use Proxyman to capture HTTPS traffic. Works with iOS and Android
+  Devices and Simulators
+---
+
 # Flutter
 
 Currently, [Flutter does not use the system-level proxy](https://github.com/flutter/flutter/issues/20376), so if you use Proxyman, you might not see any traffic from your Flutter Project.
@@ -6,16 +12,7 @@ The good news is that you can work around this issue by manually configuring Flu
 
 In general, we have to manually config the HTTP Client to proxy all traffic to Proxyman Proxy Server, which is listening at IP = localhost, port = 9090.
 
-### How to use Proxyman & Flutter
-
-1. Open Proxyman -> Certificate Menu -> Install Certificate on Android -> Physical Device.
-2. Make sure you follow all steps, **except** step 2: Config Wifi Proxy
-
-![](<../.gitbook/assets/Screen Shot 2021-09-14 at 10.52.27.png>)
-
-
-
-For step 2:
+## 1. Setup Flutter (Required to all platforms - iOS & Android)
 
 Depending on which HTTP client you’re using, the steps will be slightly different. We will cover some popular HTTP Clients:
 
@@ -23,9 +20,13 @@ Depending on which HTTP client you’re using, the steps will be slightly differ
 * The [http](https://pub.dev/packages/http) package
 * [Dio](https://pub.dev/packages/dio)
 
-If you're using Android Emulator, you can use `String proxy = 'localhost:9090'`. Otherwise, please use `String proxy = '<YOUR_LOCAL_IP>:9090'` on Android Physical Devices.
+If you're using Android Emulator or iOS Simulator, you can use `String proxy = 'localhost:9090'`. Otherwise, please use `String proxy = '<YOUR_LOCAL_IP>:9090'` on Android Physical Devices.
 
-#### Dart HTTPClient Class
+You can find the \<YOUR\_LOCAL\_IP> from the Proxyman -> Certificate menu -> Install for iOS -> Physical Device
+
+<figure><img src="../.gitbook/assets/1.jpg" alt=""><figcaption><p>Use current IP</p></figcaption></figure>
+
+### 1.1 Dart HTTPClient Class
 
 ```java
 // Make sure to replace <YOUR_LOCAL_IP> with 
@@ -45,10 +46,10 @@ httpClient.findProxy = (uri) {
 // This is a workaround to allow Proxyman to receive
 // SSL payloads when your app is running on Android
 httpClient.badCertificateCallback = 
-  ((X509Certificate cert, String host, int port) => Platform.isAndroid);
+  ((X509Certificate cert, String host, int port) => true);
 ```
 
-#### HTTP Package
+### 1.2 HTTP Package
 
 ```java
 // Make sure to replace <YOUR_LOCAL_IP> with 
@@ -68,7 +69,7 @@ httpClient.findProxy = (uri) {
 // This is a workaround to allow Proxyman to receive
 // SSL payloads when your app is running on Android.
 httpClient.badCertificateCallback = 
-  ((X509Certificate cert, String host, int port) => Platform.isAndroid);
+  ((X509Certificate cert, String host, int port) => true);
 
 // Pass your newly instantiated HttpClient to http.IOClient.
 IOClient myClient = IOClient(httpClient);
@@ -77,7 +78,7 @@ IOClient myClient = IOClient(httpClient);
 var response = myClient.get('/my-url');
 ```
 
-#### Dio
+### 1.3 Dio
 
 ```java
 // Make sure to replace <YOUR_LOCAL_IP> with 
@@ -98,15 +99,31 @@ Dio dio = Dio();
   
   // This is a workaround to allow Proxyman to receive
   // SSL payloads when your app is running on Android.
-  client.badCertificateCallback = (X509Certificate cert, String host, int port) => Platform.isAndroid;
+  client.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
 }
 ```
 
-#### 3. Continue following the Step 3, 4, and 5 to capture SSL Traffic
+## 2. Flutter with iOS Simulators
 
-At this point, you can see HTTP/HTTPS Traffic on Proxyman. However, in order to intercept HTTPS Traffic, you must follow the Step 3, 4, and 5 on the Android Setup Guide.
+1. Start your iOS Simulator from Flutter
+2. On Proxyman -> Certificate menu -> Install Certificate for iOS -> Simulators
+3. Follow all steps below
 
-If you haven't done it yet, you might encounter SSL Errors.
+<figure><img src="../.gitbook/assets/2 (1).jpg" alt=""><figcaption><p>Install &#x26; trust Proxyman certificate to your iOS Simulators</p></figcaption></figure>
+
+4. ✅ Done. Proxyman can capture your HTTPS.
+
+## 3. Flutter with iOS Devices
+
+* Follow this [Setup Guide](ios-device.md)
+
+## 4. Flutter with Android Emulator
+
+* Follow this [Setup Guide](android-device/automatic-script-for-android-emulator.md)
+
+## 5. Flitter with Android Devices
+
+* Follow this [Setup Guide](android-device/)
 
 #### Credit & Reference
 

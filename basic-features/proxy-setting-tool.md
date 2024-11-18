@@ -1,5 +1,7 @@
 ---
-description: Explain what Proxyman Proxy Helper Tool is.
+description: >-
+  Explain what Proxyman Proxy Helper Tool is. Useful to override / revert System
+  HTTP Proxy at launch time. Faster than using networkutils
 ---
 
 # Proxyman Proxy Helper Tool
@@ -57,13 +59,17 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 
 ## Changelog
 
-#### **Version 1.5.0**
+## Version 1.6.0 (Proxyman 5.11.0 or later)
+
+* Fixed: Proxyman can't restore the PAC URL when the app is closed
+
+### **Version 1.5.0**
 
 * Fix the Security Vulnerability that Proxyman v1.5.0 or older (2019) can connect to the Helper Tool (v1.4.0) and override the system proxy without user consent. This fix will add some constraints to verify the incoming Connection. (The caller must be notarized by Apple, signed by Proxyman LLC Certificate, enabled Library Validation, and enabled Force Hard flag). (CVE-2023-45732)
 
 📣 Credit to **Scott Leitch** from NCC Group.
 
-#### **Version 1.4.0**
+### **Version 1.4.0**
 
 * Comply with new macOS 13 Ventura Requirements for Helper Tool
 * Show App Icon & App Name on the Login-Items
@@ -86,11 +92,11 @@ To fix it:
 2. Restart the macOS
 3. Done
 
-#### **Version 1.3.0**
+### **Version 1.3.0**
 
 * Remember and restore to your previous Proxy Setting.
 
-#### Version 1.2.0:&#x20;
+### Version 1.2.0:&#x20;
 
 * Gracefully revert the HTTP Proxy Config if Proxyman is crashed.
 

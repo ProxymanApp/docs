@@ -164,7 +164,7 @@ webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
 
 If your Android version is below 7 you don't need to do this step. Google added extra security that doesn't allow man-in-middle-app to attack after Android 6. i.e unable to do MITM attack on android apps.
 
-We don't bear any responsibility for problems due to rooting phones. So please follow the guide at your own risk.
+We don't bear any responsibility for problems caused by rooting phones. So please follow the guide at your own risk.
 
 1. Root your phone with `magisk` framework.
 2. Install the Root file browser so you can copy and paste files in a restricted system folder.
@@ -178,15 +178,15 @@ We don't bear any responsibility for problems due to rooting phones. So please f
     $ mv temp.pem "$hash.0"
     ```
 4. If you go to `~/.proxyman` folder you must notice a file name starting with numbers with extension
-5. Copy that file to your Andriod.
+5. Copy that file to your Android.
 6. Using root file browser transfer that file to /system/etc/security/cacerts/
 7. Enjoy proxying.
 
 {% hint style="info" %}
-1. When using Andriod phones, set the gateway to any wrong IP just so you can be sure all your traffic goes from proxy man proxy only.
+1. When using Android phones, set the gateway to any wrong IP just so you can be sure all your traffic goes from proxy man proxy only.
 2. We can use the macOS sharing feature to create a mobile hotspot. And from an Android phone, you can use Proxyman proxy easily. It is much better because sometimes the router can block requests between mobile and macOS.
 {% endhint %}
 
-## Addition resources
+## Additional Resources
 
 * Mitmproxy has a useful tutorial on how to install Proxyman Certificate on your Android Emulator: [https://docs.mitmproxy.org/stable/howto-install-system-trusted-ca-android/](https://docs.mitmproxy.org/stable/howto-install-system-trusted-ca-android/)

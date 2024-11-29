@@ -49,7 +49,7 @@ From Proxyman 2.25.0+, the **sharedState** is available across different scripts
 {% endhint %}
 
 {% hint style="info" %}
-Prior to Proxyman 2.24.0**,** the **sharedState** is only alive on the current flow that executes the script and it's released when the script is run over.&#x20;
+Prior to Proxyman 2.24.&#x30;**,** the **sharedState** is only alive on the current flow that executes the script and it's released when the script is run over.&#x20;
 {% endhint %}
 
 To clear all data, please consider using \`clearSharedState\` function.
@@ -79,7 +79,7 @@ export PROXYMAN_PATH=/Users/my_user/Desktop/file-mapper
 
 3\. Reload the ENV to get the env update.
 
-![Enable env on scripts](../.gitbook/assets/Screen\_Shot\_2022-07-31\_at\_10\_48\_26.jpg)
+![Enable env on scripts](../.gitbook/assets/Screen_Shot_2022-07-31_at_10_48_26.jpg)
 
 4\. Access env from your script with a prefix `$`
 

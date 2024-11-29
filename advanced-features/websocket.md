@@ -1,5 +1,5 @@
 ---
-description: Capture and decrypt WS/WSS with Proxyman
+description: Capture and debug Websocket from iOS devices / simulators with Proxyman
 ---
 
 # WebSocket
@@ -22,17 +22,24 @@ Proxyman could capture WebSocket (WS) and Secure WebSocket (WSS) traffic and eas
 
 If your iOS app is using **URLSessionWebSocketTask** or iOS WebSocket libraries, e.g. Starscream, SocketRocket, etc. Proxyman might not be able to capture WS/WSS traffic.
 
-Reason: It's an intention of Apple. **URLSessionWebSocketTask** doesn't respect the System HTTP Proxy. All WS/WSS traffic goes directly to the Internet. Thus, Proxyman or Charles Proxy can't capture it.
+* **Reason**: Apple's intention. **URLSessionWebSocketTask** doesn't respect the System HTTP Proxy. All WS/WSS traffic goes directly to the Internet. Thus, Proxyman or Charles Proxy can't capture it.
+* Example Ap: [https://github.com/ProxymanApp/websocket-example-ios-app](https://github.com/ProxymanApp/websocket-example-ios-app)
 
 ### ✅ Solution 1 (Recommended for iOS 17 or later)
 
-1. Proxyman Setup:\
-   Tools > Proxy Settings > SOCKS Proxy settings -> Enable it (Take note of the port)
-2. App Setup:\
-   Configure a Socksv5Proxy in your App, make sure this is only available for debug builds by implementing a switch or something, you might not want your release build with this configuration.
+1. Follow the Setup guide for your [iOS Devices](../debug-devices/ios-device.md) or [iOS Simulators](../debug-devices/ios-simulator.md) (Make sure we installed and trusted the certificate on your device)
+2. Proxyman Setup: Tools > Proxy Settings > SOCKS Proxy settings -> Enable it (Take note of the port)
+3. On the main Proxyman app -> Take note of a current IP in the Proxyman Tools bar
+
+<figure><img src="../.gitbook/assets/proxyman_capture_websocket_4.jpeg" alt=""><figcaption><p>Get Proxyman current IP</p></figcaption></figure>
+
+
+
+4. On your app: Configure a SOCK Proxy in your App, make sure this is only available for debug builds by implementing a switch or something, you might not want your release build with this configuration.
 
 * For NWConnection
 
+{% code overflow="wrap" fullWidth="false" %}
 ```swift
 let parameters = webSocketURL.scheme == "wss" ? NWParameters.tls : NWParameters.tcp
 
@@ -42,7 +49,7 @@ options.autoReplyPing = true
 parameters.defaultProtocolStack.applicationProtocols.insert(options, at: 0)
 
 if #available(iOS 17.0, *) {
-    let socksv5Proxy = NWEndpoint.hostPort(host: "192.168.1.4", port: 8889) // Use proxyman socksv5 port
+    let socksv5Proxy = NWEndpoint.hostPort(host: "x.x.x.x", port: 8889) //  Please x.x.x.x with a real Proxyman IP
     let config = ProxyConfiguration.init(socksv5Proxy: socksv5Proxy)
     let context = NWParameters.PrivacyContext(description: "my socksv5Proxy")
     context.proxyConfigurations = [config]
@@ -53,24 +60,31 @@ if #available(iOS 17.0, *) {
 let connection = NWConnection(to: .url(webSocketURL), using: parameters)
 connection.start(queue: .main)
 ```
+{% endcode %}
 
-* For URLSession
+* For URLSession and URLSessionWebSocketTask
 
+{% code overflow="wrap" fullWidth="false" %}
 ```swift
 private lazy var urlSession: URLSession = {
     let config = URLSessionConfiguration.default
     if #available(iOS 17.0, *) {
-        let socksv5Proxy = NWEndpoint.hostPort(host: "192.168.1.4", port: 8889) //  Use proxyman socksv5 port
+        let socksv5Proxy = NWEndpoint.hostPort(host: "x.x.x.x", port: 8889) //  Please x.x.x.x with a real Proxyman IP
         let proxyConfig = ProxyConfiguration.init(socksv5Proxy: socksv5Proxy)
-
         config.proxyConfigurations = [proxyConfig]
     }
 
-    return URLSession(configuration: config, delegate: self, delegateQueue: operationQueue)
+    return URLSession(configuration: config, delegate: nil, delegateQueue: nil)
 }()
 ```
+{% endcode %}
 
-Credit to [**FranklinSamboni**](https://github.com/FranklinSamboni) **->** [https://github.com/ProxymanApp/Proxyman/issues/586#issuecomment-2125082129](https://github.com/ProxymanApp/Proxyman/issues/586#issuecomment-2125082129)
+5. Done ✅
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-29 at 1.17.23 PM.jpg" alt=""><figcaption><p>Capture Websocket from iOS with Proxyman</p></figcaption></figure>
+
+* Credit to [**FranklinSamboni**](https://github.com/FranklinSamboni) **->** [https://github.com/ProxymanApp/Proxyman/issues/586#issuecomment-2125082129](https://github.com/ProxymanApp/Proxyman/issues/586#issuecomment-2125082129)
+* Tutorial: [https://proxyman.io/posts/2019-10-18-WebSocket-Debugging](https://proxyman.io/posts/2019-10-18-WebSocket-Debugging)
 
 ### ✅ Solution 2
 

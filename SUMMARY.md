@@ -104,6 +104,7 @@
 * [Access Control](advanced-features/access-control.md)
 * [DNS Spoofing](advanced-features/dns-spoofing.md)
 * [SOCKS Proxy](advanced-features/socks-proxy.md)
+* [Swagger OpenAPI](advanced-features/swagger-openapi.md)
 
 ## Proxyman Windows
 

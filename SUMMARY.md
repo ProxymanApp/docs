@@ -105,6 +105,7 @@
 * [DNS Spoofing](advanced-features/dns-spoofing.md)
 * [SOCKS Proxy](advanced-features/socks-proxy.md)
 * [Swagger OpenAPI](advanced-features/swagger-openapi.md)
+* [TLS Key Logging](advanced-features/tls-key-logging.md)
 
 ## Proxyman Windows
 

@@ -127,14 +127,16 @@ Reference: [https://stackoverflow.com/a/42515317/3127477](https://stackoverflow.
 
 Reference: [https://github.com/ProxymanApp/Proxyman/issues/264#issuecomment-2317101771](https://github.com/ProxymanApp/Proxyman/issues/264#issuecomment-2317101771)
 
-### Nord VPN
+### 7. Nord VPN
 
 * For NordVPN you can use the below to set up a local http/https proxy that will router through NordVPN and then use that proxy server as an external proxy in Proxyman
 * [https://github.com/edgd1er/nordlynx-proxy](https://github.com/edgd1er/nordlynx-proxy)
 
 Credit to @seidnerj from [https://github.com/ProxymanApp/Proxyman/issues/264#issuecomment-2416373960](https://github.com/ProxymanApp/Proxyman/issues/264#issuecomment-2416373960)
 
+### 8. Zscaler
 
+Please follow this [workaround](https://github.com/ProxymanApp/Proxyman/issues/1307#issuecomment-1236202303) from the Zscaler team
 
 ## List of VPNs that do not work with Proxyman/CharlesProxy/Fiddler
 

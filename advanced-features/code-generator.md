@@ -2,9 +2,9 @@
 
 ## 1. What's it?
 
-Code Generator is a useful tool that helps you to automatically generate your HTTP/HTTPS Requests to particular code languages.
+Code Generator is a useful tool that helps you automatically generate your HTTP/HTTPS Requests for particular code languages.
 
-The following table will list down all supported languages:
+The following table will list all supported languages:
 
 * cURL
 * HTTPie
@@ -24,16 +24,20 @@ The following table will list down all supported languages:
 
 ![Generate Swift + Alamofire 5 Code](../.gitbook/assets/code-generator.png)
 
-## 2. How to use it?
+## 2. How to open the Code Generator Tab?
 
-You can either access to Code Generator tab by:
+1. On the Request Panel Tab -> Click on the "+" Button
+2. New Windows appears -> Click on the "Code Generator" checkbox
 
-* Right Click on the request -> Tools -> Code Generator
-* Open Custom Previewer Tab -> Enable Code Generator tab
+<figure><img src="../.gitbook/assets/CleanShot 2025-01-29 at 3 .44.21@2x.jpg" alt=""><figcaption><p>How to open the Code Generator Tab</p></figcaption></figure>
+
+
+
+* New Tab will add to the Request Panel -> Select any language to show the code
 
 ## 3. Missing your favorite library?
 
-If you could not found your library, you can:
+If you cannot find your library, you can:
 
 * Create a [Ticket](https://github.com/ProxymanApp/Proxyman/issues) on Github.
 * Fork [Code-Generator-Plugin Repository](https://github.com/ProxymanApp/code-generator-plugin) and open a PR. We appreciate your contribution 🙇‍♂️

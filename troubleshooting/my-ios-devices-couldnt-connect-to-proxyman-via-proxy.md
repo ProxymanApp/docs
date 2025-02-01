@@ -6,16 +6,16 @@ description: >-
 
 # My Remote Devices (iOS/Android) could not connect to Proxyman?
 
-### **1.** Problems
+## **1.** Problems
 
-* You're able to see the traffic on your Mac machine but your iOS or Android Devices could not access the Internet after changing the Proxy Config in the Wifi Setting.
-* Couldn't access to Proxyman local server **http://proxy.man/ssl** for installing the Proxyman Certificate
+* ❌ My iOS or Android Devices could not access the Internet after changing the Proxy Config in the Wifi Setting.
+* ❌ I can't download the certificate from **http://cert.proxyman.io** or **http://proxy.man/ssl**
 
 {% hint style="info" %}
 For Android, please follow the [second section](my-ios-devices-couldnt-connect-to-proxyman-via-proxy.md#android-devices-and-android-emulator)
 {% endhint %}
 
-### 2. Solution
+## 2. Solution: iOS devices
 
 Please make sure to double-check the following steps:
 
@@ -42,15 +42,15 @@ To workaround:
 [ios-16-devices-issues.md](ios-16-devices-issues.md)
 {% endcontent-ref %}
 
-### 1. Make sure your mac device and iOS/Android devices are on the same network
+### 1. Make sure your Mac device and iOS/Android devices are on the same network
 
 If they're on a different network, they are unable to connect to each other.
 
 ### 2. Make sure the server IP and Port number must match with Proxyman
 
-![](../.gitbook/assets/IMG\_4110.png)
+![](../.gitbook/assets/IMG_4110.png)
 
-![](../.gitbook/assets/Screen\_Shot\_2020-03-10\_at\_20\_37\_01.png)
+![](../.gitbook/assets/Screen_Shot_2020-03-10_at_20_37_01.png)
 
 ### 3. Turn OFF all VPN apps from macOS and iOS/Android devices
 
@@ -76,7 +76,7 @@ On **macOS**: Navigate to **System Preference -> Security & Privacy -> Firewall 
 * Automatically allow built-in software to receive incoming connection is **ON**
 * Automatically allowing downloaded signed software to receive incoming connections is **ON**
 
-![Firewall setting on macOS](../.gitbook/assets/Screen\_Shot\_2020-03-10\_at\_20\_46\_17.png)
+![Firewall setting on macOS](../.gitbook/assets/Screen_Shot_2020-03-10_at_20_46_17.png)
 
 ### 4. Firewall Setting (Windows 10/11)
 
@@ -94,13 +94,15 @@ Windows 10/11 might block Proxyman, and iPhone/Android devices could not connect
 
 Some companies block certain ports by default. Therefore, your iOS devices couldn't access to Proxyman's port at 9090.&#x20;
 
-### 6. I'm still unable to connect?
+### 6. Use Private Browser on Safari to open http://cert.proxyman.io or http://proxy.man/ssl
+
+### 7. I'm still unable to connect.
 
 If you follow all the above steps and all configuration is correct but it hasn't resolved your cases yet.
 
-Please try to **ON/OFF your Wifi, Forget the Wifi Network (iOS)** and **Restart the Computer**.
+Please try to **ON/OFF your Wifi, Forget the Wifi Network (iOS),** and **Restart the Computer**.
 
-### 7. Still does not work? (iOS app only)
+### 8. Still does not work? (iOS app only)
 
 Manual Override the HTTP Proxy, install and trust Proxyman on iOS devices is hard. We understand that. Let's try Atlantis, which is an iOS framework that helps you do it automatically.
 
@@ -117,11 +119,7 @@ Manual Override the HTTP Proxy, install and trust Proxyman on iOS devices is har
 
 If it happens, please try to **forget the network** and **re-connect the Wifi.**
 
-<div align="center">
-
-<img src="../.gitbook/assets/Screen_Shot_2020-09-29_at_8_52_45_PM (1).png" alt="" width="375">
-
-</div>
+<div align="center"><img src="../.gitbook/assets/Screen_Shot_2020-09-29_at_8_52_45_PM (1).png" alt="" width="375"></div>
 
 ### 2. Install and trust Proxyman CA for Android with API 30+
 
@@ -132,7 +130,7 @@ From Android Emulator API 30+, it requires extra steps to trust the Proxyman Cer
 
 You can verify that by opening Trusted Credentials -> User Tab
 
-![Trust the Certificate](../.gitbook/assets/Screen\_Shot\_2020-09-29\_at\_9\_00\_46\_PM.png)
+![Trust the Certificate](../.gitbook/assets/Screen_Shot_2020-09-29_at_9_00_46_PM.png)
 
 ### 3. My Android Physical Devices or Emulator connection is not stable.
 
@@ -143,7 +141,7 @@ It probably dues to the Android devices/emulators, the only way might fix it is 
 
 Read more at [https://github.com/ProxymanApp/Proxyman/issues/636](https://github.com/ProxymanApp/Proxyman/issues/636)
 
-![](../.gitbook/assets/Screen\_Shot\_2020-10-12\_at\_08\_18\_35.png)
+![](../.gitbook/assets/Screen_Shot_2020-10-12_at_08_18_35.png)
 
 ### 4. The `adb` command not FOUND! when using Android Emulator Automatic Script
 

@@ -6,7 +6,7 @@ From [Protobuf's Google](https://developers.google.com/protocol-buffers/), Proto
 
 You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages.
 
-Proxyamn is capable of **reading** a Protobuf Binary and parsing to **JSON Format** with given Protobuf File Descriptors.
+Proxyman is capable of **reading** a Protobuf Binary and parsing to **JSON Format** with given Protobuf File Descriptors.
 
 ![Parse protobuf request with File Descriptor](../.gitbook/assets/Screen\_Shot\_2020-04-25\_at\_21\_32\_54.png)
 

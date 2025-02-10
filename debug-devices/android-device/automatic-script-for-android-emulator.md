@@ -31,6 +31,12 @@ From Proxyman 5.15.0 or later, Proxyman can now install Proxyman certificate int
 
 <div data-full-width="true"><figure><img src="../../.gitbook/assets/Capture_HTTPS_Android_Emulator_proxyman.jpg" alt=""><figcaption><p>Capture and decrypt HTTPS from Android Emulators with Proxyman</p></figcaption></figure></div>
 
+* Install Proxyman Certificate to the system-level Store.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 15.12.07.jpg" alt=""><figcaption><p>Install Proxyman Certificate to the system-level Store.</p></figcaption></figure>
+
+
+
 ## 3. How to use it?
 
 1. Make sure the adb command is installed. If not, please install it

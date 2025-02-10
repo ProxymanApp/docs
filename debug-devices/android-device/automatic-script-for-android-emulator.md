@@ -1,7 +1,7 @@
 ---
 description: >-
-  How to set up Android Emulator with Proxyman to capture HTTP/HTTPS
-  Requests/Response by using the Automatic Script.
+  How to set up capture all HTTPS Request Response from Proxyman with Automatic
+  Script
 ---
 
 # Automatic Script for Android Emulator
@@ -10,90 +10,111 @@ description: >-
 
 It's too complicated and error-prone if we manually override the HTTP Proxy, Install, and Trust Proxyman Certificate from your Android Emulator.&#x20;
 
-Thus, Proxyman (2.10.0+) provides a built-in script to automatically perform it in a second. You can access it from **Certificate Menu -> Install Certificate on Android -> Emulator.**
+Thus, Proxyman provides a built-in script to automatically perform it in a second. You can access it from **Certificate Menu -> Install Certificate on Android -> Emulator.**
 
 {% hint style="info" %}
-This Script only installs the User Certificate to the User Certificate Store, not the System Certificate Store. If you'd like to install the certificate to the System Certificate, please follow this [tutorial](https://docs.mitmproxy.org/stable/howto-install-system-trusted-ca-android/).
+From Proxyman 5.14.0 or earlier, this Script only installs the User Certificate to the User Certificate Store, not the System Certificate Store. If you'd like to install the certificate to the System Certificate, please follow this [tutorial](https://docs.mitmproxy.org/stable/howto-install-system-trusted-ca-android/).
+{% endhint %}
+
+{% hint style="success" %}
+From Proxyman 5.15.0 or later, Proxyman can now install Proxyman certificate into the system-level Store. Make it possible to decrypt all HTTPS from Android Emulators.
 {% endhint %}
 
 ## 2. Benefit?
 
-* **✅ Automatically** Override or Revert HTTP Proxy
-* **✅ Automatically** Download, Install, and Trust Proxyman Certificate to the Android Emulator System.
+**1 Click to:**
+
+* **✅ Auto** Override / Revert HTTP Proxy
+* **✅ Automatically** Download, Install, and Trust Proxyman Certificate to system-level store. Can decrypt all HTTPS from your Emulators.
+* No need **network\_security\_config.xml**
 * **✅** Less error-prone and finishes in a few clicks
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-26 at 09.49.56.png" alt=""><figcaption><p>Setup Guide for Android Emulator</p></figcaption></figure>
+<div data-full-width="true"><figure><img src="../../.gitbook/assets/Capture_HTTPS_Android_Emulator_proxyman.jpg" alt=""><figcaption><p>Capture and decrypt HTTPS from Android Emulators with Proxyman</p></figcaption></figure></div>
 
-## 3. Android Emulator Google APIs
+## 3. How to use it?
 
-* Automatic Script only works with Android Emulator with the **Google APIs version**, not the Google Play Store version.
+1. Make sure the adb command is installed. If not, please install it
 
-![](../../.gitbook/assets/Screen\_Shot\_2020-10-19\_at\_13\_50\_31.png)
+```bash
+brew install android-platform-tools
+```
 
-* You can create new Android Emulators and select Google APIs in the System Image step.
+2. Open your Android app with Android Studio
+3. Create a new Emulator in Android Virtual Device Manager. **Make sure it's not a Play Store. Must be a Google Play APIs**
 
-![Create Emulator (Google APIs)](../../.gitbook/assets/Screen\_Shot\_2020-10-19\_at\_13\_50\_48.png)
+![Create new Google APIs Android Emulators](../../.gitbook/assets/Screen_Shot_2020-10-19_at_13_50_31.png)
 
-{% hint style="info" %}
-Android Emulator (Google APIs) is able to root and use the **adb** command to perform certain tasks.
-{% endhint %}
+![Create a new Emulator (Google APIs)](../../.gitbook/assets/Screen_Shot_2020-10-19_at_13_50_48.png)
 
-## 4. How does it work?
+3. Open Proxyman -> Certificate Menu -> Install Certificate on Android -> Emulators -> Click on the Override All Emulators button&#x20;
 
-Proxyman uses the [Android Debug Bridge](https://developer.android.com/studio/command-line/adb) (adb) to perform tasks automatically.
+<figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 14.54.51.jpg" alt=""><figcaption><p>capture all HTTPS from Emulators with 1 click</p></figcaption></figure>
 
-If you haven't installed the **adb** command yet, please follow the guideline:
+4. Wait until the Terminal completes
 
-1.  Install [homebrew](http://brew.sh/)
+<figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 15.02.06.png" alt=""><figcaption></figcaption></figure>
 
-    ```
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    ```
-2.  Install the **adb** command
-
-    ```
-    brew install android-platform-tools
-    ```
-
-Read more at [https://stackoverflow.com/questions/31374085/installing-adb-on-macos](https://stackoverflow.com/questions/31374085/installing-adb-on-macos)
+5. Relaunch your Android app on Android Studio&#x20;
+6. Proxyman will capture all HTTPS data ✅
 
 {% hint style="info" %}
-This installation step might take up to 10 minutes depending on your internet connection and the size of the homebrew repo. Please be patient when the **adb** command is installed successfully!
+If you close Proxyman, make sure to click on the Revert All Changes button. Otherwise, your Android Emulator could not access the Internet.
 {% endhint %}
 
-{% hint style="info" %}
-Please make sure you **Revert Override** when you close Proxyman. Otherwise, your Android Emulator could not access the Internet.
-{% endhint %}
-
-{% hint style="info" %}
-Make sure that you **remove these configs in the Release build**. If not, your HTTP/HTTPS requests can be intercepted and leak your sensitive data in the Production build.
-{% endhint %}
-
-## 5. Run the script manually
+## 4. Advance: Run the script manually
 
 It's possible to execute the script manually in your Terminal app without granting the Automation Permission in Security & Privacy.
 
-**Script path**: `/Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh`
+### **Script path**:&#x20;
 
-### 5.1 Override HTTP Proxy and Install the Certificate
+{% code overflow="wrap" %}
+```bash
+/Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh
+```
+{% endcode %}
 
-1. Open Proxyman app
-2. Replace `192.168.0.1` with your current IP (You can find it under Certificate Menu -> Install Certificate on iOS -> Physical Device -> Copy the IP string)
-3. Execute the following script from your Terminal app
-
-`$ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh all 192.168.0.1 9090 ~/.proxyman/proxyman-ca.pem`
-
-### 5.2 Only Override HTTP Proxy&#x20;
+### Prepare the certificate
 
 1. Open Proxyman app
-2. Replace `192.168.0.1` with your current IP (You can find it under Certificate Menu -> Install Certificate on iOS -> Physical Device -> Copy the IP string)
-3. Execute the following script from your Terminal app
+2. Find the current IP in the Main Toolbar
+3. Certificate menu -> Export -> Root Certificate as PEM -> Save to Desktop folder
 
-`$ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh proxy 192.168.0.1 9090`
+### 4.1 Override HTTP Proxy and Install the Certificate to system-level Store
 
-### 5.3 Revert HTTP Proxy&#x20;
+{% code overflow="wrap" %}
+```bash
+bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh all <current_ip> <port> <certificate_path>
+```
+{% endcode %}
 
-1. Open Proxyman app
-2. Execute the following script from your Terminal app
+Example:
 
-`$ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh revertProxy`
+{% code overflow="wrap" %}
+```bash
+bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh all 192.168.1.1 9090 ~/desktop/proxyman-ca.pem
+```
+{% endcode %}
+
+### 4.2 Only Override HTTP Proxy&#x20;
+
+{% code overflow="wrap" %}
+```bash
+bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh proxy <current_ip> <port> 
+```
+{% endcode %}
+
+Example:
+
+{% code overflow="wrap" %}
+```bash
+bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh proxy 192.168.1.1 9090 
+```
+{% endcode %}
+
+### 4.3 Revert HTTP Proxy&#x20;
+
+{% code overflow="wrap" %}
+```bash
+bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh revertProxy
+```
+{% endcode %}

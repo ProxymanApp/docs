@@ -18,7 +18,7 @@ In order to capture HTTP/HTTPS messages in iOS devices (iPhone, iPad), please na
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-12-13 at 14.13.02.png" alt=""><figcaption><p>Install Proxyman Certificate on iOS devices</p></figcaption></figure>
 
-Let's follow the guideline:
+Let's follow the guidelines:
 
 1. Install **Root Proxyman Certificate** on your machine: You can follow the [macOS Guide](macos.md).
 2. Get your iOS Device -> Open Setting app -> Wifi -> Select the current Wifi -> Config the HTTP Proxy by following the next tables.
@@ -33,15 +33,15 @@ Let's follow the guideline:
 If you're using any **VPN apps** on macOS or iOS devices, please make sure to close all VPN apps, because they conflict with the HTTPS Proxy config.
 {% endhint %}
 
-&#x20; 3\. Open [http://proxy.man/ssl](http://proxy.man/ssl) by **Safari browser** from your iOS Devices in order to install the Proxyman Certificate.
+&#x20; 3\. Open [http://proxy.man/ssl](http://proxy.man/ssl) or http://cert.proxyman.io by **Safari browser** from your iOS Devices in order to install the Proxyman Certificate.
 
 {% hint style="info" %}
-**http://proxy.man/ssl** is a local website, which serves from the local Proxyman's HTTP server. If you couldn't open it, please forget the wifi, re-connect and make sure the Proxyman app is opening.
+**http://proxy.man/ssl** or **http://cert.proxyman.io** is a local website, which serves from the local Proxyman's HTTP server. If you can't open it, please forget the wifi, re-connect, and make sure the Proxyman app is opening.
 
-If you couldn't access it. Please open the support ticket at [Github's repo](https://github.com/ProxymanApp/Proxyman).
+If you can't access it. Please open the support ticket at [Github's repo](https://github.com/ProxymanApp/Proxyman).
 {% endhint %}
 
-&#x20;   4\. From iOS 10.3, we have to explicitly install & trust the Proxyman CA in the Setting app
+&#x20;   4\. From iOS 10.3, we have to explicitly install & trust the Proxyman CA in the Settings app
 
 #### **Install Proxyman CA**
 
@@ -52,14 +52,14 @@ If you couldn't access it. Please open the support ticket at [Github's repo](htt
 
 * Setting app > General > About > Certificate Trust Settings > Switch ON on Proxyman CA.
 
-![Install and Trust Proxyman Certificate](../.gitbook/assets/install\_and\_trust\_proxyman\_certificate.png)
+![Install and Trust Proxyman Certificate](../.gitbook/assets/install_and_trust_proxyman_certificate.png)
 
 {% hint style="info" %}
-Please make sure we **install** and **trust** the Proxyman CA in your iOS Device. If you have any problem, shot us an email at **support@proxyman.io** or bump it in [**Github**](https://github.com/ProxymanApp/Proxyman)
+Please make sure we **install** and **trust** the Proxyman CA on your iOS Device. If you have any problem, shoot us an email at **support@proxyman.io** or bump it to [**Github**](https://github.com/ProxymanApp/Proxyman)
 {% endhint %}
 
 {% hint style="info" %}
-If you could not see any traffic from your iOS Devices, please check out this [troubleshooting](../troubleshooting/my-ios-devices-couldnt-connect-to-proxyman-via-proxy.md)
+If you cannot see any traffic from your iOS Devices, please check out this [troubleshooting](../troubleshooting/my-ios-devices-couldnt-connect-to-proxyman-via-proxy.md)
 {% endhint %}
 
 {% hint style="info" %}
@@ -72,7 +72,7 @@ See detailed steps on how to [debug an application on iOS device](https://proxym
 
 ### Tired of manual config?
 
-We understand that manually overriding the HTTP Proxy, and installing and trusting Proxyman Certificates is painful. Let's check out Atlantis, which is a native iOS framework that helps you do it automatically.
+We understand that manually overriding the HTTP Proxy and installing and trusting Proxyman Certificates is painful. Let's check out Atlantis, which is a native iOS framework that helps you do it automatically.
 
 {% content-ref url="../atlantis/atlantis-for-ios.md" %}
 [atlantis-for-ios.md](../atlantis/atlantis-for-ios.md)

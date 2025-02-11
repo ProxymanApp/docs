@@ -41,7 +41,7 @@ Some Samsung devices couldn't access the Internet after setting the HTTP Proxy. 
 If **you're using any VPN app**, please make sure to close it, since some VPN apps conflict with HTTP/HTTPS Proxy configs.
 {% endhint %}
 
-&#x20; 3\. Open [http://proxy.man/ssl](http://proxy.man/ssl) from the native web browser on your Android Devices in order to install the Proxyman Certificate.
+&#x20; 3\. Open [http://proxy.man/ssl](http://proxy.man/ssl) or http://cert.proxyman.io from the native web browser on your Android Devices in order to install the Proxyman Certificate.
 
 ### **Android 11, Android 12 or later:**
 
@@ -60,14 +60,14 @@ Ref: [https://stackoverflow.com/a/70261393/3127477](https://stackoverflow.com/a/
 {% endhint %}
 
 {% hint style="info" %}
-**http://proxy.man/ssl** is a local website, which serves from the local Proxyman's HTTP server. If you couldn't open it, please forget the wifi, re-connect and make sure the Proxyman app is opening.
+**http://proxy.man/ssl** is a local website, which serves from the local Proxyman's HTTP server. If you can't open it, please forget the wifi, re-connect, and make sure the Proxyman app is opening.
 {% endhint %}
 
 4\. On Android 11 and Android 12. Let's verify by opening the Trusted Credentials -> User Tab.
 
 Make sure you can see the **Proxyman CA** Certificate like the below screenshot.
 
-![Verify that Proxyman CA Certificate is installed properly](<../../.gitbook/assets/Screen\_Shot\_2020-09-29\_at\_9\_00\_46\_PM (1).png>)
+![Verify that Proxyman CA Certificate is installed properly](<../../.gitbook/assets/Screen_Shot_2020-09-29_at_9_00_46_PM (1).png>)
 
 &#x20;   5\. Open your app Source Code: Adding the two following `xml` files.
 
@@ -183,8 +183,8 @@ We don't bear any responsibility for problems caused by rooting phones. So pleas
 7. Enjoy proxying.
 
 {% hint style="info" %}
-1. When using Android phones, set the gateway to any wrong IP just so you can be sure all your traffic goes from proxy man proxy only.
-2. We can use the macOS sharing feature to create a mobile hotspot. And from an Android phone, you can use Proxyman proxy easily. It is much better because sometimes the router can block requests between mobile and macOS.
+1) When using Android phones, set the gateway to any wrong IP just so you can be sure all your traffic goes from proxy man proxy only.
+2) We can use the macOS sharing feature to create a mobile hotspot. And from an Android phone, you can use Proxyman proxy easily. It is much better because sometimes the router can block requests between mobile and macOS.
 {% endhint %}
 
 ## Additional Resources

@@ -165,7 +165,7 @@ Proxyman macOS v5.11.0 now supports:
 
 ## 9. Import Custom Root Certificate
 
-* ✅ Import Custom Root Certificate to Proxyman
+* ✅ Import Custom p12 Root Certificate to Proxyman
 * Automatically Trust the certificate in System Keychain (sudo required)
 * Available from Proxyman macOS 5.15.0 or later
 
@@ -173,7 +173,7 @@ Proxyman macOS v5.11.0 now supports:
 
 {% code overflow="wrap" %}
 ```bash
-/Applications/Proxyman.app/Contents/MacOS/proxyman-cli install-root-cert <certificate_path> --password <yourpassword> --trust
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli install-root-cert <certificate_path> --password <your_cert_password> --trust
 ```
 {% endcode %}
 
@@ -181,7 +181,7 @@ Proxyman macOS v5.11.0 now supports:
 
 {% code overflow="wrap" %}
 ```bash
-/Applications/Proxyman.app/Contents/MacOS/proxyman-cli install-root-cert <certificate_path> --password <yourpassword>
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli install-root-cert <certificate_path> --password <your_cert_password>
 ```
 {% endcode %}
 

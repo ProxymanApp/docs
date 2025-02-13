@@ -143,7 +143,7 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 ```
 {% endcode %}
 
-## Export Proxyman Log
+## 8. Export Proxyman Log
 
 Proxyman macOS v5.11.0 now supports:
 
@@ -162,4 +162,31 @@ Proxyman macOS v5.11.0 now supports:
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/twitterlog" --domains 'api.twitter.com' --domains 'www.producthunt.com'
 ```
 {% endcode %}
+
+## 9. Import Custom Root Certificate
+
+* ✅ Import Custom Root Certificate to Proxyman
+* Automatically Trust the certificate in System Keychain (sudo required)
+* Available from Proxyman macOS 5.15.0 or later
+
+#### Install and trust
+
+{% code overflow="wrap" %}
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli install-root-cert <certificate_path> --password <yourpassword> --trust
+```
+{% endcode %}
+
+#### Install but not trust (you might need to trust it manually in the Keychain)
+
+{% code overflow="wrap" %}
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli install-root-cert <certificate_path> --password <yourpassword>
+```
+{% endcode %}
+
+\
+
+
+
 

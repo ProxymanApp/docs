@@ -80,6 +80,38 @@ var response = myClient.get('/my-url');
 
 ### 1.3 Dio
 
+* Dio ≥ v6.0.0 (Recommended)
+
+```dart
+// Make sure to replace <YOUR_LOCAL_IP> with 
+// the external IP of your computer if you're using Android. 
+// You can get the IP in the Android Setup Guide window
+String proxy = Platform.isAndroid ? '<YOUR_LOCAL_IP>:9090' : 'localhost:9090';
+
+// Create a new Dio instance.
+Dio dio = Dio();
+
+dio.httpClientAdapter = IOHttpClientAdapter(
+      createHttpClient: () {
+        final client = HttpClient()
+        client.findProxy = (uri) {
+            return 'PROXY $proxy';
+          }
+        client.badCertificateCallback =
+              (X509Certificate cert, String host, int port) => true;
+        return client;
+      },
+      validateCertificate: (cert, host, port) {
+        return true;
+      },
+    ); 
+
+```
+
+
+
+* Dio v5.0.0 or earlier (Deprecated APIs)
+
 ```java
 // Make sure to replace <YOUR_LOCAL_IP> with 
 // the external IP of your computer if you're using Android. 

@@ -25,7 +25,7 @@ From Proxyman 5.15.0 or later, Proxyman can now install Proxyman certificate int
 **1 Click to:**
 
 * **✅ Auto** Override / Revert HTTP Proxy
-* **✅ Automatically** Download, Install, and Trust Proxyman Certificate to system-level store. Can decrypt all HTTPS from your Emulators.
+* **✅ Automatically** Download, Install, and Trust Proxyman Certificate to the system-level store. Can decrypt all HTTPS from your Emulators. (Available on Proxyman 5.16.0 or later)
 * No need **network\_security\_config.xml**
 * **✅** Less error-prone and finishes in a few clicks
 
@@ -67,7 +67,51 @@ brew install android-platform-tools
 If you close Proxyman, make sure to click on the Revert All Changes button. Otherwise, your Android Emulator could not access the Internet.
 {% endhint %}
 
-## 4. Advance: Run the script manually
+## 4. ⚠️ Proxyman 5.15.0 or earlier&#x20;
+
+* Proxyman 5.15.0 or earlier is only able to install Proxyman Certificate to the User level.
+* It means: We have to complete the next step:
+* In your source code:
+  * Add res/xml/network\_security\_config.xml
+
+```xml
+<network-security-config>
+    <debug-overrides>
+        <trust-anchors>
+            <!-- Trust user added CAs while debuggable only -->
+            <certificates src="user" />
+            <certificates src="system" />
+        </trust-anchors>
+    </debug-overrides>
+
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
+```
+
+* Add to AndroidManifest.xml
+
+<pre class="language-xml"><code class="lang-xml">&#x3C;?xml version="1.0" encoding="utf-8"?>
+&#x3C;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    &#x3C;uses-permission android:name="android.permission.INTERNET" />
+
+    &#x3C;application
+        <a data-footnote-ref href="#user-content-fn-1">android:networkSecurityConfig="@xml/network_security_config"></a>
+        &#x3C;activity
+            ...
+        &#x3C;/activity>
+    &#x3C;/application>
+
+&#x3C;/manifest>
+</code></pre>
+
+## 5. Advance: Run the script manually
 
 It's possible to execute the script manually in your Terminal app without granting the Automation Permission in Security & Privacy.
 
@@ -124,3 +168,5 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh revertProxy
 ```
 {% endcode %}
+
+[^1]: This line

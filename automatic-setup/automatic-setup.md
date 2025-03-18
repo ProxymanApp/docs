@@ -11,6 +11,7 @@ Proxyman **could not capture** HTTP/HTTPS traffic from the following setup:
 * **NodeJS**: Axios, got, superagent, fetch, and node-fetch
 * **Python**: http, https, aiohttp, requests
 * **Ruby**: http, net/http, net/htps, faraday, and httparty, fastlane
+* Golang: net/http, fasthttp, resty, gorequest, req, grequests
 * ElectronJS
 * cURL
 
@@ -64,6 +65,7 @@ Proxyman (with Automatic Setup) can work out of the box with the following netwo
 * NodeJS: [axios](https://www.npmjs.com/package/axios), [fetch](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch) (v18+), [node-fetch](https://www.npmjs.com/package/node-fetch), [got](https://www.npmjs.com/package/got), [https](https://nodejs.org/api/https.html), and [superagent](https://www.npmjs.com/package/superagent)
 * Ruby: [http](https://ruby-doc.org/stdlib-3.0.2/libdoc/net/http/rdoc/Net/HTTP.html), [net/http](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html), [net/https](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html), [httparty](https://github.com/jnunemaker/httparty), and [faraday](https://github.com/lostisland/faraday), fastlane
 * Python: [request](https://pypi.org/project/requests/), [aiohttp](https://docs.aiohttp.org/en/stable/), http.client, urllib3 and httpx
+* Golang: net/http, fasthttp, resty, gorequest, req, grequests
 * ElectronJS app
 * cURL without --proxy flag
 

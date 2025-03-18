@@ -110,6 +110,11 @@ For example:
 1. Override $PYTHONPATH to Proxyman app
 2. Patching all common library, such as aiohttp, httplib, http.client -> Set HTTP Proxy and trust Proxyman self-signed certificate.&#x20;
 
+**Go**:
+
+1. Override HTTP\_PROXY & HTTPS\_PROXY env
+2. Override some Go env to trust self-signed certificate
+
 ## 4. Troubleshooting
 
 See the [Troubleshooting](troubleshooting.md) page

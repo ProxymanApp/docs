@@ -11,15 +11,15 @@ description: >-
 In order to intercept encrypted HTTPS messages (Request or Response), you have to install **Proxyman CA Certificate** on your current machine. This step is mandatory for iOS, Android devices, iOS simulators, Java VMs, and Firefox too.
 
 {% hint style="info" %}
-The Proxyman Certificate is a self-signed certificate, which is generated in your machine. Proxyman never stores or transmits any personal data to Proxyman's server or 3rd-party.
+The Proxyman Certificate is a self-signed certificate that is generated on your machine. Proxyman never stores or transmits any personal data to Proxyman's server or 3rd-party.
 
 Please check out the [Privacy Statement](https://proxyman.io/privacy) to understand what Proxyman obtains or not.
 
-If you'd like to manually generate a Certificate on your machine then adding to Proxyman. Please check out the [Custom Certificate Doc](../advanced-features/custom-certificates.md#6-how-to-generate-self-signed-certificates-for-custom-root-certificate-that-comply-with-new-apples-security-requirements)
+If you'd like to manually generate a Certificate on your machine, then add it to Proxyman. Please check out the [Custom Certificate Doc](../advanced-features/custom-certificates.md#6-how-to-generate-self-signed-certificates-for-custom-root-certificate-that-comply-with-new-apples-security-requirements)
 {% endhint %}
 
 {% hint style="info" %}
-Proxyman's certificate is stored locally at **\~/.proxyman** or **\~/Library/Application Support/com.proxyman.NSProxy/certificates/**
+Proxyman's certificate is stored locally at **\~/Library/Application\ Support/com.proxyman.NSProxy/app-data/**
 {% endhint %}
 
 ## 1. Automatic mode (recommended)
@@ -42,12 +42,12 @@ Proxyman could **automatically** install & trust the Certificate in Keychain by 
 
 In automatic mode, Proxyman will automatically perform two steps:
 
-1. Generate a local Proxyman Certificate at `~/.proxyman/proxyman-ca.pem`
+1. Generate a local Proxyman Certificate at `~/Library/Application\ Support/com.proxyman.NSProxy/app-data/proxyman-ca.pem`
 2. Install & Trust the certificate to System Keychain Access. It requires Root Privileges to execute the following CLI:&#x20;
 
 {% code overflow="wrap" %}
 ```bash
-sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.proxyman/proxyman-ca.pem
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Library/Application\ Support/com.proxyman.NSProxy/app-data/proxyman-ca.pem
 ```
 {% endcode %}
 
@@ -73,7 +73,11 @@ If you'd like to use your own custom Root Certificate, please check out the [Cus
 
 Suppose you are not sure how to trust the certificate on the Keychain Access app. You can open the Terminal app and execute the command:
 
-`sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.proxyman/proxyman-ca.pem`
+{% code overflow="wrap" %}
+```bash
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Library/Application\ Support/com.proxyman.NSProxy/app-data/proxyman-ca.pem
+```
+{% endcode %}
 
 {% hint style="info" %}
 Make sure that you **Delete the Proxyman Certificate in Keychain app** if you're not using Proxyman anymore. If not, anyone who has the Proxyman Certificate can intercept your HTTP/HTTPS requests from your macOS machine.

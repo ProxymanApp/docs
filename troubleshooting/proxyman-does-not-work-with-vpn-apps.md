@@ -6,13 +6,13 @@ description: >-
 
 # Proxyman does not work with VPN apps
 
-In general, VPN apps might conflict with all Web Debugging Proxy apps, includes Proxyman, Charles Proxy, Fiddler, and Wireshark.
+In general, VPN apps might conflict with all Web Debugging Proxy apps, including Proxyman, Charles Proxy, Fiddler, and Wireshark.
 
-This troubleshooting would describe what VPN services that work and do not work with Proxyman and how to fix it.
+This troubleshooting would describe which VPN services work and do not work with Proxyman and how to fix them.
 
 ## Problems
 
-Proxyman could not capture any HTTP/HTTPS Traffic when you're using  VPN apps.
+Proxyman cannot capture any HTTP/HTTPS traffic when you're using corporate VPNs.
 
 ## How to fix it in general
 
@@ -20,11 +20,23 @@ Basically, the VPN app would force all traffic that goes through the VPN Server 
 
 In order to fix it
 
-* Open your VPN's Preference and try to find a text field that you can override the HTTP/HTTPS Proxy.
+* Open your VPN's Settings and try to find a text field where you can override the HTTP/HTTPS Proxy.
 * If it's available, let override to the address: **127.0.0.1** at Port **9090**
-* If it's not available, please google "\<Your VPN Name> config HTTP Proxy" and see how to do it.
+* If it's not available, please Google "\<Your VPN Name> config HTTP Proxy" and see how to do it.
 
-Then, Proxyman can capture and works with your VPN app.
+Then, Proxyman can capture and work with your VPN app.
+
+## ✅ New Solution for iOS: Atlantis + Proxyman
+
+* Works with any VPN.
+* Capture all HTTP/HTTPS or Websocket traffic from your iOS app
+* No need to set up a Proxy or install any certificate
+* Works with iOS Simulators and iOS Physical Devices
+
+### 👉 How to use Atlantis?
+
+* Check out the [Atlantis README](https://github.com/ProxymanApp/atlantis)
+* Blog: [https://proxyman.com/posts/capture-https-ios-app-with-company-vpn](https://proxyman.com/posts/capture-https-ios-app-with-company-vpn)
 
 ## List of VPNs that work with Proxyman/CharlesProxy/Fiddler
 

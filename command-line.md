@@ -145,13 +145,13 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 
 ## 8. Export Proxyman Log
 
-Proxyman macOS v5.11.0 now supports:
+**Proxyman macOS v5.11.0+ now supports:**
 
-* Export all (ProxymanSession)
+* Export all (ProxymanSession Format)
 
 {% code overflow="wrap" %}
 ```bash
-/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m all -o "~/desktop/all"
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m all -o "~/desktop/output"
 ```
 {% endcode %}
 
@@ -159,7 +159,41 @@ Proxyman macOS v5.11.0 now supports:
 
 {% code overflow="wrap" %}
 ```bash
-/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/twitterlog" --domains 'api.twitter.com' --domains 'www.producthunt.com'
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/output" --domains 'api.twitter.com' --domains 'www.producthunt.com'
+```
+{% endcode %}
+
+**From Proxyman macOS 5.20.0+, we can export with Raw or HAR format.**
+
+* Export All - RAW Request/Response Format
+
+{% code overflow="wrap" %}
+```
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m all -o "~/desktop/output" --format raw
+```
+{% endcode %}
+
+* Export All - HAR Format
+
+{% code overflow="wrap" %}
+```
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/output" --domains 'api.twitter.com' --domains 'www.producthunt.com' --format har
+```
+{% endcode %}
+
+* Export certain domains - RAW Request/Response Format
+
+{% code overflow="wrap" %}
+```
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m all -o "~/desktop/output" --format raw
+```
+{% endcode %}
+
+* Export certain domains - HAR Format
+
+{% code overflow="wrap" %}
+```
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/output" --domains 'api.twitter.com' --domains 'www.producthunt.com' --format raw
 ```
 {% endcode %}
 

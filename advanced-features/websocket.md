@@ -1,5 +1,8 @@
 ---
-description: Capture and debug Websocket from iOS devices / simulators with Proxyman
+description: >-
+  How to capture and decrypt Websocket (WS/WSS) from iOS devices / simulators
+  with Proxyman. Works with Google Chrome Web Browser or websocket from NodeJS,
+  Python, Golang Backend Server
 ---
 
 # WebSocket
@@ -15,7 +18,7 @@ Proxyman could capture WebSocket (WS) and Secure WebSocket (WSS) traffic and eas
 * Filter All / Sent / Received messages.
 * See the content in JSON / Tree Preview / HEX format.
 * Customize Columns: Frame, Length, Data, Time, ...&#x20;
-* Auto decode Binary Message to JSON if possible
+* Auto-decode Binary Message to JSON if possible
 * Open WebSocket messages by external Editors, such as Sublime, VSCode
 
 ## 2. Capture WS/WSS from iOS
@@ -92,11 +95,17 @@ Use [Atlantis Framework](https://github.com/ProxymanApp/atlantis#features) (deve
 
 Read more at [https://github.com/ProxymanApp/atlantis](https://github.com/ProxymanApp/atlantis#wswss-traffic)
 
-### Screenshots
+## 3. Capture WebSockets from your Web Browser (Chrome, Safari, etc)
 
-![Capture Websocket](../.gitbook/assets/websocket.png)
+* Proxyman can capture WS/WSS from a Web Browser out of the box. No need to configure anything.
+* How to use: Open Google Chrome -> Visit your website that makes a WS/WSS connection -> Open Proxyman -> Find your websocket domains -> On the Response Panel -> Click Enable SSL Proxying on these domains. Open your Browser, and reload your website -> Proxyman will capture and decrypt WS/WSS ✅
 
-## 3. Map Websocket from Localhost <-> Production
+## 4. Capture Websocket from NodeJS, Golang, Python Server
+
+* Proxyman can capture WS/WSS from your NodeJS, Golang, Python, and Ruby server.
+* How to use: Read [automatic-setup.md](../automatic-setup/automatic-setup.md "mention") to start your server on this Terminal -> Make a WS/WSS connection -> Proxyman automatically captures and decyrpts it ✅
+
+## 5. Map Websocket from Localhost <-> Production
 
 It's possible to map the WebSocket Traffic from localhost <-> Production. Please check out the [Map Remote Tool.](map-remote.md#7.4-map-websocket-from-localhost-to-production)
 

@@ -24,7 +24,7 @@ If you're using Android Emulator or iOS Simulator, you can use `String proxy = '
 
 You can find the \<YOUR\_LOCAL\_IP> from the Proxyman -> Certificate menu -> Install for iOS -> Physical Device
 
-<figure><img src="../.gitbook/assets/1.jpg" alt=""><figcaption><p>Use current IP</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/1 (1).jpg" alt=""><figcaption><p>Use current IP</p></figcaption></figure>
 
 ### 1.1 Dart HTTPClient Class
 

@@ -16,11 +16,7 @@ This handy tool might help you to fix the following issues:
 * [Code Generator](../advanced-features/code-generator.md) to Swift, Node, Javascript, cURL, ...
 * GraphQL Query Prettier
 
-<div data-full-width="false">
-
-<figure><img src="../.gitbook/assets/Screenshot 2024-06-27 at 15.01.33.png" alt="" width="563"><figcaption><p>Select Custom Tabs for Request / Response Panel</p></figcaption></figure>
-
-</div>
+<div data-full-width="false"><figure><img src="../.gitbook/assets/Screenshot 2024-06-27 at 15.01.33.png" alt="" width="563"><figcaption><p>Select Custom Tabs for Request / Response Panel</p></figcaption></figure></div>
 
 {% hint style="info" %}
 The selected custom tabs will be appended to the right side of the Request or Response view&#x20;
@@ -36,6 +32,15 @@ You can either access the Custom Previewer Window:
 2. Click the checkbox to show/hide your custom Tab
 3. The New Tab will appear on the Request or Response Panel ✅
 
+### 2.1 Server-Sent Events and OpenAI Tabs
+
+From Proxyman 5.22.0 or later, Proxyman supports
+
+* Server-Sent Events from OpenAI endpoints: Auto prettify the inline JSON of the data event
+* OpenAI Tab: Auto accumulate the content and show the final result, similar to the output of your chat view.
+
+<figure><img src="../.gitbook/assets/1.jpg" alt=""><figcaption><p>Capture OpenAI Endpoints</p></figcaption></figure>
+
 ## 3. ⚡️ Advance: Create a custom Tab with the Scripting Tool
 
 * ✅ Show your own data on your tab
@@ -44,8 +49,8 @@ You can either access the Custom Previewer Window:
 ### How to use:
 
 1. the Click on the "+" button on the Request/Response bar or (from the Tools Menu -> Custom Previewer Tab...)
-2. Select \`Add Custom Tab\` button
-3. Select Request / Response panel and set a name for your tab
+2. Select the \`Add Custom Tab\` button
+3. Select the Request / Response panel and set a name for your tab
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-06-27 at 15.01.51.png" alt=""><figcaption></figcaption></figure>
 
@@ -71,13 +76,13 @@ Proxyman supports JSON Tree View for better visualization
 
 We can show/hide a certain column by Right-Click on the Column Header
 
-![](../.gitbook/assets/JSON\_Col.png)
+![](../.gitbook/assets/JSON_Col.png)
 
 #### Force render HTML Page
 
-![](../.gitbook/assets/Screen\_Shot\_2020-07-14\_at\_10\_19\_51.png)
+![](../.gitbook/assets/Screen_Shot_2020-07-14_at_10_19_51.png)
 
 #### Beautify the Javascript files
 
-![Beautify JS Body](../.gitbook/assets/Screen\_Shot\_2020-07-12\_at\_08\_40\_52.png)
+![Beautify JS Body](../.gitbook/assets/Screen_Shot_2020-07-12_at_08_40_52.png)
 

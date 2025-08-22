@@ -69,6 +69,7 @@
 * [Import / Export Settings](basic-features/import-export-settings.md)
 * [Multipart Form-Data Previewer](basic-features/multipart-form-data-previewer.md)
 * [JSONPath](basic-features/jsonpaths.md)
+* [JQ](basic-features/jq.md)
 * [Customize Toolbar](basic-features/customize-toolbar.md)
 * [Localization](basic-features/localization.md)
 * [Quick Preview](basic-features/quick-preview.md)

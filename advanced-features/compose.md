@@ -1,24 +1,27 @@
 ---
-description: Make a Restful Requests to your server, and inspect the HTTPS Response
+description: >-
+  Make new HTTPS Requests to your server, and inspect the HTTPS Response. It's a
+  simple version of Postman
 ---
 
 # Compose new Request
 
 ## 1. What's it?
 
-Compose a new Request is a handy tool to help developers:
+"Compose new Request" tool is a handy tool to help developers:
 
 * Compose an HTTP/HTTPS Request and send it to your service. It's similar to Paw, Insomnia, and Postman.
 * Quickly test your APIs without depending on your app client.
 * Support Header, Query, URL, Form, JSON Body
 * Support Raw Message
+* Support multipart body
 * Preset template: Empty Request, GET Request, Post Request with JSON or Form.
 
 {% hint style="info" %}
 You can reuse your request data for new requests. Please check out the [Edit & Repeat](edit-and-repeat.md) page.
 {% endhint %}
 
-![Compose new request and inspect the response](../.gitbook/assets/174536780-6ced0dc3-df59-4c51-a1a5-dc72cb30140f.jpeg)
+<figure><img src="../.gitbook/assets/Screenshot 2025-09-05 at 21.01.54.png" alt=""><figcaption><p>Make a HTTPS Requests with Proxyman</p></figcaption></figure>
 
 ## 2. How to use
 
@@ -48,14 +51,24 @@ Proxyman also supports a few request templates.
 
 ![Use preset template](<../.gitbook/assets/Screenshot 2025-02-01 at 10.45.59 PM.jpg>)
 
-
-
 ## 4. Import from cURL
 
 You can import your cURL, which you can copy from a Network Tab in Google Chrome and make a request with the Compose Tool.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-02-01 at 10.42.21 PM.jpg" alt=""><figcaption><p>import cURL</p></figcaption></figure>
 
-## 5. Settings
+{% hint style="success" %}
+You can simply paste your cURL to the URL Text View, Proxyman will tries to parse your cURL
+{% endhint %}
 
-* **Request Timeout**: In Setting -> Tools Tab -> Request Timeout: Define a second that the Request will timeout. Use 0 to disable it. Available on Proxyman 4.13.0 or later
+## 5. History Request
+
+From Proxyman macOS 5.24.0, Proxyman will store your requests/responses in the History List.
+
+* ✅ Useful to preview your previous Request/Response
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-08-25 at 14.02.04.jpg" alt=""><figcaption><p>Request History in the Compose View</p></figcaption></figure>
+
+## 6. Settings
+
+* **SettingsRequest Timeout**: In Setting -> Tools Tab -> Request Timeout: Define a second that the Request will timeout. Use 0 to disable it. Available on Proxyman 4.13.0 or later

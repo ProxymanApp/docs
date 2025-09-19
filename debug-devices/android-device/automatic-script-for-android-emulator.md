@@ -56,6 +56,8 @@ brew install android-platform-tools
 
 ![Create a new Emulator (Google APIs)](../../.gitbook/assets/Screen_Shot_2020-10-19_at_13_50_48.png)
 
+<figure><img src="../../.gitbook/assets/Screenshot 2025-09-19 at 20.01.37.jpg" alt=""><figcaption></figcaption></figure>
+
 3. Open Proxyman -> Certificate Menu -> Install Certificate on Android -> Emulators -> Click on the Override All Emulators button&#x20;
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 14.54.51.jpg" alt=""><figcaption><p>capture all HTTPS from Emulators with 1 click</p></figcaption></figure>

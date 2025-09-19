@@ -39,6 +39,7 @@
 * [Docker](debug-devices/docker.md)
 * [ElectronJS](debug-devices/electronjs.md)
 * [NextJS (fetch)](debug-devices/nextjs-fetch.md)
+* [Demo iOS & Android](debug-devices/demo-ios-and-android.md)
 
 ## Automatic Setup
 

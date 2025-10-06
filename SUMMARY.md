@@ -74,6 +74,7 @@
 * [Customize Toolbar](basic-features/customize-toolbar.md)
 * [Localization](basic-features/localization.md)
 * [Quick Preview](basic-features/quick-preview.md)
+* [Command Palette](basic-features/command-palette.md)
 
 ## ADVANCED FEATURES
 

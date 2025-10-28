@@ -6,22 +6,22 @@ description: >-
 
 # iOS Device
 
-In order to capture HTTP/HTTPS messages in iOS devices (iPhone, iPad), please navigate to:
+To capture HTTP/HTTPS messages in iOS devices (iPhone, iPad), please navigate to:
 
-* **Certificate** **Menu** -> **Install Certificate on iOS -> Physical Device**
+* **Certificate** **Menu** -> **Install Certificate on iOS -> Physical Devices...**
+
+{% hint style="success" %}
+This setup guide works with all real physical devices, including iPhone, iPad, Apple Watch, Apple TV, and Vision PRO.
+{% endhint %}
 
 ## iOS Setup Guide
 
-{% hint style="info" %}
-⚠️ If you're iOS 16, there is an Apple bug that you could not set the HTTP Proxy. Please check out the [troubleshooting](../troubleshooting/ios-16-devices-issues.md#1.-problem).
-{% endhint %}
-
-<figure><img src="../.gitbook/assets/Screenshot 2022-12-13 at 14.13.02.png" alt=""><figcaption><p>Install Proxyman Certificate on iOS devices</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-10-28 at 21.29.31.png" alt="Install certificate to iPhone Setup Guide"><figcaption></figcaption></figure>
 
 Let's follow the guidelines:
 
 1. Install **Root Proxyman Certificate** on your machine: You can follow the [macOS Guide](macos.md).
-2. Get your iOS Device -> Open Setting app -> Wifi -> Select the current Wifi -> Config the HTTP Proxy by following the next tables.
+2. Get your iOS Device -> Open Settings app -> Wifi -> Select the current Wifi -> Configure the HTTP Proxy by following the next tables.
 
 | Name           | Value                                             |
 | -------------- | ------------------------------------------------- |
@@ -30,13 +30,13 @@ Let's follow the guidelines:
 | Authentication | No                                                |
 
 {% hint style="info" %}
-If you're using any **VPN apps** on macOS or iOS devices, please make sure to close all VPN apps, because they conflict with the HTTPS Proxy config.
+If you're using any **VPN apps** on macOS or iOS devices, please ensure that you close all VPN apps, as they conflict with the HTTPS Proxy configuration.
 {% endhint %}
 
-&#x20; 3\. Open [http://proxy.man/ssl](http://proxy.man/ssl) or http://cert.proxyman.io by **Safari browser** from your iOS Devices in order to install the Proxyman Certificate.
+&#x20; 3\. Open [http://proxy.man/ssl](http://proxy.man/ssl) or [http://cert.proxyman.io](http://cert.proxyman.io/) in **Safari Web Browser with Private Tab** from your iOS device to install the Proxyman Certificate.
 
 {% hint style="info" %}
-**http://proxy.man/ssl** or **http://cert.proxyman.io** is a local website, which serves from the local Proxyman's HTTP server. If you can't open it, please forget the wifi, re-connect, and make sure the Proxyman app is opening.
+**http://proxy.man/ssl** or **http://cert.proxyman.io** is a local website, which is served from the local Proxyman's HTTP server. If you can't open it, please forget the wifi, reconnect, and make sure the Proxyman app is opening.
 
 If you can't access it. Please open the support ticket at [Github's repo](https://github.com/ProxymanApp/Proxyman).
 {% endhint %}
@@ -45,8 +45,7 @@ If you can't access it. Please open the support ticket at [Github's repo](https:
 
 #### **Install Proxyman CA**
 
-* **iOS ≥ 10.3**: Setting app > General > Profiles > Select Proxyman CA > Install
-* **iOS ≥ 12.2**: Setting app > Profiles Downloaded > Select Proxyman CA > Install
+* **iOS ≥ 12.2**: On your iPhone -> Open Settings app > Profiles Downloaded > Select Proxyman CA > Install
 
 #### Trust Proxyman CA
 

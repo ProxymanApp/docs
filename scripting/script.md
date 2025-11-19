@@ -95,7 +95,7 @@ function onRequest(context, url, request) {
 
 ### onRequest() Object Format
 
-`context`, `url` and `request` objects are defined by:
+`context`, `url` and `request` Objects are defined by:
 
 ```javascript
 // context (readonly)
@@ -115,7 +115,8 @@ function onRequest(context, url, request) {
         "id": "51",
         "clientPath": null,
         "clientPort": "51494",
-        "clientName": null
+        "clientName": null,
+        "mapRemoteOriginalURL": "<String> Original URL before Map Remote modification (nullable)"
     },
 }
 
@@ -263,7 +264,7 @@ To enable the Mock API:
 1. Open the Scripting Tool -> Select the Script
 2. Enable Run as Mock API checkbox.
 
-![Enable Mock API](../.gitbook/assets/Screen\_Shot\_2021-09-17\_at\_14\_59\_30.png)
+![Enable Mock API](../.gitbook/assets/Screen_Shot_2021-09-17_at_14_59_30.png)
 
 Then you can define a Response as usual:
 

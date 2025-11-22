@@ -8,19 +8,20 @@ description: Explain what Proxyman app offers to developers
 
 Proxyman is a high-performance macOS app that enables developers to view HTTP/HTTPS requests from apps and domains, including iOS devices, iOS Simulators, and Android devices.
 
-<div data-full-width="true"><figure><img src=".gitbook/assets/Screenshot 2025-09-05 at 21.17.59.png" alt=""><figcaption><p>Proxyman Dashboard macOS app</p></figcaption></figure></div>
+<div data-full-width="true"><figure><img src=".gitbook/assets/new_dashboard_macOS_26.jpg" alt="Proxyman dashboard for macOS 26"><figcaption><p>Proxyman Dashboard for macOS 26</p></figcaption></figure></div>
 
 ### 2. Features
 
 * [x] ✅ Intercept HTTP/HTTPS (SSL) requests from your MacBook, iOS Simulators, iOS devices, and Android devices 📱.
-* [x] Support Apple M1/M2/M3/M4 Chip and macOS Ventura & Sonoma
+* [x] Built for Apple Silicon Chip and macOS 26 Tahoe
 * [x] ✅ 100% written by Apple Swift NIO for high-performance
 * [x] 🦋 Modern and intuitive UI.
-* [x] ⭐️ Exclusively native built for macOS. [Windows](broken-reference) app is also available. Linux is soon.
+* [x] 🍸 Liquid Glass UI for macOS 26
+* [x] ⭐️ Exclusively native built for macOS. ElectronJS-based for Windows & Linux
 * [x] 👑 Comprehensive debugging tools: Compose, Repeat, ...
 * [x] 🛠 Advanced Tools: Map Local, Map Remote, Breakpoint, Allow List, Block List, External Proxying, No Caching, Clear Cache, Protobuf, Scripting (Rewrite), and Diff.
 * [x] 👨‍💻 Customizable workspace.
-* [x] 🖥 macOS 11 or later
+* [x] 🖥 Support macOS 12 or later
 
 ## 3. Download&#x20;
 
@@ -36,13 +37,13 @@ $ brew install --cask proxyman
 
 ## 4. Github
 
-[Proxyman's Repo Github](https://github.com/ProxymanApp/Proxyman) is where you can create tickets for feature requests, and discussions, or report bugs and catch up with Proxyman's team quickly and efficiently.
+[Proxyman's Repo Github](https://github.com/ProxymanApp/Proxyman) is where you can create tickets for feature requests, discussions, or report bugs and catch up with Proxyman's team quickly and efficiently.
 
 {% hint style="success" %}
 We welcome all bug reports and feature requests 😍
 {% endhint %}
 
-If you'd notify all Proxyman's release. Please Watch the repo
+If you'd notify all Proxyman's release. Please watch the repo
 
 ## 4. Milestone&#x20;
 

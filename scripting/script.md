@@ -35,21 +35,30 @@ You can access the Scripting Tool by:
 * Script Menu -> Script List (⌥⌘I)
 * Open Menu Context from Right Click on the Flow -> Tools -> Scripting
 
-Please Check out [Snippet Code](snippet-code.md) to see a collection of snippet JS codes for the Scripting Tool.
+Please check out the [Snippet Code](snippet-code.md) to see a collection of snippet JS codes for the Scripting Tool.
 
 ### 4. Scripting with GraphQL Requests
 
-From Proxyman 2.27.0+, the Scripting Tool can work with GraphQL Request by a specific QueryName. Please check out the following GraphQL Document.
+From Proxyman 2.27.0+, the Scripting Tool can work with a GraphQL Request by a specific QueryName. Please check out the following GraphQL Document.
 
 {% content-ref url="../advanced-features/graphql.md" %}
 [graphql.md](../advanced-features/graphql.md)
 {% endcontent-ref %}
 
+### 4.1 Scripting with Websocket
+
+From Proxyman v6.2.0 or later, it's possible to use the Script to
+
+* Modify the Websocket Request URL & Header
+* Modify the Websocket Response Headers
+* ❌ Can not modify the websocket message. Only URL and Headers are supported.
+* Refer to this snippet code.
+
 ### 5. Examples
 
 The following guide will show you how to write JS code to change the Request domain from Production to Localhost and change the Response Body
 
-1. Make sure you enable SSL for this domain before creating the script)
+1. Make sure you enable SSL for this domain before creating the script.
 2. Open the Scripting Tool and create a new Script Entry (⌘N). You can right-click on the Request -> Tools -> Scripting => Proxyman will create a Script too
 3. Give the name and define a Matching Rule.&#x20;
 4. Ex: **Name**=Test on Localhost endpoint, **URL**=https://proxyman.io

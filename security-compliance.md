@@ -4,13 +4,13 @@ description: Describe all security Compliance from Proxyman, such as SOC 2
 
 # Security Compliance
 
-### Exciting News: Proxyman Achieves SOC 2 Type 1 Compliance!
+### Exciting News: Proxyman Achieves SOC 2 Type 2 Compliance!
 
 
 
 <figure><img src=".gitbook/assets/Frame 8.jpg" alt=""><figcaption><p>Proxyman is now SOC 2 Compliant</p></figcaption></figure>
 
-## What is SOC 2 Type 1 Compliance?
+## What is SOC 2 Type 2 Compliance?
 
 SOC 2 is a stringent audit by the AICPA. A Type 1 report confirms our security controls are well-designed at a specific time, evaluating five key criteria:
 
@@ -20,7 +20,7 @@ SOC 2 is a stringent audit by the AICPA. A Type 1 report confirms our security c
 * **Confidentiality**: Safeguards confidential information.
 * **Privacy**: Handles personal data per our privacy policy.
 
-## Why SOC 2 Type 1 Compliance Matters
+## Why SOC 2 Type 2 Compliance Matters
 
 In today's digital world, strong security is essential. For a debugging proxy tool managing sensitive data, SOC 2 compliance:
 
@@ -53,9 +53,8 @@ In today's digital world, strong security is essential. For a debugging proxy to
 
 This milestone is the first step. Our focus includes:
 
-* Maintaining and improving security controls.
-* Progressing towards SOC 2 Type 2 compliance.
+* Maintain SOC 2 Type 2 compliance.
 * Conducting regular audits.
 * Continuously enhancing security practices.
 
-For more about our security and privacy policies, visit our Privacy Policy, Terms of Service, and SDLC Policy. Questions? Reach us at support@proxyman.io.
+For more about our security and privacy policies, visit our Privacy Policy, Terms of Service, and SDLC Policy. Questions? Reach us at support@proxyman.com

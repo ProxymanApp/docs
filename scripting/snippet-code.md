@@ -95,6 +95,10 @@ Please open a ticket at [https://github.com/ProxymanApp/Proxyman](https://github
 
 * [Manually read system environment variables](snippet-code.md#reload-system-environment-variables)
 
+## Websocket
+
+* [Change the Websocket URL, Headers](snippet-code.md#change-websocket-url-requests-response-header)
+
 ## HTTP Header
 
 #### Add/Update: Request or Response Header
@@ -454,7 +458,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-![Use Scripting for Color and Comment](../.gitbook/assets/Screen\_Shot\_2021-08-13\_at\_09\_27\_36.png)
+![Use Scripting for Color and Comment](../.gitbook/assets/Screen_Shot_2021-08-13_at_09_27_36.png)
 
 ## Import Files with require()
 
@@ -758,7 +762,9 @@ function onResponse(context, url, request, response) {
 
 #### Response delay with sleep() function
 
-It's useful for simulating the "Slow Network" on a particular Request or Response. You can check out the [Network Conditions tool](../advanced-features/network-throttling.md#1.-whats-it) for GUI.
+the It's useful for simulating the "Slow Network" on a particular Request or Response. You can check out the [Network Conditions tool](../advanced-features/network-throttling.md#1.-whats-it) for GUI.
+
+* macOS
 
 ```javascript
 function onResponse(context, url, request, response) {
@@ -766,6 +772,21 @@ function onResponse(context, url, request, response) {
   
   // Sleep 5 seconds
   sleep(5000);
+  
+  // Done
+  return response;
+}
+```
+
+* Windows/Linux
+
+```javascript
+async function onResponse(context, url, request, response) {
+  console.log("Start sleep");
+  
+  // Sleep 5 seconds
+  // Must use `await` keyword on Windows/Linux
+  await sleep(5000);
   
   // Done
   return response;
@@ -1152,3 +1173,47 @@ async function onRequest(context, url, request) {
   return request;
 }
 ```
+
+### Change Websocket URL, Requests/Response Header
+
+* Supported from macOS 6.2.0 or later
+* ❌ Can NOT modify the Websocket Message. Only URL and Headers are supported.
+
+**Map from localhost to production**
+
+* Rule ws://proxyman.debug:3000
+
+```js
+async function onRequest(context, url, request) {
+  // console.log(request);
+  console.log(url);
+
+  request.scheme = "wss";
+  request.host = "wss.httpbin-proxyman.xyz"
+  request.port = 443
+
+  // Done
+  return request;
+}
+
+```
+
+**Production to localhost**
+
+* Rule wss://echo.websocket.org
+
+```js
+async function onRequest(context, url, request) {
+  // console.log(request);
+  console.log(url);
+
+  request.scheme = "ws";
+  request.host = "proxyman.debug"
+  request.port = 3000
+
+  // Done
+  return request;
+}
+
+```
+

@@ -168,7 +168,7 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 * Export All - RAW Request/Response Format
 
 {% code overflow="wrap" %}
-```
+```bash
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m all -o "~/desktop/output" --format raw
 ```
 {% endcode %}
@@ -176,7 +176,7 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 * Export All - HAR Format
 
 {% code overflow="wrap" %}
-```
+```bash
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/output" --domains 'api.twitter.com' --domains 'www.producthunt.com' --format har
 ```
 {% endcode %}
@@ -184,7 +184,7 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 * Export certain domains - RAW Request/Response Format
 
 {% code overflow="wrap" %}
-```
+```bash
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m all -o "~/desktop/output" --format raw
 ```
 {% endcode %}
@@ -192,10 +192,12 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 * Export certain domains - HAR Format
 
 {% code overflow="wrap" %}
-```
+```bash
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/output" --domains 'api.twitter.com' --domains 'www.producthunt.com' --format raw
 ```
 {% endcode %}
+
+**From macOS 6.2.0+, we can export with a flag `--since <last_flow_id>` to only export from this flow ID.**
 
 ## 9. Import Custom Root Certificate
 

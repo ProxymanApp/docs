@@ -35,7 +35,7 @@ You can find the \<YOUR\_LOCAL\_IP> from the Proxyman -> Certificate menu -> Ins
 String proxy = Platform.isAndroid ? '<YOUR_LOCAL_IP>:9090' : 'localhost:9090';
 
 // Create a new HttpClient instance.
-HttpClient httpClient = new HttpClient();
+HttpClient httpClient = HttpClient();
 
 // Hook into the findProxy callback to set
 // the client's proxy.
@@ -45,8 +45,7 @@ httpClient.findProxy = (uri) {
 
 // This is a workaround to allow Proxyman to receive
 // SSL payloads when your app is running on Android
-httpClient.badCertificateCallback = 
-  ((X509Certificate cert, String host, int port) => true);
+httpClient.badCertificateCallback = (cert, host, port) => true;
 ```
 
 ### 1.2 HTTP Package
@@ -58,7 +57,7 @@ httpClient.badCertificateCallback =
 String proxy = Platform.isAndroid ? '<YOUR_LOCAL_IP>:9090' : 'localhost:9090';
 
 // Create a new HttpClient instance.
-HttpClient httpClient = new HttpClient();
+HttpClient httpClient = HttpClient();
 
 // Hook into the findProxy callback to set
 // the client's proxy.
@@ -68,19 +67,18 @@ httpClient.findProxy = (uri) {
 
 // This is a workaround to allow Proxyman to receive
 // SSL payloads when your app is running on Android.
-httpClient.badCertificateCallback = 
-  ((X509Certificate cert, String host, int port) => true);
+httpClient.badCertificateCallback = (cert, host, port) => true;
 
 // Pass your newly instantiated HttpClient to http.IOClient.
 IOClient myClient = IOClient(httpClient);
 
 // Make your request as normal.
-var response = myClient.get('/my-url');
+final response = myClient.get('/my-url');
 ```
 
 ### 1.3 Dio
 
-* Dio ≥ v6.0.0 (Recommended)
+* Dio ≥ v5.0.0 (Recommended)
 
 ```dart
 // Make sure to replace <YOUR_LOCAL_IP> with 
@@ -92,27 +90,23 @@ String proxy = Platform.isAndroid ? '<YOUR_LOCAL_IP>:9090' : 'localhost:9090';
 Dio dio = Dio();
 
 dio.httpClientAdapter = IOHttpClientAdapter(
-      createHttpClient: () {
-        final client = HttpClient()
-        client.findProxy = (uri) {
-            return 'PROXY $proxy';
-          }
-        client.badCertificateCallback =
-              (X509Certificate cert, String host, int port) => true;
-        return client;
-      },
-      validateCertificate: (cert, host, port) {
-        return true;
-      },
-    ); 
-
+  createHttpClient: () {
+    final client = HttpClient();
+    client.findProxy = (uri) {
+      return 'PROXY $proxy';
+    }
+    client.badCertificateCallback = (cert, host, port) => true;
+    return client;
+  },
+  validateCertificate: (cert, host, port) {
+    return true;
+  },
+); 
 ```
 
+* Dio ＜ v5.0.0 (Deprecated APIs)
 
-
-* Dio v5.0.0 or earlier (Deprecated APIs)
-
-```java
+```dart
 // Make sure to replace <YOUR_LOCAL_IP> with 
 // the external IP of your computer if you're using Android. 
 // You can get the IP in the Android Setup Guide window
@@ -153,7 +147,7 @@ Dio dio = Dio();
 
 * Follow this [Setup Guide](android-device/automatic-script-for-android-emulator.md)
 
-## 5. Flitter with Android Devices
+## 5. Flutter with Android Devices
 
 * Follow this [Setup Guide](android-device/)
 

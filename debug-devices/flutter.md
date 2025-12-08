@@ -28,7 +28,7 @@ You can find the \<YOUR\_LOCAL\_IP> from the Proxyman -> Certificate menu -> Ins
 
 ### 1.1 Dart HTTPClient Class
 
-```java
+```dart
 // Make sure to replace <YOUR_LOCAL_IP> with 
 // the external IP of your computer if you're using Android. 
 // You can get the IP in the Android Setup Guide window
@@ -50,7 +50,7 @@ httpClient.badCertificateCallback = (cert, host, port) => true;
 
 ### 1.2 HTTP Package
 
-```java
+```dart
 // Make sure to replace <YOUR_LOCAL_IP> with 
 // the external IP of your computer if you're using Android. 
 // You can get the IP in the Android Setup Guide window

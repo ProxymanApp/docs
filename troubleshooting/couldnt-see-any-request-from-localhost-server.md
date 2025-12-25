@@ -4,15 +4,37 @@ description: Fix why localhost request/response doesn't appear on Proxyman
 
 # I could not see any requests from my localhost server
 
-## 1. Problem: I develop a local NodeJS, Ruby, or Python Backend at **http://localhost:3000**, but when I visit **http://localhost:3000** from Google Chrome, Safari  -> There is no traffic on the Proxyman app.
+## 1. Problem
 
-**Why does this happen?** By default, on macOS, all localhost requests don't go through the System HTTP Proxy. Therefore, there is no traffic recorded by Proxyman app.
+I develop a local NodeJS, Ruby, or Python Backend at **http://localhost:3000**, but when I visit **http://localhost:3000** from Google Chrome or Safari, there is no traffic on the Proxyman app.
 
-### 2. Solution
+**Why does this happen?** By default, on macOS, all localhost requests don't go through the System HTTP Proxy. Therefore, there is no traffic recorded by the Proxyman app.
+
+<figure><img src="../.gitbook/assets/capture_http_localhost_chrome_2.jpeg" alt="Proxyman can not capture any http localhost traffic"><figcaption></figcaption></figure>
+
+## 2. Solution
+
+### 2.1 ✅ New Solution for v6.3.0
+
+From Proxyman macOS v6.3.0, Proxyman can:
+
+* Capture `http://locahost:3000` or any localhost traffic in Google Chrome / Firefox without modifying the /etc/host file
+* Works with a single click
+* Tutorial: [https://proxyman.com/posts/how-to-capture-http-localhost-traffic-from-google-chrome](https://proxyman.com/posts/how-to-capture-http-localhost-traffic-from-google-chrome)
+
+### How to do it
+
+1. In Proxyman app -> Go to the Setup Menu -> Automatic Setup -> Click on the "Google Chrome" button
+2. New Google Chrome will appear
+3. Done. Visit http://localhost:3000 and Proxyman can capture it
+
+<figure><img src="../.gitbook/assets/capture_http_localhost_chrome_1.jpeg" alt="capture HTTPS traffic from Google Chrome with Proxyman"><figcaption></figcaption></figure>
+
+## 2.2 Old solution
 
 There are two solutions to fix it: You should follow either one of the following solutions.
 
-### Solution 1: Map **localhost** to the domain name in `/etc/hosts` (recommended ✅)
+### Solution 1: Map **localhost** to the domain name in `/etc/hosts`&#x20;
 
 1. Open `etc/hosts` file with Vim or VS Code.
 
@@ -40,8 +62,6 @@ $ sudo vim /etc/hosts
 {% hint style="info" %}
 If you use a `local` as a suffix, e.g. proxyman.local, make sure to remove the \`\*.local\` from the Bypass Proxy List ([Instruction](https://docs.proxyman.io/troubleshooting/.local-doesnt-appear-in-proxyman#2-solution)).
 {% endhint %}
-
-###
 
 ### Solution 2: Use **localhost.proxyman.io** instead of **localhost**
 

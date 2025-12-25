@@ -76,7 +76,7 @@ If you've tried and verified all the above steps, but still get SSL Errors?
 I get SSL Errors from:
 
 * **Mac devices (Macbook, Mac Mini, Mac Studio)** -> Install & Trust the Certificate on your Macbook -> Follow [macOS Guide](../debug-devices/macos.md)
-* **Windows** -> Install and trust the certificate on your Windows machine  -> Follow [Windows guide](broken-reference)&#x20;
+* **Windows** -> Install and trust the certificate on your Windows machine  -> Follow [Windows guide](/broken/pages/y8s9TgFJ2sXqOqkNkN97)&#x20;
 * Java -> Follow [Java VM Guide](../debug-devices/java.md)
 * Firefox -> Follow [Firefox Guide](../debug-devices/firefox.md)
 * Python -> Follow [Python Guide](../debug-devices/python.md)
@@ -90,7 +90,7 @@ Some networking libraries (Ruby, NodeJS, Python, Golang) don't trust the self-si
 
 ## 2.3 SSL-Pinning?
 
-* You're still unable to see HTTPS Response on your app, it seems that your app is protected by [SSL-Pinning](https://en.wikipedia.org/wiki/HTTP\_Public\_Key\_Pinning), which prevents MitM apps from seeing the content. All popular apps (Facebook, Apple, Instagram, Messenger, etc.) have this feature.
+* You're still unable to see HTTPS Response on your app, it seems that your app is protected by [SSL-Pinning](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning), which prevents MitM apps from seeing the content. All popular apps (Facebook, Apple, Instagram, Messenger, etc.) have this feature.
 * Please temporarily **disable SSL-Pinning** and try again.
 
 Read more about SSL-Pining: [https://www.raywenderlich.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning](https://www.raywenderlich.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning)&#x20;
@@ -98,7 +98,7 @@ Read more about SSL-Pining: [https://www.raywenderlich.com/1484288-preventing-ma
 
 
 {% hint style="info" %}
-If you've tried everything but are not sure what is wrong? Please open a [Github ticket](https://app.gitbook.com/o/-LlPtWiscJCRFiRPxWvB/s/-LlPt\_6BePnJ3oK3saP1/).
+If you've tried everything but are not sure what is wrong? Please open a [Github ticket](https://app.gitbook.com/o/-LlPtWiscJCRFiRPxWvB/s/-LlPt_6BePnJ3oK3saP1/).
 
 Please also mention: Proxyman macOS/Windows, Proxyman version, your iOS/Android device, etc.
 {% endhint %}

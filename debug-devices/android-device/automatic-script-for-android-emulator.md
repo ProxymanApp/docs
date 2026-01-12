@@ -20,6 +20,8 @@ From Proxyman 5.14.0 or earlier, this Script only installs the User Certificate 
 From Proxyman 5.15.0 or later, Proxyman can now install Proxyman certificate into the system-level Store. Make it possible to decrypt all HTTPS from Android Emulators.
 {% endhint %}
 
+<figure><img src="../../.gitbook/assets/Screenshot 2026-01-10 at 19.29.46.jpg" alt="capture traffic from Android Emulator - including Flutter app" width="563"><figcaption></figcaption></figure>
+
 ## 2. Benefit?
 
 **1 Click to:**
@@ -40,6 +42,12 @@ Work with Android Emulator and Android Physical Devices via \`adb\`  (Only for P
 <figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 15.12.07.jpg" alt=""><figcaption><p>Install Proxyman Certificate to the system-level Store.</p></figcaption></figure>
 
 
+
+### ✅ Flutter / React Native app
+
+From Proxyman macOS 6.4.0 or later, Proxyman can capture HTTPS traffic from the Flutter app without a code change required.
+
+Refer [flutter.md](../flutter.md "mention") documentation to know more.
 
 ## 3. How to use it?
 

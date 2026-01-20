@@ -9,6 +9,10 @@
 * [MCP](mcp.md)
 * [Security Compliance](security-compliance.md)
 
+## Team Workspace
+
+* [Team Workspace](team-workspace/team-workspace.md)
+
 ## Proxyman iOS
 
 * [Proxyman for iOS](proxyman-ios/vpn-and-proxyman-certificate.md)

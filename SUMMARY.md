@@ -11,8 +11,9 @@
 
 ## Team Workspace
 
-* [Share Log online](team-workspace/share-log-online.md)
 * [Team Workspace](team-workspace/team-workspace.md)
+* [Share Log online](team-workspace/share-log-online.md)
+* [Team Management](team-workspace/team-management.md)
 
 ## Proxyman iOS
 

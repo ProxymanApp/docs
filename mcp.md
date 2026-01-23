@@ -34,18 +34,34 @@ The architecture consists of two components:
 
     Add to your MCP configuration:
 
-    ```json
-    {
-      "mcpServers": {
-        "proxyman": {
-          "command": "/Applications/Proxyman.app/Contents/MacOS/proxyman-mcp-server"
-        }
-      }
+* Production Version:
+
+```json
+{
+  "mcpServers": {
+    "proxyman": {
+      "command": "/Applications/Proxyman.app/Contents/MacOS/mcp-server"
     }
-    ```
+  }
+}
+```
+
+* Setapp Version
+
+```json
+{
+  "mcpServers": {
+    "proxyman": {
+      "command": "/Applications/Setapp/Proxyman.app/Contents/MacOS/mcp-server"
+    }
+  }
+}
+```
+
 3. **Start using**
-   * Ensure Proxyman is running
-   * Ask your AI assistant to interact with Proxyman
+
+* Ensure Proxyman is running
+* Ask your AI assistant to interact with Proxyman
 
 #### Example Prompts
 

@@ -13,15 +13,37 @@ Supported uploads:
 * .proxymanlogv2, .proxymansessionv2, .har
 * Max file size: 50 MB per upload
 
-After a successful upload, the UI guides you through:
+### Upload from Proxyman app
 
-1. Adding an optional note (Markdown supported)
+1. Make sure you've already logged into your Team Workspace
+2. In Proxyman app -> Select your request that you'd like to export -> Right-Click -> Export -> Share Log Online
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-01-20 at 16.26.43.png" alt="Add note to your log"><figcaption></figcaption></figure>
+* Redact Sensitive Data: Auto-redact your cookie or Authorization headers before sharing
+* Add Note
+* Change the name of the log
+* Grant permission who can see this log
 
-2. Setting sharing permissions
+3. Click Share to share to your workspace
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-01-20 at 16.26.49.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2026-01-24 at 13.49.44.png" alt="" width="563"><figcaption></figcaption></figure>
+
+
+
+### Upload from Workspace website
+
+1. Visit [https://workspace.proxyman.com/logs](https://workspace.proxyman.com/logs) -> Click on the Browse File button -> Select the Proxyman Log that you've already exported from your Mac.
+
+{% hint style="info" %}
+To export Proxyman Logs on Proxyman app: In Proxyman app -> Select your request that you'd like to export -> Right-Click -> Export -> Proxyman Log
+{% endhint %}
+
+2. Adding an optional note (Markdown supported)
+
+<figure><img src="../.gitbook/assets/Screenshot 2026-01-20 at 16.26.43.png" alt="Add note to your log" width="563"><figcaption></figcaption></figure>
+
+3. Setting sharing permissions
+
+<figure><img src="../.gitbook/assets/Screenshot 2026-01-20 at 16.26.49.png" alt="" width="563"><figcaption></figcaption></figure>
 
 
 

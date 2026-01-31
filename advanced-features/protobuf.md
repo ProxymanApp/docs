@@ -1,31 +1,36 @@
+---
+description: How to decode your HTTP/HTTPS Request/Response Protobuf with Proxyman
+---
+
 # Protobuf
 
-### 1. Protocol Buffer
+## 1. Protobuf
 
-From [Protobuf's Google](https://developers.google.com/protocol-buffers/), Protocol buffers are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, but smaller, faster, and simpler.&#x20;
+* Proxyman macOS can decode your HTTP/HTTPS Request/Response Protobuf Body with a given Protobuf Desc file
+* Decode Protobuf binary and show as plain text
+* Support Single or Multiple Delimited Messages in a single Protobuf Binary
+* Import a desc file and read all Message Type -> Useful to decode protobuf binary
+* Decode [Protobuf from Websocket](websocket.md#websocket-with-protobuf-payload)
 
-You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages.
+![Parse protobuf request with File Descriptor](../.gitbook/assets/Screen_Shot_2020-04-25_at_21_32_54.png)
 
-Proxyman is capable of **reading** a Protobuf Binary and parsing to **JSON Format** with given Protobuf File Descriptors.
+## 2. Protobuf File Descriptor (\*.desc)
 
-![Parse protobuf request with File Descriptor](../.gitbook/assets/Screen\_Shot\_2020-04-25\_at\_21\_32\_54.png)
-
-### 2. Protobuf File Descriptor (\*.desc)
-
-Proxyman requires File Descriptor (\*.desc) to properly parse the Protobuf Data.
+Proxyman requires a File Descriptor (\*.desc) to properly parse the Protobuf Data.
 
 There are various ways to get the File Descriptor:
 
-#### 1. Ask your colleagues.&#x20;
+#### 1. Ask your colleagues.
 
 If your company is using Protobuf, it's a high chance that your colleagues have already had this file, especially the Backend and Frontend teams.
 
-It might be one or multiple descriptor files.&#x20;
+It might be one or multiple descriptor files.
 
 #### 2. Generate from \*.proto file
 
 If you have a bunch of \*.proto files, you can simply generate 1 single \*.desc file by using the following command line.
 
+{% code overflow="wrap" %}
 ```bash
 # Install protobuf cli if need
 brew install protobuf
@@ -39,10 +44,11 @@ protoc --descriptor_set_out=output.desc --include_imports -I=/Users/<your_name>/
 # Done
 # output.desc
 ```
+{% endcode %}
 
 Once you have the Descriptor File, you can import them to Proxyman:
 
-* Proxyman -> Tools Menu -> Protobuf Schema&#x20;
+* Proxyman -> Tools Menu -> Protobuf Schema
 * Click on the + button and select the **output.desc** file
 
 {% hint style="info" %}
@@ -57,44 +63,47 @@ Proxyman automatically imports all common types from **Google Protobuf**, such a
 Proxyman supports both **proto2** and **proto3** syntax. [Read more](https://developers.google.com/protocol-buffers/docs/proto3)
 {% endhint %}
 
-### 3. Protobuf Config
+#### 3. Protobuf Config
 
-Before using Protobuf, you have to config which Message Type should be used to parse the Protobuf data.
+Before using Protobuf, you have to configure which Message Type should be used to parse the Protobuf data.
 
-The following table describes which config are:
+The following table describes which configurations are:
 
-| Name                                | Description                                                                                                                                                          |
-| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Schema                              | Add `.desc` file if need                                                                                                                                             |
-| Message Type                        | The Class name of the root object in Protobuf binary. **Must include Package name**                                                                                  |
-| Payload Type: **Auto**              | Auto detect if the Protobuf Binary is encoding as a Single Message or [Delimited Message](https://developers.google.com/protocol-buffers/docs/techniques#streaming)  |
-| Payload Type: **Single Message**    | Single Mesage in a Protobuf Binary                                                                                                                                   |
-| Payload Type: **Delimited Message** | Multiple Messages in a Protobuf Binary (Length-Prefix)                                                                                                               |
+| Name                                | Description                                                                                                                                                         |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Schema                              | Add `.desc` file if need                                                                                                                                            |
+| Message Type                        | The Class name of the root object in Protobuf binary. **Must include Package name**                                                                                 |
+| Payload Type: **Auto**              | Auto detect if the Protobuf Binary is encoding as a Single Message or [Delimited Message](https://developers.google.com/protocol-buffers/docs/techniques#streaming) |
+| Payload Type: **Single Message**    | Single Mesage in a Protobuf Binary                                                                                                                                  |
+| Payload Type: **Delimited Message** | Multiple Messages in a Protobuf Binary (Length-Prefix)                                                                                                              |
 
-![Add Message Type to particular requests](<../.gitbook/assets/Screen Shot 2020-04-25 at 21.40.16.png>)
+<figure><img src="../.gitbook/assets/Screenshot 2026-01-31 at 10.04.50.png" alt="Decode Protobuf HTTPS Resposne with Proxyman"><figcaption><p>Decode Protobuf HTTPS Resposne with Proxyman</p></figcaption></figure>
 
-### 4. How to use?
+## 4. How to use?
 
 There are **two** ways to parse Protobuf properly with qualified name fields:
 
 * Define Protobuf Rules
 * Read from Content-Type Header
 
-#### 4.1 Define Protobuf Rule
+### 4.1 Define Protobuf Rule
 
-1. Make a request, which has `Content-Type: application/x-protobuf` or `Content-Type: application/protobuf`
-2. You can see the Warning that Proxyman couldn't parse properly due to the absence of Message Type. Click Add to open Protobuf Settings
+1. Your Protobuf Request should have a Content-Type header, which is `Content-Type: application/x-protobuf` or `Content-Type: application/protobuf`
+2. Proxyman detects that it's a Protobuf Payload -> A Warning that Proxyman couldn't parse properly due to the absence of the message type. Click Add to open Protobuf Settings.
 
-![Missing Message Type](../.gitbook/assets/Screen\_Shot\_2020-04-25\_at\_21\_56\_19.png)
+Alternatively, you can right-click on your Request -> Tools -> Protobuf
 
-3\. Add Schema and fill Message type and Payload Type:
+![Missing Message Type](../.gitbook/assets/Screen_Shot_2020-04-25_at_21_56_19.png)
 
-* Right Click on the Protobuf Request -> Tools -> Protobuf
-* Select which Message Type for this request (Add Desc file if need)
+3\. In the Protobuf Rule Window -> Select which Message Type for this request (Add Desc file if needed) for this Request/Response
 
-![](<../.gitbook/assets/Screen Shot 2020-04-25 at 21.40.16.png>)
+{% hint style="info" %}
+If you have a different Protobuf Message Type for the Request and Response. Select the \`Use different Message Type for Request/Response\` checkbox
+{% endhint %}
 
-4\. Click Add and see qualified JSON Format
+![](<../.gitbook/assets/Screenshot 2026-01-31 at 10.04.50.png>)
+
+4\. Click Add and see the JSON Format
 
 ![](<../.gitbook/assets/Screen Shot 2020-04-25 at 22.08.07.png>)
 
@@ -114,10 +123,9 @@ To specify that the Protobuf Body this MessageType and the payload encoding.
 
 #### 5.1 Some name fields are missing
 
-There is a situation where some field names are absent because the field name definition is not included in your Protobuf File Descriptor. It might be your descriptor is out of date.
+There is a situation where some field names are absent because the field name definition is not included in your Protobuf File Descriptor. It might be that your descriptor is out of date.
 
 **Solution**:
 
-* Remove old Protobuf Schema and Add the latest descriptor file from your server.
-* If you're using Proxyman 3.5.2 and older, please update to Proxyman 3.6.0 or later. Then, use File Descriptor (\*.desc) for better results.
-
+* Remove the old Protobuf Schema and add the latest descriptor file from your server.
+* If you're using Proxyman 3.5.2 or older, please update to Proxyman 3.6.0 or later. Then, use File Descriptor (\*.desc) for better results.

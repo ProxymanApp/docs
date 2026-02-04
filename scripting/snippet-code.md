@@ -35,6 +35,10 @@ Please open a ticket at [https://github.com/ProxymanApp/Proxyman](https://github
 * [Comment & Highlight with color](snippet-code.md#comment-and-highlight-with-color)
 * [Abort (close) the request/response connection (Like Block List Tool)](snippet-code.md#abort-the-request-response-like-block-list-tool)
 
+#### Multipart/form-data
+
+* [Read, add, update, or remove a part of multipart/form-data](snippet-code.md#multipart-form-data-1)
+
 ## 3. Addons&#x20;
 
 * [Base64 Encoding/Decoding or atob/btoa](snippet-code.md#use-base64-addon)
@@ -95,7 +99,7 @@ Please open a ticket at [https://github.com/ProxymanApp/Proxyman](https://github
 
 * [Manually read system environment variables](snippet-code.md#reload-system-environment-variables)
 
-## Websocket
+## 12. Websocket
 
 * [Change the Websocket URL, Headers](snippet-code.md#change-websocket-url-requests-response-header)
 
@@ -290,6 +294,63 @@ function onResponse(context, url, request, response)  {
     return response;
 }
 
+```
+
+#### Multipart/form-data
+
+From Proxyman macOS 6.6.0 or later, you can read, add, delete a multipart/form-data
+
+```javascript
+function onRequest(context, url, request) {
+  // Only run for multipart requests
+  if (!request.multipart) {
+    return request;
+  }
+
+  var parts = request.multipart;
+
+  // 1) List parts (debug)
+  console.log("Multipart parts:", parts);
+
+  // 2) Modify a text part by name
+  for (var i = 0; i < parts.length; i++) {
+    if (parts[i].name === "text_field") {
+      var p = parts[i];
+      p.body = "Updated text from script";
+      parts[i] = p;
+    }
+  }
+
+  // 3) Modify a file part by name (binary body as [UInt8])
+  for (var i = 0; i < parts.length; i++) {
+    if (parts[i].name === "file_field") {
+      var p = parts[i];
+      p.body = [72, 101, 108, 108, 111]; // "Hello"
+      p.fileName = "hello.txt";
+      p.contentType = "text/plain";
+      parts[i] = p;
+    }
+  }
+
+  // 4) Add a new text part
+  parts.push({
+    name: "new_field",
+    body: "Added by script"
+  });
+
+  // 5) Remove a part by name
+  var filtered = [];
+  for (var i = 0; i < parts.length; i++) {
+    if (parts[i].name !== "remove_me") {
+      filtered.push(parts[i]);
+    }
+  }
+
+  // Apply updates
+  request.multipart = filtered;
+
+  return request;
+}
 ```
 
 #### Map a local file to Response's Body like Map Local Tool (Proxyman 2.25.0+)

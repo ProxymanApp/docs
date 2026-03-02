@@ -1,18 +1,29 @@
+---
+description: Explain how to set up your Electron JS App, so Proxyman can capture HTTP/HTTPS
+---
+
 # ElectronJS
 
-### 1. Capture HTTPS traffic from the ElectronJS app with Automatic Setup
+## 1. Problem
 
-Proxyman can capture HTTPS traffic from the ElectronJS app out of the box. No need to config any HTTP Proxy or trust the certificate on the ElectronJS app.
+Many ElectronJS apps are unaware of System Proxy; it doesn't respect the System HTTP Proxy, so Proxyman can't capture HTTP/HTTPS from this app :x:
 
-Let's follow:
+## 2. Solution
 
-1. Open Proxyman app -> Setup menu -> Automatic Setup
-2. Click on the "Start the Terminal" button
-3. New Terminal app appears -> Open your ElectronJS app by command:
+From Proxyman macOS 6.7.0 or later
 
-```
-open ~/Applications/your_electron_app.app
-```
+* Capture HTTP/HTTPS from ElectronJS app
+* 1-click to set up
+* No modify the source code, it just works :white\_check\_mark:
 
-4. Done
+## 3. How to use
+
+1. Start Proxyman app: Make sure you've already installed & trusted Proxyman Certificate to your Mac. If not, you can follow the guide from the Certificate Menu -> Install Certificate on this Mac -> Automatic Tab
+2. Open the Setup Menu -> Automatic Setup
+3. Click on the "Select Electron App" button and select the app you'd like to capture (Make sure to kill your Electron App first)
+4. Done :white\_check\_mark:
+
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-02 at 16.11.10.jpg" alt="Captuer HTTP from Electron App with Proxyman"><figcaption></figcaption></figure>
+
+
 

@@ -221,7 +221,13 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 ```
 {% endcode %}
 
-<br>
+### 10. Export Current IP and Port
+
+* Available from macOS 7.6.0 or later
+* Get the current Listening IP & Port in JSON format
+
+<pre class="language-bash"><code class="lang-bash"><strong>/Applications/Proxyman.app/Contents/MacOS/proxyman-cli proxy-host
+</strong></code></pre>
 
 
 

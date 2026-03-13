@@ -119,6 +119,15 @@ The architecture consists of two components:
 
 ***
 
+## Changelogs
+
+### MCP v2  (Proxyman ≥ v6.7.0)
+
+* Built-in knowledge base covering iOS, Android, browsers, terminal, VPN, localhost, and third-party libraries
+* New commands: answer\_setup\_question, search\_docs, list\_setup\_workflows, open\_proxyman\_screen, run\_guided\_setup, create\_reverse\_proxy
+* MCP resources and prompt templates for chat clients
+* Reverse proxy create/list support
+
 ### Security
 
 * Server binds to `127.0.0.1` only (no network exposure)

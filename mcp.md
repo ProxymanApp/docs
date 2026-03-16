@@ -13,6 +13,17 @@ The architecture consists of two components:
 * **MCP HTTP Server** - Runs inside Proxyman app on localhost with token-based authentication
 * **MCP CLI Server** - A stdio-based MCP server that AI tools connect to, which forwards commands to Proxyman
 
+#### ✅ Example Prompts
+
+* Show me the last 10 API requests to api.example.com
+* Create a breakpoint for all POST requests to /api/users
+* Export the failed request as a cURL command
+* Enable SSL proxying for \*.stripe.com
+* Create a new Script to change the status code, headers, body.
+* Create Map Local, Breakpoint Tools with given URL
+
+<figure><img src=".gitbook/assets/Screenshot 2026-03-16 at 11.20.29.jpg" alt="Use Claude Code to create the Script"><figcaption></figcaption></figure>
+
 ## 2. Benefits
 
 | Benefit                      | Description                                                                          |
@@ -63,15 +74,6 @@ The architecture consists of two components:
 * Ensure Proxyman is running
 * Ask your AI assistant to interact with Proxyman
 
-#### Example Prompts
-
-```
-"Show me the last 10 API requests to api.example.com"
-"Create a breakpoint for all POST requests to /api/users"
-"Export the failed request as a cURL command"
-"Enable SSL proxying for *.stripe.com"
-```
-
 ### 4. Available Tools
 
 #### Read-Only Tools
@@ -88,13 +90,14 @@ The architecture consists of two components:
 
 #### Write Tools
 
-| Tool                  | Description                                             | Required Params      |
-| --------------------- | ------------------------------------------------------- | -------------------- |
-| `create_breakpoint`   | Creates a breakpoint to pause/inspect matching requests | `url` (pattern)      |
-| `create_map_local`    | Returns custom responses for matching URLs              | `url` (pattern)      |
-| `create_map_remote`   | Redirects requests from one URL to another              | `from_url`, `to_url` |
-| `create_blacklist`    | Blocks requests matching a URL pattern                  | `url` (pattern)      |
-| `enable_ssl_proxying` | Enables HTTPS decryption for a domain                   | `domain`             |
+| Tool                    | Description                                             | Required Params      |
+| ----------------------- | ------------------------------------------------------- | -------------------- |
+| `create_breakpoint`     | Creates a breakpoint to pause/inspect matching requests | `url` (pattern)      |
+| `create_map_local`      | Returns custom responses for matching URLs              | `url` (pattern)      |
+| `create_map_remote`     | Redirects requests from one URL to another              | `from_url`, `to_url` |
+| `create_blacklist`      | Blocks requests matching a URL pattern                  | `url` (pattern)      |
+| enable\_scripting\_tool | Create Script                                           |                      |
+| `enable_ssl_proxying`   | Enables HTTPS decryption for a domain                   | `domain`             |
 
 #### Session Control
 

@@ -124,6 +124,50 @@ The architecture consists of two components:
 
 ## Changelogs
 
+MCP v3 (Proxyman macOS ≥ 6.8.0)
+
+| Name                           | Description                                                                                                                            |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| get\_version                   | Get the current Proxyman macOS app version and build number                                                                            |
+| get\_proxy\_status             | Get current proxy status including recording state, port number, and SSL proxying status                                               |
+| get\_flows                     | Get recent HTTP/HTTPS flows from Proxyman's active session data source                                                                 |
+| get\_flow\_detail              | Get detailed information about a specific flow including headers, body, query params, and cookies                                      |
+| list\_rules                    | List all active debugging rules (breakpoints, map local, map remote, blacklist, scripting, dns spoofing, network condition, whitelist) |
+| get\_ssl\_proxying\_list       | Get the current SSL Proxying configuration including enabled status and domain lists                                                   |
+| create\_breakpoint             | Create a new breakpoint rule to pause and inspect/modify requests or responses matching a URL pattern                                  |
+| create\_map\_local             | Create a Map Local rule to return a custom response for matching requests                                                              |
+| create\_map\_remote            | Create a Map Remote rule to redirect requests from one URL to another                                                                  |
+| create\_blacklist              | Create a Blacklist rule to block requests matching a URL pattern                                                                       |
+| create\_scripting\_rule        | Create a Scripting rule with custom JavaScript to modify requests/responses                                                            |
+| enable\_ssl\_proxying          | Enable SSL Proxying for a specific domain to decrypt HTTPS traffic                                                                     |
+| clear\_session                 | Clear all captured flows from the current session                                                                                      |
+| toggle\_recording              | Start or stop recording HTTP traffic                                                                                                   |
+| export\_flow\_curl             | Export a captured HTTP request as a cURL command                                                                                       |
+| filter\_flows                  | Filter captured HTTP/HTTPS flows using advanced filter criteria                                                                        |
+| get\_certificate\_status       | Get the current status of Proxyman's root certificate                                                                                  |
+| install\_certificate           | Install and trust the Proxyman root CA certificate                                                                                     |
+| uninstall\_certificate         | Remove the Proxyman root CA certificate from the Keychain                                                                              |
+| inject\_terminal               | Launch a terminal app with Proxyman proxy environment variables injected                                                               |
+| get\_terminal\_manual\_command | Get a bash source command for manually setting proxy environment variables                                                             |
+| answer\_setup\_question        | Answer setup questions about capturing HTTPS from iOS, Android, browsers, etc.                                                         |
+| search\_docs                   | Search the built-in Proxyman setup and troubleshooting doc index                                                                       |
+| list\_setup\_workflows         | List the supported setup workflows Proxyman MCP can guide users through                                                                |
+| list\_popular\_workflows       | List popular setup workflows using Proxyman's curated fallback ranking                                                                 |
+| open\_proxyman\_screen         | Open a specific Proxyman guide or setup screen in the macOS app                                                                        |
+| run\_guided\_setup             | Run a one-click automation in Proxyman for browsers or Android emulators                                                               |
+| list\_reverse\_proxies         | List configured Reverse Proxy entries                                                                                                  |
+| create\_reverse\_proxy         | Create a Reverse Proxy entry for localhost or custom local port routing                                                                |
+| generate\_code                 | Generate code from a captured HTTP flow in 18+ languages/frameworks                                                                    |
+| create\_dns\_spoofing          | Create a DNS Spoofing rule to redirect a hostname to a different IP address                                                            |
+| list\_dns\_spoofing            | List all DNS Spoofing rules and their enabled status                                                                                   |
+| update\_dns\_spoofing          | Update an existing DNS Spoofing rule                                                                                                   |
+| get\_external\_proxy           | Get the current External Proxy (upstream proxy) configuration                                                                          |
+| set\_external\_proxy           | Configure an External Proxy setting for a specific protocol kind                                                                       |
+| toggle\_no\_caching            | Toggle the No Caching feature (strips cache-related headers)                                                                           |
+| inject\_electron               | Launch an Electron app with Proxyman proxy configuration injected                                                                      |
+| open\_proxyman                 | Launch the Proxyman macOS application                                                                                                  |
+| quit\_proxyman                 | Quit the Proxyman macOS application                                                                                                    |
+
 ### MCP v2  (Proxyman ≥ v6.7.0)
 
 * Built-in knowledge base covering iOS, Android, browsers, terminal, VPN, localhost, and third-party libraries

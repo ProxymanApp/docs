@@ -26,24 +26,51 @@ The architecture consists of two components:
 
 ## 2. Benefits
 
-| Benefit                      | Description                                                                          |
-| ---------------------------- | ------------------------------------------------------------------------------------ |
-| **AI-Powered Debugging**     | Ask AI to analyze captured traffic, find specific requests, or explain API responses |
-| **Hands-Free Rule Creation** | Create breakpoints, map local/remote rules through conversation                      |
-| **Faster Workflow**          | Export cURL commands, filter flows, and manage sessions without switching context    |
-| **Secure by Design**         | Localhost-only server with per-session token authentication                          |
-| **IDE Integration**          | Works seamlessly with Cursor and other MCP-compatible tools                          |
+<table><thead><tr><th width="229.90625">Benefit</th><th>Description</th></tr></thead><tbody><tr><td><strong>AI-Powered Debugging</strong></td><td>Ask AI to analyze captured traffic, find specific requests, or explain API responses</td></tr><tr><td><strong>Hands-Free Rule Creation</strong></td><td>Create breakpoints, map local/remote rules through conversation</td></tr><tr><td><strong>Faster Workflow</strong></td><td>Export cURL commands, filter flows, and manage sessions without switching context</td></tr><tr><td><strong>Secure by Design</strong></td><td>Localhost-only server with per-session token authentication</td></tr><tr><td><strong>IDE Integration</strong></td><td>Works seamlessly with Cursor and other MCP-compatible tools</td></tr></tbody></table>
 
-## 3. How to Use
-
-#### Setup
+## 3. How to add Proxyman MCP
 
 1. **Enable MCP in Proxyman**
-   * Open Proxyman → Settings → MCP
-   * Toggle **Enable MCP Server**
-2.  **Configure your MCP client** (e.g., Cursor, Claude Desktop)
+   * Open Proxyman → Settings → MCP Tab
+   * Toggle **Enable MCP Server to start the MCP Server**
+2. **Configure your MCP client** (e.g., Cursor, Claude Desktop)
+3. Add Proxyman MCP to your Agents:
 
-    Add to your MCP configuration:
+#### Codex
+
+* Production Version:
+
+```bash
+codex mcp add proxyman -- "/Applications/Proxyman.app/Contents/MacOS/mcp-server"
+```
+
+* Setapp Version:&#x20;
+
+```bash
+codex mcp add proxyman -- "/Applications/Setapp/Proxyman.app/Contents/MacOS/mcp-server"
+```
+
+#### Claude Code
+
+* Production Version:
+
+{% code overflow="wrap" %}
+```bash
+claude mcp add proxyman --transport stdio -- "/Applications/Proxyman.app/Contents/MacOS/mcp-server"
+```
+{% endcode %}
+
+* Setapp Version:&#x20;
+
+{% code overflow="wrap" %}
+```bash
+claude mcp add proxyman --transport stdio -- "/Applications/Setapp/Proxyman.app/Contents/MacOS/mcp-server"
+```
+{% endcode %}
+
+#### Manual
+
+Depend on what your AI Agents are, you have to edit the Agent Settings, to use Proxyman MCP. Here is the sample setting.json:
 
 * Production Version:
 
@@ -69,12 +96,12 @@ The architecture consists of two components:
 }
 ```
 
-3. **Start using**
+4. **Start using Proxyman MCP**
 
 * Ensure Proxyman is running
-* Ask your AI assistant to interact with Proxyman
+* Ask your AI assistant to interact with Proxyman.
 
-### 4. Available Tools
+## 4. Available Tools
 
 #### Read-Only Tools
 
@@ -177,7 +204,7 @@ MCP v3 (Proxyman macOS ≥ 6.8.0)
 
 ### Security
 
-* Server binds to `127.0.0.1` only (no network exposure)
+* The server binds to `127.0.0.1` only (no network exposure)
 * Per-session cryptographic token stored in `~/Library/Application Support/com.proxyman.NSProxy/mcp-handshake.json`
-* Handshake file has `0600` permissions (owner-only access)
+* The handshake file has `0600` permissions (owner-only access)
 * Sensitive data (auth tokens, passwords, API keys) is automatically redacted in responses

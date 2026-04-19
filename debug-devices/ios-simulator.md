@@ -87,7 +87,7 @@ Alamofire or URLSession might use the cached response for your request. As a res
 
 Solution:&#x20;
 
-* Disable the cache mechanism on URLSession or Alamofre.
+* Disable the cache mechanism on URLSession or Alamofire.
 * Use the [No Caching Tool](../advanced-features/no-caching.md) (⌥⌘N)
 
 ## Manually Install the Certificate by exporting the certificate

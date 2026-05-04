@@ -29,7 +29,7 @@ OPTIONS:
 ```
 
 {% hint style="info" %}
-By default, the `export` command will export all rules. To exclude particular rules, please uncheck the "Enabled" column in each debugging tool and use the `-m  enabledRules`
+By default, the `export` command will export all rules. To exclude particular rules, please uncheck the "Enabled" column in each debugging tool and use the `-m enabledRules`
 {% endhint %}
 
 #### For example:
@@ -76,8 +76,6 @@ By default, new imported rules will be appended to the existing debugging rules.
 ```
 {% endcode %}
 
-
-
 * Import, but override all my existing rules:
 
 {% code overflow="wrap" %}
@@ -85,8 +83,6 @@ By default, new imported rules will be appended to the existing debugging rules.
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli import -m override -i ~/Desktop/data.json
 ```
 {% endcode %}
-
-
 
 ## 3. Activate/Unlink License
 
@@ -229,5 +225,18 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 <pre class="language-bash"><code class="lang-bash"><strong>/Applications/Proxyman.app/Contents/MacOS/proxyman-cli proxy-host
 </strong></code></pre>
 
+### 11. Add, Remove, Replace the Custom certificates (Client and Server)&#x20;
 
+* Available on macOS 6.10.0 or later ✅
+* Support the P12 certificate with a password
 
+{% code overflow="wrap" %}
+```bash
+proxyman-cli custom-cert add server ~/Desktop/mycert.p12 --password 123
+proxyman-cli custom-cert add client ~/Desktop/mycert.p12 --password 123 --host myserver.com --port 443
+proxyman-cli custom-cert replace server ~/Desktop/mycert.p12 --password 123 --name mycert.p12
+proxyman-cli custom-cert replace client ~/Desktop/mycert.p12 --password 123 --host myserver.com --port 443
+proxyman-cli custom-cert remove server --name mycert.p12
+proxyman-cli custom-cert remove client --host myserver.com --port 443
+```
+{% endcode %}

@@ -9,7 +9,7 @@ description: The collection of useful snippet code for the Scripting tool
 A collection of snippet Javascript code for the Scripting Tool.
 
 {% hint style="info" %}
-Could not find the Snippet Code you are looking for?&#x20;
+Could not find the Snippet Code you are looking for?
 
 Please open a ticket at [https://github.com/ProxymanApp/Proxyman](https://github.com/ProxymanApp/Proxyman), we will get back to help you ⭐️
 {% endhint %}
@@ -39,7 +39,7 @@ Please open a ticket at [https://github.com/ProxymanApp/Proxyman](https://github
 
 * [Read, add, update, or remove a part of multipart/form-data](snippet-code.md#multipart-form-data-1)
 
-## 3. Addons&#x20;
+## 3. Addons
 
 * [Base64 Encoding/Decoding or atob/btoa](snippet-code.md#use-base64-addon)
 * [Hashing Addon (MD5, SHA1, SHA256, SHA512)](snippet-code.md#use-hashing-addon-md-5-sha-1-sha-256-sha-512)
@@ -47,7 +47,11 @@ Please open a ticket at [https://github.com/ProxymanApp/Proxyman](https://github
 * [Deflate/Inflate or GZip/UnGZip](snippet-code.md#deflate-inflate-and-gzip-ungzip)
 * [JWT Decode](snippet-code.md#jwt-decode)
 
-## 4. Regex&#x20;
+## 3.1 Use \`npm install\`
+
+* [use \`npm install dayjs\` to install 3rd npm packages](snippet-code.md#use-npm-install)
+
+## 4. Regex
 
 * [Check if a given string contains only numbers](snippet-code.md#regex)
 * [Regex to get the Scheme, Host, Port, Path, and Query of the URL](snippet-code.md#regex-to-get-the-scheme-host-port-path-and-query-of-the-url)
@@ -71,7 +75,7 @@ Please open a ticket at [https://github.com/ProxymanApp/Proxyman](https://github
 
 ## 7. Encryption/Decryption
 
-* [AES](snippet-code.md#aes-encryption-decryption)&#x20;
+* [AES](snippet-code.md#aes-encryption-decryption)
 * [DES](snippet-code.md#des-encryption-decryption)
 
 ## 8. Map Remote with Scripting
@@ -181,7 +185,7 @@ function onRequest(context, url, request) {
 
 ```
 
-#### Delete&#x20;
+#### Delete
 
 ```javascript
 function onRequest(context, url, request) {
@@ -465,7 +469,7 @@ function onResponse(context, url, request, response) {
 
 Since Javascript doesn't have the Data object type, the Data Body will convert to **Base64 Encoded String** in Javascript. To pass **Uint8Array**, **blob**, or **ArrayBuffer** to the body, make sure you convert to **Base64 Encoded String** and set the ContentType to `application/octet-stream`
 
-Proxyman will convert Base64 Encoding to ArrayBuffer, so the client will receive the data properly.&#x20;
+Proxyman will convert Base64 Encoding to ArrayBuffer, so the client will receive the data properly.
 
 ```javascript
 // Import
@@ -539,7 +543,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-2\. More -> Import JSON or Other Files. Then selecting your file&#x20;
+2\. More -> Import JSON or Other Files. Then selecting your file
 
 ![](<../.gitbook/assets/Screen Shot 2021-04-22 at 10.59.46.png>)
 
@@ -789,7 +793,7 @@ function onRequest(context, url, request) {
 
 ## Miscellaneous
 
-#### By-pass CORS&#x20;
+#### By-pass CORS
 
 ```javascript
 function onResponse(context, url, request, response) {  
@@ -804,7 +808,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-#### Inject Header to Request / Response&#x20;
+#### Inject Header to Request / Response
 
 ```javascript
 function onRequest(context, url, request) {
@@ -927,7 +931,7 @@ async function onResponse(context, url, request, response) {
 }
 ```
 
-#### Check if the first exist&#x20;
+#### Check if the first exist
 
 * Available: Proxyman macOS 5.4.0+
 
@@ -1278,3 +1282,37 @@ async function onRequest(context, url, request) {
 
 ```
 
+#### Use \`npm install\`
+
+Read more at [use-npm-install.md](use-npm-install.md "mention")
+
+#### Install a package
+
+Open Terminal and install packages into Proxyman's Application Support folder:
+
+* Install `dayjs`
+
+```bash
+$ cd "$HOME/Library/Application Support/com.proxyman.NSProxy"
+$ npm install --prefix . dayjs --ignore-scripts --no-audit --no-fund
+```
+
+After installation, the package should exist in:
+
+```
+~/Library/Application Support/com.proxyman.NSProxy/node_modules
+```
+
+#### Use a package in a script
+
+Use the package name with `require()`:
+
+```javascript
+const dayjs = require("dayjs");
+
+async function onRequest(context, url, request) {
+  const formattedDate = dayjs("2026-05-05T13:00:00Z").format("YYYY-MM-DD");
+  request.headers["X-Proxyman-Dayjs"] = formattedDate;
+  return request;
+}
+```

@@ -127,6 +127,7 @@
 * [async/await Request](scripting/async-await-request.md)
 * [Addons](scripting/addons.md)
 * [Built-in JS Libraries](scripting/built-in-js-libraries.md)
+* [Use npm install](scripting/use-npm-install.md)
 * [Write your own Addons](scripting/write-your-own-addons.md)
 * [Snippet Code](scripting/snippet-code.md)
 * [Environment Variables](scripting/environment-variables.md)

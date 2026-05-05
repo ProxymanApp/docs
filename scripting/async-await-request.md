@@ -1,3 +1,7 @@
+---
+description: How to use async/await for JS Script in the Scripting Tool
+---
+
 # async/await Request
 
 ## 1. What's it?
@@ -6,7 +10,7 @@ From Proxyman macOS v3.5.0 and Windows/Linux v2.11.0 or later, you can use `asyn
 
 {% hint style="info" %}
 * On macOS: Use \`$http\`
-* On Windows/Linux: Use built-in \`axios\`&#x20;
+* On Windows/Linux: Use built-in \`axios\`
 {% endhint %}
 
 #### Sample: POST Request with JSON Body (macOS)

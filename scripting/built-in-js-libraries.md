@@ -1,3 +1,7 @@
+---
+description: List of built-in JS libraries that you can use the Script
+---
+
 # Built-in JS Libraries
 
 ### 1. What's it?
@@ -6,6 +10,10 @@ Proxyman provides certain useful bundled JS Libraries that help you achieve some
 
 {% hint style="info" %}
 Library Location: **\~/Library/Application\ Support/com.proxyman.NSProxy/addons/libs**
+{% endhint %}
+
+{% hint style="success" %}
+From Proxyman macOS 6.10.0 or later, you can use the native \`npm install\` to install your 3rd-party libraries. Refer [use-npm-install.md](use-npm-install.md "mention")documentation.
 {% endhint %}
 
 ### 2. Built-in Libraries
@@ -25,7 +33,7 @@ Library Location: **\~/Library/Application\ Support/com.proxyman.NSProxy/addons/
 1. You can provide your own JS Library, but make sure you bundle all dependencies by using [Browserify](http://browserify.org) or [WebPack](https://webpack.js.org) to a single JS file.
 2. Make sure you export the func properly.
 3. Put the file at **\~/Library/Application\ Support/com.proxyman.NSProxy/addons/libs/your-lib.js**
-4. Importing the file by using&#x20;
+4. Importing the file by using
 
 ```javascript
 require('@libs/your-lib.js');
@@ -49,4 +57,3 @@ You might check built-in libraries for reference at **\~/Library/Application\ Su
 {% hint style="info" %}
 Thanks to [Ivan Mathy](https://github.com/IvanMathy) for creating Boop app that facilitates Proxyman's built-in add-ons.
 {% endhint %}
-

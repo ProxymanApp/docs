@@ -119,7 +119,14 @@ For example: Your `Content-Type` in the Request or Response might look like:
 
 To specify that the Protobuf Body this MessageType and the payload encoding.
 
-### 5. Troubleshooting
+
+
+### 5. ✅ Protobuf With Websocket (from macOS 6.5.0 or later)
+
+* Decode a single binary web socket frame: Read at [websocket.md](websocket.md "mention")
+* You can create a Protobuf Rule for websocket. Use Request Message Type for the client message, and Response Message Type for the server message
+
+### 6. Troubleshooting
 
 #### 5.1 Some name fields are missing
 

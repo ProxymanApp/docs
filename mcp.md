@@ -13,6 +13,10 @@ The architecture consists of two components:
 * **MCP HTTP Server** - Runs inside Proxyman app on localhost with token-based authentication
 * **MCP CLI Server** - A stdio-based MCP server that AI tools connect to, which forwards commands to Proxyman
 
+{% hint style="info" %}
+Check out the [Proxyman SKILL.md](skill-md.md) for your AI Agents
+{% endhint %}
+
 #### ✅ Example Prompts
 
 * Show me the last 10 API requests to api.example.com
@@ -44,7 +48,7 @@ The architecture consists of two components:
 codex mcp add proxyman -- "/Applications/Proxyman.app/Contents/MacOS/mcp-server"
 ```
 
-* Setapp Version:&#x20;
+* Setapp Version:
 
 ```bash
 codex mcp add proxyman -- "/Applications/Setapp/Proxyman.app/Contents/MacOS/mcp-server"
@@ -60,7 +64,7 @@ claude mcp add proxyman --transport stdio -- "/Applications/Proxyman.app/Content
 ```
 {% endcode %}
 
-* Setapp Version:&#x20;
+* Setapp Version:
 
 {% code overflow="wrap" %}
 ```bash
@@ -195,7 +199,7 @@ MCP v3 (Proxyman macOS ≥ 6.8.0)
 | open\_proxyman                 | Launch the Proxyman macOS application                                                                                                  |
 | quit\_proxyman                 | Quit the Proxyman macOS application                                                                                                    |
 
-### MCP v2  (Proxyman ≥ v6.7.0)
+### MCP v2 (Proxyman ≥ v6.7.0)
 
 * Built-in knowledge base covering iOS, Android, browsers, terminal, VPN, localhost, and third-party libraries
 * New commands: answer\_setup\_question, search\_docs, list\_setup\_workflows, open\_proxyman\_screen, run\_guided\_setup, create\_reverse\_proxy

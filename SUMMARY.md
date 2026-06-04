@@ -7,6 +7,7 @@
 * [Raycast](raycast.md)
 * [Command-line](command-line.md)
 * [MCP](mcp.md)
+* [SKILL.md](skill-md.md)
 * [Security Compliance](security-compliance.md)
 
 ## Team Workspace

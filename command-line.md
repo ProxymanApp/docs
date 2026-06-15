@@ -232,11 +232,54 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 
 {% code overflow="wrap" %}
 ```bash
-proxyman-cli custom-cert add server ~/Desktop/mycert.p12 --password 123
-proxyman-cli custom-cert add client ~/Desktop/mycert.p12 --password 123 --host myserver.com --port 443
-proxyman-cli custom-cert replace server ~/Desktop/mycert.p12 --password 123 --name mycert.p12
-proxyman-cli custom-cert replace client ~/Desktop/mycert.p12 --password 123 --host myserver.com --port 443
-proxyman-cli custom-cert remove server --name mycert.p12
-proxyman-cli custom-cert remove client --host myserver.com --port 443
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli custom-cert add server ~/Desktop/mycert.p12 --password 123
+
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli custom-cert add client ~/Desktop/mycert.p12 --password 123 --host myserver.com --port 443
+
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli custom-cert replace server ~/Desktop/mycert.p12 --password 123 --name mycert.p12
+
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli custom-cert replace client ~/Desktop/mycert.p12 --password 123 --host myserver.com --port 443
+
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli custom-cert remove server --name mycert.p12
+
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli custom-cert remove client --host myserver.com --port 443
 ```
 {% endcode %}
+
+### 12. External Proxy CLI
+
+* Proxyman macOS6.12.0 or later ✅
+
+#### Enable
+
+Enable External Proxy without changing the saved configuration:
+
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy enable
+```
+
+* Enable and configure a proxy mode:
+
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy enable http --host proxy.example.com --port 8080
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy enable https --host proxy.example.com --port 8443
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy enable socks --host proxy.example.com --port 1080
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy enable pac --url https://example.com/proxy.pac
+```
+
+#### Disable
+
+Disable the entire External Proxy feature:
+
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy disable
+```
+
+* Disable only one proxy mode:
+
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy disable http
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy disable https
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy disable socks
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy disable pac
+```

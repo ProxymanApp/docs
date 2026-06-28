@@ -1,14 +1,14 @@
 ---
-description: 'How to use Breakpoint Templates features: Create a Breakpoint Template'
+description: How to use HTTP Message Template to quickly reuse it in the Breakpoint Tool
 ---
 
-# Breakpoint Templates
+# HTTP Message Templates
 
 ## 1. What's it?
 
-From Proxyman 3.1.0+, you can create a Breakpoint Template for Requests and Response that allows developers to reuse it.
+You can create a HTTP Message Template for the Breakpoint that you can reuse it later
 
-* Create new Template for Request: HTTP Method, URL, Headers
+* Create new HTTP Message Template for Request: HTTP Method, URL, Headers
 * Template for Response: Status Code, Headers
 * Boots productivity when using the [Breakpoint tool](breakpoint.md#1.-whats-it).
 

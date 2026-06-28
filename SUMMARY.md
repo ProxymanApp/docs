@@ -90,7 +90,7 @@
 * [Compose new Request](advanced-features/compose.md)
 * [No Caching](advanced-features/no-caching.md)
 * [Breakpoint](advanced-features/breakpoint.md)
-* [Breakpoint Templates](advanced-features/breakpoint-templates.md)
+* [HTTP Message Templates](advanced-features/breakpoint-templates.md)
 * [Map Local (File)](advanced-features/map-local.md)
 * [Map Local (Directory)](advanced-features/map-local-directory.md)
 * [Map Remote](advanced-features/map-remote.md)

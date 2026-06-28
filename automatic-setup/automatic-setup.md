@@ -40,7 +40,7 @@ You have to read through the Technical Documentation of each library and manuall
 4. The New Terminal app is launched -> You can start your Backend Server, or Run scripts => Proxyman automatically captures all traffic.
 5. Done ✅
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-04-22 at 15.18.19@2x (1).jpg" alt=""><figcaption><p>Start the pre-configured Terminal app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/CleanShot 2023-04-22 at 15.18.19@2x.jpg" alt=""><figcaption><p>Start the pre-configured Terminal app</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/CleanShot 2023-04-26 at 15.53.00@2x.jpg" alt=""><figcaption><p>New Terminal app is launched</p></figcaption></figure>
 
@@ -78,7 +78,7 @@ It's completely **SAFE** since the change only affects your current Terminal Ses
 As soon as you click on the "Open New Terminal" button, Proxyman would perform a series of automatic actions:
 
 1. Use AppleScript to start the Terminal app.
-2. With the new Terminal app, it starts running this command line:&#x20;
+2. With the new Terminal app, it starts running this command line:
 
 ```bash
 set -a && source "$HOME/.proxyman/proxyman_env_automatic_setup.sh" && set +a
@@ -108,7 +108,7 @@ For example:
 **Python**:
 
 1. Override $PYTHONPATH to Proxyman app
-2. Patching all common library, such as aiohttp, httplib, http.client -> Set HTTP Proxy and trust Proxyman self-signed certificate.&#x20;
+2. Patching all common library, such as aiohttp, httplib, http.client -> Set HTTP Proxy and trust Proxyman self-signed certificate.
 
 **Go**:
 

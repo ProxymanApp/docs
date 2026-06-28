@@ -10,7 +10,7 @@ Proxyman supports Custom **Root Certificate**, **Server Certificates, and** **Cl
 | **Client Certificate**  | For intercepting HTTPS Traffic from clients that use Mutual Authentication                        | Use this certificate for SSL-Handshake to specific Server |
 | **Root Certificate**    | For intercepting HTTPS Traffic from clients and servers without using local Proxyman certificates | SSL Handshake for both clients & servers                  |
 
-![](<../.gitbook/assets/Screen Shot 2020-09-09 at 15.52.42 (1).png>)
+![](<../.gitbook/assets/Screen Shot 2020-09-09 at 15.52.42.png>)
 
 {% hint style="info" %}
 Even though the Proxyman Root Certificate is locally generated in your machine, you can manually generate and add to Proxyman. [Read more](custom-certificates.md#6-how-to-generate-self-signed-certificates-that-meet-apples-requirements)
@@ -20,19 +20,19 @@ Even though the Proxyman Root Certificate is locally generated in your machine, 
 
 Proxyman accepts the following formats:
 
-| Custom Certificate  | PEM or DER    | PKCS #12 (p12) |
-| ------------------- | ------------- | -------------- |
-| Root Certificate    | Not Supported | Supported      |
-| Client Certificate  | Supported     | Supported      |
-| Server Certificate  | Supported     | Supported      |
+| Custom Certificate | PEM or DER    | PKCS #12 (p12) |
+| ------------------ | ------------- | -------------- |
+| Root Certificate   | Not Supported | Supported      |
+| Client Certificate | Supported     | Supported      |
+| Server Certificate | Supported     | Supported      |
 
 * PKCS #12 (p12).
 * PEM or DER Private Key and Certificate file.
 
 {% hint style="info" %}
-* Proxyman automatically determines the format of the Private Key and Certificate file (Support PEM or DER).
-* Proxyman will prompt to enter the password if import an encrypted Private Key or PKCS #12 file.
-* All passphrases are securely stored in Proxyman Keychain.
+- Proxyman automatically determines the format of the Private Key and Certificate file (Support PEM or DER).
+- Proxyman will prompt to enter the password if import an encrypted Private Key or PKCS #12 file.
+- All passphrases are securely stored in Proxyman Keychain.
 {% endhint %}
 
 {% hint style="info" %}
@@ -108,7 +108,7 @@ cd ~/Desktop
 openssl genrsa -aes256 -passout pass:your_password -out key.pem 2048
 ```
 
-&#x20;3\. Generate the self-signed certificate and private key. (Replace **your\_password** with the password in step 2)
+3\. Generate the self-signed certificate and private key. (Replace **your\_password** with the password in step 2)
 
 ```
 openssl req -x509 -new -nodes -passin pass:your_password -config cert.config -key key.pem -sha256 -extensions v3_ca -days 825 -out root-ca.pem
@@ -122,15 +122,11 @@ openssl pkcs12 -export -legacy -out root-ca.p12 -in root-ca.pem -inkey key.pem -
 
 5\. Finally, you would have **root-ca.p12** file and move to the next step
 
-
-
 {% hint style="info" %}
 If you can't import your custom certificate on macOS 14 (OpenSSL v3) or later, you should use the \`-legacy\` flag in step 4.
 
 Ref: [https://stackoverflow.com/questions/70431528/mac-verification-failed-during-pkcs12-import-wrong-password-azure-devops](https://stackoverflow.com/questions/70431528/mac-verification-failed-during-pkcs12-import-wrong-password-azure-devops)
 {% endhint %}
-
-
 
 ### 7. Import as a Custom Root Certificate
 

@@ -20,7 +20,7 @@ There are many reasons why SSL Handshake Failed, please walk through the below s
 
 ## 2.1 Mobile devices
 
-### iOS Device&#x20;
+### iOS Device
 
 * Follow this [iOS Setup Guide](../debug-devices/ios-device.md) -> Make sure you've installed & trusted the Proxyman CA Certificate on your device.
 * If you're intercepting some popular apps (e.g. Facebook, Instagram, Apple, Whatsapp, ...): They are protected by SSL Pinning -> Impossible to intercept them.
@@ -54,13 +54,13 @@ If you've tried and verified all the above steps, but still get SSL Errors?
 
 ### Verify that you're able to see HTTPS Request/Response from https://google.com without any errors
 
-1. Get your devices&#x20;
+1. Get your devices
 2. Open the Web Browser (Safari on iOS or Google Chrome on Android)
 3. Visit **https://google.com**
 4. Select "Enable SSL Proxying" on this domain on the Proxyman app for macOS
 5. Verify if you're able to see the HTTPS Response or not.
 
-#### ✅  Success
+#### ✅ Success
 
 1. You're able to see https://google.com HTTPS Response, which means you set up the Certificate correctly -> It's good ✅
 2. The problem might be from your apps. Let's try again on your domains/apps -> If the SSL Error still happens, a high chance that this app is protected by the SSL Pinning.
@@ -76,7 +76,7 @@ If you've tried and verified all the above steps, but still get SSL Errors?
 I get SSL Errors from:
 
 * **Mac devices (Macbook, Mac Mini, Mac Studio)** -> Install & Trust the Certificate on your Macbook -> Follow [macOS Guide](../debug-devices/macos.md)
-* **Windows** -> Install and trust the certificate on your Windows machine  -> Follow [Windows guide](/broken/pages/y8s9TgFJ2sXqOqkNkN97)&#x20;
+* **Windows** -> Install and trust the certificate on your Windows machine -> Follow [Windows guide](https://app.gitbook.com/s/-LlPt_6BePnJ3oK3saP1/proxyman-windows)
 * Java -> Follow [Java VM Guide](../debug-devices/java.md)
 * Firefox -> Follow [Firefox Guide](../debug-devices/firefox.md)
 * Python -> Follow [Python Guide](../debug-devices/python.md)
@@ -93,9 +93,7 @@ Some networking libraries (Ruby, NodeJS, Python, Golang) don't trust the self-si
 * You're still unable to see HTTPS Response on your app, it seems that your app is protected by [SSL-Pinning](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning), which prevents MitM apps from seeing the content. All popular apps (Facebook, Apple, Instagram, Messenger, etc.) have this feature.
 * Please temporarily **disable SSL-Pinning** and try again.
 
-Read more about SSL-Pining: [https://www.raywenderlich.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning](https://www.raywenderlich.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning)&#x20;
-
-
+Read more about SSL-Pining: [https://www.raywenderlich.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning](https://www.raywenderlich.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning)
 
 {% hint style="info" %}
 If you've tried everything but are not sure what is wrong? Please open a [Github ticket](https://app.gitbook.com/o/-LlPtWiscJCRFiRPxWvB/s/-LlPt_6BePnJ3oK3saP1/).

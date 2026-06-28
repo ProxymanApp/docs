@@ -17,23 +17,21 @@ Proxyman could capture WebSocket (WS) and Secure WebSocket (WSS) traffic and eas
 * Prettier WebSocket Message.
 * Filter All / Sent / Received messages.
 * See the content in JSON / Tree Preview / HEX format.
-* Customize Columns: Frame, Length, Data, Time, ...&#x20;
+* Customize Columns: Frame, Length, Data, Time, ...
 * Auto-decode Binary Message to JSON if possible
 * Open WebSocket messages by external Editors, such as Sublime, VSCode
-
-
 
 ## 2. Capture WS/WSS from Web Browsers
 
 ### Localhost websocket
 
-Proxyman can capture localhost websocket, such as ws://localhost:3000, from Google Chrome by using the [Automatic Setup](/broken/pages/OhcRYB7VyVMgZBSLy8fL)
+Proxyman can capture localhost websocket, such as ws://localhost:3000, from Google Chrome by using the [Automatic Setup](https://app.gitbook.com/s/-LlPt_6BePnJ3oK3saP1/automatic-setup)
 
 1. Go to Setup Menu -> Automatic Setup
 2. Select Google Chrome (New Profile or Current Profile) -> New Google Chrome opens
 3. Try to access your localhost websocket here. Proxyman will capture it
 
-### Production websocket&#x20;
+### Production websocket
 
 Proxyman automatically captures your WS/WSS on Google Chrome, without configuring anything
 
@@ -69,8 +67,6 @@ If your iOS app is using **URLSessionWebSocketTask** or iOS WebSocket libraries,
 3. On the main Proxyman app -> Take note of a current IP in the Proxyman Tools bar
 
 <figure><img src="../.gitbook/assets/proxyman_capture_websocket_4.jpeg" alt=""><figcaption><p>Get Proxyman current IP</p></figcaption></figure>
-
-
 
 4. On your app: Configure a SOCK Proxy in your App, make sure this is only available for debug builds by implementing a switch or something, you might not want your release build with this configuration.
 
@@ -142,4 +138,3 @@ Read more at [https://github.com/ProxymanApp/atlantis](https://github.com/Proxym
 ## 5. Map Websocket from Localhost <-> Production
 
 It's possible to map the WebSocket Traffic from localhost <-> Production. Please check out the [Map Remote Tool.](map-remote.md#7.4-map-websocket-from-localhost-to-production)
-

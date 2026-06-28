@@ -27,7 +27,7 @@ icon: mobile-button
 
 ### Screenshots
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-06-01 at 15.28.38 (1).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-06-01 at 15.28.38.jpeg" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-06-01 at 15.28.42.jpeg" alt=""><figcaption></figcaption></figure>
 
@@ -43,7 +43,7 @@ Proxyman for iOS creates a local VPN on your devices, then proxying all traffic 
 
 Proxyman captures and decrypts HTTP/HTTPS data (Including Headers, Body, URL, Host, etc )to display them in plain text
 
-&#x20; 2\. **Device Name**
+2\. **Device Name**
 
 To generate a self-signed Root Certificate. Proxyman does not use pre-generated or shared certificates.
 

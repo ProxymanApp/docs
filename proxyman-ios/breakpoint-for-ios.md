@@ -15,9 +15,7 @@ Breakpoint is a tool to help developers:
 
 on the fly, without depending on Proxyman for macOS.
 
-
-
-<figure><img src="../.gitbook/assets/1 (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/1 (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 2. Tutorial
 
@@ -26,4 +24,3 @@ Please checkout the Breakpoint for iOS Tutorial.
 {% content-ref url="tutorial-for-ios/breakpoint-for-ios-tutorial.md" %}
 [breakpoint-for-ios-tutorial.md](tutorial-for-ios/breakpoint-for-ios-tutorial.md)
 {% endcontent-ref %}
-

@@ -283,3 +283,71 @@ Disable the entire External Proxy feature:
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy disable socks
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy disable pac
 ```
+
+### 13. CRUD for all debugging tools
+
+{% hint style="success" %}
+Only available on Proxyman macOS 6.14.0 or later
+{% endhint %}
+
+#### Supported tools
+
+`block-list`, `allow-list`, `ssl-proxying`, `map-local`, `map-remote`, `breakpoint`, `scripting`, `network-condition`, `reverse-proxy`, `protobuf`, and `dns-spoofing`.
+
+#### Common commands
+
+Replace `<tool>` with one of the supported tools and `<id>` with a rule ID from `list` or `get`.
+
+```bash
+# Read rules
+proxyman-cli rules <tool> list
+proxyman-cli rules <tool> list --enabled true
+proxyman-cli rules <tool> get <id>
+
+# Change one rule
+proxyman-cli rules <tool> update <id> --name "New name"
+proxyman-cli rules <tool> delete <id>
+
+# Turn a whole tool on or off
+proxyman-cli rules <tool> enable
+proxyman-cli rules <tool> disable
+
+# Turn one rule on or off
+proxyman-cli rules <tool> enable <id>
+proxyman-cli rules <tool> disable <id>
+```
+
+`enable <id>` also turns on its tool when needed. Turning off a tool keeps each rule's own enabled setting. Updates change only the fields you send; delete removes the rule right away.
+
+#### Create a rule
+
+These are the smallest create commands. Optional flags let you set more fields. Run `proxyman-cli rules <tool> create --help` to see them.
+
+```bash
+proxyman-cli rules block-list create https://ads.example.com/*
+proxyman-cli rules allow-list create https://api.example.com/*
+proxyman-cli rules ssl-proxying create '*.example.com' --list include
+proxyman-cli rules map-local create https://api.example.com/* --path ./response.json
+proxyman-cli rules map-remote create https://old.example.com/* https://new.example.com/
+proxyman-cli rules breakpoint create https://api.example.com/* --phase both
+proxyman-cli rules scripting create https://api.example.com/* --script-file ./rule.js
+proxyman-cli rules network-condition create --profile 3g
+proxyman-cli rules reverse-proxy create https://upstream.example.com --local-port 8080
+proxyman-cli rules protobuf create https://api.example.com/* --request-type package.Request
+proxyman-cli rules dns-spoofing create example.com 127.0.0.1
+```
+
+Common rule flags include `--name`, `--enabled true|false`, `--method`, `--match wildcard|regex`, and `--include-subpaths true|false` when the tool supports them. Names are optional. If you omit an optional value, Proxyman uses that tool's normal default.
+
+#### JSON input
+
+For create and update, use `--input <file>` to send a JSON object. Use `--input -` to read JSON from standard input. Do not mix `--input` with field flags.
+
+```bash
+printf '%s' '{"url":"https://api.example.com/*","name":"Local API","enabled":true}' \\
+  | proxyman-cli rules map-local create --input -
+
+proxyman-cli rules map-local update <id> --input ./map-local-change.json
+```
+
+When Proxyman is closed, the command returns JSON with `ok: false` and the `app_not_running` error code. Input errors use exit code `2`; other errors use exit code `1`.

@@ -8,16 +8,16 @@ description: >-
 
 ## 1. What's it?
 
-It's too complicated and error-prone if we manually override the HTTP Proxy, Install, and Trust Proxyman Certificate from your Android Emulator.&#x20;
+It's too complicated and error-prone if we manually override the HTTP Proxy, Install, and Trust Proxyman Certificate from your Android Emulator.
 
 Thus, Proxyman provides a built-in script to automatically perform it in a second. You can access it from **Certificate Menu -> Install Certificate on Android -> Emulator.**
 
-{% hint style="info" %}
-From Proxyman 5.14.0 or earlier, this Script only installs the User Certificate to the User Certificate Store, not the System Certificate Store. If you'd like to install the certificate into the System Certificate, please follow this [tutorial](https://docs.mitmproxy.org/stable/howto-install-system-trusted-ca-android/).
-{% endhint %}
-
 {% hint style="success" %}
 From Proxyman 5.15.0 or later, Proxyman can now install Proxyman certificate into the system-level Store. Make it possible to decrypt all HTTPS from Android Emulators.
+{% endhint %}
+
+{% hint style="info" %}
+Proxyman nows can works with Google-Play and non Google-Play Emulators. 1 click to override. Refer at [google-play-android-emulator-with-magisk.md](google-play-android-emulator-with-magisk.md "mention")
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-01-10 at 19.29.46.jpg" alt="capture traffic from Android Emulator - including Flutter app" width="563"><figcaption></figcaption></figure>
@@ -32,7 +32,7 @@ From Proxyman 5.15.0 or later, Proxyman can now install Proxyman certificate int
 * **✅** Less error-prone and finishes in a few clicks
 
 {% hint style="success" %}
-Work with Android Emulator and Android Physical Devices via \`adb\`  (Only for Proxyman v5.19.0+)
+Work with Android Emulator and Android Physical Devices via \`adb\` (Only for Proxyman v5.19.0+)
 {% endhint %}
 
 <div data-full-width="true"><figure><img src="../../.gitbook/assets/Capture_HTTPS_Android_Emulator_proxyman.jpg" alt=""><figcaption><p>Capture and decrypt HTTPS from Android Emulators with Proxyman</p></figcaption></figure></div>
@@ -40,8 +40,6 @@ Work with Android Emulator and Android Physical Devices via \`adb\`  (Only for P
 * Install Proxyman Certificate to the system-level Store.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 15.12.07.jpg" alt=""><figcaption><p>Install Proxyman Certificate to the system-level Store.</p></figcaption></figure>
-
-
 
 ### ✅ Flutter / React Native app
 
@@ -62,11 +60,13 @@ brew install android-platform-tools
 
 ![Create new Google APIs Android Emulators](../../.gitbook/assets/Screen_Shot_2020-10-19_at_13_50_31.png)
 
+* ✅ NEW: Proxyman now can root Google-Play Store Emulators, please read at [google-play-android-emulator-with-magisk.md](google-play-android-emulator-with-magisk.md "mention")
+
 ![Create a new Emulator (Google APIs)](../../.gitbook/assets/Screen_Shot_2020-10-19_at_13_50_48.png)
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-09-19 at 20.01.37.jpg" alt=""><figcaption></figcaption></figure>
 
-3. Open Proxyman -> Certificate Menu -> Install Certificate on Android -> Emulators -> Click on the Override All Emulators button&#x20;
+3. Open Proxyman -> Certificate Menu -> Install Certificate on Android -> Emulators -> Click on the Override All Emulators button
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 14.54.51.jpg" alt=""><figcaption><p>capture all HTTPS from Emulators with 1 click</p></figcaption></figure>
 
@@ -74,14 +74,14 @@ brew install android-platform-tools
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 15.02.06.png" alt=""><figcaption></figcaption></figure>
 
-5. Relaunch your Android app on Android Studio&#x20;
+5. Relaunch your Android app on Android Studio
 6. Proxyman will capture all HTTPS data ✅
 
 {% hint style="info" %}
 If you close Proxyman, make sure to click on the Revert All Changes button. Otherwise, your Android Emulator could not access the Internet.
 {% endhint %}
 
-## 4. ⚠️ Proxyman 5.15.0 or earlier&#x20;
+## 4. ⚠️ Proxyman 5.15.0 or earlier
 
 * Proxyman 5.15.0 or earlier is only able to install Proxyman Certificate to the User level.
 * It means: We have to complete the next step:
@@ -129,7 +129,7 @@ If you close Proxyman, make sure to click on the Revert All Changes button. Othe
 
 It's possible to execute the script manually in your Terminal app without granting the Automation Permission in Security & Privacy.
 
-### **Script path**:&#x20;
+### **Script path**:
 
 {% code overflow="wrap" %}
 ```bash
@@ -177,7 +177,7 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 ```
 {% endcode %}
 
-* Proxyman v5.18.0 or earlier&#x20;
+* Proxyman v5.18.0 or earlier
 
 {% code overflow="wrap" %}
 ```bash
@@ -185,7 +185,7 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 ```
 {% endcode %}
 
-### 4.2 Only Override HTTP Proxy&#x20;
+### 4.2 Only Override HTTP Proxy
 
 * Proxyman v5.19.0 or later (NEW)
 
@@ -195,7 +195,7 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 ```
 {% endcode %}
 
-* Proxyman v5.18.0 or earlier&#x20;
+* Proxyman v5.18.0 or earlier
 
 {% code overflow="wrap" %}
 ```bash
@@ -203,7 +203,7 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 ```
 {% endcode %}
 
-### 4.3 Revert HTTP Proxy&#x20;
+### 4.3 Revert HTTP Proxy
 
 * Proxyman v5.19.0 or later (NEW)
 
@@ -213,7 +213,7 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 ```
 {% endcode %}
 
-* Proxyman v5.18.0 or earlier&#x20;
+* Proxyman v5.18.0 or earlier
 
 {% code overflow="wrap" %}
 ```bash

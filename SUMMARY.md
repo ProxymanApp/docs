@@ -32,6 +32,7 @@
 * [tvOS & watchOS](debug-devices/tvos-and-watchos.md)
 * [Android Device & Emulator](debug-devices/android-device/README.md)
   * [Automatic Script for Android Emulator](debug-devices/android-device/automatic-script-for-android-emulator.md)
+  * [Google-Play Android Emulator with Magisk](debug-devices/android-device/google-play-android-emulator-with-magisk.md)
   * [Sample Android Project](debug-devices/android-device/sample-android-project.md)
 * [Firefox](debug-devices/firefox.md)
 * [Java VMs](debug-devices/java.md)

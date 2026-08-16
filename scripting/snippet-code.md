@@ -14,6 +14,10 @@ Could not find the Snippet Code you are looking for?
 Please open a ticket at [https://github.com/ProxymanApp/Proxyman](https://github.com/ProxymanApp/Proxyman), we will get back to help you ⭐️
 {% endhint %}
 
+{% hint style="success" %}
+Use [Proxyman MCP](../mcp.md) with your agent (Codex/Claude Code) to help you generate a Scripting easily 🚀
+{% endhint %}
+
 ## 2. Common on Request and Response
 
 * [Update Headers of Request or Response](snippet-code.md#http-header)

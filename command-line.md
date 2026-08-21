@@ -351,3 +351,24 @@ printf '%s' '{"url":"https://api.example.com/*","name":"Local API","enabled":tru
 ```
 
 When Proxyman is closed, the command returns JSON with `ok: false` and the `app_not_running` error code. Input errors use exit code `2`; other errors use exit code `1`.
+
+
+
+## 14. Company Policy
+
+### MCP (Proxyman macOS 6.15.0+)
+
+* Enable/Disable the MCP feature
+* Can't enable the MCP in the GUI if it's disabled by command line
+
+Disable MCP and lock the Settings toggle:
+
+```
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli mcp off
+```
+
+Enable MCP and unlock the toggle:
+
+```
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli mcp on
+```

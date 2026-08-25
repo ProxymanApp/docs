@@ -1,5 +1,5 @@
 ---
-description: Copy content from Request / Response
+description: Copy content from Request / Response as cURL, Markdown, CSV, ...
 ---
 
 # Copy as
@@ -7,18 +7,9 @@ description: Copy content from Request / Response
 Proxyman offers various Copy functions from Right-click menu Context:
 
 * **Copy URL**: Copy URL of the selected flow.
-* **Copy cURL**: Generate cURL command, which includes headers, cookies, query, and body.&#x20;
+* **Copy cURL**: Generate cURL command, which includes headers, cookies, query, and body.
 * **Copy Cell Value**: Copy a string value of the right-clicked cell
 * **Copy as**: Cookies, Header, Body from Request and Response.
+* Support Markdown Table and CSV and Raw Data
 
-![Copy selected requests](<../.gitbook/assets/Screen Shot 2021-08-27 at 13.58.35.png>)
-
-{% hint style="info" %}
-You can opt-out the `--proxy` flag from cURL command from Preference -> Advanced -> Uncheck "Include HTTP Proxy config in cURL"
-{% endhint %}
-
-{% hint style="info" %}
-**⌘C:** Copy the URL
-
-⇧**⌘C:** Copy as **cURL**
-{% endhint %}
+<figure><img src="../.gitbook/assets/Screenshot 2026-08-25 at 13.40.11.png" alt=""><figcaption></figcaption></figure>

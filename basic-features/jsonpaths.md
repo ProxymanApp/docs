@@ -1,12 +1,23 @@
+---
+description: Query your JSON Body with JSON Path Syntax easily
+---
+
 # JSONPath
 
 ## 1. What's it?
 
 JSONPath is a tool for quickly filtering from JSON data.
 
-![Filter JSON data](../.gitbook/assets/Screen\_Shot\_2021-08-01\_at\_10\_29\_35.png)
+<figure><img src="../.gitbook/assets/Screenshot 2026-08-25 at 14.04.30.jpg" alt=""><figcaption></figcaption></figure>
 
-### Operator
+### 2. How to use
+
+1. In the Request / Response Panel -> Click the "+" button
+2. Select JSON Tab
+3. The filter bar will appear on top of the JSON Body
+4. You can select JSON Path or JQ filter mode
+
+### 3. Syntax
 
 | Operator                  | Description                                                         |
 | ------------------------- | ------------------------------------------------------------------- |

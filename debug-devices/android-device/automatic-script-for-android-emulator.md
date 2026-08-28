@@ -167,7 +167,7 @@ Optional Options:
 2. Find the current IP in the Main Toolbar
 3. Certificate menu -> Export -> Root Certificate as PEM -> Save to Desktop folder
 
-### 4.1 Override HTTP Proxy and Install the Certificate to system-level Store
+### 5.1 Override HTTP Proxy and Install the Certificate to system-level Store
 
 * Proxyman v5.19.0 or later (NEW)
 
@@ -185,7 +185,7 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 ```
 {% endcode %}
 
-### 4.2 Only Override HTTP Proxy
+### 5.2 Only Override HTTP Proxy
 
 * Proxyman v5.19.0 or later (NEW)
 
@@ -203,7 +203,7 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 ```
 {% endcode %}
 
-### 4.3 Revert HTTP Proxy
+### 5.3 Revert HTTP Proxy
 
 * Proxyman v5.19.0 or later (NEW)
 
@@ -220,5 +220,9 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resources/install_certificate_android_emulator.sh revertProxy
 ```
 {% endcode %}
+
+## 6. Left certificate expiry date
+
+TBD
 
 [^1]: This line

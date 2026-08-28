@@ -223,6 +223,14 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 
 ## 6. Left certificate expiry date
 
-TBD
+6.1 Problem: If you got this error when intercepting HTTPS from WebView Android
+
+❗️ Android WebView rejects with ERR\_CERT\_VALIDITY\_TOO\_LONG
+
+You can change the leaf certificate's expiry at
+
+<figure><img src="../../.gitbook/assets/Screenshot 2026-08-28 at 14.28.54.jpg" alt=""><figcaption></figcaption></figure>
+
+* Ref: [https://github.com/ProxymanApp/Proxyman/issues/2751](https://github.com/ProxymanApp/Proxyman/issues/2751)
 
 [^1]: This line

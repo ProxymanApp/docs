@@ -1,3 +1,7 @@
+---
+description: "Configure the proxy and certificate handling for Rust reqwest requests so their HTTP/HTTPS traffic appears in Proxyman."
+---
+
 # Rust
 
 ## 1. Problem

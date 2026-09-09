@@ -1,3 +1,7 @@
+---
+description: "Inspect individual parts of multipart/form-data request bodies in Proxyman and export their data."
+---
+
 # Multipart Form-Data Previewer
 
 ## 1. What's it?

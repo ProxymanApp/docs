@@ -1,3 +1,7 @@
+---
+description: "Import debugging rules from Proxyman or Charles Proxy, export settings for teammates, and open Charles traffic logs."
+---
+
 # Import / Export Settings
 
 ## 1. Import Settings

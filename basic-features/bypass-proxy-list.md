@@ -1,3 +1,7 @@
+---
+description: "Choose domains that bypass Proxyman with the Bypass Proxy List, including wildcard matching and system proxy behavior."
+---
+
 # Bypass Proxy List
 
 ## 1. Bypass Proxy List

@@ -1,3 +1,7 @@
+---
+description: "Customize the Proxyman macOS toolbar with buttons for proxy settings and debugging tools such as Breakpoint and Map Local."
+---
+
 # Customize Toolbar
 
 ## 1. What's it?

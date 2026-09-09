@@ -1,3 +1,7 @@
+---
+description: "Map request paths to files in a local directory, with requests falling back to the server when no local file exists."
+---
+
 # Map Local (Directory)
 
 ## 1. What's it?

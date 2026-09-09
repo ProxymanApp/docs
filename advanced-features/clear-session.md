@@ -1,3 +1,7 @@
+---
+description: "Clear captured requests, domains, and clients from the current Proxyman session without quitting the app."
+---
+
 # Clear Session
 
 Clean the current working sessions, includes: All Requests, Domains and Clients

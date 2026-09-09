@@ -1,3 +1,7 @@
+---
+description: "Combine Proxyman request filters with AND or OR to search URLs, headers, bodies, status codes, methods, and comments."
+---
+
 # Multiple Filters
 
 ## 1. What's it?

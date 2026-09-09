@@ -1,12 +1,20 @@
 ---
-description: >-
-  How to set up Android Device or Emulator with Proxyman to capture HTTP/HTTPS
-  Requests/Response
+description: "Capture Android device and emulator HTTP/HTTPS traffic with desktop Proxyman, including proxy setup, certificates, automatic scripts, and Google Play images."
 ---
 
 # Android Device & Emulator
 
-In order to capture and decrypt HTTP/HTTPS request/response from your physical Android Devices or Android Emulators, please navigate to:
+This guide sends traffic from an Android device or emulator to Proxyman on your computer. It covers proxy configuration, certificate installation, and app certificate trust for HTTPS inspection.
+
+Choose the setup that matches your device:
+
+* **Physical Android device:** Follow the manual setup below. Your device must be able to reach the computer running Proxyman over the network.
+* **Android Emulator:** Start with the [automatic setup script](automatic-script-for-android-emulator.md).
+* **Google Play emulator image:** Follow the [Google Play and Magisk guide](google-play-android-emulator-with-magisk.md). The standard automatic setup does not cover every image.
+
+To capture directly on a phone without a computer, use the [standalone Proxyman Android app](https://proxyman.com/android).
+
+For desktop capture, open the matching guide in Proxyman:
 
 * **Certificate** **Menu** -> **Install Certificate on Android -> Device**
 * **Certificate Menu -> Install Certificate on Android -> Emulator**
@@ -21,7 +29,7 @@ For the **Android Emulator**, let's check out the [Automatic Script for Android 
 
 ## 1. Android Setup Guide
 
-If you want to capture & decrypt HTTP/HTTPS Traffic from your Physical or Emulator Android Device, please follow all steps in the setup guide:
+For manual setup, configure the device proxy first, then install the certificate and configure certificate trust in your development app. Installing the certificate alone does not make every Android app trust it. Follow all steps below:
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-08-26 at 09.50.35.png" alt="" width="563"><figcaption><p>Setup Guide for Android Devices</p></figcaption></figure>
 

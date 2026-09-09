@@ -1,3 +1,7 @@
+---
+description: "Share data between Proxyman request and response scripts with sharedState and manage its lifetime across scripts."
+---
+
 # Environment Variables
 
 ## 1. Shared State

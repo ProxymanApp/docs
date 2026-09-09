@@ -1,3 +1,7 @@
+---
+description: "Use the Atlantis iOS framework to send HTTP/HTTPS and WebSocket traffic to Proxyman without proxy or certificate setup."
+---
+
 # Atlantis for iOS
 
 ## 1. What's it?

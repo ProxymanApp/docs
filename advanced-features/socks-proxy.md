@@ -1,3 +1,7 @@
+---
+description: "Configure a SOCKS5 client to use Proxyman for traffic capture and HTTPS debugging through its SOCKS proxy."
+---
+
 # SOCKS Proxy
 
 ## 1. What's it?

@@ -1,3 +1,7 @@
+---
+description: "Route a domain to a different address with Proxyman DNS Spoofing while preserving the request URL and Host header."
+---
+
 # DNS Spoofing
 
 ## 1. What's it?

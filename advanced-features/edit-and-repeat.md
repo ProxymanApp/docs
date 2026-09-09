@@ -1,3 +1,7 @@
+---
+description: "Edit and resend captured HTTP requests in Proxyman to test changes to URLs, queries, headers, and bodies."
+---
+
 # Edit & Repeat
 
 ### 1. What's it?

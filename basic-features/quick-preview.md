@@ -1,3 +1,7 @@
+---
+description: "Preview selected text in Proxyman to format JSON, decode Base64 or JWT tokens, and display key-value data."
+---
+
 # Quick Preview
 
 ## 1. What is it?

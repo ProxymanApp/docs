@@ -1,3 +1,7 @@
+---
+description: "Use a local Proxyman reverse proxy to capture traffic from clients that cannot use an HTTP/HTTPS proxy directly."
+---
+
 # Reverse Proxy
 
 ### 1. What's it?

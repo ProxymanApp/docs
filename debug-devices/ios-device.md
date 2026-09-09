@@ -1,12 +1,14 @@
 ---
-description: >-
-  How to set up iOS/iPad Devices with Proxyman, to capture and decrypt HTTPS
-  request/response
+description: "Capture iPhone and iPad HTTP/HTTPS traffic with desktop Proxyman by configuring the Wi-Fi proxy, installing and trusting the certificate, and verifying connectivity."
 ---
 
 # iOS Device
 
-To capture HTTP/HTTPS messages in iOS devices (iPhone, iPad), please navigate to:
+To capture traffic from an iPhone or iPad, route its Wi-Fi traffic through Proxyman on your computer. HTTPS inspection also requires installing the Proxyman certificate and explicitly trusting it on the device. These are separate steps.
+
+Keep Proxyman running and connect the device to a network that can reach your computer. Use the computer IP address and Proxyman port shown in the setup guide, rather than the device IP address.
+
+Open the physical-device setup guide in Proxyman:
 
 * **Certificate** **Menu** -> **Install Certificate on iOS -> Physical Devices...**
 
@@ -49,6 +51,8 @@ If you can't access it. Please open the support ticket at [Github's repo](https:
 
 #### Trust Proxyman CA
 
+Installing the profile does not enable full trust by itself. Complete this step before testing HTTPS traffic:
+
 * Setting app > General > About > Certificate Trust Settings > Switch ON on Proxyman CA.
 
 ![Install and Trust Proxyman Certificate](../.gitbook/assets/install_and_trust_proxyman_certificate.png)
@@ -58,7 +62,7 @@ Please make sure we **install** and **trust** the Proxyman CA on your iOS Device
 {% endhint %}
 
 {% hint style="info" %}
-If you cannot see any traffic from your iOS Devices, please check out this [troubleshooting](../troubleshooting/my-ios-devices-couldnt-connect-to-proxyman-via-proxy.md)
+After setup, enable [SSL Proxying](../basic-features/ssl-proxying.md) for the domain and make a new request. If no traffic appears, verify the Wi-Fi proxy IP and port, network connectivity, and VPN settings using the [device connection troubleshooting guide](../troubleshooting/my-ios-devices-couldnt-connect-to-proxyman-via-proxy.md). If requests appear but HTTPS fails, recheck certificate installation and trust.
 {% endhint %}
 
 {% hint style="info" %}
@@ -67,7 +71,7 @@ Make sure that you **delete the certificate on your iPhone** when you're not deb
 
 ## Tutorial
 
-See detailed steps on how to [debug an application on iOS device](https://proxyman.io/blog/2019/06/How-I-use-Proxyman-to-see-HTTP-requests-responses-on-my-iPhone.html) with Proxyman.
+See detailed steps on how to [debug an application on iOS device](https://proxyman.com/posts/2019-06-16-How-I-use-Proxyman-to-see-HTTP-requests-responses-on-my-iPhone) with Proxyman.
 
 ### Tired of manual config?
 

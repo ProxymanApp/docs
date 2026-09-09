@@ -1,3 +1,7 @@
+---
+description: "Create reusable JavaScript addons for Proxyman scripts using the custom addons folder and built-in libraries."
+---
+
 # Write your own Addons
 
 ## 1. What's it?

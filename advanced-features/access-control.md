@@ -1,3 +1,7 @@
+---
+description: "Control which remote devices can connect to Proxyman using access modes, IP restrictions, and command-line settings."
+---
+
 # Access Control
 
 ## 1. What's it?

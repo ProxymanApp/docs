@@ -1,3 +1,7 @@
+---
+description: "Save captured requests, responses, apps, domains, and devices as a Proxyman session to reopen or share with teammates."
+---
+
 # Save Session
 
 ### 1. What's it?

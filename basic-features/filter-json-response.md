@@ -1,3 +1,7 @@
+---
+description: "Find data in JSON responses with text search, regular expressions, JSONPath, key paths, and key or value filters."
+---
+
 # Filter JSON Response
 
 You can quickly filter the JSON Response with the following approach:

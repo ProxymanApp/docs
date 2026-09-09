@@ -1,3 +1,7 @@
+---
+description: "Configure Postman, Insomnia, and Paw to send HTTP/HTTPS traffic through Proxyman and troubleshoot certificate errors."
+---
+
 # HTTP Clients
 
 ### 1. Problems

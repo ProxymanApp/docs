@@ -1,3 +1,7 @@
+---
+description: "Configure custom root, server, and client certificates in Proxyman for HTTPS inspection and mutual authentication."
+---
+
 # Custom Certificates
 
 ### 1. What's it?

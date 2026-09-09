@@ -1,3 +1,7 @@
+---
+description: "Capture HTTP/HTTPS traffic from Docker services and configure containers to route outgoing requests through Proxyman."
+---
+
 # Docker
 
 ### 1. Capture traffic from your Docker Container

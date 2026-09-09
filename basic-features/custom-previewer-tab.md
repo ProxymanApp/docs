@@ -1,3 +1,7 @@
+---
+description: "Customize request and response preview tabs to display JSON, Protobuf, HTML, MessagePack, and other body formats."
+---
+
 # Custom Previewer Tab
 
 ## 1. What's it?

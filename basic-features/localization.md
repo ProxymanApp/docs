@@ -1,3 +1,7 @@
+---
+description: "Choose the language used by Proxyman and learn how to contribute improvements to the app translations."
+---
+
 # Localization
 
 ### 1. What's it?

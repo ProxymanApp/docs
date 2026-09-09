@@ -1,10 +1,10 @@
 ---
-description: >-
-  How to install Certificate and decrypt HTTPS Request/response in macOS device.
-  Support Automatic and Manual steps
+description: "Install and trust the Proxyman CA certificate on macOS, verify HTTPS capture, or use manual Keychain setup when automatic installation fails."
 ---
 
 # macOS
+
+To inspect HTTPS traffic on your Mac, install and trust the Proxyman CA certificate, then enable [SSL Proxying](../basic-features/ssl-proxying.md) for the domain you want to inspect. Start with automatic installation below, or use Manual Mode if you need to manage trust in Keychain Access yourself.
 
 ## Install & Trust Proxyman Certificates on your Mac
 
@@ -13,7 +13,7 @@ In order to intercept encrypted HTTPS messages (Request or Response), you have t
 {% hint style="info" %}
 The Proxyman Certificate is a self-signed certificate that is generated on your machine. Proxyman never stores or transmits any personal data to Proxyman's server or 3rd-party.
 
-Please check out the [Privacy Statement](https://proxyman.io/privacy) to understand what Proxyman obtains or not.
+Please check out the [Privacy Statement](https://proxyman.com/privacy) to understand what Proxyman obtains or not.
 
 If you'd like to manually generate a Certificate on your machine, then add it to Proxyman. Please check out the [Custom Certificate Doc](../advanced-features/custom-certificates.md#6-how-to-generate-self-signed-certificates-for-custom-root-certificate-that-comply-with-new-apples-security-requirements)
 {% endhint %}
@@ -31,6 +31,8 @@ Proxyman could **automatically** install & trust the Certificate in Keychain by 
 3. On the Automatic Mode -> Enter your Mac's password (Root Privileges)
 4. Verify the status: ✅ `Installed & Trusted` in the button (If not, try to use the Manual Tab, or contact us for further support)
 5. Done :white\_check\_mark:
+
+To verify capture, make a new HTTPS request from your browser with Proxyman running and SSL Proxying enabled for that domain. Confirm that you can read the request and response. If nothing appears, use the [missing-traffic checklist](../troubleshooting/i-couldnt-see-any-traffics-on-proxyman.md); if certificate installation fails, continue with Manual Mode below.
 
 ![Install & trust Proxyman Certificacte](../.gitbook/assets/proxyman_install_ca_certificate.jpg)
 

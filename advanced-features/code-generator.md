@@ -1,3 +1,7 @@
+---
+description: "Generate code and command-line examples from captured HTTP/HTTPS requests using the Proxyman Code Generator tab."
+---
+
 # Code Generator
 
 ## 1. What's it?

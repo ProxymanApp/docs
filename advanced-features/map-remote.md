@@ -1,3 +1,7 @@
+---
+description: "Redirect matching HTTP/HTTPS and WebSocket requests to another endpoint with Proxyman Map Remote rules."
+---
+
 # Map Remote
 
 ## 1. What's it?

@@ -1,12 +1,14 @@
 ---
-description: >-
-  How to set up iOS / iPad Simulator with Proxyman to capture HTTP/HTTPS
-  Requests/Response
+description: "Capture iOS Simulator HTTP/HTTPS traffic with Proxyman on macOS, using automatic certificate setup, manual installation, and missing-traffic checks."
 ---
 
 # iOS Simulator
 
-In order to capture the HTTP/HTTPS message from your iOS Simulator devices, please navigate to:
+Use Proxyman on your Mac to capture and inspect HTTP/HTTPS requests from iOS Simulator. Start with automatic certificate installation; use the manual steps below if installation fails.
+
+Before you start, install Xcode and open the simulator you want to debug at least once. Keep Proxyman running while you reproduce requests in your app. For HTTPS inspection, install and trust the certificate, then enable [SSL Proxying](../basic-features/ssl-proxying.md) for the domain.
+
+Open the simulator setup guide in Proxyman:
 
 * **Certificate** **Menu** -> **Install Certificate on iOS -> Simulators**
 
@@ -64,6 +66,8 @@ In Proxyman v4.16.0 or later, you can manually install the certificate to your i
 
 ## 2. Troubleshooting
 
+If the request list is empty, first check recording, filters, and proxy settings using the [missing-traffic checklist](../troubleshooting/i-couldnt-see-any-traffics-on-proxyman.md). If requests appear but HTTPS fails, check certificate installation and SSL Proxying. The sections below cover installation errors and cached requests.
+
 ### 1. Unable to install the Certificate
 
 If you get errors when clicking on Step 2, please open Xcode -> Preferences -> Location tabs -> Select your Xcode in the Command Line Tools.
@@ -102,4 +106,4 @@ If you cannot install the certificate, you can **manually** do it:
 
 ### Tutorial
 
-See detailed steps to [debug an application on iOS Simulator ](https://proxyman.io/blog/2019/07/Debugging-on-iOS-Simulator-with-Proxyman.html)with Proxyman
+See detailed steps to [debug an application on iOS Simulator](https://proxyman.com/posts/2019-07-06-Debugging-on-iOS-Simulator-with-Proxyman) with Proxyman

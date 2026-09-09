@@ -1,3 +1,7 @@
+---
+description: "Use Proxyman Breakpoint on iOS to pause and edit request URLs, headers, bodies, and response status codes."
+---
+
 # Breakpoint for iOS Tutorial
 
 ## M**odify HTTP(s) Request & Response on your iPhone with Proxyman Breakpoint Tool**

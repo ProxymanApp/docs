@@ -26,6 +26,7 @@ Use [Proxyman MCP](../mcp.md) with your agent (Codex/Claude Code) to help you ge
 * [Update JSON Request or Response Body](snippet-code.md#json-body)
 * [Map a local file to Response's Body like Map Local Tool](snippet-code.md#map-a-local-file-to-responses-body-like-map-local-tool-proxyman-2.25.0+)
 * [Change Request Scheme, Host, Port, Path](snippet-code.md#change-request-destination-scheme-host-port-path)
+* [Upstream ALPN and HTTP/2 settings](snippet-code.md#upstream-alpn-and-http2-settings)
 * [HTTP to HTTPS](snippet-code.md#http-to-https)
 * [HTTPS to HTTP](snippet-code.md#http-to-https-1)
 * [Change Request Method](snippet-code.md#change-response-http-status-code)
@@ -216,6 +217,42 @@ function onRequest(context, url, request) {
     return request;
 }
 ```
+
+## Upstream ALPN and HTTP/2 settings
+
+Available in the Proxyman macOS HTTP/2 beta.
+
+Set `request.upstream` in `onRequest` to change how Proxyman connects to the server. Enable SSL Proxying for the HTTPS domain. H2 overrides also require HTTP/2 enabled in Settings and an HTTP/2 client connection to Proxyman.
+
+```javascript
+async function onRequest(context, url, request) {
+  request.upstream = {
+    tls: { alpnProtocols: ["h2"] },
+    http2: {
+      headerTableSize: 65536,
+      initialWindowSize: 6291456,
+      maxHeaderListSize: 262144
+    }
+  };
+  return request;
+}
+```
+
+ALPN accepts a nonempty list with no duplicates:
+
+* `["h2"]`: Require HTTP/2. Fail if the server cannot use it.
+* `["h2", "http/1.1"]`: Allow HTTP/1.1 fallback.
+* `["http/1.1"]`: Use HTTP/1.1.
+
+HTTP/2 values must be integers from `0` to the maximum below. Omitted or `null` fields use defaults.
+
+| Setting | Default | Maximum |
+| --- | --- | --- |
+| `headerTableSize` | `65536` | `4294967295` |
+| `initialWindowSize` | `6291456` | `2147483647` |
+| `maxHeaderListSize` | `262144` | `4294967295` |
+
+To reset all overrides, delete `request.upstream` or set it to `null`. Invalid or incompatible settings return a local `502` Scripting error.
 
 ## HTTP to HTTPS
 

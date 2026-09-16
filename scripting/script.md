@@ -145,7 +145,8 @@ url: String // => Present the full URL
     "bodyFilePath": "<String><Optional> Set a body with a local file. See example in Snippet Code Page"
     "rawBody": "<Readonly>: A raw body String or Uint8Array",
     "preserveHostHeader": "<Bool> Preserve the Host",
-    "isURLEncoding": "<Bool> Determine if Proxyman will perform URLEncoding when constructing the final URL. Default is True"
+    "isURLEncoding": "<Bool> Determine if Proxyman will perform URLEncoding when constructing the final URL. Default is True",
+    "upstream": "<Object><Optional> Upstream TLS ALPN and HTTP/2 settings. macOS HTTP/2 beta only."
 }
 
 ```
@@ -153,6 +154,8 @@ url: String // => Present the full URL
 {% hint style="info" %}
 You can change any value of the request obj except `rawBody`
 {% endhint %}
+
+Set `request.upstream` in `onRequest`. See [Upstream ALPN and HTTP/2 settings](snippet-code.md#upstream-alpn-and-http2-settings) for an example and supported fields.
 
 {% hint style="info" %}
 If the **body** variable is invalid format due to incorrect Content-Type in the Header. Please consider using the **rawBody** and manually parse the string.

@@ -19,6 +19,7 @@ This handy tool might help you to fix the following issues:
 * Convert MessagePack (msgpack) to JSON
 * [Code Generator](../advanced-features/code-generator.md) to Swift, Node, Javascript, cURL, ...
 * GraphQL Query Prettier
+* [Connection Log](connection-log.md) to inspect DNS, TCP, TLS, and HTTP details
 
 <div data-full-width="false"><figure><img src="../.gitbook/assets/Screenshot 2024-06-27 at 15.01.33.png" alt="" width="563"><figcaption><p>Select Custom Tabs for Request / Response Panel</p></figcaption></figure></div>
 

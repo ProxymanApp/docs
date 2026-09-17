@@ -63,6 +63,7 @@
 
 * [Proxyman Proxy Helper Tool](basic-features/proxy-setting-tool.md)
 * [Request / Response Previewer](basic-features/request-response-viewer.md)
+* [Connection Log](basic-features/connection-log.md)
 * [SSL Proxying](basic-features/ssl-proxying.md)
 * [Bypass Proxy List](basic-features/bypass-proxy-list.md)
 * [Import / Export](basic-features/import-export.md)

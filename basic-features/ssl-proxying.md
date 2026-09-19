@@ -6,6 +6,8 @@ description: >-
 
 # SSL Proxying
 
+For HTTP/2 traffic on macOS, also enable **Use HTTP/2** in Settings. See the [HTTP/2 guide](http2.md) for setup and protocol checks. Certificate trust and SSL Proxying are still required to inspect HTTPS content.
+
 ## 1. SSL Proxying List
 
 A list of domains or applications that Proxyman should decrypt its SSL Connection. It enables the user to inspect the HTTPS Request/Response in plain text.

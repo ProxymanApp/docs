@@ -146,7 +146,7 @@ url: String // => Present the full URL
     "rawBody": "<Readonly>: A raw body String or Uint8Array",
     "preserveHostHeader": "<Bool> Preserve the Host",
     "isURLEncoding": "<Bool> Determine if Proxyman will perform URLEncoding when constructing the final URL. Default is True",
-    "upstream": "<Object><Optional> Upstream TLS ALPN and HTTP/2 settings. macOS HTTP/2 beta only."
+    "upstream": "<Object><Optional> Upstream TLS ALPN and HTTP/2 settings. Proxyman v26.0.0 or later for macOS."
 }
 
 ```

@@ -1,5 +1,5 @@
 ---
-description: "Customize request and response preview tabs to display JSON, Protobuf, HTML, MessagePack, and other body formats."
+description: "Customize request and response preview tabs to display JSON, Protobuf, HTML, MessagePack, and other body formats, or inspect connection details with Connection Log."
 ---
 
 # Custom Previewer Tab
@@ -45,6 +45,15 @@ From Proxyman 5.22.0 or later, Proxyman supports
 * OpenAI Tab: Auto accumulate the content and show the final result, similar to the output of your chat view.
 
 <figure><img src="../.gitbook/assets/1.jpg" alt=""><figcaption><p>Capture OpenAI Endpoints</p></figcaption></figure>
+
+### 2.2 Connection Log
+
+* **Connection Log** shows connection info for the selected request, including DNS lookups, TCP connections, TLS negotiation, certificates, and HTTP headers.
+* Click **+** in the Request tab bar. Under **Request**, check **Connection Log** to show it or uncheck it to hide it.
+* The tab appears next to **Summary** in the Request panel. It is enabled by default, and Proxyman remembers your choice.
+* See the [HTTP/2 guide](http2.md) for a sample log, or the [Connection Log guide](connection-log.md) for all fields.
+
+<!-- IMAGE PLACEHOLDER: Custom Previewer Tab with Connection Log checked under Request. -->
 
 ## 3. ⚡️ Advance: Create a custom Tab with the Scripting Tool
 

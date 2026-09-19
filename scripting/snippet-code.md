@@ -220,7 +220,7 @@ function onRequest(context, url, request) {
 
 ## Upstream ALPN and HTTP/2 settings
 
-Available in the Proxyman macOS HTTP/2 beta.
+Available in Proxyman v26.0.0 or later for macOS. See [HTTP/2](../basic-features/http2.md) for setup.
 
 Set `request.upstream` in `onRequest` to change how Proxyman connects to the server. Enable SSL Proxying for the HTTPS domain. H2 overrides also require HTTP/2 enabled in Settings and an HTTP/2 client connection to Proxyman.
 

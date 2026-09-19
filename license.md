@@ -15,7 +15,8 @@ The **Pro version** comes with:
 * A year’s worth of macOS, Windows, and Linux updates
 * 1 Mac device per seat
 * Premium [Proxyman for iOS](https://proxyman.io/ios) (2 devices per seat)
-* Multiple Tabs
+* [Tab View](basic-features/multiple-tabs.md)
+* [Split View](basic-features/split-view.md) for macOS
 * Unlimited Pinned Domains / Apps
 * Unlimited rules for all Advanced Debugging Tools (e.g., [SSL Proxying List](https://docs.proxyman.io/basic-features/ssl-proxying), [Map Local](https://docs.proxyman.io/advanced-features/map-local), [Map Remote](https://docs.proxyman.io/advanced-features/map-remote), [Breakpoint](https://docs.proxyman.io/advanced-features/breakpoint), [Allow/Block List](https://docs.proxyman.io/advanced-features/blacklist), [Protobuf](https://docs.proxyman.io/advanced-features/protobuf), [Scripting](https://docs.proxyman.io/scripting/script), [Network Conditions](https://docs.proxyman.io/advanced-features/network-throttling), [Multiple Filters](https://docs.proxyman.io/advanced-features/multiple-filters), [Reverse Proxy](https://docs.proxyman.io/advanced-features/reverse-proxy), [Request/Response Diff](https://docs.proxyman.io/advanced-features/diff), etc).
 

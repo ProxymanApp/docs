@@ -12,6 +12,12 @@ description: >-
 
 * I can see other requests on Proxyman but not from my website, NodeJS, iOS, or Android, .... which use 3rd-party network libraries, such as [fetch](https://github.com/github/fetch), [axios](https://github.com/axios/axios), [Alamofire](https://github.com/Alamofire/Alamofire), [Ktor Apache HttpClient](https://ktor.io), curl...
 
+{% hint style="info" %}
+If a library running on your Mac ignores proxy settings, try [Network Extension](../advanced-features/network-extension.md). It captures supported HTTP/HTTPS traffic without changing the library's proxy settings. HTTPS still needs certificate trust and [SSL Proxying](../basic-features/ssl-proxying.md).
+
+Network Extension is BETA and requires Proxyman PRO on macOS 26 or later.
+{% endhint %}
+
 ## 2. New Automatic Solution (v4.7.0 or later) ✅
 
 Proxyman v4.7.0 or later can capture HTTP/HTTPS traffic from Python with 1-click.

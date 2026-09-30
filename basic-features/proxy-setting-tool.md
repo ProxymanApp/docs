@@ -6,6 +6,12 @@ description: >-
 
 # Proxyman Proxy Helper Tool
 
+{% hint style="info" %}
+Proxyman also offers [Network Extension](../advanced-features/network-extension.md) to capture HTTP/HTTPS traffic from Mac apps that ignore proxy settings. The Helper Tool manages the system proxy; Network Extension captures supported traffic without per-app proxy setup.
+
+Network Extension is BETA and requires Proxyman PRO on macOS 26 or later.
+{% endhint %}
+
 ## Proxyman Proxy Helper Tool
 
 By default, Proxyman will try overriding your HTTP/HTTPS Proxy Config by using the [networksetup](https://www.unix.com/man-page/osx/8/networksetup/) Command-Line. However, the **networksetup** is a bottleneck during starting or quitting the app.&#x20;

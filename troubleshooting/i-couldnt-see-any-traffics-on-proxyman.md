@@ -19,6 +19,12 @@ For remote devices (iOS or Android), please check out this [troubleshoot](my-ios
 
 ![](../.gitbook/assets/Screen\_Shot\_2020-04-26\_at\_09\_48\_10.png)
 
+{% hint style="info" %}
+If an app on your Mac ignores the system proxy, try [Network Extension](../advanced-features/network-extension.md). Open Proxyman -> Settings -> Network Extension, enable it, then restart the app and make a new request.
+
+Network Extension is BETA and requires Proxyman PRO on macOS 26 or later.
+{% endhint %}
+
 ### 2. Solution
 
 Work through these checks in order, making a fresh request after each change:

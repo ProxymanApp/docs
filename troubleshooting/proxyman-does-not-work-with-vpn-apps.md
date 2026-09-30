@@ -14,6 +14,12 @@ This troubleshooting would describe which VPN services work and do not work with
 
 Proxyman cannot capture any HTTP/HTTPS traffic when you're using corporate VPNs.
 
+{% hint style="info" %}
+If your VPN changes the system proxy or an app on your Mac ignores it, try [Network Extension](../advanced-features/network-extension.md). Capture works independently of the system proxy, but VPN compatibility can vary. HTTPS still needs certificate trust and [SSL Proxying](../basic-features/ssl-proxying.md).
+
+Network Extension is BETA and requires Proxyman PRO on macOS 26 or later.
+{% endhint %}
+
 ## How to fix it in general
 
 Basically, the VPN app would force all traffic that goes through the VPN Server instead of the Proxyman Local Server (127.0.0.1:9090). Therefore, Proxyman could not capture the traffic.

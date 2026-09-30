@@ -89,6 +89,7 @@
 
 ## ADVANCED FEATURES
 
+* [Network Extension](advanced-features/network-extension.md)
 * [Repeat](advanced-features/repeat.md)
 * [Edit & Repeat](advanced-features/edit-and-repeat.md)
 * [Compose new Request](advanced-features/compose.md)

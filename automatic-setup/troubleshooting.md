@@ -14,6 +14,12 @@ Proxyman supports the following libraries:
 
 \-> If you're using a new library and Proxyman Automatic Setup doesn't capture your HTTP/HTTPS traffic, please [create a new ticket](https://github.com/ProxymanApp/Proxyman/issues) to request your library.
 
+{% hint style="info" %}
+If your library running on your Mac ignores proxy settings, try [Network Extension](../advanced-features/network-extension.md). It captures supported HTTP/HTTPS traffic without relying on Automatic Setup's proxy configuration. Certificate trust is still required for HTTPS.
+
+Network Extension is BETA and requires Proxyman PRO on macOS 26 or later.
+{% endhint %}
+
 ### 2. I get SSL Errors from my NodeJS, Ruby, Python script
 
 \-> Make sure you've installed & trusted the certificate on macOS. You can easily do it by opening the Certificate Menu -> Install a certificate for Mac.

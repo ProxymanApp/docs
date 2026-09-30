@@ -16,6 +16,12 @@ For example:&#x20;
 * I'm using net/http from Golang, but no requests appear on Proxyman
 * ... so all
 
+{% hint style="info" %}
+Try [Network Extension](../advanced-features/network-extension.md) to capture HTTP/HTTPS requests from scripts running on your Mac without setting a proxy in each library. For SSL errors, use [Automatic Setup](../automatic-setup/automatic-setup.md) to set up certificate trust for supported libraries.
+
+Network Extension is BETA and requires Proxyman PRO on macOS 26 or later.
+{% endhint %}
+
 ## 2. New Automatic Solution (v4.7.0 or later) ✅
 
 Proxyman v4.7.0 or later can capture HTTP/HTTPS traffic from Python/Ruby/NodeJS/Golang with 1-click.

@@ -66,6 +66,10 @@ Use [Automatic Setup](../automatic-setup/automatic-setup.md) to set up certifica
 2. Click **Open New Terminal** and accept the permission prompt if needed.
 3. Run your script or restart your server in that new terminal.
 
+{% hint style="success" %}
+If you're using [Automatic Setup](../automatic-setup/automatic-setup.md) or [Manual Setup](../automatic-setup/manual-setup.md), you can turn off **Enable Network Extension** in **Settings** -> **Network Extension**. Keep running your script or server in the terminal configured by that setup.
+{% endhint %}
+
 If the error continues, check the [Automatic Setup troubleshooting guide](../automatic-setup/troubleshooting.md).
 
 ## 7. How to uninstall?

@@ -1,5 +1,7 @@
 ---
-description: Capture HTTP/HTTPS traffic from Mac apps that ignore proxy settings with Proxyman Network Extension.
+description: >-
+  Capture HTTP/HTTPS traffic from Mac apps that ignore proxy settings with
+  Proxyman Network Extension.
 ---
 
 # Network Extension
@@ -12,7 +14,7 @@ It's built on Apple's [transparent proxy Network Extension API](https://develope
 
 It works similarly to Network Capture mode in Fiddler Everywhere and Local Capture mode in mitmproxy. You don't need to set a proxy in each app.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Network Extension is BETA and off by default. It requires Proxyman PRO and is only available on macOS 26 or later.
 {% endhint %}
 
@@ -32,23 +34,39 @@ Regular proxy mode relies on apps sending their requests through the proxy.
 * Skip manual proxy setup for each app.
 * Use existing tools such as Map Local, Breakpoint, and Scripting on captured requests.
 
-## 4. How to install?
+## 4. How to install the Network Extension?
 
-1. Open Proxyman -> **Settings** -> **Network Extension**.
-2. Turn on **Enable Network Extension**. Click **Install and Enable** if shown.
-3. Open **System Settings** -> **General** -> **Login Items & Extensions**. Under **Extensions**, select **By Category** -> **Network Extensions**, then enable Proxyman.
-4. When macOS asks to add the network configuration, click **Allow**.
-5. Restart your Mac if requested. Wait until Proxyman shows "Capturing HTTP and HTTPS from local applications."
+1. There are 2 way to do it
 
-<figure><img src="../.gitbook/assets/install_proxyman_network_extension_step_1.jpg" alt="Open General, Login Items & Extensions, By Category, then Network Extensions in System Settings"><figcaption><p>Find Network Extensions in System Settings</p></figcaption></figure>
+* Open Proxyman -> **Settings** -> **Network Extension**.
+
+<figure><img src="../.gitbook/assets/Screenshot 2026-10-01 at 19.56.42.jpg" alt=""><figcaption></figcaption></figure>
+
+* Turn on **Enable Network Extension**. Click **Install and Enable** if shown.
+
+or
+
+* Click in the Status Bar and switch the Network Extension ON
+
+<figure><img src="../.gitbook/assets/Screenshot 2026-10-01 at 19.56.31.jpg" alt="" width="563"><figcaption></figcaption></figure>
+
+
+
+2. Open **System Settings** -> **General** -> **Login Items & Extensions**. Under **Extensions**, select **By Category** -> **Network Extensions**, then enable Proxyman.
+3. When macOS asks to add the network configuration, click **Allow**.
+
+<figure><img src="../.gitbook/assets/install_proxyman_network_extension_step_1.jpg" alt="Open General, Login Items &#x26; Extensions, By Category, then Network Extensions in System Settings"><figcaption><p>Find Network Extensions in System Settings</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/install_proxyman_network_extension_step_2.jpeg" alt="Enable the Proxyman toggle in Network Extensions"><figcaption><p>Allow Proxyman Network Extension</p></figcaption></figure>
+
+5. Wait until Proxyman shows "Capturing HTTP and HTTPS from local applications."
 
 ## 5. How to use?
 
 1. Keep Proxyman open with Network Extension enabled.
-2. To read HTTPS content, [install and trust the Proxyman certificate](../debug-devices/macos.md), then enable [SSL Proxying](../basic-features/ssl-proxying.md) for the app or domain.
-3. Make a new request from your app, browser, or script. The request appears in Proxyman.
+2. From this point, The network extension will capture all traffic from your Mac, and proxy to Proxyman
+3. To read HTTPS content, [install and trust the Proxyman certificate](../debug-devices/macos.md), then enable [SSL Proxying](../basic-features/ssl-proxying.md) for the app or domain.
+4. Make a new request from your app, browser, or script. The request appears in Proxyman.
 
 If an app was already running before you enabled the extension, restart it to capture new connections.
 
@@ -72,7 +90,7 @@ If you're using [Automatic Setup](../automatic-setup/automatic-setup.md) or [Man
 
 If the error continues, check the [Automatic Setup troubleshooting guide](../automatic-setup/troubleshooting.md).
 
-## 7. How to uninstall?
+## 7. How to uninstall the Network Extension?
 
 1. Open Proxyman -> **Settings** -> **Network Extension**.
 2. Click **Uninstall**, then confirm.

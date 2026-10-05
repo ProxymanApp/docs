@@ -111,6 +111,11 @@ Use [Proxyman MCP](../mcp.md) with your agent (Codex/Claude Code) to help you ge
 ## 12. Websocket
 
 * [Change the Websocket URL, Headers](snippet-code.md#change-websocket-url-requests-response-header)
+* [Log WebSocket messages with onWebsocket](snippet-code.md#log-websocket-messages-with-onwebsocket)
+* [Read text and JSON messages](snippet-code.md#read-text-and-json-messages)
+* [Inspect binary messages](snippet-code.md#inspect-binary-messages)
+* [Log ping and pong frames](snippet-code.md#log-ping-and-pong-frames)
+* [Inspect close frames](snippet-code.md#inspect-close-frames)
 
 ## HTTP Header
 
@@ -1282,8 +1287,8 @@ async function onRequest(context, url, request) {
 
 ### Change Websocket URL, Requests/Response Header
 
-* Supported from macOS 6.2.0 or later
-* ❌ Can NOT modify the Websocket Message. Only URL and Headers are supported.
+* Supported from Proxyman 6.2.0 or later for macOS.
+* `onRequest` and `onResponse` modify the URL and handshake headers. Message payloads cannot be modified; use [onWebsocket](snippet-code.md#log-websocket-messages-with-onwebsocket) to inspect and log them on macOS Proxyman 26.1.0 or later.
 
 **Map from localhost to production**
 
@@ -1321,6 +1326,88 @@ async function onRequest(context, url, request) {
   return request;
 }
 
+```
+
+### Log WebSocket messages with onWebsocket
+
+{% hint style="warning" %}
+These `onWebsocket` snippets require **macOS Proxyman 26.1.0 or later**. They are not available on Windows, Linux, or iOS.
+{% endhint %}
+
+Match the captured `ws://` or `wss://` URL, save and activate the script, then reconnect the WebSocket. See [Scripting with WebSocket](script.md#4.1-scripting-with-websocket) for setup and the complete `message` object.
+
+Each example defines a separate `onWebsocket` function. Use one example, or combine the checks into a single function. The hook is read-only: changing `message` or returning a value does not modify traffic.
+
+Log every captured message from both sides:
+
+```javascript
+function onWebsocket(context, url, request, response, message) {
+  console.log(`[${message.from}] ${message.type}: ${message.data}`);
+}
+```
+
+### Read text and JSON messages
+
+Inspect text sent by the server. JSON messages are parsed when valid; other text is logged unchanged.
+
+```javascript
+function onWebsocket(context, url, request, response, message) {
+  if (message.type !== "text" || message.from !== "server") return;
+
+  try {
+    const payload = JSON.parse(message.data);
+    console.log("Server JSON: " + JSON.stringify(payload, null, 2));
+  } catch (error) {
+    // A text message does not have to contain JSON.
+    console.log("Server text: " + message.data);
+  }
+}
+```
+
+Proxyman reassembles fragmented text frames before calling the hook, so you can parse the complete JSON message here. Binary fragments are also reassembled; there is no separate continuation-frame callback.
+
+### Inspect binary messages
+
+Use `message.rawData` for the original bytes. `message.data` is only a text representation and may be `Binary (length=N)`.
+
+```javascript
+function onWebsocket(context, url, request, response, message) {
+  if (message.type !== "binary") return;
+
+  const bytes = message.rawData;
+  // Limit the preview so large messages do not flood the console.
+  const hex = Array.from(bytes.slice(0, 32))
+    .map(byte => byte.toString(16).padStart(2, "0"))
+    .join(" ");
+  const suffix = bytes.length > 32 ? " ..." : "";
+  console.log(`[${message.from}] binary (${bytes.length} bytes): ${hex}${suffix}`);
+}
+```
+
+`rawData` is a copied `Uint8Array` and is non-enumerable. Access it directly rather than expecting `console.log(message)` or `JSON.stringify(message)` to include it.
+
+### Log ping and pong frames
+
+Use these events to inspect heartbeat traffic in either direction. Ping and pong payloads are not exposed.
+
+```javascript
+function onWebsocket(context, url, request, response, message) {
+  if (message.type !== "ping" && message.type !== "pong") return;
+
+  console.log(`[${message.from}] ${message.type} on ${url}`);
+}
+```
+
+### Inspect close frames
+
+Log the close code and which side sent the frame. The close reason is not exposed.
+
+```javascript
+function onWebsocket(context, url, request, response, message) {
+  if (message.type !== "close") return;
+
+  console.log(`[${message.from}] closed with code ${message.closeCode}`);
+}
 ```
 
 #### Use \`npm install\`

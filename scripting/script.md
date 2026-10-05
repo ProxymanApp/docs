@@ -1,7 +1,7 @@
 ---
 description: >-
-  How to use the Scripting tool to modify the Request/Response by Javascript
-  Code.
+  Use JavaScript to modify HTTP requests and responses and inspect WebSocket
+  messages with the Scripting tool.
 ---
 
 # Scripting
@@ -14,6 +14,7 @@ Proxyman offers a scripting feature that the developer could write the JS code t
 
 * Implement Map Local / Map Remote / Breakpoint by JS Code. **100x Faster**
 * Change the **Request Content**, including Domain, Host, Scheme, Port, Path, HTTP Method, HTTP Headers, Query, Body (Encoded-Form, JSON, plain-text)
+* Log and inspect WebSocket messages with `onWebsocket` (**macOS Proxyman 26.1.0 or later**).
 * Change the **Response Content**, including HTTP Status Code, HTTP Headers, and Body (JSON, Encoded-Form, plain-text, binary...)
 * Provide plenty of built-in addons and libraries for common tasks, such as Hashing, Encode/Decode, JSON-Text transformer, Beautify,...
 * Able to **write your own JS Addons or Libraries**
@@ -47,12 +48,54 @@ From Proxyman 2.27.0+, the Scripting Tool can work with a GraphQL Request by a s
 
 ### 4.1 Scripting with Websocket
 
-From Proxyman v6.2.0 or later, it's possible to use the Script to
+From Proxyman 6.2.0 for macOS, use `onRequest` and `onResponse` to modify the WebSocket request URL and handshake headers. See [Change the WebSocket URL and headers](snippet-code.md#change-websocket-url-requests-response-header).
 
-* Modify the Websocket Request URL & Header
-* Modify the Websocket Response Headers
-* ❌ Can not modify the websocket message. Only URL and Headers are supported.
-* Refer to this snippet code.
+#### Log messages with onWebsocket
+
+{% hint style="warning" %}
+`onWebsocket` is available **only in macOS Proxyman 26.1.0 or later**. It is not available on Windows, Linux, or iOS.
+{% endhint %}
+
+Use `onWebsocket(context, url, request, response, message)` to inspect and log captured messages from both the client and the server:
+
+```javascript
+function onWebsocket(context, url, request, response, message) {
+  console.log(`[${message.from}] ${message.type}: ${message.data}`);
+}
+```
+
+This hook is **read-only**. Proxyman forwards the message before running the script. Changing its arguments or returning a value does not modify the traffic or captured messages. No return statement is required.
+
+**How to use it**
+
+1. Capture a WebSocket connection. For `wss://`, enable SSL Proxying for the host so Proxyman can read its messages.
+2. Right-click the captured flow and select **Tools → Scripting**. The generated script includes `onWebsocket` below `onResponse`.
+3. Add your logging code and click **Save & Activate**.
+4. Reconnect the WebSocket, send messages, and check the script's **Console Log**.
+
+The rule must be active when the connection opens. Reconnect after creating a rule or adding `onWebsocket` to a script that did not have it when the connection opened. The ordinary new-script template does not include this hook; you can add it manually.
+
+**Arguments**
+
+Keep all five arguments in order. `context` and `url` describe the flow and matching rule. `request` and `response` contain the final handshake, including changes made by `onRequest`, `onResponse`, or Breakpoint. `message` contains:
+
+| Field | Value |
+| --- | --- |
+| `message.type` | `"text"`, `"binary"`, `"ping"`, `"pong"`, or `"close"`. |
+| `message.from` | `"client"` or `"server"`. |
+| `message.data` | Always a string. Binary data is shown as UTF-8 text when possible, otherwise `Binary (length=N)`. Optional WebSocket tab decoders are not applied. |
+| `message.rawData` | A copied `Uint8Array`, available only for binary messages. Log it explicitly; it is not included when enumerating `message`. |
+| `message.closeCode` | A number, available only for close messages, such as `1000`. |
+
+**Notes**
+
+* Fragmented text and binary frames are reassembled before the hook runs. You receive one complete message, not a separate callback for each continuation frame.
+* Ping/pong payloads and close reasons are not exposed.
+* Synchronous and `async` hooks are supported, along with helpers such as `console.log`, `require`, `sharedState`, and `$http`.
+* Edits to an existing hook and rule/folder/tool enabled state are checked at most once per second as messages arrive. Calls already queued may finish.
+* The Console Log keeps the latest 200 log entries. If scripts cannot keep up, hook calls may be skipped with a warning while traffic continues. Use it for debugging, not as a complete traffic archive.
+
+See [WebSocket message snippets](snippet-code.md#log-websocket-messages-with-onwebsocket) for text, JSON, binary, ping/pong, and close examples.
 
 ### 5. Examples
 

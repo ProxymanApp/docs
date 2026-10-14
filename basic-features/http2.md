@@ -41,6 +41,8 @@ For certificate setup, see the [macOS guide](../debug-devices/macos.md). A remot
 
 To turn HTTP/2 off, uncheck **Use HTTP/2** in the same Settings section.
 
+For scripts, use `proxyman-cli http-version status` or `proxyman-cli http-version set prefer_http2`. See the [HTTP version command-line guide](../command-line.md#15.-http-version) for syntax and JSON output.
+
 ## 4. What does it capture?
 
 Select a request in the main list to inspect the available details:

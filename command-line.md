@@ -372,3 +372,105 @@ Enable MCP and unlock the toggle:
 ```
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli mcp on
 ```
+
+## 15. HTTP version
+
+Read or change the global [HTTP/2](basic-features/http2.md) policy. Keep Proxyman open; these commands work even when MCP is disabled.
+
+```bash
+# Read the current policy
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli http-version status
+
+# Prefer HTTP/2, with HTTP/1.1 fallback
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli http-version set prefer_http2
+
+# Turn the HTTP/2 preference off
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli http-version set http1_only
+```
+
+HTTP/2 is off by default. Changing the policy closes active HTTP, WebSocket, and Server-Sent Events connections and refreshes the Compose client. Setting the current policy again leaves connections open.
+
+The policy does not prove which protocol a request used. Check the captured request and upstream connection. With Network Extension capture, a client offering only `h2` keeps HTTP/2 even under `http1_only`.
+
+Both commands return JSON. Status includes `httpVersionMode` and `http2Enabled`; `set` also includes `previousMode` and `changed`. For example, changing from HTTP/1 to the HTTP/2 preference returns:
+
+```json
+{
+  "success": true,
+  "data": {
+    "httpVersionMode": "prefer_http2",
+    "http2Enabled": true,
+    "previousMode": "http1_only",
+    "changed": true
+  }
+}
+```
+
+## 16. Network Extension
+
+Manage [Network Extension](advanced-features/network-extension.md) installation and capture from the command line. Keep Proxyman open; MCP does not need to be enabled.
+
+{% hint style="info" %}
+Network Extension requires the direct Proxyman edition and macOS 26 or later. Installation and capture require Proxyman PRO. Status and uninstall remain available without PRO. Setapp does not support Network Extension.
+{% endhint %}
+
+```bash
+# Read installation and capture status without changing either
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli network-extension status
+
+# Install or update the bundled extension without enabling capture
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli network-extension install
+
+# Enable capture, installing the extension if necessary
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli network-extension enable
+
+# Stop capture and keep the extension installed
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli network-extension disable
+
+# Retry requested installation or capture after resolving an error
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli network-extension retry
+
+# Stop capture and remove the extension and its saved network configurations
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli network-extension uninstall
+```
+
+`install` leaves capture off if it is already off. `enable` starts capture and turns the helper-based system proxy off. The system proxy cannot be enabled while Network Extension capture is on.
+
+`disable` and `uninstall` close existing connections through the provider, including direct TCP connections. Afterwards, the system proxy follows **Auto Override System Proxy Settings at Launch**.
+
+macOS may ask for approval or a restart. Complete those steps, then run `network-extension status` again. A successful command means the request was accepted; it does not mean installation or capture has finished. If an operation is busy or times out, read status before repeating it.
+
+HTTPS decryption still requires a trusted Proxyman certificate and matching SSL Proxying rules. Reconnect clients to capture newly opened connections.
+
+### Read the JSON status
+
+| Field | Meaning |
+| --- | --- |
+| `supported` | Whether this app and macOS version support Network Extension. Unsupported hosts return `false` and reject changes. |
+| `installed`, `installedBuild`, `bundledBuild` | Installation reported by macOS and the build bundled with the running app. |
+| `systemExtensionEnabled` | Whether macOS reports the installed extension as enabled. |
+| `proAvailable` | Whether Proxyman PRO is available for installation and capture. |
+| `captureEnabled` | Whether capture has been requested. |
+| `captureActive` | Whether the provider has acknowledged the capture session. |
+| `state`, `message` | Current app state and a readable explanation. |
+| `operationPending` | Whether an installation, removal, or capture startup is in progress. |
+| `approvalRequired`, `restartRequired` | Whether approval or a restart is needed. |
+| `removalPending` | Whether macOS still has extension records awaiting removal, including after an app relaunch. |
+| `systemProxyEnabled` | Whether Proxyman currently reports the macOS system proxy as enabled. |
+
+Supported hosts return these fields under `data`. `disable` does not wait for an installation query, so `installed` is `null` in its response. Use `status` for a fresh installation check.
+
+### JSON output and exit codes
+
+The `http-version` and `network-extension` command groups return a JSON response with `success`, `data` when available, and `error` on failure.
+
+* `0`: The read succeeded or the change was accepted. Check Network Extension status for completion.
+* `1`: The command failed, Proxyman is closed, or the command timed out.
+* `64`: Invalid command-line arguments. Parser errors and help use plain text.
+
+Check the syntax supported by your installed app with:
+
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli http-version --help
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli network-extension --help
+```

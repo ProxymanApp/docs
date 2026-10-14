@@ -15,7 +15,7 @@ It's built on Apple's [transparent proxy Network Extension API](https://develope
 It works similarly to Network Capture mode in Fiddler Everywhere and Local Capture mode in mitmproxy. You don't need to set a proxy in each app.
 
 {% hint style="warning" %}
-Network Extension is BETA and off by default. It requires Proxyman PRO and is only available on macOS 26 or later.
+Network Extension is BETA and off by default. It requires Proxyman PRO, the direct Proxyman edition, and macOS 26 or later. It is not available in Setapp.
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/proxyman_network_extension.jpeg" alt="Proxyman captures cURL HTTPS requests without the --proxy flag"><figcaption><p>Capture cURL requests without the --proxy flag</p></figcaption></figure>
@@ -96,4 +96,10 @@ If the error continues, check the [Automatic Setup troubleshooting guide](../aut
 2. Click **Uninstall**, then confirm.
 3. Enter your Mac password if asked, and restart your Mac if requested.
 
-Uninstalling stops capture and closes connections using the extension. It also removes the network configuration. Proxyman and Proxyman Setapp share the same extension, so removal applies to both apps.
+Uninstalling stops capture and closes connections using the extension. It also removes the network configuration.
+
+## 8. Command-line
+
+Use `proxyman-cli network-extension` to read status, install, uninstall, enable, disable, or retry. Proxyman must be open. Use `install` to install without turning capture on, or `enable` to start capture and install the extension if needed. macOS approval or a restart may still be required.
+
+See the [Network Extension command-line guide](../command-line.md#16.-network-extension) for commands, JSON status fields, and exit codes.

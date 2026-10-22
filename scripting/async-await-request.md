@@ -1,19 +1,21 @@
 ---
-description: How to use async/await for JS Script in the Scripting Tool
+description: >-
+  Use async/await in Proxyman Scripting to call external HTTP/HTTPS APIs from
+  onRequest and onResponse, with $http on macOS or axios on Windows/Linux.
 ---
 
 # async/await Request
 
 ## 1. What's it?
 
-From Proxyman macOS v3.5.0 and Windows/Linux v2.11.0 or later, you can use `async / await` to make an HTTP/HTTPS call for retrieving external resources inside your Script.
+From Proxyman macOS v3.5.0 and Windows/Linux v2.11.0 or later, you can use `async / await` to make an HTTP/HTTPS call and fetch external resources inside your script.
 
 {% hint style="info" %}
 * On macOS: Use \`$http\`
 * On Windows/Linux: Use built-in \`axios\`
 {% endhint %}
 
-#### Sample: POST Request with JSON Body (macOS)
+### Sample: POST Request with JSON Body (macOS)
 
 ```javascript
 async function onResponse(context, url, request, response) {  
@@ -49,17 +51,17 @@ async function onResponse(context, url, request, response) {
 
 ## 2. How to use on macOS?
 
-#### Method
+### Method
 
 ```javascript
 var output = await $http.get("https://httpbin.org/anything");
 var output = await $http.post("https://httpbin.org/anything");
 var output = await $http.put("https://httpbin.org/anything");
-var output = await $http.update("https://httpbin.org/anything");
+var output = await $http.patch("https://httpbin.org/anything");
 var output = await $http.delete("https://httpbin.org/anything");
 ```
 
-#### Output format
+### Output format
 
 ```javascript
 var output = await $http.get("https://httpbin.org/anything");
@@ -73,7 +75,7 @@ console.log(output)
 }
 ```
 
-#### Sample Code
+### Sample Code
 
 * [GET Request with Query](snippet-code.md#get-request-with-query)
 * [POST Request with JSON Body](snippet-code.md#post-request-with-json-body)
@@ -81,12 +83,12 @@ console.log(output)
 * [PUT / PATCH / DELETE Request](snippet-code.md#put-patch-delete-request)
 
 {% hint style="info" %}
-Please checkout the [HTTP Snippet code](snippet-code.md#make-async-await-http-request) for more sample code.
+Check out the [async/await HTTP request snippets](snippet-code.md#make-async-await-http-request-macos) for more sample code.
 {% endhint %}
 
 ## 3. How to use on Windows/Linux?
 
-Proxyman Windows/Linux ships with a built-in [axios](https://github.com/axios/axios) library, it means we can use the axios syntax to make HTTP(s) requests.
+Proxyman for Windows/Linux ships with a built-in [axios](https://github.com/axios/axios) library, so you can use the axios syntax to make HTTP(s) requests.
 
 For example:
 
@@ -103,7 +105,7 @@ async function getUser() {
 
 ## 4. Notes
 
-* Make sure you defined the **async** function on `onRequest()` and `onResponse()`:
+* Make sure you define `onRequest()` and `onResponse()` as **async** functions:
 
 ```javascript
 async function onRequest(context, url, request) {
@@ -117,10 +119,10 @@ async function onResponse(context, url, request, response) {
 }
 ```
 
-* Request Timeout is 10 seconds.
-* The inline HTTP Request doesn't go through the Proxyman Proxy, so it isn't affected by other debugging tools.
-* Use can use `await $http.get()` on both `onRequest()` and `onResponse()`
-* Make sure the Body type is matched with the Content-Type header.
+* The request timeout is 10 seconds.
+* The inline HTTP request doesn't go through the Proxyman proxy, so other debugging tools don't affect it.
+* You can use `await $http.get()` in both `onRequest()` and `onResponse()`
+* Make sure the body type matches the Content-Type header.
 
 **JSON Body with application/json**
 

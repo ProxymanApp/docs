@@ -1,5 +1,5 @@
 ---
-description: Compare two traffic views with separate filters and selections in Proxyman for macOS.
+description: Use Proxyman Split View on macOS to compare two traffic panes side by side, each with its own filters, selected request and inspector.
 ---
 
 # Split View
@@ -14,7 +14,7 @@ Both panes share the same capture. You can inspect two endpoints or compare requ
 Split View is available in Proxyman v26.0.0 or later for macOS and requires Proxyman PRO.
 {% endhint %}
 
-<!-- IMAGE PLACEHOLDER: Split View with two request lists, different filters, and inspectors below each list. -->
+<figure><img src="../.gitbook/assets/proxyman-split-view.jpg" alt="Proxyman Split View with httpbin requests on the left and jsonplaceholder requests on the right, each with an inspector"><figcaption><p>Two panes in Split View</p></figcaption></figure>
 
 ## 2. Benefits
 
@@ -38,7 +38,7 @@ Or open an app or domain directly:
 2. Select **Open as Split View**.
 3. Proxyman opens it in the second pane. If the second pane is already open, Proxyman uses that pane.
 
-<!-- IMAGE PLACEHOLDER: Sidebar context menu with Open as Split View below Open as New Tab. -->
+<figure><img src="../.gitbook/assets/proxyman-open-as-split-view-menu.jpg" alt="Proxyman sidebar right-click menu on a domain with Open as Split View highlighted below Open as New Tab"><figcaption><p>Open a domain in Split View</p></figcaption></figure>
 
 Proxyman supports two panes per tab. Opening another source as Split View changes the second pane instead of adding a third one.
 
@@ -72,3 +72,7 @@ Each tab has its own layout. You can keep Split View open in one tab and use a s
 * [Content Filter](content-filter.md)
 * [Multiple Filters](../advanced-features/multiple-filters.md)
 * [Horizontal/Vertical/Window Layout](horizontal-vertical-layout.md)
+
+## Learn more
+
+* [HTTP/2 is finally here in Proxyman v26.0.0](https://proxyman.com/posts/2026-09-19-http2-is-finally-here) (introduces Split View and Tab View)

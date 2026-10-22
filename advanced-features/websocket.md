@@ -1,74 +1,71 @@
 ---
 description: >-
-  How to capture and decrypt Websocket (WS/WSS) from iOS devices / simulators
-  with Proxyman. Works with Google Chrome Web Browser or websocket from NodeJS,
-  Python, Golang Backend Server
+  Capture and decrypt WebSocket (WS/WSS) traffic with Proxyman from web
+  browsers, iOS devices and simulators, Android, and NodeJS or Python servers.
 ---
 
 # WebSocket
 
 ## 1. What's it?
 
-Proxyman could capture WebSocket (WS) and Secure WebSocket (WSS) traffic and easily preview it.
+Proxyman can capture WebSocket (WS) and Secure WebSocket (WSS) traffic and lets you preview it easily.
 
 * Capture WS/WSS from iOS Physical devices and iOS Simulator (Required [Atlantis framework](https://github.com/ProxymanApp/atlantis))
 * Capture WS/WSS from Web Browser and Mac applications.
 * Capture WS/WSS from Android Physical devices or Android Emulators.
-* Prettier WebSocket Message.
+* Pretty-print WebSocket messages.
 * Filter All / Sent / Received messages.
 * See the content in JSON / Tree Preview / HEX format.
 * Customize Columns: Frame, Length, Data, Time, ...
-* Auto-decode Binary Message to JSON if possible
-* Open WebSocket messages by external Editors, such as Sublime, VSCode
+* Auto-decode binary messages to JSON if possible.
+* Open WebSocket messages in external editors, such as Sublime or VS Code.
 
 ## 2. Capture WS/WSS from Web Browsers
 
 ### Localhost websocket
 
-Proxyman can capture localhost websocket, such as ws://localhost:3000, from Google Chrome by using the [Automatic Setup](https://app.gitbook.com/s/-LlPt_6BePnJ3oK3saP1/automatic-setup)
+Proxyman can capture a localhost WebSocket, such as ws://localhost:3000, from Google Chrome with [Automatic Setup](../automatic-setup/automatic-setup.md).
 
-1. Go to Setup Menu -> Automatic Setup
-2. Select Google Chrome (New Profile or Current Profile) -> New Google Chrome opens
-3. Try to access your localhost websocket here. Proxyman will capture it
+1. Go to the **Setup** menu -> **Automatic Setup…**
+2. Select Google Chrome (New Profile or Current Profile). A new Google Chrome window opens.
+3. Open your localhost WebSocket page in this window. Proxyman will capture it.
 
 ### Production websocket
 
-Proxyman automatically captures your WS/WSS on Google Chrome, without configuring anything
+Proxyman automatically captures your WS/WSS traffic from Google Chrome, without any setup.
 
-1. Open Proxyman, and your Google Chrome
-2. Make some WS/WSS traffic, such as [https://echo.websocket.org/.ws](https://echo.websocket.org/.ws)
-3. Inspect WS/WSS data in Proxyman
-
-<figure><img src="../.gitbook/assets/Screenshot 2026-01-31 at 09.41.12.png" alt="Proxyman captures websocket traffic"><figcaption></figcaption></figure>
+1. Open Proxyman and Google Chrome
+2. Make some WS/WSS traffic, for example on [https://echo.websocket.org/.ws](https://echo.websocket.org/.ws)
+3. Inspect the WS/WSS data in Proxyman
 
 ### Websocket with Protobuf Payload
 
-From Proxyman macOS 6.5.0 or later, Proxyman can decode your websocket protobuf.
+From Proxyman macOS 6.5.0 or later, Proxyman can decode Protobuf in your WebSocket messages.
 
-1. Make sure Proxyman can capture your websocket traffic first
-2. Right-click on a websocket protobuf message -> Protobuf -> Decode
+1. Make sure Proxyman can capture your WebSocket traffic first
+2. Right-click on a WebSocket Protobuf message -> **Protobuf** -> **Decode Raw Text…** or **Decode with Message Type…**
 
-* **Raw mode**: Useful if you don't have a Protobuf Desc file.
-* **Message Type**: Use Message Type from your protobuf desc file.
+* **Raw mode**: Useful if you don't have a Protobuf desc file.
+* **Message Type**: Use a Message Type from your Protobuf desc file.
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-01-30 at 15.11.30.jpg" alt="Decode websocket payload with Protobuf"><figcaption><p>Decode websocket payload with Protobuf</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2026-01-30 at 15.11.30.jpg" alt="Proxyman context menu on a binary WebSocket message with Protobuf, Decode Raw Text and Decode with Message Type"><figcaption><p>Decode WebSocket payload with Protobuf</p></figcaption></figure>
 
 ## 3. Capture WS/WSS from iOS
 
-If your iOS app is using **URLSessionWebSocketTask** or iOS WebSocket libraries, e.g. Starscream, SocketRocket, etc. Proxyman might not be able to capture WS/WSS traffic.
+If your iOS app uses **URLSessionWebSocketTask** or iOS WebSocket libraries, such as Starscream or SocketRocket, Proxyman might not be able to capture WS/WSS traffic.
 
-* **Reason**: Apple's intention. **URLSessionWebSocketTask** doesn't respect the System HTTP Proxy. All WS/WSS traffic goes directly to the Internet. Thus, Proxyman or Charles Proxy can't capture it.
-* Example Ap: [https://github.com/ProxymanApp/websocket-example-ios-app](https://github.com/ProxymanApp/websocket-example-ios-app)
+* **Reason**: This is by Apple's design. **URLSessionWebSocketTask** doesn't respect the System HTTP Proxy. All WS/WSS traffic goes directly to the Internet, so Proxyman or Charles Proxy can't capture it.
+* Example App: [https://github.com/ProxymanApp/websocket-example-ios-app](https://github.com/ProxymanApp/websocket-example-ios-app)
 
 ### ✅ Solution 1 (Recommended for iOS 17 or later)
 
-1. Follow the Setup guide for your [iOS Devices](../debug-devices/ios-device.md) or [iOS Simulators](../debug-devices/ios-simulator.md) (Make sure we installed and trusted the certificate on your device)
-2. Proxyman Setup: Tools > Proxy Settings > SOCKS Proxy settings -> Enable it (Take note of the port)
-3. On the main Proxyman app -> Take note of a current IP in the Proxyman Tools bar
+1. Follow the setup guide for your [iOS Devices](../debug-devices/ios-device.md) or [iOS Simulators](../debug-devices/ios-simulator.md). Make sure the certificate is installed and trusted on your device.
+2. In Proxyman: **Tools** -> **Proxy Settings** -> **SOCKS Proxy Settings…** -> enable it. Take note of the port.
+3. In the main Proxyman window, take note of the current IP in the toolbar.
 
-<figure><img src="../.gitbook/assets/proxyman_capture_websocket_4.jpeg" alt=""><figcaption><p>Get Proxyman current IP</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-status-popover.jpg" alt="Proxyman status popover with IP 192.168.64.4, Proxy Port 9090, and Recording, macOS proxy and Network Extension toggles"><figcaption><p>Get Proxyman current IP</p></figcaption></figure>
 
-4. On your app: Configure a SOCK Proxy in your App, make sure this is only available for debug builds by implementing a switch or something, you might not want your release build with this configuration.
+4. In your app: Configure a SOCKS proxy. Make sure it's only on for debug builds, for example with a switch. You don't want this setting in your release build.
 
 * For NWConnection
 
@@ -82,7 +79,7 @@ options.autoReplyPing = true
 parameters.defaultProtocolStack.applicationProtocols.insert(options, at: 0)
 
 if #available(iOS 17.0, *) {
-    let socksv5Proxy = NWEndpoint.hostPort(host: "x.x.x.x", port: 8889) //  Please x.x.x.x with a real Proxyman IP
+    let socksv5Proxy = NWEndpoint.hostPort(host: "x.x.x.x", port: 8889) //  Please replace x.x.x.x with a real Proxyman IP
     let config = ProxyConfiguration.init(socksv5Proxy: socksv5Proxy)
     let context = NWParameters.PrivacyContext(description: "my socksv5Proxy")
     context.proxyConfigurations = [config]
@@ -102,7 +99,7 @@ connection.start(queue: .main)
 private lazy var urlSession: URLSession = {
     let config = URLSessionConfiguration.default
     if #available(iOS 17.0, *) {
-        let socksv5Proxy = NWEndpoint.hostPort(host: "x.x.x.x", port: 8889) //  Please x.x.x.x with a real Proxyman IP
+        let socksv5Proxy = NWEndpoint.hostPort(host: "x.x.x.x", port: 8889) //  Please replace x.x.x.x with a real Proxyman IP
         let proxyConfig = ProxyConfiguration.init(socksv5Proxy: socksv5Proxy)
         config.proxyConfigurations = [proxyConfig]
     }
@@ -114,27 +111,32 @@ private lazy var urlSession: URLSession = {
 
 5. Done ✅
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-11-29 at 1.17.23 PM.jpg" alt=""><figcaption><p>Capture Websocket from iOS with Proxyman</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-29 at 1.17.23 PM.jpg" alt="Proxyman capturing wss://echo.websocket.org messages from a URLSessionWebSocketTask app in the iOS Simulator"><figcaption><p>Capture WebSocket from iOS with Proxyman</p></figcaption></figure>
 
 * Credit to [**FranklinSamboni**](https://github.com/FranklinSamboni) **->** [https://github.com/ProxymanApp/Proxyman/issues/586#issuecomment-2125082129](https://github.com/ProxymanApp/Proxyman/issues/586#issuecomment-2125082129)
-* Tutorial: [https://proxyman.io/posts/2019-10-18-WebSocket-Debugging](https://proxyman.io/posts/2019-10-18-WebSocket-Debugging)
+* Tutorial: [How to intercept and debug WebSocket from iOS simulators or devices](https://proxyman.com/posts/2019-10-18-WebSocket-Debugging)
 
 ### ✅ Solution 2
 
 Use [Atlantis Framework](https://github.com/ProxymanApp/atlantis#features) (developed by Proxyman) to capture WS/WSS **URLSessionWebSocketTask** traffic from iOS.
 
-Read more at [https://github.com/ProxymanApp/atlantis](https://github.com/ProxymanApp/atlantis#wswss-traffic)
+Read more in the [Atlantis WS/WSS traffic guide](https://github.com/ProxymanApp/atlantis#wswss-traffic).
 
-## 3. Capture WebSockets from your Web Browser (Chrome, Safari, etc)
+## 4. Capture WebSockets from your Web Browser (Chrome, Safari, etc)
 
-* Proxyman can capture WS/WSS from a Web Browser out of the box. No need to configure anything.
-* How to use: Open Google Chrome -> Visit your website that makes a WS/WSS connection -> Open Proxyman -> Find your websocket domains -> On the Response Panel -> Click Enable SSL Proxying on these domains. Open your Browser, and reload your website -> Proxyman will capture and decrypt WS/WSS ✅
+* Proxyman can capture WS/WSS from a web browser out of the box. No need to configure anything.
+* How to use: Open Google Chrome -> Visit your website that makes a WS/WSS connection -> Open Proxyman -> Find your WebSocket domains -> On the Response panel, click **Enable SSL Proxying** for these domains. Reload your website in the browser. Proxyman will capture and decrypt WS/WSS ✅
 
-## 4. Capture Websocket from NodeJS, Golang, Python Server
+## 5. Capture Websocket from NodeJS, Golang, Python Server
 
 * Proxyman can capture WS/WSS from your NodeJS, Golang, Python, and Ruby server.
-* How to use: Read [automatic-setup.md](../automatic-setup/automatic-setup.md "mention") to start your server on this Terminal -> Make a WS/WSS connection -> Proxyman automatically captures and decrypts it ✅
+* How to use: Read [automatic-setup.md](../automatic-setup/automatic-setup.md "mention") to start your server in the Terminal it opens -> Make a WS/WSS connection -> Proxyman automatically captures and decrypts it ✅
 
-## 5. Map Websocket from Localhost <-> Production
+## 6. Map Websocket from Localhost <-> Production
 
-It's possible to map the WebSocket Traffic from localhost <-> Production. Please check out the [Map Remote Tool.](map-remote.md#7.4-map-websocket-from-localhost-to-production)
+You can map WebSocket traffic from localhost <-> Production. Please check out the [Map Remote Tool](map-remote.md#7.4-map-websocket-from-localhost-to-production).
+
+## Learn more
+
+* [How to capture WebSocket and decode Protobuf message](https://proxyman.com/posts/how-to-capture-websocket-with-protobuf-message)
+* [Proxyman vs mitmproxy: Decode Protobuf WebSocket Messages](https://proxyman.com/posts/2026-07-21-Proxyman-vs-mitmproxy-Protobuf-WebSocket)

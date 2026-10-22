@@ -1,29 +1,33 @@
 ---
-description: Define a set of requests that appears on Proxyman app
+description: >-
+  Use the Proxyman Allow List to capture only the domains you choose and let
+  all other traffic bypass Proxyman, so you can focus on your own APIs.
 ---
 
 # Allow List
 
 ## 1. What's it?
 
-The Allow List Tool is a handy tool to help you define which domains you **allow to appear** on the Proxyman app.&#x20;
+The Allow List tool lets you define which domains are **allowed to appear** in the Proxyman app.
 
-The unmatched requests won't go through Proxyman (by-pass)
+Requests that don't match a rule don't go through Proxyman (they bypass it).
 
 It's useful in the following situations:
 
-* Ignore all domains except your debugging domains (e.g. producthunt.com)
-* Reduce the number of unnecessary requests, and focus on the domains you need to track
+* Ignore all domains except the ones you are debugging (e.g. producthunt.com)
+* Reduce the number of unnecessary requests and focus on the domains you need to track
 
-If you would like to block certain domains, please visit [Block Tool](blacklist.md)
+If you would like to block certain domains, use the [Block List](blacklist.md) instead.
 
 ## 2. How to use?
 
-* **Tools** menu -> **Allow List**
-* Right-click on the selected request -> **Tools** -> **Allow List**
+* **Tools** menu -> **Allow List…**
+* Right-click on the selected request -> **Tools** -> **Allow List…**
 
-![](<../.gitbook/assets/Screen Shot 2020-06-16 at 11.24.12.png>)
+<figure><img src="../.gitbook/assets/proxyman-allow-list-context-menu.jpg" alt="Proxyman right-click menu on a request with Tools > Allow List... highlighted"><figcaption><p>Right-click > Tools > Allow List</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/proxyman-allow-list-window.jpg" alt="Proxyman Allow List window with an Only httpbin rule matching https://httpbin.proxyman.app/*"><figcaption><p>Allow List window</p></figcaption></figure>
 
 {% hint style="success" %}
-**⌥⌘]** to quickly open the Allow List Window
+Press **⌥⌘]** to quickly open the Allow List window.
 {% endhint %}

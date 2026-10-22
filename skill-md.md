@@ -1,7 +1,7 @@
 ---
 description: >-
-  Official agent skills Proxyman for inspecting, replaying, and debugging HTTP,
-  HTTPS, WebSocket, and app traffic.
+  Install the official Proxyman agent skills (SKILL.md) for Codex, Claude Code,
+  Cursor and Copilot to inspect, replay and debug HTTP/HTTPS traffic.
 ---
 
 # SKILL.md
@@ -12,9 +12,9 @@ Official agent skills for [Proxyman](https://proxyman.com), a web debugging prox
 
 The bundle covers installation, every macOS App Settings tab, certificate lifecycle and recovery, MCP connection and all current MCP operations, live documentation lookup, debugging-tool workflows, licensing, `proxyman-cli`, and HTTPS capture across devices and runtimes. Proxyman MCP controls a running local app through its bundled stdio bridge; it is not a cloud API.
 
-See coverage and maintenance evidence for the requirement-by-requirement audit.
+See the GitHub repo for the coverage and maintenance notes of each skill.
 
-* Github Repo: [https://github.com/ProxymanApp/proxyman-SKILL.md](https://github.com/ProxymanApp/proxyman-SKILL.md)
+* GitHub Repo: [https://github.com/ProxymanApp/proxyman-SKILL.md](https://github.com/ProxymanApp/proxyman-SKILL.md)
 
 ### Plugin
 
@@ -87,8 +87,8 @@ Skills can work together. For example, use HTTPS Capture to configure an Android
 
 ### Requirements And Safety
 
-* Proxyman must be installed and running before operational MCP tools work.
-* Enable Settings > MCP > MCP Server, or use the installed `proxyman-cli mcp` hierarchy after reading version-matched help.
+* Proxyman must be installed and running before operational [MCP](mcp.md) tools work.
+* Turn on **Enable MCP Server** in Settings > MCP, or use the installed [`proxyman-cli mcp`](command-line.md) command after reading the help for your version.
 * Configure agents with Proxyman's bundled stdio bridge, not a fixed HTTP URL or the main app executable.
 * Treat live `tools/list`, resources/prompts discovery, and installed CLI help as authoritative for schemas and syntax.
 * Treat the installed Settings UI as authoritative for preferences; the reviewed MCP server is not a generic App Settings API.
@@ -100,8 +100,12 @@ Skills can work together. For example, use HTTPS Capture to configure an Android
 
 ### Plugin Packaging
 
-This directory is a self-contained skill bundle and can be placed under a Codex plugin's `skills/` directory. The plugin still needs to configure or document the local Proxyman MCP bridge separately; packaging these skills does not embed the Proxyman app, bridge executable, license, or a running MCP connection.
+The skill bundle is self-contained and can be placed under a Codex plugin's `skills/` directory. The plugin still needs to configure or document the local Proxyman MCP bridge separately; packaging these skills does not embed the Proxyman app, bridge executable, license, or a running MCP connection.
 
 The production Proxyman plugin is available on [ChatGPT](https://chatgpt.com/plugins/plugins_6a88afab118c8191970bbc714223ff14).
 
-The publishable plugin source is available at `plugins/proxyman`. It is a skills-only package with a public-ready manifest and Proxyman brand asset. See `SUBMISSION.md` for the marketplace listing, starter prompts, reviewer tests, release notes, and the remaining OpenAI Platform submission checks.
+The publishable plugin source is available at `plugins/proxyman` in the GitHub repo. It is a skills-only package with a public-ready manifest and Proxyman brand asset. See `SUBMISSION.md` in the repo for the marketplace listing, starter prompts, reviewer tests, release notes, and the remaining OpenAI Platform submission checks.
+
+## Learn more
+
+* [How to use Proxyman MCP with Codex and Claude Code](https://proxyman.com/posts/how-to-use-proxyman-mcp-with-codex-and-claude-code)

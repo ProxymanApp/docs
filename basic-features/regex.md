@@ -1,48 +1,50 @@
 ---
-description: Regular Expression
+description: >-
+  Use Wildcard and Regex matching rules in Proxyman tools such as Map Local and
+  Breakpoint, and test your rule against sample URLs before you save it.
 ---
 
 # Regex (Regular Expression)
 
 ## 1. What's it?
 
-From the 2.3.0 version, Proxyman supports **Wildcard** and **Regex** (Match a whole word) when you define matching rules for all available tools:
+From version 2.3.0, Proxyman supports **Wildcard** and **Regex** (match whole words) when you define matching rules for all debugging tools:
 
-* Map Local
-* Map Remote
-* Block & Allow List
-* Breakpoints
-* Protocol Buffers (Protobuf)
-* Reverse Proxy
-* Network Throttling
+* [Map Local](../advanced-features/map-local.md)
+* [Map Remote](../advanced-features/map-remote.md)
+* [Block List](../advanced-features/blacklist.md) and [Allow List](../advanced-features/whitelist.md)
+* [Breakpoint](../advanced-features/breakpoint.md)
+* [Protocol Buffers (Protobuf)](../advanced-features/protobuf.md)
+* [Reverse Proxy](../advanced-features/reverse-proxy.md)
+* [Network Conditions](../advanced-features/network-throttling.md)
 * ...
 
-It's a handy tool to help you exactly define which requests should trigger the tool.
+It helps you define exactly which requests trigger the tool.
 
-![Match a request by Wildcard or Regex](<../.gitbook/assets/Screen Shot 2020-07-19 at 10.17.34.png>)
+<figure><img src="../.gitbook/assets/proxyman-map-remote-rules.jpg" alt="Proxyman Map Remote rule list with one Regex rule and two Wildcard rules in the Matching Rule column"><figcaption><p>Wildcard and Regex rules</p></figcaption></figure>
 
 ## 2. Test your URL (New feature 🎉)
 
-From Proxyman v4.8.0, you can quickly test your Rule (Wildcard / Regex).
+From Proxyman v4.8.0, you can quickly test your rule (Wildcard or Regex).
 
-* You can quickly test & play around with your Wildcard/Regex
+* Quickly test and try out your Wildcard or Regex rule.
 * **Save time**: You don't need to go back and forth to check your URL.
-* Less error-prone.
+* Make fewer mistakes.
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-05-09 at 09.54.22@2x.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-test-rules-window.jpg" alt="Proxyman Test Rules window checking the wildcard http://localhost:3000/* against three URLs, Matched or Not Matched"><figcaption><p>Test a rule against your URLs</p></figcaption></figure>
 
 #### How to use it?
 
-1. Open any debugging tools (Breakpoint, Map Local, ...) -> Create a new rule
-2. Click on the "Test your Rule" underline button -> New Window is opened.
-3. Add your Rule and URLs you'd like to check
+1. Open any debugging tool (Breakpoint, Map Local, ...) and create a new rule.
+2. Click the **Test your Rule** button. The Test Rules window opens.
+3. Add your rule and the URLs you want to check.
 
-* :white\_check\_mark: Matched: Your URL is matched with your rule.
-* :warning: Not Matched: Your URL doesn't match your rule. You might rewrite your wildcard/Regex rule.
+* :white\_check\_mark: Matched: Your URL matches your rule.
+* :warning: Not Matched: Your URL doesn't match your rule. You might need to rewrite your Wildcard or Regex rule.
 
 ## 3. Wildcard
 
-Proxyman supports simple Wildcard characters, which include `*` and `?`
+Proxyman supports two simple Wildcard characters: `*` and `?`
 
 | Wildcard | Purpose                                                              |
 | -------- | -------------------------------------------------------------------- |
@@ -58,9 +60,9 @@ For instance:
 
 Proxyman also supports Regex.&#x20;
 
-* Make sure your regex is **matching a whole URL**.
-* **Partial Matching** is considered as not matching.
-* Make sure you **escape characters** properly: Splash (/), full-stop (.), etc.
+* Make sure your regex **matches the whole URL**.
+* A **partial match** counts as not matching.
+* Make sure you **escape characters** properly: slash (/), dot (.), etc.
 
 For instance:
 
@@ -70,22 +72,20 @@ For instance:
 | ^(http\|https):\\/\\/www\\.google\\.com.\*                                   | <p>http://www.google.com<br>http://www.google.com/user?id=proxyman<br>https://www.google.com</p> |
 | ^(http\|https)?:\\/\\/www\\.google\\.com\\/v\[0-9]?\\/build\\?query=proxyman | <p>http://www.google.com/v1/build?query=proxyman<br>www.google.com/v2/build?query=proxyman</p>   |
 
-You can use [https://regex101.com/](https://regex101.com/) to verify your Regex that matches the whole text.
+You can use [regex101](https://regex101.com/) to check that your regex matches the whole URL.
 
-![Make sure your Regex matches whole words](../.gitbook/assets/1.png)
+![regex101 test with a regex that fully matches three google.com URLs](../.gitbook/assets/1.png)
 
 {% hint style="info" %}
-Please check the [**Regex** **Metacharacters, Operator and Flag**](https://developer.apple.com/documentation/foundation/nsregularexpression#1965590) from Apple Developer Documents to know which one is supported.
+Proxyman uses Apple's NSRegularExpression. Check the [**Regex** **metacharacters, operators and flags**](https://developer.apple.com/documentation/foundation/nsregularexpression#1965590) in the Apple Developer documentation to see which ones are supported.
 {% endhint %}
 
 {% hint style="info" %}
-Check [https://regex101.com](https://regex101.com) and make sure your Regex is full-matching with the given URL
+Check your regex on [regex101.com](https://regex101.com) and make sure it fully matches the given URL.
 {% endhint %}
 
-* Select Regex when creating rules
-
-![](<../.gitbook/assets/Screen Shot 2020-07-19 at 10.17.44.png>)
+* Select **Use Regex** when you create a rule.
 
 {% hint style="info" %}
-With regular expressions the meaning of `?` and `*` is different from that of wildcards. The equivalent of wildcard `?` is the regex `.` and the equivalent of wildcard `*` is the regex `.*`
+With regular expressions, `?` and `*` mean something different than in wildcards. The wildcard `?` is the regex `.` and the wildcard `*` is the regex `.*`
 {% endhint %}

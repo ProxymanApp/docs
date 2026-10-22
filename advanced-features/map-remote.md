@@ -1,16 +1,16 @@
 ---
-description: "Redirect matching HTTP/HTTPS and WebSocket requests to another endpoint with Proxyman Map Remote rules."
+description: "Use Proxyman Map Remote to redirect matching HTTP, HTTPS, and WebSocket requests to another host, port, or path, such as localhost or staging."
 ---
 
 # Map Remote
 
 ## 1. What's it?
 
-Map Remote (**⌘⌥R**) would help the developer to change the HTTP Request's location to a new destination server, per the configured rules, so the HTTP Response is transparently served from your client.
+Map Remote (**⌥⌘R**) changes the location of an HTTP request to a new destination server, based on your rules. Your client gets the response from the new server as if nothing changed.
 
-Map Remote also supports mapping from HTTP to HTTPS and vice-versa
+Map Remote also supports mapping from HTTP to HTTPS and vice versa.
 
-![Map Remote Rules](<../.gitbook/assets/Screen Shot 2020-07-19 at 10.17.34.png>)
+<figure><img src="../.gitbook/assets/proxyman-map-remote-rules.jpg" alt="Proxyman Map Remote window with Localhost to Production, Staging to Production and a Regex rule"><figcaption><p>Map Remote rules</p></figcaption></figure>
 
 {% hint style="info" %}
 Check out common [Map Remote Config](map-remote.md#7.-common-usages) when mapping from HTTP <-> HTTPS.
@@ -22,20 +22,20 @@ From Proxyman 4.3.0: Map Remote supports Websocket and Secure Websocket.
 
 ## 2. Benefits
 
-* Use Production Endpoints on your Development website on certain endpoints without changing the source code
-* Use Development Endpoints on your Production website
-* Change certain request's URLs to different destinations
-* Able to replace requests components, such as Protocol, Host, Port, Path, or Query on the fly
+* Use Production endpoints on your Development website for certain endpoints, without changing the source code
+* Use Development endpoints on your Production website
+* Send certain request URLs to different destinations
+* Replace request components, such as Protocol, Host, Port, Path, or Query, on the fly
 
 {% hint style="info" %}
-To boost your productivity, you can use the [Scripting feature](../scripting/script.md#1-whats-it) that allows you to achieve the same result as Map Remote by writing simple Javascript Code
+To boost your productivity, you can use the [Scripting feature](../scripting/script.md#1-whats-it) to get the same result as Map Remote by writing simple JavaScript code.
 
 For instance, [Snippet code to change Production to Localhost server](../scripting/snippet-code.md#change-request-destination-schema-host-port-path)
 {% endhint %}
 
 ## 3. Map Remote with GraphQL Requests
 
-From Proxyman 2.27.0+, Map Remote can work with GraphQL Request by a specific QueryName. Please check out the following GraphQL Document.
+From Proxyman 2.27.0+, Map Remote can work with GraphQL requests by a specific QueryName. Please check out the following GraphQL document.
 
 {% content-ref url="graphql.md" %}
 [graphql.md](graphql.md)
@@ -43,11 +43,11 @@ From Proxyman 2.27.0+, Map Remote can work with GraphQL Request by a specific Qu
 
 ## 4. Using Scripting as Map Remote ✅
 
-If you get difficult to set up a complicated Map Remote Rule, you might easily do it by using the [Scripting Tool](../scripting/script.md#1-whats-it).
+If a Map Remote rule is hard to set up, you can do it more easily with the [Scripting Tool](../scripting/script.md#1-whats-it).
 
 Please check out [Map Remote Snippet Code](../scripting/snippet-code.md#8-map-remote-with-scripting) to learn how to use Scripting to achieve the same result as Map Remote.
 
-For instance, it's straightforward to do the following by Scripting:
+For instance, it's easy to do the following with Scripting:
 
 * Map v1 to v2 endpoints
 * Map Production to Localhost
@@ -57,50 +57,46 @@ For instance, it's straightforward to do the following by Scripting:
 ## 5. Matching Rule
 
 {% hint style="info" %}
-Proxyman supports [Regular Expression](https://developer.apple.com/documentation/foundation/nsregularexpression#1965590) and Wildcard from the 2.3.0 version. [Check out here](../basic-features/regex.md)
+Proxyman supports [Regular Expression](https://developer.apple.com/documentation/foundation/nsregularexpression#1965590) and Wildcard from version 2.3.0. Check out [how to use Wildcard and Regex](../basic-features/regex.md).
 {% endhint %}
 
 We can define matching rules by using [Wildcard or Regular Expression](../basic-features/regex.md).
 
 For matched requests, Proxyman attempts to:
 
-* Replace Protocol, Host, Port, Path, and Query if it available
-* If the component is empty, it won't change the matched request's component
+* Replace the Protocol, Host, Port, Path, and Query, if they are set
+* If a component is empty, it won't change that component of the matched request
 
-![](<../.gitbook/assets/Screen Shot 2020-07-19 at 10.17.44.png>)
+<figure><img src="../.gitbook/assets/proxyman-map-remote-rule-editor.jpg" alt="Proxyman Map Remote rule editor that maps http://localhost:3000/* to https://httpbin.proxyman.app"><figcaption><p>Map Remote rule editor</p></figcaption></figure>
 
 {% hint style="info" %}
-* Leave the Text Field blank to keep it unchanged from the matched request
-* The wildcard is not allow
+* Leave a text field blank to keep that part unchanged from the matched request
+* Wildcards are not allowed in the Map To fields
 {% endhint %}
 
 ### Debugging
 
-To determine what Map Remote matches your URL, you can open The Request -> Summary Tab:
+To find which Map Remote rule matches your URL, open the request's Summary tab:
 
 1. Select your request
-2. Summary Tab -> Debugging Tools
-3. Check the Map URL
-
-<figure><img src="../.gitbook/assets/CleanShot 2023-02-15 at 09.23.58@2x.jpg" alt=""><figcaption><p>How to debug the Map Remote</p></figcaption></figure>
+2. **Summary** tab -> **Debugging Tools**
+3. Check the mapped URL
 
 ### Preserve Host Header
 
-By default, Proxyman attempts to override the Host Header to match with the new Host in Remote Map. It's crucial to successfully make a request.
+By default, Proxyman overrides the Host header to match the new host in Map Remote. This is needed for most requests to succeed.
 
-If you would like to preserve the original Host Header, please check ON in the "Preserve Host Header" checkbox when creating a new entry. Proxyman will preserve the Host value.
+If you would like to keep the original Host header, check the "Preserve Host Header" checkbox when you create a new entry. Proxyman will keep the Host value.
 
 ## 6. How to use
 
-* Right Click on selected Request -> Tools -> Map Remote: Proxyman will fill in the necessary data from the selected request
+* Right-click on the selected request -> **Tools** -> **Map Remote…**. Proxyman fills in the needed data from the selected request.
 
-![Create a Map Remote](<../.gitbook/assets/Screen Shot 2020-04-25 at 16.18.59.png>)
+<figure><img src="../.gitbook/assets/proxyman-map-remote-context-menu.jpg" alt="Proxyman right-click menu on a request with Tools > Map Remote... highlighted"><figcaption><p>Create a Map Remote rule from a request</p></figcaption></figure>
 
 ## 7. Common Usages
 
 ### 7.1 Map Localhost (HTTP) to Production (HTTPS)
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-02-15 at 09.34.02.png" alt=""><figcaption><p>Map Remote Config</p></figcaption></figure>
 
 **Result:**
 
@@ -112,8 +108,6 @@ If you would like to preserve the original Host Header, please check ON in the "
 | **POST** http://localhost:3000/login                | **POST** https://proxyman.io/login                |
 
 ### 7.2 Map Production (HTTPS) to localhost (HTTP)
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-02-15 at 09.39.50.png" alt=""><figcaption><p>Map Remote Config</p></figcaption></figure>
 
 | Original URL                                      | To URL                                              |
 | ------------------------------------------------- | --------------------------------------------------- |
@@ -130,7 +124,7 @@ If you would like to preserve the original Host Header, please check ON in the "
 **Map To:**
 
 * Protocol: **https**
-* Host: New Host (e.g staging.proxyman.io)
+* Host: New Host (e.g. staging.proxyman.io)
 * Port: **443** (your local port)
 * Leave Path and Query Empty
 
@@ -144,8 +138,6 @@ If you would like to preserve the original Host Header, please check ON in the "
 
 ### 7.4 Map Websocket from localhost to Production
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-02-15 at 09.29.05.png" alt=""><figcaption><p>Map Remote Config</p></figcaption></figure>
-
 | Original URL                  | To URL                              |
 | ----------------------------- | ----------------------------------- |
 | ws://localhost:4000           | wss://ws.postman-echo.com           |
@@ -153,9 +145,11 @@ If you would like to preserve the original Host Header, please check ON in the "
 
 ### 7.5 Map Websocket from Production to Localhost
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-02-15 at 09.38.19.png" alt=""><figcaption><p>Map Remote Config</p></figcaption></figure>
-
-| Original URL                        | to URL                        |
+| Original URL                        | To URL                        |
 | ----------------------------------- | ----------------------------- |
 | wss://ws.postman-echo.com           | ws://localhost:3000           |
 | wss://ws.postman-echo.com/websocket | ws://localhost:3000/websocket |
+
+## Learn more
+
+* [Switch API endpoint from Production to localhost environment for testing](https://proxyman.com/posts/2025-01-10-switch-api-endpoint-from-localhost-to-production-environment)

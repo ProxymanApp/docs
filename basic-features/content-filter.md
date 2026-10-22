@@ -1,74 +1,82 @@
 ---
 description: >-
-  Quick filter the URLs with many criteria, such as URL, Header, Body, Status
-  Code by contains, not contains, prefix, suffix, and regex.
+  Use the Proxyman Content Filter to find requests fast by type, status code,
+  URL, header, body and more, with contains, wildcard and regex matching.
 ---
 
 # Content Filter
 
-Proxyman offers the Primary and Secondary Filters to quickly filter out the Requests or Responses you're looking for.
+Proxyman offers the Primary and Secondary Filters to quickly find the requests or responses you're looking for.
 
 {% hint style="info" %}
-**⌘F: Open** Filter Bar quickly
+**⌘F**: Open the Filter Bar
 
-**ESC** to close the Filter Bar
+**ESC**: Close the Filter Bar
 {% endhint %}
 
-![Multiple Filters Selection (Hold CMD key and Click)](../.gitbook/assets/111282473-9e95ab00-8670-11eb-8d05-6e2c641a82bb.png)
+<figure><img src="../.gitbook/assets/proxyman-content-filter-bar.jpg" alt="Proxyman filter bar with HTTPS, JSON, Form, 2xx and 4xx selected, so only matching requests show in the list"><figcaption><p>Select several filters at once</p></figcaption></figure>
 
-![](../.gitbook/assets/Screen\_Shot\_2021-03-22\_at\_22\_29\_07.png)
+<figure><img src="../.gitbook/assets/proxyman-filter-key-menu.jpg" alt="Proxyman Secondary Filter key menu with URL, Host, Query String, Header, Body, Method, Status Code, Comment and Color"><figcaption><p>Choose what to filter</p></figcaption></figure>
 
-![](<../.gitbook/assets/CleanShot 2020-11-17 at 08.31.48@2x.png>)
+<figure><img src="../.gitbook/assets/proxyman-filter-matching-menu.jpg" alt="Proxyman filter matching menu with Contains, Start With, Equal, number comparisons, Match Wildcard and Match Regex"><figcaption><p>Choose how to match</p></figcaption></figure>
 
-![](<../.gitbook/assets/CleanShot 2020-11-17 at 08.31.52@2x.png>)
+## Primary Filter
 
-### Primary Filter:&#x20;
+| Filter    | Description                                                     |
+| --------- | --------------------------------------------------------------- |
+| All       | All Requests and Responses                                      |
+| HTTP      | Only HTTP                                                       |
+| HTTPS     | Only HTTPS                                                      |
+| WebSocket | Only WebSocket and Secure WebSocket                             |
+| JSON      | Content-Type is application/json or JSON contents               |
+| Form      | Only Form Body in Request / Response                            |
+| XML       | Only XML                                                        |
+| JS        | Only JavaScript content                                         |
+| CSS       | Only CSS content                                                |
+| GraphQL   | GraphQL requests (the URL contains `/graphql`)                  |
+| Document  | Document content: HTML, ...                                     |
+| Media     | Image, audio and video content: PNG, JPG, GIF, ...              |
+| Other     | Other content that doesn't match any of the above               |
+| h1        | Only HTTP/1.x requests                                          |
+| h2        | Only [HTTP/2](http2.md) requests                                |
 
-| Filter    | Description                                       |
-| --------- | ------------------------------------------------- |
-| All       | All Requests and Responses                        |
-| HTTP      | Only HTTP                                         |
-| HTTPS     | Only HTTPS                                        |
-| WebSocket | Only WebSocket and Secure WebSocket               |
-| JSON      | Content-Type is application/json or JSON contents |
-| XML       | Only XML                                          |
-| Form      | Only Form Body in Request / Response              |
-| JS        | Only JavaScript content                           |
-| CSS       | Only CSS content                                  |
-| Document  | Documents content: HTML, ...                      |
-| Media     | Image contents: PNG, JPG, GIF, ...                |
-| Other     | Other contents which no matching with the above.  |
-| Font      | All font family                                   |
-| GraphQL   | GraphQL Request (has suffix `/graphQL`)           |
+## Status Filters
 
-### Status Filters:
-
-| Filter | Description              |
-| ------ | ------------------------ |
-| 1xx    | Status Code from 100-200 |
-| 2xx    | Status Code from 200-300 |
-| 3xx    | Status Code from 300-400 |
-| 4xx    | Status Code from 400-500 |
-| 5xx    | Status Code from 500     |
+| Filter | Description                  |
+| ------ | ---------------------------- |
+| 1xx    | Status codes from 100 to 199 |
+| 2xx    | Status codes from 200 to 299 |
+| 3xx    | Status codes from 300 to 399 |
+| 4xx    | Status codes from 400 to 499 |
+| 5xx    | Status codes 500 and above   |
 
 {% hint style="info" %}
-Hold CMD key and Click to select multiple Types
+Hold the ⌘ key and click to select multiple types.
 {% endhint %}
 
-### Secondary Filter:
+## Secondary Filter
 
-#### Content:
+### Content
 
 * URL
+* Host
 * Query String
 * Request Header
 * Response Header
+* Request Body
+* Response Body
 * Method
 * Status Code
+* Duration (ms)
+* Request Body Size (KB)
+* Response Body Size (KB)
+* GraphQL
+* Client
+* IP Address
 * Comment
 * Color
 
-#### Matching:
+### Matching
 
 * Contains
 * Not Contains
@@ -76,14 +84,20 @@ Hold CMD key and Click to select multiple Types
 * End With
 * Equal
 * Not Equal
-* Regex
+* `<` (less than, for numbers)
+* `>=` (greater than or equal, for numbers)
+* Match Wildcard
+* Not Match Wildcard
+* Match Regex
+* Not Match Regex
 
-### Header, Query, Auth, Form Filter
+## Header, Query, Auth, Form Filter
 
-From Proxyman 2.34.0+, we can quickly filter the Header, Query, Auth, Form from the selected Request and Response.
+From Proxyman 2.34.0+, you can quickly filter the Header, Query, Auth, and Form content of the selected request and response.
 
-1. Click on the view (e.g. Header of the Request)
-2. Use Hotkey: CMD + F or Right-Click -> Show Filter to open the filter
+1. Click the view (e.g. the Header tab of the Request)
+2. Press ⌘F or right-click → **Show Filter** to open the filter
 
-![Filter Header, Query, Auth Form content](../.gitbook/assets/Screen\_Shot\_2021-10-14\_at\_22\_59\_20.png)
+## Learn more
 
+* [Use Multiple Filters to find HTTP requests faster](https://proxyman.com/posts/2021-04-08-Use_Multiple_Filters)

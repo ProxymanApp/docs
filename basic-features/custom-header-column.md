@@ -1,49 +1,51 @@
 ---
 description: >-
-  How to create a Column from your Request/Response Headers, Query, and JSON
-  Body
+  Add custom columns in Proxyman from request or response headers, query
+  parameters, and JSON body values to tell similar requests apart at a glance.
 ---
 
 # Custom Header Column
 
 ## 1. What's it?
 
-Custom Header Column feature allows you to customize the column that displays on the main Table View. It's similar to Custom Header Column from [Google Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools/network/reference#custom-columns)
+The Custom Header Column feature lets you add your own columns to the main table view. It's similar to the [custom columns in Chrome DevTools](https://developer.chrome.com/docs/devtools/network/reference#custom-columns).
 
 ## 2. Benefit
 
-* Define a Header from Request/Response and show it on the table.
-* **Easier to distinguish each request/response if they have the same URL, but different Headers**
-* Support resize/sorting/reorder columns
-* Remember the previous state and restore it for the future session.
-
-<figure><img src="../.gitbook/assets/Screenshot 2026-08-25 at 13.23.32.jpg" alt=""><figcaption></figcaption></figure>
+* Show a request or response header as a column in the table.
+* **Tell requests apart when they have the same URL but different headers.**
+* Resize, sort, and reorder the columns.
+* Proxyman remembers your columns and restores them in your next session.
 
 ## 3. Custom Column
 
-You can create a custom column from the following items:&#x20;
+You can create a custom column from:
 
-* ✅ Request Response Header, e.g. Content-Type, X-Key, ...
-* ✅ Query, e.g. name, id, ...
-* ✅ JSON Body with jq or JSON Path, e.g. $.data.user.name
+* ✅ Request or response header, e.g. Content-Type, X-Key, ...
+* ✅ Query parameter of the request, e.g. name, id, ...
+* ✅ JSON body with jq or JSON Path, e.g. $.data.user.name (Proxyman 6.17.0 or later)
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-08-25 at 13.13.07.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2026-08-25 at 13.13.07.jpg" alt="Custom Columns window with request and response lists, and Header, Query and JSON Body columns turned on"><figcaption></figcaption></figure>
 
-## 3. How to use it?
+## 4. How to use it?
 
-1. **Tools Menu** -> **Custom Header Column**
-2. Click on the + button on the Request or Response Panel
-3. Create new column from Header or Query or JSON Body
+1. Open **Tools** → **Customize Columns…**
+2. Click the **+** button under the Request or Response list.
+3. Choose Header, Query, or JSON Body. Enter the name or expression, then click **Add**.
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-08-25 at 13.13.17.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2026-08-25 at 13.13.17.png" alt="Proxyman sheet that adds a custom column from a JSON body value with the JSON Path option selected"><figcaption></figcaption></figure>
 
-Follow this documentation to understand how to use JSON Path or jq to query data from your JSON Data
+To learn how to query JSON data with JSON Path or jq, read:
 
 * [**JSON Path**](jsonpaths.md)
 * [**jq**](jq.md)
 
-## **4. Built-in GraphQL Query Column**
+## 5. Built-in GraphQL Query Column
 
-Custom Header Column would extract and display the query name for GraphQL Request.
+Proxyman can show the query name of each GraphQL request in the **Query Name** column. Right-click the table header and select **Query Name (GraphQL)** to show it.
 
-![](../.gitbook/assets/Screen_Shot_2021-03-13_at_16_20_42.png)
+<figure><img src="../.gitbook/assets/proxyman-graphql-query-name-column.jpg" alt="Proxyman table with a Query Name column showing GetUser, ListPosts and CreatePost for GraphQL requests"><figcaption><p>GraphQL Query Name column</p></figcaption></figure>
+
+## Learn more
+
+* [Manage header columns on the main table view](https://proxyman.com/posts/2022-06-18-Tips-Manage-custom-columns-on-the-main-table-view)

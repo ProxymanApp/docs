@@ -4,35 +4,35 @@ description: "Configure Postman, Insomnia, and Paw to send HTTP/HTTPS traffic th
 
 # HTTP Clients
 
-### 1. Problems
+## 1. Problems
 
-Proxyman might not capture or get SSL Error from HTTP/HTTPS Requests, which makes from some HTTP Clients, such as [Postman](https://www.postman.com/), [Insomnia Rest](https://insomnia.rest/), and [Paw](https://paw.cloud/) app.
+Proxyman might not capture requests, or you might get an SSL error, when you send HTTP/HTTPS requests from some HTTP clients, such as [Postman](https://www.postman.com/), [Insomnia Rest](https://insomnia.rest/), and [Paw](https://paw.cloud/).
 
-This documentation would provide a solution to make Proxyman works.
+This page shows how to make them work with Proxyman.
 
-### 2. Postman
+## 2. Postman
 
-1. Open Postman Preference
-2. In General Tab -> Uncheck the "SSL certificate validation" checkbox
-3. In Proxy Tab -> Check the "Use the System Proxy" and "Respect `HTTP_PROXY` _and `HTTPS_PROXY`_ variables".
+1. Open Postman Settings
+2. In the General tab -> Uncheck the "SSL certificate verification" checkbox
+3. In the Proxy tab -> Check "Use the system proxy" and "Respect `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` environment variables".
 
-![Config to make Postman works with Proxyman](../.gitbook/assets/Postman\_And\_Proxyman.jpg)
+![Postman Settings, Proxy tab, with Use the system proxy checked](../.gitbook/assets/Postman\_And\_Proxyman.jpg)
 
-### 3. Insomnia Rest
+## 3. Insomnia Rest
 
-1. Open Insomnia Preference -> General Tab
-2. Uncheck the "Validate Certificates" checkbox
-3. Check "Enable Proxy" and enter `localhost:9090` in HTTP Proxy and HTTPS Proxy Textbox.
+1. Open Insomnia Preferences -> General tab
+2. Uncheck the "Validate certificates" checkbox
+3. Check "Enable proxy" and enter `localhost:9090` in the HTTP Proxy and HTTPS Proxy text boxes.
 
-![Config to make Insomnia Rest works with Proxyman](../.gitbook/assets/Insomnia\_And\_Proxyman.jpg)
+![Insomnia Preferences with Validate certificates unchecked and the proxy set to localhost:9090](../.gitbook/assets/Insomnia\_And\_Proxyman.jpg)
 
-### 4. Paw
+## 4. Paw
 
-By default, Paw app uses the System Proxy Configuration. Thus, Proxyman can work out of the box.
+By default, the Paw app uses the system proxy configuration, so Proxyman works out of the box.
 
-If you don't see any Paw traffic from Proxyman, please double-check:
+If you don't see any Paw traffic in Proxyman, please double-check:
 
-1. Open Paw Preference.
-2. Make sure you're using System Proxy Configuration in the Proxy Setting.
+1. Open Paw Preferences.
+2. In the Network tab, make sure Proxy is set to System Proxy Configuration.
 
-![Paw and Proxyman](../.gitbook/assets/Paw\_Proxyman.jpg)
+![Paw Preferences, Network tab, with Proxy set to System Proxy Configuration](../.gitbook/assets/Paw\_Proxyman.jpg)

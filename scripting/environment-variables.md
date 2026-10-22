@@ -1,5 +1,7 @@
 ---
-description: "Share data between Proxyman request and response scripts with sharedState and manage its lifetime across scripts."
+description: >-
+  Share data between Proxyman scripts with sharedState, and read system
+  environment variables such as API tokens in your scripts with the $ prefix.
 ---
 
 # Environment Variables
@@ -7,16 +9,16 @@ description: "Share data between Proxyman request and response scripts with shar
 ## 1. Shared State
 
 {% hint style="info" %}
-This feature is only available on **macOS 10.15+**. Prior to macOS 10.15, it might be crashed.
+Shared State works on all macOS versions that Proxyman supports (**macOS 14 Sonoma or later**).
 {% endhint %}
 
-It's possible to share states from the **onRequest()** and the **onResponse()** from **different scripts** when the script is executed with the global object: **sharedState**
+You can share state between **onRequest()** and **onResponse()**, and between **different scripts**, with the global object **sharedState**.
 
-* The **sharedState** is a JS Object (Dictionary), so you can assign any keys and values from **onRequest()**, then receive the data on the **onResponse()** or from **different scripts**.
+* **sharedState** is a JS Object (Dictionary). You can assign any keys and values in **onRequest()**, then read the data in **onResponse()** or in **different scripts**.
 
-The following code demonstrates:
+The following code shows how to:
 
-* Get the global counter and increase it as soon as the script is executed
+* Get the global counter and increase it each time the script runs
 * Share data between Request and Response
 
 ```javascript
@@ -40,7 +42,7 @@ function onRequest(context, url, request) {
 function onResponse(context, url, request, response) {
 
   // Receive it
-  console.log("Custom data = " + sharedState.dataa);
+  console.log("Custom data = " + sharedState.data);
   console.log("sharedState.count = " + sharedState.count);
   
   // Done
@@ -49,14 +51,14 @@ function onResponse(context, url, request, response) {
 ```
 
 {% hint style="info" %}
-From Proxyman 2.25.0+, the **sharedState** is available across different scripts. It is only released when quitting Proxyman app or using \`clearSharedState()\`  function.
+From Proxyman 2.25.0+, **sharedState** is available across different scripts. It is only released when you quit Proxyman or call the \`clearSharedState()\` function.
 {% endhint %}
 
 {% hint style="info" %}
-Prior to Proxyman 2.24.&#x30;**,** the **sharedState** is only alive on the current flow that executes the script and it's released when the script is run over.&#x20;
+Before Proxyman 2.24.0, **sharedState** only lives in the current flow that runs the script, and it's released when the script finishes.
 {% endhint %}
 
-To clear all data, please consider using \`clearSharedState\` function.
+To clear all data, use the \`clearSharedState()\` function.
 
 ```javascript
 // Clear all data from sharedState object
@@ -65,12 +67,12 @@ clearSharedState();
 
 ## 2. Environment Variables
 
-Environment Variables feature is introduced from **Proxyman 3.8.0** and later.
+The Environment Variables feature is available from **Proxyman 3.8.0** or later.
 
-* Scripts can access system env.
-* Support bash or zsh.
+* Scripts can read system environment variables.
+* Supports bash and zsh.
 
-#### How to use
+### How to use
 
 1. Define an env in your `~/.zshrc` or `~/.bashrc`
 
@@ -79,13 +81,13 @@ export ACCESS_TOKEN=AAABBBCCC
 export PROXYMAN_PATH=/Users/my_user/Desktop/file-mapper
 ```
 
-2\. Open any scripts -> More button -> Environment Variables -> Allow all scripts to access env.
+2\. Open any script -> **More** button -> **Environment Variables** -> **Allow all scripts to access Environment Variables**.
 
-3\. Reload the ENV to get the env update.
+3\. Click **Reload** to load the latest env changes.
 
-![Enable env on scripts](../.gitbook/assets/Screen_Shot_2022-07-31_at_10_48_26.jpg)
+<figure><img src="../.gitbook/assets/proxyman-script-environment-variables-menu.jpg" alt="Proxyman Script Editor More menu with Environment Variables open: Allow all scripts to access Environment Variables, Reload"><figcaption><p>Allow scripts to read Environment Variables</p></figcaption></figure>
 
-4\. Access env from your script with a prefix `$`
+4\. Access an env variable in your script with the `$` prefix
 
 ```javascript
 async function onResponse(context, url, request, response) {
@@ -100,7 +102,7 @@ async function onResponse(context, url, request, response) {
 
 ## 3. Additions
 
-* Manually Reload the System Env (Available on Proxyman macOS 4.15.0 or later). Make sure we enable the permission first, in the More Button -> Environment Variables -> Allow all scripts to read env.
+* Manually reload the system env (Proxyman macOS 4.15.0 or later). Enable the permission first: **More** button -> **Environment Variables** -> **Allow all scripts to access Environment Variables**.
 
 ```javascript
 async function onRequest(context, url, request) {

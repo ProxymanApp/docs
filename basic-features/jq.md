@@ -1,20 +1,23 @@
 ---
-description: How to use the jq filter in the JSON Tab to quickly filter your JSON Data
+description: >-
+  Filter and transform JSON request and response bodies in Proxyman with jq in
+  the JSON and Treeview tabs. Learn how to open the JSON tab and use jq.
 ---
 
 # JQ
 
 ## 1. What's it?
 
-* jq is like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text.
+* jq is a small language for JSON data. It works like sed does for text: you can slice, filter, map, and transform JSON data.
 * Available on Proxyman 5.24.0 or later
 
 {% hint style="success" %}
-- jq Filter is only available in the JSON Tab. On the Request/Response Tool bar -> Click on the + button -> Select JSON in the Request or Response. A new JSON Tab will be added.
+- You can use the jq filter in the JSON tab and the Treeview tab. To add the JSON tab, click the + button on the Request or Response toolbar and select JSON.
 {% endhint %}
 
-<div align="center" data-full-width="false"><figure><img src="../.gitbook/assets/481323588-7ae7cb0a-ca66-4199-a16d-e171960a9814.jpg" alt="use jq to filter JSON Body"><figcaption></figcaption></figure></div>
+<figure><img src="../.gitbook/assets/proxyman-treeview-jq.jpg" alt="Proxyman Treeview tab in jq mode with .slideshow.slides[] | {title, type} returning the title and type of each slide"><figcaption><p>Filter JSON with jq</p></figcaption></figure>
 
 ## 2. Syntax
 
-* Please refer the [jq Manual Page](https://jqlang.org/manual/#basic-filters) to understand how to use the jq
+* Read the [jq manual](https://jqlang.org/manual/#basic-filters) to learn how to write jq filters.
+* You can also use jq to create a [custom column](custom-header-column.md) from a JSON body.

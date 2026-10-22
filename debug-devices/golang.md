@@ -1,50 +1,50 @@
 ---
 description: >-
-  Capture HTTP/HTTPS from Golang application (net/http, fasthttp, resty,
-  gorequest, req, grequests) with Proxyman
+  Capture HTTP/HTTPS traffic from Go apps with Proxyman Automatic Setup. Works
+  with net/http, fasthttp, resty, gorequest, req and grequests.
 ---
 
 # Golang
 
 ## 1. New Automatic Solution (macOS v5.17.0 or later) ✅
 
-Proxyman macOS v5.17.0 or later can capture HTTP/HTTPS traffic from Golang with 1-click.
+Proxyman macOS v5.17.0 or later can capture HTTP/HTTPS traffic from Golang with 1 click.
 
-* 1-click solution: No need to manually set HTTP Proxy config or trust the self-signed certificate.
-* ✅ Support many Go Network Libraries: net/http, fasthttp, resty, gorequest, req, grequests
+* 1-click solution: No need to set the HTTP Proxy config or trust the self-signed certificate manually.
+* ✅ Supports many Go network libraries: net/http, fasthttp, resty, gorequest, req, grequests
 
 ### How to use:
 
 1. Open Proxyman -> Setup Menu -> Automatic Setup
-2. Select your favorite Terminal ->  Click on the "Open New Terminal" button
-3. Accept the Apple Script permission prompt if needed
+2. Select your favorite Terminal -> Click the "Open New Terminal" button
+3. Accept the AppleScript permission prompt if needed
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-03-18 at 10.54.37.jpg" alt=""><figcaption><p>Open Pre-configured Terminal to intercept GO network https</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-automatic-setup-window.jpg" alt="Proxyman Automatic Setup window listing Golang libraries such as net/http and resty, with the Open New Terminal button"><figcaption><p>Open a pre-configured Terminal to intercept HTTPS from Go</p></figcaption></figure>
 
-4. The New Terminal app is launched -> You can start your Golang Backend Server, or Run scripts => Proxyman automatically captures all traffic.
+4. A new Terminal window opens -> Start your Golang backend server or run your scripts there => Proxyman captures all traffic automatically.
 5. For example:&#x20;
 
 ```
 $ go run main.go
 ```
 
-6. Proxyman captures all internal HTTP/HTTPS from go, including net/http
+6. Proxyman captures all HTTP/HTTPS traffic from Go, including net/http
 
-<figure><img src="../.gitbook/assets/CleanShot 2025-03-18 at 09.56.44@2x.jpg" alt=""><figcaption><p>capture and intercept HTTPS traffic from net/http go</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/CleanShot 2025-03-18 at 09.56.44@2x.jpg" alt="Terminal running go run main.go next to Proxyman showing captured requests from net/http, fasthttp and resty"><figcaption><p>Capture and intercept HTTPS traffic from Go net/http</p></figcaption></figure>
 
 * Go Example Code: [https://github.com/ProxymanApp/golang-example](https://github.com/ProxymanApp/golang-example)
 
 ## 2. Old Solution (Not recommended ❌)
 
-* Proxyman can't capture any HTTP/HTTPS traffic from the Golang Server.
-* The reason is that some network libraries (such as net/http) won't respect the System HTTP Proxy, so no traffic goes through the Proxyman app.
+* Proxyman can't capture any HTTP/HTTPS traffic from the Golang server.
+* The reason is that some network libraries (such as net/http) don't respect the system HTTP Proxy, so no traffic goes through the Proxyman app.
 
 ### 2.1 Solution
 
 #### net/http
 
-1. Config Proxy to Proxyman, by default, it's at IP = localhost, port 9090
-2. Tell the Transport to trust Proxyman self-signed certificate. Otherwise, you will get an SSL Error because net/http rejects.
+1. Set the proxy to Proxyman. By default, it's at IP = localhost, port 9090
+2. Tell the Transport to trust the Proxyman self-signed certificate. Otherwise, you get an SSL error because net/http rejects it.
 
 ```go
 package main
@@ -98,3 +98,7 @@ func main() {
 }
 
 ```
+
+## Learn more
+
+* [Capture HTTP/HTTPS traffic from Golang with Proxyman](https://proxyman.com/golang) (Proxyman website)

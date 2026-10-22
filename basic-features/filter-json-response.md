@@ -1,45 +1,40 @@
 ---
-description: "Find data in JSON responses with text search, regular expressions, JSONPath, key paths, and key or value filters."
+description: >-
+  Filter JSON responses in Proxyman with text search, regex, JSONPath and jq,
+  or show only the keys and values that match in the Treeview tab.
 ---
 
 # Filter JSON Response
 
-You can quickly filter the JSON Response with the following approach:
+You can quickly filter a JSON response in these ways:
 
-### 1. Filter on JSON Previewer
+## 1. Filter on JSON Previewer
 
-* **⌘F** to trigger the Filter
-* Support Regex
-* Support Jump Next
+* Press **⌘F** in the Body tab to search
+* Supports Regex
+* Jump to the next match
 
-![](../.gitbook/assets/Screen\_Shot\_2020-10-06\_at\_19\_47\_47.png)
+## 2. JSONPath
 
-### 2. JSONPath
+Proxyman supports [JSONPath](https://github.com/json-path/JsonPath#path-examples) to quickly query data in a JSON document.
 
-Proxyman supports [JSONPath](https://github.com/json-path/JsonPath#path-examples) for quickly querying the data in JSON Document.
+<figure><img src="../.gitbook/assets/proxyman-treeview-jsonpath-filter.jpg" alt="Proxyman Treeview tab with the JSON Path $.slideshow.slides[*].title returning two slide titles"><figcaption><p>Filter JSON with JSON Path</p></figcaption></figure>
 
-![](../.gitbook/assets/Screen\_Shot\_2021-08-01\_at\_10\_29\_23.png)
-
-Please check out JSONPath documentation.
+Read the JSONPath page to learn the syntax.
 
 {% content-ref url="jsonpaths.md" %}
 [jsonpaths.md](jsonpaths.md)
 {% endcontent-ref %}
 
-### &#x20;3. KeyPaths
+You can also filter JSON with jq. Read the [jq](jq.md) page.
 
-* Support Key Paths filter on JSON Tree View mode
-* Search specifically the children keys&#x20;
+## 3. Search in the Treeview
 
-Syntax example:
+* Press **⌘F** in the Treeview tab and choose a mode: Search, Filter, JSON Path, or jq.
+* **Search** highlights the keys and values that contain the search text.
 
-* **posts\[1].maker\[2]**: Go from Root -> Get item at index 1 of the Posts array -> Get the index 3 items of Makers array and filter out
-* **users.name**: Get the name value of the "users" dictionary&#x20;
+## 4. Filter by Keys or Values
 
-![](../.gitbook/assets/Screen\_Shot\_2020-10-06\_at\_19\_30\_35.png)
+* **Filter** shows only the nodes whose key or value contains the search text.
 
-### 4. All Keys or All Values
-
-* Show all nodes that the key or value contains the search text
-
-![](<../.gitbook/assets/Screen Shot 2020-10-06 at 14.21.26.png>)
+<figure><img src="../.gitbook/assets/proxyman-treeview-filter-mode.jpg" alt="Proxyman Treeview filter mode menu with Search, Filter, JSON Path and jq options"><figcaption><p>Pick a filter mode</p></figcaption></figure>

@@ -1,90 +1,84 @@
 ---
 description: >-
-  How to set up capture all HTTPS Request Response from Proxyman with Automatic
-  Script
+  Use the Proxyman automatic script to set the HTTP proxy and install the
+  Proxyman certificate on Android Emulators, so you can capture HTTPS in one click.
 ---
 
 # Automatic Script for Android Emulator
 
 ## 1. What's it?
 
-It's too complicated and error-prone if we manually override the HTTP Proxy, Install, and Trust Proxyman Certificate from your Android Emulator.
+Manually overriding the HTTP Proxy, then installing and trusting the Proxyman Certificate on your Android Emulator, is complicated and error-prone.
 
-Thus, Proxyman provides a built-in script to automatically perform it in a second. You can access it from **Certificate Menu -> Install Certificate on Android -> Emulator.**
+Proxyman provides a built-in script that does it for you in seconds. You can open it from **Certificate Menu -> Install Certificate on Android -> Emulators…**
 
 {% hint style="success" %}
-From Proxyman 5.15.0 or later, Proxyman can now install Proxyman certificate into the system-level Store. Make it possible to decrypt all HTTPS from Android Emulators.
+From Proxyman 5.16.0 or later, Proxyman can install the Proxyman certificate into the system-level store. This makes it possible to decrypt all HTTPS traffic from Android Emulators.
 {% endhint %}
 
 {% hint style="info" %}
-Proxyman nows can works with Google-Play and non Google-Play Emulators. 1 click to override. Refer at [google-play-android-emulator-with-magisk.md](google-play-android-emulator-with-magisk.md "mention")
+Proxyman now works with Google Play and non-Google Play Emulators. Override them in 1 click. See [google-play-android-emulator-with-magisk.md](google-play-android-emulator-with-magisk.md "mention")
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-01-10 at 19.29.46.jpg" alt="capture traffic from Android Emulator - including Flutter app" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-01-10 at 19.29.46.jpg" alt="Proxyman Android Emulator Setup Guide with Override All Emulators and the Install Proxyman VPN option checked" width="563"><figcaption></figcaption></figure>
+
+## Video
+
+{% embed url="https://www.youtube.com/watch?v=CWInB7gZj6g" %}
+Capture HTTPS from a native Android app (OkHttp) on the Android Emulator with API 36
+{% endembed %}
 
 ## 2. Benefit?
 
 **1 Click to:**
 
 * **✅ Auto** Override / Revert HTTP Proxy
-* **✅ Automatically** download, install, and trust the Proxyman Certificate at the system-level store. Can decrypt all HTTPS from your Emulators. (Available on Proxyman 5.16.0 or later)
-* No need **network\_security\_config.xml**
-* **✅** Less error-prone and finishes in a few clicks
+* **✅ Automatically** download, install, and trust the Proxyman Certificate in the system-level store. Decrypt all HTTPS from your Emulators. (Available on Proxyman 5.16.0 or later)
+* No need for **network\_security\_config.xml**
+* **✅** Less error-prone and done in a few clicks
 
 {% hint style="success" %}
-Work with Android Emulator and Android Physical Devices via \`adb\` (Only for Proxyman v5.19.0+)
+Works with Android Emulators and Android Physical Devices via `adb` (Only for Proxyman v5.19.0+)
 {% endhint %}
 
-<div data-full-width="true"><figure><img src="../../.gitbook/assets/Capture_HTTPS_Android_Emulator_proxyman.jpg" alt=""><figcaption><p>Capture and decrypt HTTPS from Android Emulators with Proxyman</p></figcaption></figure></div>
+<div data-full-width="true"><figure><img src="../../.gitbook/assets/Capture_HTTPS_Android_Emulator_proxyman.jpg" alt="Proxyman main window showing decrypted HTTPS requests from an OkHttp app running on the Android Emulator"><figcaption><p>Capture and decrypt HTTPS from Android Emulators with Proxyman</p></figcaption></figure></div>
 
 * Install Proxyman Certificate to the system-level Store.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 15.12.07.jpg" alt=""><figcaption><p>Install Proxyman Certificate to the system-level Store.</p></figcaption></figure>
-
 ### ✅ Flutter / React Native app
 
-From Proxyman macOS 6.4.0 or later, Proxyman can capture HTTPS traffic from the Flutter app without a code change required.
+From Proxyman macOS 6.4.0 or later, Proxyman can capture HTTPS traffic from Flutter apps without any code change.
 
-Refer [flutter.md](../flutter.md "mention") documentation to know more.
+See the [flutter.md](../flutter.md "mention") documentation to learn more.
 
 ## 3. How to use it?
 
-1. Make sure the adb command is installed. If not, please install it
+1. Make sure the `adb` command is installed. If not, please install it
 
 ```bash
 brew install android-platform-tools
 ```
 
 2. Open your Android app with Android Studio
-3. Create a new Emulator in Android Virtual Device Manager. **Make sure it's not the Play Store. Must be a Google Play API**
+3. Create a new Emulator in the Android Virtual Device Manager. **Make sure it's not a Google Play image. It must be a Google APIs image.**
 
-![Create new Google APIs Android Emulators](../../.gitbook/assets/Screen_Shot_2020-10-19_at_13_50_31.png)
+* ✅ NEW: Proxyman can now root Google Play Store Emulators. Please read [google-play-android-emulator-with-magisk.md](google-play-android-emulator-with-magisk.md "mention")
 
-* ✅ NEW: Proxyman now can root Google-Play Store Emulators, please read at [google-play-android-emulator-with-magisk.md](google-play-android-emulator-with-magisk.md "mention")
+4. Open Proxyman -> Certificate Menu -> Install Certificate on Android -> Emulators… -> Click the Override All Emulators button
 
-![Create a new Emulator (Google APIs)](../../.gitbook/assets/Screen_Shot_2020-10-19_at_13_50_48.png)
+5. Wait until the Terminal script completes
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-09-19 at 20.01.37.jpg" alt=""><figcaption></figcaption></figure>
-
-3. Open Proxyman -> Certificate Menu -> Install Certificate on Android -> Emulators -> Click on the Override All Emulators button
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 14.54.51.jpg" alt=""><figcaption><p>capture all HTTPS from Emulators with 1 click</p></figcaption></figure>
-
-4. Wait until the Terminal completes
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 15.02.06.png" alt=""><figcaption></figcaption></figure>
-
-5. Relaunch your Android app on Android Studio
-6. Proxyman will capture all HTTPS data ✅
+6. Relaunch your Android app from Android Studio
+7. Proxyman will capture all HTTPS data ✅
 
 {% hint style="info" %}
-If you close Proxyman, make sure to click on the Revert All Changes button. Otherwise, your Android Emulator could not access the Internet.
+If you close Proxyman, make sure to click the Revert All Changes button. Otherwise, your Android Emulator cannot access the Internet.
 {% endhint %}
 
 ## 4. ⚠️ Proxyman 5.15.0 or earlier
 
-* Proxyman 5.15.0 or earlier is only able to install Proxyman Certificate to the User level.
-* It means: We have to complete the next step:
+* Proxyman 5.15.0 or earlier can only install the Proxyman Certificate at the user level.
+* It means you have to complete the next step:
 * In your source code:
   * Add res/xml/network\_security\_config.xml
 
@@ -125,9 +119,9 @@ If you close Proxyman, make sure to click on the Revert All Changes button. Othe
 &#x3C;/manifest>
 </code></pre>
 
-## 5. Advance: Run the script manually
+## 5. Advanced: Run the script manually
 
-It's possible to execute the script manually in your Terminal app without granting the Automation Permission in Security & Privacy.
+You can run the script manually in your Terminal app without granting the Automation permission in Privacy & Security.
 
 ### **Script path**:
 
@@ -137,7 +131,7 @@ It's possible to execute the script manually in your Terminal app without granti
 ```
 {% endcode %}
 
-* For Proxyman 51.9.0 or later
+* For Proxyman 5.19.0 or later
 
 {% code overflow="wrap" %}
 ```bash
@@ -164,8 +158,8 @@ Optional Options:
 ### Prepare the certificate
 
 1. Open the Proxyman app
-2. Find the current IP in the Main Toolbar
-3. Certificate menu -> Export -> Root Certificate as PEM -> Save to Desktop folder
+2. Find the current IP in the main toolbar
+3. Certificate menu -> Export -> Root Certificate as PEM -> Save to the Desktop folder
 
 ### 5.1 Override HTTP Proxy and Install the Certificate to system-level Store
 
@@ -223,14 +217,20 @@ bash /Applications/Proxyman.app/Contents/Frameworks/ProxymanCore.framework/Resou
 
 ## 6. Left certificate expiry date
 
-6.1 Problem: If you got this error when intercepting HTTPS from WebView Android
+6.1 Problem: You get this error when intercepting HTTPS from an Android WebView
 
 ❗️ Android WebView rejects with ERR\_CERT\_VALIDITY\_TOO\_LONG
 
-You can change the leaf certificate's expiry at
+You can change the leaf certificate's expiry in Proxyman Settings -> General -> **More** (next to the certificate) -> **Leaf Certificate Expiry**, then select a shorter expiry, such as 10 days.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-08-28 at 14.28.54.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-08-28 at 14.28.54.jpg" alt="Proxyman Settings, General, with the certificate More menu open on Leaf Certificate Expiry set to 10 days"><figcaption></figcaption></figure>
 
 * Ref: [https://github.com/ProxymanApp/Proxyman/issues/2751](https://github.com/ProxymanApp/Proxyman/issues/2751)
+
+## Learn more
+
+* [How to capture HTTPS traffic from Android Emulators with API 35](https://proxyman.com/posts/capture_https_android_emulators)
+* [How to capture HTTPS traffic from Flutter apps on Android Emulators](https://proxyman.com/posts/Capture-https-flutter-android-emulator)
+* [Capture Android Emulator HTTP/HTTPS traffic with Proxyman](https://proxyman.com/android-emulator) (Proxyman website)
 
 [^1]: This line

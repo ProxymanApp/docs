@@ -1,30 +1,35 @@
 ---
-description: Solution to fix memory issue when using Proxyman
+description: >-
+  Proxyman using too much memory, slow or not responding? Remove * wildcard and
+  web browser rules from the SSL Proxying List and keep auto cleanup on.
 ---
 
 # Proxyman consumes too much RAM & unresponsive
 
 ## Problems
 
-If Proxyman is:
+Proxyman might:
 
-* Unresponsive after using it for a while.
-* Consume too much Memory.
+* Become unresponsive after you use it for a while.
+* Use too much memory.
 
-You might encounter the above problems if you enable SSL Proxying with the following rules:
+You might see these problems if you enable SSL Proxying with the following rules:
 
-* Use the all \`\*\` wildcard to intercept all traffic from your Mac Machine.
-* Enable the entire web browser (Google Chrome, Safari, Firefox, etc.).
+* The `*` wildcard, which intercepts all traffic from your Mac.
+* Whole web browsers (Google Chrome, Safari, Firefox, etc.).
 
 ## **Reason**
 
-Proxyman will intercept and decrypt all traffic which leads to high memory usage. In the worst scenario, the app can become unresponsive.
+Proxyman intercepts and decrypts all of that traffic, which leads to high memory usage. In the worst case, the app can become unresponsive.
 
-![SSL Proxying List with web browser or \* wildcard can slow your Mac.](../.gitbook/assets/Screen\_Shot\_2022-08-10\_at\_14\_01\_16.png)
+![Proxyman SSL Proxying List with Safari, Google Chrome and Firefox enabled and a warning that this can slow your Mac](../.gitbook/assets/Screen\_Shot\_2022-08-10\_at\_14\_01\_16.png)
 
 ## Solution
 
-1. ✅ Update to the latest Proxyman version (Memory Leaks has been fixed in the latest builds)
-2. Open Tools -> SSL Proxying List&#x20;
-3. Remove all Web Browser or \`\*\` wildcards if they exist.
-4. Enable SSL Proxying on particular domains.
+1. ✅ Update to the latest Proxyman version. (Memory leaks are fixed in the latest builds.)
+2. Open **Tools** -> **SSL Proxying List…**
+3. Remove all web browsers and `*` wildcards if they exist.
+4. Enable SSL Proxying only on the domains you need.
+5. Keep **Automatically Remove Older Requests** on in **Settings** -> **Advanced**. It removes older requests when memory goes over the limit. Click **Edit…** to change the limit.
+
+<figure><img src="../.gitbook/assets/proxyman-settings-advanced-proxy-helper-tool.jpg" alt="Proxyman Advanced settings with Automatically Remove Older Requests turned on and an Edit button"><figcaption><p>Automatically Remove Older Requests</p></figcaption></figure>

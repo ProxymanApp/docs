@@ -1,22 +1,33 @@
 ---
-description: "Choose the language used by Proxyman and learn how to contribute improvements to the app translations."
+description: >-
+  Change the Proxyman app language to English, Chinese, Japanese, Portuguese,
+  or Spanish, and help improve the app translations on GitHub.
 ---
 
 # Localization
 
-### 1. What's it?
+## 1. What's it?
 
-Proxyman supports localization, which affect all UI of the app. The following list is a current langauges:
+Proxyman is localized, so the whole app UI can show in your language. The current languages are:
 
 * English (Default)
 * Chinese - Simplified
+* Japanese
+* Portuguese - Brazil
+* Spanish - Latin America
 
-### 2. How to override the app language?
+Japanese, Portuguese, and Spanish are available from Proxyman 6.17.0.
 
-By default, Proxyman will respect the current System Language. To override it, please:
+## 2. How to change the app language?
 
-* System Preference -> Language & Region -> Select Apps Tab -> Add Proxyman app -> Click the + button -> Select Proxyman app and English.
+By default, Proxyman uses your macOS system language. To change it:
 
-### 3. Improve localization?
+1. Open Proxyman **Settings** (⌘,) → **General** → **App Language** and select a language. Proxyman offers to open System Settings for you.
+2. In **System Settings** → **General** → **Language & Region**, under **Applications**, add Proxyman and choose a language.
+3. Relaunch Proxyman to apply the change.
 
-If you've encountered a poor translation in your languages, please help us a hand at [https://github.com/ProxymanApp/proxyman-localization](https://github.com/ProxymanApp/proxyman-localization)
+<figure><img src="../.gitbook/assets/proxyman-settings-app-language.jpg" alt="Proxyman App Language menu with English, Chinese Simplified, Japanese, Portuguese Brazil and Spanish Latin America"><figcaption><p>Pick an app language</p></figcaption></figure>
+
+## 3. Improve localization?
+
+If you find a poor translation in your language, please help us improve it on GitHub at [ProxymanApp/proxyman-localization](https://github.com/ProxymanApp/proxyman-localization).

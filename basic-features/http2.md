@@ -1,5 +1,5 @@
 ---
-description: Capture HTTP/2 traffic in Proxyman for macOS and inspect requests, responses, trailers, and negotiated protocols.
+description: Turn on HTTP/2 in Proxyman for macOS to capture HTTP/2 traffic and inspect requests, responses, trailers, and the negotiated protocol.
 ---
 
 # HTTP/2
@@ -31,7 +31,7 @@ HTTP/2 uses header compression and connection reuse to reduce overhead. Results 
 5. Enable [SSL Proxying](ssl-proxying.md) for the app or domain.
 6. Send a fresh request or reload the page.
 
-<!-- IMAGE PLACEHOLDER: Settings > General > Proxy with Use HTTP/2 enabled. -->
+<figure><img src="../.gitbook/assets/proxyman-settings-use-http2.jpg" alt="Proxyman Settings General tab with Use HTTP/2 checked below the port number and recording options"><figcaption><p>Turn on Use HTTP/2</p></figcaption></figure>
 
 {% hint style="warning" %}
 Changing this setting closes existing connections. Send fresh requests afterward. Active WebSocket and Server-Sent Events connections may also need to reconnect.
@@ -56,8 +56,6 @@ Select a request in the main list to inspect the available details:
 
 Trailers are headers sent after the body. For gRPC traffic, check `grpc-status` and `grpc-message` in the headers or trailers. HTTP 200 alone does not prove the RPC succeeded. Binary payloads may need further decoding.
 
-<!-- IMAGE PLACEHOLDER: An HTTP/2 exchange showing the request version and response trailer headers. -->
-
 ## 5. How to check the protocol?
 
 The setting allows HTTP/2 with HTTP/1.1 fallback. It does not guarantee that every request uses HTTP/2.
@@ -73,8 +71,6 @@ These connections can use different HTTP versions. Check the request's HTTP vers
 * `http/1.1` means HTTP/1.1.
 * An offered protocol is not proof that the server selected it. Check the accepted protocol.
 * Older saved captures may lack upstream protocol details. Missing data does not mean HTTP/1.1.
-
-<!-- IMAGE PLACEHOLDER: Connection Log showing the protocol accepted by the upstream server. -->
 
 ## 6. Connection info in Connection Log
 
@@ -99,8 +95,6 @@ Example excerpt with sample values:
 ```
 
 If the tab is hidden, enable **Connection Log** under Request in [Custom Previewer Tab](custom-previewer-tab.md). See the [Connection Log guide](connection-log.md) for all fields.
-
-<!-- IMAGE PLACEHOLDER: Connection Log in the Request panel showing an HTTP/2 connection. -->
 
 ## 7. Troubleshooting
 

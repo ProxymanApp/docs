@@ -1,7 +1,7 @@
 ---
 description: >-
-  Explain how to use `npm install` to install 3rd-party libraries to Proxyman
-  Script
+  Install npm packages such as dayjs or lodash into Proxyman's Application
+  Support folder and use them in Proxyman Scripting with require().
 ---
 
 # Use npm install
@@ -98,7 +98,7 @@ Script:
 const validator = require("validator");
 
 async function onRequest(context, url, request) {
-  const email = url.searchParams.get("email") || "";
+  const email = new URL(url).searchParams.get("email") || "";
   request.headers["X-Email-Is-Valid"] = validator.isEmail(email) ? "true" : "false";
   return request;
 }
@@ -118,7 +118,7 @@ Script:
 const slugify = require("slugify");
 
 async function onRequest(context, url, request) {
-  const title = url.searchParams.get("title") || "Hello Proxyman";
+  const title = new URL(url).searchParams.get("title") || "Hello Proxyman";
   request.headers["X-Proxyman-Slug"] = slugify(title, { lower: true });
   return request;
 }

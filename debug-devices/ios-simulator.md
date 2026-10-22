@@ -12,56 +12,66 @@ Open the simulator setup guide in Proxyman:
 
 * **Certificate** **Menu** -> **Install Certificate on iOS -> Simulators**
 
+## Video
+
+{% embed url="https://proxyman.com/videos/ios-simulator" %}
+Capture HTTPS traffic from an iOS Simulator
+{% endembed %}
+
+{% embed url="https://www.youtube.com/watch?v=THzb2e9hoGo" %}
+Capture HTTPS from a native iOS app on the iOS 26 Simulator with Xcode 26
+{% endembed %}
+
 ## 1. iOS Simulator Setup Guide
 
-![Automatically install the Certificate to iOS Simulators](<../.gitbook/assets/Screen Shot 2022-07-11 at 08.15.26.png>)
+<figure><img src="../.gitbook/assets/proxyman-ios-simulators-setup.jpg" alt="Proxyman iOS Simulators Setup with three steps: certificate Installed &#x26; Trusted, Prepare Simulators, and Reboot"><figcaption><p>iOS Simulators Setup</p></figcaption></figure>
 
 {% hint style="info" %}
-It works for iOS, iPadOS, tvOS and watchOS.
+It works for iOS, iPadOS, tvOS, watchOS and visionOS.
 {% endhint %}
 
-The following photo describes three steps:
+The setup guide has three steps:
 
-1. Install **Root Proxyman Certificate** on your machine: You can follow the [macOS Guide](macos.md).
-2. Install Proxyman Certificate to all available simulators, which you have opened at least one time.
-3. **Reset the Simulator**: Proxyman tries to reset all simulators, so it will load the new Certificate.
+1. Install the **Root Proxyman Certificate** on your Mac: You can follow the [macOS Guide](macos.md).
+2. Install the Proxyman Certificate on all available simulators that you have opened at least once (click **Prepare Simulators**).
+3. **Reboot the simulators**: Proxyman reboots all simulators, so they load the new certificate.
 
 {% hint style="info" %}
-From Proxyman 2.19.0+, Proxyman uses the [simctl](https://nshipster.com/simctl/) command line to perform tasks.&#x20;
+From Proxyman 2.19.0+, Proxyman uses the [simctl](https://nshipster.com/simctl/) command line to perform these tasks.&#x20;
 
-**simctl** is built-in on your installed Xcode, which is more modern and reliable than the legacy approach (Use Python custom scripts).
+**simctl** comes with Xcode. It is more modern and reliable than the legacy approach (custom Python scripts).
 {% endhint %}
 
 {% hint style="info" %}
-This step only installs on Simulators, which you have open at least one time
+This step only installs the certificate on simulators that you have opened at least once.
 
-For instance, if you would like to debug on iPhone X Simulator, please make sure to **open** the iPhone X Simulator first, then **install** the Certificate in Step 2&#x20;
+For instance, if you would like to debug on the iPhone X Simulator, please make sure to **open** the iPhone X Simulator first, then **install** the certificate in Step 2.&#x20;
 {% endhint %}
 
 ### Xcode Preview (SwiftUI)
 
-If you're using Xcode Preview for SwiftUI, you can install the certificate into the Xcode Preview Simulator by following:
+If you're using Xcode Previews for SwiftUI, you can install the certificate into the Xcode Preview simulator:
 
-1. Open Xcode with Previewer Mode (SwiftUI).
-2. Open Proxyman -> Certificate Menu -> Install for iOS -> Simulator
-3. Click on the Advanced button -> Install for Xcode Preview
+1. Open Xcode with the SwiftUI preview canvas.
+2. Open Proxyman -> Certificate menu -> Install Certificate on iOS -> Simulators
+3. In Step 2, click the ↓ button (next to the Prepare Simulators button) -> Install to Xcode Preview (SwiftUI)
 
-You can read more at: [https://github.com/ProxymanApp/Proxyman/issues/1568#issue-1610877870](https://github.com/ProxymanApp/Proxyman/issues/1568#issue-1610877870)
+You can read more in [GitHub issue #1568](https://github.com/ProxymanApp/Proxyman/issues/1568#issue-1610877870).
 
 ### Manually Install
 
-In Proxyman v4.16.0 or later, you can manually install the certificate to your iOS Simulator in case the Automatic Solution doesn't work.
+In Proxyman v4.16.0 or later, you can manually install the certificate on your iOS Simulator in case the automatic solution doesn't work.
 
-1. Certificate Menu -> Install Certificates for iOS -> Simulators
-2. In Step 2, click on the ↓ button (Next to the Prepare Simulators button) -> Install Manually…
+1. Certificate menu -> Install Certificate on iOS -> Simulators
+2. In Step 2, click the ↓ button (next to the Prepare Simulators button) -> Install Manually…
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-11-01 at 20.14.39.jpg" alt=""><figcaption><p>Install certificate manually</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-01 at 20.14.39.jpg" alt="Proxyman iOS Simulators Setup with the Prepare Simulators menu open and Install Manually selected"><figcaption><p>Install the certificate manually</p></figcaption></figure>
 
-3. Drag and drop the certificate to your iOS Simulator
+3. Drag and drop the certificate onto your iOS Simulator
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-01-07 at 14.43.13.png" alt="" width="563"><figcaption><p>Manually Install the certificate</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-01-07 at 14.43.13.png" alt="Proxyman sheet with a draggable Proxyman Certificate icon and steps to trust it in the simulator" width="563"><figcaption><p>Drag the certificate onto the simulator, then trust it</p></figcaption></figure>
 
-4. Open your iOS Simulator -> Setting app -> General -> About -> Certificate Trust Setting -> Find Proxyman CA Certificate and switch it ON
+4. Open your iOS Simulator -> Settings app -> General -> About -> Certificate Trust Settings -> Find the Proxyman CA certificate and switch it ON
 5. Done
 
 ## 2. Troubleshooting
@@ -70,24 +80,20 @@ If the request list is empty, first check recording, filters, and proxy settings
 
 ### 1. Unable to install the Certificate
 
-If you get errors when clicking on Step 2, please open Xcode -> Preferences -> Location tabs -> Select your Xcode in the Command Line Tools.
-
-![Make sure you have the Xcode Command Line](../.gitbook/assets/Screen\_Shot\_2022-07-11\_at\_08\_12\_33.png)
+If you get errors when you click the button in Step 2, open Xcode -> Settings -> Locations tab -> Select your Xcode in Command Line Tools.
 
 ### 2. Get SSL Error from HTTPS Response
 
-* Opening the Setting app -> General -> About -> Certificate Trust Settings and verifying that Proxyman Certificate is installed and trusted.
-
-![Proxyman Certificate is installed and trusted properly](<../.gitbook/assets/Screen Shot 2021-03-05 at 13.32.25.png>)
+* Open the Settings app -> General -> About -> Certificate Trust Settings and verify that the Proxyman Certificate is installed and trusted.
 
 If it's not installed:
 
-* Open the iOS Simulator Setup (Certificate Menu -> Install Certificate on iOS -> Simulator) and click on the 2nd button.
-* Or Try the following step to manually install the Certificate.
+* Open the iOS Simulator Setup (Certificate menu -> Install Certificate on iOS -> Simulators) and click the button in Step 2.
+* Or try the steps in [Manually install the certificate by exporting it](#manually-install-the-certificate-by-exporting-the-certificate) below.
 
 ### 3. Some HTTP/HTTPS Requests are missing from Proxyman
 
-Alamofire or URLSession might use the cached response for your request. As a result, the actual request doesn't hit the server. Thus, Proxyman could not capture and display it on the app.
+Alamofire or URLSession might use the cached response for your request. As a result, the actual request doesn't hit the server, so Proxyman cannot capture and display it.
 
 Solution:&#x20;
 
@@ -96,14 +102,20 @@ Solution:&#x20;
 
 ## Manually Install the Certificate by exporting the certificate
 
-If you cannot install the certificate, you can **manually** do it:
+If you cannot install the certificate, you can do it **manually**:
 
-1. Open Proxyman -> Certificate Menu -> Export -> Root Certificate as DER -> Save to Desktop Folder
-2. Open the Simulator **drag the certificate and drop it** on the Simulator screen
-3. Open Setting app (on the Simulator) -> General -> Device Management -> Select the Certificate -> Install
-4. Setting app -> General -> About -> Certificate Trust Settings and verifying that Proxyman Certificate is installed and trusted.
+1. Open Proxyman -> Certificate menu -> Export -> Root Certificate as DER -> Save to the Desktop folder
+2. Open the Simulator, then **drag the certificate and drop it** on the Simulator screen
+3. Open the Settings app (on the Simulator) -> General -> VPN & Device Management (Device Management on older iOS) -> Select the certificate -> Install
+4. Settings app -> General -> About -> Certificate Trust Settings and verify that the Proxyman Certificate is installed and trusted.
 5. Done ✅
 
-### Tutorial
+## Tutorial
 
-See detailed steps to [debug an application on iOS Simulator](https://proxyman.com/posts/2019-07-06-Debugging-on-iOS-Simulator-with-Proxyman) with Proxyman
+See detailed steps to [debug an application on iOS Simulator](https://proxyman.com/posts/2019-07-06-Debugging-on-iOS-Simulator-with-Proxyman) with Proxyman.
+
+## Learn more
+
+* [How to inspect network traffic from iOS 15 Simulator with Proxyman](https://proxyman.com/posts/2022-06-04-How-to-inspect-network-traffic-from-iOS-simulator-with-Proxyman)
+* [Capture HTTPS requests from Vision Pro Simulator](https://proxyman.com/posts/2024-01-24-Capture-HTTPS-traffic-from-Vision-Pro-Simulator)
+* [Capture iOS Simulator HTTP/HTTPS traffic with Proxyman](https://proxyman.com/ios-simulator) (Proxyman website)

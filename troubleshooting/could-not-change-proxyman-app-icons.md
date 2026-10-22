@@ -1,23 +1,26 @@
 ---
-description: Solution to change the Proxyman app icon
+description: >-
+  Proxyman Dock icon not changing after you pick a new one? Restart the Dock
+  Extra process in Activity Monitor, then select the app icon again.
 ---
 
 # Could not change Proxyman App Icons
 
-### 1. Problems?
+## 1. Problems?
 
-Proxyman 3.2.0 introduces various new App Icons that help Proxyman to be distinguished from other apps in the Dock.
+Proxyman 3.2.0 introduced new app icons that help you tell Proxyman apart from other apps in the Dock.
 
-If you've encountered the following issue:
+You might see the following issue:
 
-* Could not update the icon in Preference -> Theme
+* The icon doesn't change when you pick a new one in **Settings** -> **Appearance** -> **Proxyman Dock Icon**.
 
-### 2. Solution
+<figure><img src="../.gitbook/assets/proxyman-settings-appearance-dock-icon.jpg" alt="Proxyman Appearance settings with the Dock Icon options On Earth, On Mars, Space Candy and Classic"><figcaption><p>Dock icon options in Appearance settings</p></figcaption></figure>
 
-1. Quit Proxyman -> Open Activity Monitor
-2. Search "Dock" in the Search Bar
-3. Select Dock Extra and Kill it.
-4. Relaunch Proxyman and select your favorite App Icon
+## 2. Solution
 
-![](../.gitbook/assets/Screen\_Shot\_2022-03-05\_at\_15\_07\_41.png)
+1. Quit Proxyman, then open Activity Monitor.
+2. Search for "Dock" in the search bar.
+3. Select **Dock Extra** and quit it with the stop (X) button in the toolbar.
+4. Relaunch Proxyman and select your favorite app icon.
 
+![Activity Monitor search for Dock with the Dock Extra processes selected](../.gitbook/assets/Screen\_Shot\_2022-03-05\_at\_15\_07\_41.png)

@@ -1,29 +1,29 @@
 ---
-description: "Route a domain to a different address with Proxyman DNS Spoofing while preserving the request URL and Host header."
+description: "Use Proxyman DNS Spoofing to send a domain to a different IP address or server while keeping the original URL and Host header unchanged."
 ---
 
 # DNS Spoofing
 
 ## 1. What's it?
 
-DNS Spoofing allows developers:
+DNS Spoofing lets developers:
 
 * Provide a custom DNS for particular domains
-* Able to map from a domain to different domains
+* Map a domain to a different IP address or domain
 
-<figure><img src="../.gitbook/assets/1 (3).png" alt=""><figcaption><p>DNS Spoofing</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-dns-spoofing-window.jpg" alt="Proxyman DNS Spoofing window with Enable DNS Spoofing checked and a rule that maps api.example.com to 127.0.0.1"><figcaption><p>DNS Spoofing window</p></figcaption></figure>
 
 ## 2. What is different with Map Remote?
 
-DNS Spoofing is different than Map Remote by:
+DNS Spoofing is different from [Map Remote](map-remote.md):
 
-* The \`Host\` in the Request Header doesn't change
+* The `Host` in the request header doesn't change
 * The URL doesn't change
 
-On the other hand, Map Remote allows you to change the Host Header and the mapped URL.
+On the other hand, Map Remote changes the Host header and the URL to the mapped values.
 
 ## 3. How to use it?
 
-1. Simply create a new rule by opening the Tools Menu -> DNS Spoofing
-2. Create new Rule with the Host name and Remote Address
+1. Open the **Tools** menu -> **DNS Spoofing…**
+2. Create a new rule with the **Host Name** and the **New Remote Address**
 3. Done ✅

@@ -1,28 +1,28 @@
 ---
 description: >-
-  How to use Proxyman License Manager to manage the license key remotely. Able
-  to add/remove/revoke old devices
+  Use the Proxyman License Manager to check your license status, renew or
+  extend your key, and remove old Mac or iOS devices from your seats.
 ---
 
 # License Manager
 
-License Manager is an easier way to manage your license, which allows you to:
+License Manager is an easier way to manage your license. It allows you to:
 
-* Display License status (Purchase date, Expiry date, Number of Mac / iOS Seats)
-* See a list of devices, which activated by your license key
+* See your License status (Purchase date, Expiry date, Number of Mac / iOS Seats)
+* See a list of devices that are activated with your license key
 * Renew / Extend your license key
 * Remove Mac or iOS devices
 
-![License Manager](.gitbook/assets/Proxyman\_License\_Manager.png)
+![Proxyman License Manager page with license status, Mac and iOS seat counts, and active devices](.gitbook/assets/Proxyman\_License\_Manager.png)
 
 ## How to use it?
 
-1. Open the [License Manage](https://proxyman.io/license-manager/access-link)
-2. Enter your email, which you purchase a license key.
-3. You will receive a `Access Link` from your mailbox.&#x20;
+1. Open the [Proxyman License Manager](https://proxyman.com/license-manager/access-link)
+2. Enter the email that you used to buy the license key.
+3. You will receive an `Access Link` by email.&#x20;
 4. Open it to access the License Manager.
 
 {% hint style="info" %}
-If you don't remember which email you purchase Proxyman License, please contact us at support@proxyman.io
+If you don't remember which email you used to buy your Proxyman License, please contact us at support@proxyman.com
 {% endhint %}
 

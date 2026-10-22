@@ -1,37 +1,43 @@
 ---
-description: How to use HTTP Message Template to quickly reuse it in the Breakpoint Tool
+description: >-
+  Create Proxyman Breakpoint Templates for requests and responses, then apply
+  a saved HTTP message in the Breakpoint Raw tab with one click.
 ---
 
 # HTTP Message Templates
 
 ## 1. What's it?
 
-You can create a HTTP Message Template for the Breakpoint that you can reuse it later
+You can create an HTTP Message Template for the Breakpoint tool and reuse it later.
 
-* Create new HTTP Message Template for Request: HTTP Method, URL, Headers
-* Template for Response: Status Code, Headers
-* Boots productivity when using the [Breakpoint tool](breakpoint.md#1.-whats-it).
+* Create a new HTTP Message Template for a Request: HTTP Method, URL, Headers
+* Create a template for a Response: Status Code, Headers
+* Boost your productivity when using the [Breakpoint tool](breakpoint.md#1.-whats-it).
 
-![Breakpoint Template for Request/Response](../.gitbook/assets/153364144-b1a8378e-dff8-412b-a3b6-4bfad44f9d61.png)
+![Proxyman Breakpoint Template window with request and response templates and a raw 404 response](../.gitbook/assets/153364144-b1a8378e-dff8-412b-a3b6-4bfad44f9d61.png)
 
 ## 2. How to create a new template?
 
 ### Create a new one
 
-1. Tools Menu -> Breakpoint -> Breakpoint Template
-2. CMD+N or SHIFT+CMD+N to create a template for Request/Response
-3. Defind your Request/Response template
+1. **Tools** menu -> **Breakpoint** -> **Breakpoint Templates…**
+2. Press ⌘N to create a Request template, or ⇧⌘N to create a Response template.
+3. Define your Request/Response template.
 
 ### Use the existing one
 
-1. Create a Breakpoint Rule -> Make sure your request/response -> Make sure it hits the Breakpoint
-2. Click Raw Tab -> Template button -> Request/Response -> Create new request/response
-3. Done
+1. Create a Breakpoint rule and make sure your request/response hits the Breakpoint.
+2. Click the **Raw** tab -> **Templates** -> **Save as Template...**
+3. Enter a name for the template. Done.
 
 ## 3. How to use it?
 
-1. When a request/response hit a Breakpoint -> Click Raw Tab
-2. Template -> Request/Response -> Select your template
-3. It will replace the current data with the template one.
+1. When a request/response hits a Breakpoint, click the **Raw** tab.
+2. Click **Templates** -> Request/Response -> select your template.
+3. Proxyman replaces the current data with the template.
 
-![Use Breakpoint Template](../.gitbook/assets/153364160-7fde3bdb-2941-4cd1-a62f-77a4a4ba7013.png)
+![Proxyman Breakpoint window with the Raw tab and Templates button for a response](../.gitbook/assets/153364160-7fde3bdb-2941-4cd1-a62f-77a4a4ba7013.png)
+
+## Learn more
+
+* [How to change HTTP Response Status Code, Header, Or the Body for Testing](https://proxyman.com/posts/change-response-status-code-header-for-testing)

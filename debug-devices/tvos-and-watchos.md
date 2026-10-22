@@ -1,7 +1,7 @@
 ---
 description: >-
-  How to set up tvOS and watchOS Simulator or real devices with Proxyman to
-  capture HTTP/HTTPS Requests/Response
+  Set up Apple TV and Apple Watch simulators or real devices with Proxyman to
+  capture and inspect HTTP/HTTPS requests and responses from tvOS and watchOS.
 ---
 
 # tvOS & watchOS
@@ -12,25 +12,25 @@ Proxyman can capture and intercept HTTP/HTTPS traffic from tvOS and watchOS.
 
 ### Simulator
 
-It's straightforward by following the [Proxyman iOS Simulator Guideline.](ios-simulator.md#ios-simulator-setup-guide)
+Follow the [Proxyman iOS Simulator guide](ios-simulator.md). It works the same way for watchOS simulators.
 
 ### watchOS Physical Device
 
-Follow the [iOS devices guideline](ios-device.md) to set HTTP Proxy and install the certificate to your host device.
+Follow the [iOS device guide](ios-device.md) to set the HTTP Proxy and install the certificate on your host device.
 
 #### Tutorial:
 
-{% embed url="https://proxyman.io/posts/2021-09-02-intercept-https-traffic-from-watch-os-simulator" %}
+{% embed url="https://proxyman.com/posts/2021-09-02-intercept-https-traffic-from-watch-os-simulator" %}
 
 ## 2. tvOS
 
 ### Simulator
 
-Fortunately, it's easy to capture traffic from the tvOS simulator. All you have to do is follow the [iOS Simulator Guideline](ios-simulator.md).
+Capturing traffic from the tvOS simulator is easy. Follow the [iOS Simulator guide](ios-simulator.md).
 
 ### tvOS Devices
 
-It's quite tricky to use Proxyman on a real device.
+Using Proxyman with a real Apple TV takes a few more steps.
 
 ✅ New Setup Guide (2024)
 
@@ -39,12 +39,16 @@ It's quite tricky to use Proxyman on a real device.
 ⚠️ Old Setup Guide
 
 1. Follow this tutorial: [https://www.willowtreeapps.com/craft/a-how-to-guide-for-apple-tv-setup-with-charles-proxy](https://www.willowtreeapps.com/craft/a-how-to-guide-for-apple-tv-setup-with-charles-proxy)
-2. Instead of using Charles Proxy, you can use Proxyman.
+2. Use Proxyman instead of Charles Proxy.
 
-* Please note that Proxyman port is 9090 (default)
-* Export Proxyman Certificate in the Certificate Menu -> Export
-* Make sure you install & trust the Proxyman Certificate before intercepting HTTPS Traffic.
+* Please note that the default Proxyman port is 9090
+* Export the Proxyman Certificate from the Certificate menu -> Export
+* Make sure you install and trust the Proxyman Certificate before intercepting HTTPS traffic.
 
 {% hint style="info" %}
-If you can't set up Proxyman with watchOS or tvOS, please contact us at support@proxyman.io
+If you can't set up Proxyman with watchOS or tvOS, please contact us at support@proxyman.com
 {% endhint %}
+
+## Learn more
+
+* [How to capture HTTP/HTTPS traffic from Apple Watch with watchOS 26](https://proxyman.com/posts/how-to-capture-https-from-apple-watch-watchOS-26)

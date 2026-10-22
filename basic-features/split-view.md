@@ -1,5 +1,5 @@
 ---
-description: Compare two traffic views with separate filters and selections in Proxyman for macOS.
+description: Use Proxyman Split View on macOS to compare two traffic panes side by side, each with its own filters, selected request and inspector.
 ---
 
 # Split View
@@ -72,3 +72,7 @@ Each tab has its own layout. You can keep Split View open in one tab and use a s
 * [Content Filter](content-filter.md)
 * [Multiple Filters](../advanced-features/multiple-filters.md)
 * [Horizontal/Vertical/Window Layout](horizontal-vertical-layout.md)
+
+## Learn more
+
+* [HTTP/2 is finally here in Proxyman v26.0.0](https://proxyman.com/posts/2026-09-19-http2-is-finally-here) (introduces Split View and Tab View)

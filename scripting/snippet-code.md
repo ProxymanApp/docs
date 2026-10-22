@@ -1,21 +1,23 @@
 ---
-description: The collection of useful snippet code for the Scripting tool
+description: >-
+  Copy ready-to-use JavaScript snippets for Proxyman Scripting: edit headers,
+  queries, JSON bodies and status codes, map local files, call APIs, and more.
 ---
 
 # Snippet Code
 
 ## 1. What's it?
 
-A collection of snippet Javascript code for the Scripting Tool.
+A collection of JavaScript snippets for the Proxyman Scripting Tool.
 
 {% hint style="info" %}
 Could not find the Snippet Code you are looking for?
 
-Please open a ticket at [https://github.com/ProxymanApp/Proxyman](https://github.com/ProxymanApp/Proxyman), we will get back to help you ⭐️
+Please open a ticket on [GitHub](https://github.com/ProxymanApp/Proxyman) and we will help you ⭐️
 {% endhint %}
 
 {% hint style="success" %}
-Use [Proxyman MCP](../mcp.md) with your agent (Codex/Claude Code) to help you generate a Scripting easily 🚀
+Use [Proxyman MCP](../mcp.md) with your agent (Codex/Claude Code) to generate scripts easily 🚀
 {% endhint %}
 
 ## 2. Common on Request and Response
@@ -28,8 +30,8 @@ Use [Proxyman MCP](../mcp.md) with your agent (Codex/Claude Code) to help you ge
 * [Change Request Scheme, Host, Port, Path](snippet-code.md#change-request-destination-scheme-host-port-path)
 * [Upstream ALPN and HTTP/2 settings](snippet-code.md#upstream-alpn-and-http2-settings)
 * [HTTP to HTTPS](snippet-code.md#http-to-https)
-* [HTTPS to HTTP](snippet-code.md#http-to-https-1)
-* [Change Request Method](snippet-code.md#change-response-http-status-code)
+* [HTTPS to HTTP](snippet-code.md#https-to-http)
+* [Change Request Method](snippet-code.md#change-http-request-method)
 * [Change Response Status Code](snippet-code.md#change-response-http-status-code)
 * [Logging](snippet-code.md#logging)
 * [Use JSON File as a Body of Request or Response](snippet-code.md#use-json-file-as-a-body-of-request-or-response)
@@ -40,7 +42,7 @@ Use [Proxyman MCP](../mcp.md) with your agent (Codex/Claude Code) to help you ge
 * [Comment & Highlight with color](snippet-code.md#comment-and-highlight-with-color)
 * [Abort (close) the request/response connection (Like Block List Tool)](snippet-code.md#abort-the-request-response-like-block-list-tool)
 
-#### Multipart/form-data
+### Multipart/form-data
 
 * [Read, add, update, or remove a part of multipart/form-data](snippet-code.md#multipart-form-data-1)
 
@@ -54,7 +56,7 @@ Use [Proxyman MCP](../mcp.md) with your agent (Codex/Claude Code) to help you ge
 
 ## 3.1 Use \`npm install\`
 
-* [use \`npm install dayjs\` to install 3rd npm packages](snippet-code.md#use-npm-install)
+* [Use \`npm install dayjs\` to install 3rd-party npm packages](snippet-code.md#use-npm-install)
 
 ## 4. Regex
 
@@ -68,7 +70,7 @@ Use [Proxyman MCP](../mcp.md) with your agent (Codex/Claude Code) to help you ge
 * [Import Text-based file (css, html, js....)](snippet-code.md#text-based-file)
 * [Import Files without using the "Import Tool"](snippet-code.md#import-file-without-using-the-import-tool)
 * [Write / Export to a local file](snippet-code.md#write-export-to-a-local-file)
-* [Check file exist](snippet-code.md#check-if-the-first-exist)
+* [Check if a file exists](snippet-code.md#check-if-the-file-exists)
 * [Read a Local File](snippet-code.md#read-a-file)
 * [Use Response as Mock API](snippet-code.md#use-as-mock-api)
 
@@ -119,7 +121,7 @@ Use [Proxyman MCP](../mcp.md) with your agent (Codex/Claude Code) to help you ge
 
 ## HTTP Header
 
-#### Add/Update: Request or Response Header
+### Add/Update: Request or Response Header
 
 ```javascript
 function onRequest(context, url, request) {
@@ -137,7 +139,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-#### Delete: Request or Response Header
+### Delete: Request or Response Header
 
 ```javascript
 function onRequest(context, url, request) {
@@ -154,7 +156,7 @@ function onResponse(context, url, request, response) {
 
 ## Request Query
 
-#### Add/Update
+### Add/Update
 
 ```javascript
 function onRequest(context, url, request) {
@@ -165,7 +167,7 @@ function onRequest(context, url, request) {
 }
 ```
 
-#### Delete
+### Delete
 
 ```javascript
 function onRequest(context, url, request) {
@@ -178,16 +180,16 @@ function onRequest(context, url, request) {
 
 ## URLEncoded Form Body
 
-#### Add/Update
+### Add/Update
 
 ```javascript
 function onRequest(context, url, request) {
-    // Make sure the Response Header is application/x-www-form-urlencoded
+    // Make sure the Request Header is application/x-www-form-urlencoded
     // Content-Type: application/x-www-form-urlencoded   
     var formBody = request.body;
 
     formBody["name"] = "Proxyman";
-    formBody["flatform"] = "macOS";
+    formBody["platform"] = "macOS";
 
     request.body = formBody; // => name=Proxyman&platform=macOS
     return request;
@@ -195,7 +197,7 @@ function onRequest(context, url, request) {
 
 ```
 
-#### Delete
+### Delete
 
 ```javascript
 function onRequest(context, url, request) {
@@ -203,7 +205,7 @@ function onRequest(context, url, request) {
     var formBody = request.body;
 
     delete formBody["name"];
-    delete formBody["flatform"];
+    delete formBody["platform"];
 
     request.body = formBody;
     return request;
@@ -263,8 +265,8 @@ To reset all overrides, delete `request.upstream` or set it to `null`. Invalid o
 
 ```javascript
 function onRequest(context, url, request) {
-    request.scheme = "http";
-    request.port = 80; // Don't forget to override the port
+    request.scheme = "https";
+    request.port = 443; // Don't forget to override the port
     return request;
 }
 ```
@@ -273,8 +275,8 @@ function onRequest(context, url, request) {
 
 ```javascript
 function onRequest(context, url, request) {
-    request.scheme = "https";
-    request.port = 443; // Don't forget to override the port
+    request.scheme = "http";
+    request.port = 80; // Don't forget to override the port
     return request;
 }
 ```
@@ -299,7 +301,7 @@ function onResponse(context, url, request, response) {
 
 ## JSON Body
 
-#### On Request
+### On Request
 
 ```javascript
 function onRequest(context, url, request) {
@@ -311,7 +313,7 @@ function onRequest(context, url, request) {
     
     // Modify data
     jsonBody["name"] = "Proxyman";
-    jsonBody["flatform"] = "macOS";
+    jsonBody["platform"] = "macOS";
     jsonBody["info"] = { 
                         "website": "proxyman.io",
                         "region": "Earth"
@@ -322,7 +324,7 @@ function onRequest(context, url, request) {
 }
 ```
 
-#### On Response
+### On Response
 
 ```javascript
 function onResponse(context, url, request, response)  {
@@ -334,7 +336,7 @@ function onResponse(context, url, request, response)  {
     
     // Modify data
     jsonBody["name"] = "Proxyman";
-    jsonBody["flatform"] = "macOS";
+    jsonBody["platform"] = "macOS";
     jsonBody["info"] = { 
                         "website": "proxyman.io",
                         "region": "Earth"
@@ -346,7 +348,7 @@ function onResponse(context, url, request, response)  {
 
 ```
 
-#### Multipart/form-data
+### Multipart/form-data
 
 From Proxyman macOS 6.6.0 or later, you can read, add, delete a multipart/form-data
 
@@ -403,9 +405,9 @@ function onRequest(context, url, request) {
 }
 ```
 
-#### Map a local file to Response's Body like Map Local Tool (Proxyman 2.25.0+)
+### Map a local file to Response's Body like Map Local Tool (Proxyman 2.25.0+)
 
-It's a convenient way to directly set a local file to a Body by using `bodyFilePath` property
+It's a convenient way to set a local file as the body with the `bodyFilePath` property.
 
 ```javascript
 // For request
@@ -437,17 +439,17 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-#### Use JSON File as a Body of Request or Response
+### Use JSON File as a Body of Request or Response
 
-It's possible to use your JSON file and set it as a Request/Response's body
+You can use a JSON file as the request or response body.
 
-Please follow this [tutorial](snippet-code.md#json).
+Follow the [Import a JSON file](snippet-code.md#json) steps.
 
-#### Use multiple JSON files
+### Use multiple JSON files
 
-You can use set a different body for each matching endpoint by using the IF statement.
+You can set a different body for each matching endpoint with an if statement.
 
-1. Follow this [tutorial](snippet-code.md#json) to understand how to import a JSON file to the script
+1. Follow the [Import a JSON file](snippet-code.md#json) steps to import a JSON file into the script
 2. Set Script Rule with wildcard or Regex pattern that can match many endpoints. E.g https://my-domain.com/v\*
 3. Use \`includes()\` to check whether or not the endpoint is matched
 
@@ -475,7 +477,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-#### Map Local with GraphQL
+### Map Local with GraphQL
 
 Read more at [https://github.com/ProxymanApp/Proxyman/issues/412#issuecomment-697101594](https://github.com/ProxymanApp/Proxyman/issues/412#issuecomment-697101594)
 
@@ -511,7 +513,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-#### Use ArrayBuffer in Request/Response Body
+### Use ArrayBuffer in Request/Response Body
 
 Since Javascript doesn't have the Data object type, the Data Body will convert to **Base64 Encoded String** in Javascript. To pass **Uint8Array**, **blob**, or **ArrayBuffer** to the body, make sure you convert to **Base64 Encoded String** and set the ContentType to `application/octet-stream`
 
@@ -542,7 +544,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-#### Preserve the Host
+### Preserve the Host
 
 ```javascript
 function onRequest(context, url, request) {
@@ -551,9 +553,9 @@ function onRequest(context, url, request) {
 }
 ```
 
-#### Comment & Highlight with color
+### Comment & Highlight with color
 
-Use `comment` or `color` to highlight on the main table view.
+Use `comment` or `color` to highlight the flow in the main table view.
 
 ```javascript
 function onRequest(context, url, request) {
@@ -569,11 +571,11 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-![Use Scripting for Color and Comment](../.gitbook/assets/Screen_Shot_2021-08-13_at_09_27_36.png)
+![Proxyman main table with rows colored and commented by a script](../.gitbook/assets/Screen_Shot_2021-08-13_at_09_27_36.png)
 
 ## Import Files with require()
 
-#### JSON
+### JSON
 
 1. Prepare a JSON file and save it to your Desktop
 
@@ -589,9 +591,9 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-2\. More -> Import JSON or Other Files. Then selecting your file
+2\. Click **More** -> **Import JSON or Other File...**, then select your file
 
-![](<../.gitbook/assets/Screen Shot 2021-04-22 at 10.59.46.png>)
+![Proxyman Script Editor More menu with Import JSON or Other File highlighted](<../.gitbook/assets/Screen Shot 2021-04-22 at 10.59.46.png>)
 
 3\. Proxyman will add the import code to the top of the script
 
@@ -615,10 +617,10 @@ The selected file is copied to **\~/Library/Application\ Support/com.proxyman.NS
 {% endhint %}
 
 {% hint style="info" %}
-To support other format files, such as image, text, pdf. Make sure you have correct **Header Content-Type**
+For other file types, such as images, text, or PDF, make sure you set the correct **Content-Type header**.
 {% endhint %}
 
-#### Binary File
+### Binary File
 
 1. Follow the same above instruction (Select your Binary File)
 2. Set it as a body
@@ -638,9 +640,9 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-#### Text-Based File
+### Text-Based File
 
-1. Follow the same above instruction (Select your Binary File)
+1. Follow the same above instruction (Select your text file)
 2. Set it as a body
 
 ```javascript
@@ -658,9 +660,9 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-#### Import File without using the "Import Tool"
+### Import File without using the "Import Tool"
 
-From Proxyman 2.24.0+, you can import any files without using the "Import File".
+From Proxyman 2.24.0+, you can import any file without using the "Import Tool".
 
 ```javascript
 // Import your file from your Desktop folder
@@ -682,18 +684,18 @@ function onResponse(context, url, request, response) {
 * Otherwise, Proxyman will import it as normal
 
 {% hint style="info" %}
-Only files that are imported by using the "Import Tool", are included when exporting the script to your colleague.
+Only files imported with the "Import Tool" are included when you export the script to a colleague.
 {% endhint %}
 
-#### Use as Mock API
+### Use as Mock API
 
-You can use Scripting as a Mock API by following this [guideline](https://docs.proxyman.io/scripting/script#8-use-scripting-as-a-mock-api).
+You can use Scripting as a Mock API. See [Use Scripting as a Mock API](script.md#8-use-scripting-as-a-mock-api).
 
 ## Using Addons
 
 [Full list of built-in addons](addons.md)
 
-#### Use Base64 Addon
+### Use Base64 Addon
 
 ```javascript
 // Encode Base64
@@ -712,7 +714,7 @@ const { atob } = require("@addons/Base64.js")
 var text = atob("aGVsbG8=");
 ```
 
-#### Use Hashing Addon (MD5, SHA1, SHA256, SHA512)
+### Use Hashing Addon (MD5, SHA1, SHA256, SHA512)
 
 ```javascript
 // Hash MD5
@@ -730,10 +732,10 @@ const { sha1 } = require("@addons/SHA1.js")
 var hashedText = sha1("Hello World");
 ```
 
-#### Use UUID-v4 Addon
+### Use UUID-v4 Addon
 
 ```javascript
-// Hash MD5
+// Generate UUID v4
 const { uuidv4 } = require("@addons/UUID.js")
 
 // Usage:
@@ -742,7 +744,7 @@ var uuid = uuidv4();
 
 ## Deflate/Inflate and GZip/UnGZip
 
-#### Deflate/inflate
+### Deflate/inflate
 
 ```javascript
 const { inflate, deflate } = require("@addons/Pako.js")
@@ -758,7 +760,7 @@ var rawText = inflate(text);
 console.log(rawText); // Hello World from Pako!!!
 ```
 
-#### GZip/UnGZip
+### GZip/UnGZip
 
 ```javascript
 const { ungzip, gzip } = require("@addons/Pako.js")
@@ -774,7 +776,7 @@ var rawText = ungzip(text);
 console.log(rawText); // HelloWorld
 ```
 
-#### JWT Decode
+### JWT Decode
 
 ```javascript
 const { jwtDecode } = require('@addons/JWTDecode.js');
@@ -796,7 +798,7 @@ console.log(typeof(myObj));
 
 ## Regex
 
-#### Only number
+### Only number
 
 ```javascript
 //Init Regex
@@ -807,7 +809,7 @@ if (reg.test("123123123")) {
 }
 ```
 
-#### Regex to get the Scheme, Host, Port, Path, and Query of the URL
+### Regex to get the Scheme, Host, Port, Path, and Query of the URL
 
 ```javascript
 function onRequest(context, url, request) {
@@ -839,14 +841,14 @@ function onRequest(context, url, request) {
 
 ## Miscellaneous
 
-#### By-pass CORS
+### By-pass CORS
 
 ```javascript
 function onResponse(context, url, request, response) {  
 
   // Allow all
   response.headers["Access-Control-Allow-Origin"] = "*";
-  response.headers["Access-Control-Allow-Headers"] = "*"；
+  response.headers["Access-Control-Allow-Headers"] = "*";
   response.headers["Access-Control-Allow-Methods"] = "*";
 
   // Done
@@ -854,7 +856,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-#### Inject Header to Request / Response
+### Inject Header to Request / Response
 
 ```javascript
 function onRequest(context, url, request) {
@@ -871,9 +873,9 @@ function onResponse(context, url, request, response) {
 
 ```
 
-#### Response delay with sleep() function
+### Response delay with sleep() function
 
-the It's useful for simulating the "Slow Network" on a particular Request or Response. You can check out the [Network Conditions tool](../advanced-features/network-throttling.md#1.-whats-it) for GUI.
+It's useful for simulating a "Slow Network" on a particular request or response. For a GUI tool, check out [Network Conditions](../advanced-features/network-throttling.md#1.-whats-it).
 
 * macOS
 
@@ -904,7 +906,7 @@ async function onResponse(context, url, request, response) {
 }
 ```
 
-#### AES Encryption/Decryption
+### AES Encryption/Decryption
 
 ```javascript
 const { encryptAES, decryptAES } = require("@addons/CryptoJS.js")
@@ -924,7 +926,7 @@ function onRequest(context, url, request) {
 }
 ```
 
-#### DES Encryption/Decryption
+### DES Encryption/Decryption
 
 ```javascript
 const { encryptDES, decryptDES } = require("@addons/CryptoJS.js")
@@ -944,7 +946,7 @@ function onRequest(context, url, request) {
 }
 ```
 
-#### Write / Export to a local file
+### Write / Export to a local file
 
 * Override Mode
 
@@ -977,7 +979,7 @@ async function onResponse(context, url, request, response) {
 }
 ```
 
-#### Check if the first exist
+### Check if the file exists
 
 * Available: Proxyman macOS 5.4.0+
 
@@ -998,7 +1000,7 @@ async function onRequest(context, url, request) {
 }
 ```
 
-#### Read a file
+### Read a file
 
 * If it's text-based -> Return a **String**
 * Otherwise -> Return **Uint8Array**
@@ -1010,12 +1012,12 @@ async function onRequest(context, url, request) {  // console.log(request);
   const textFilePath = "~/Desktop/myfile.json";
   
   // check exist
-  if (isFileExists(filePath)) {
+  if (isFileExists(textFilePath)) {
   
     // read from file
     const text = readFromFile(textFilePath);
     
-    // pares string to JSON Object
+    // parse string to JSON Object
     const obj = JSON.parse(text);
   }
   
@@ -1030,7 +1032,7 @@ async function onRequest(context, url, request) {  // console.log(request);
 
 ## Map Remotes
 
-#### Map v1 to v2 endpoints
+### Map v1 to v2 endpoints
 
 ```javascript
 function onRequest(context, url, request) {
@@ -1044,7 +1046,7 @@ function onRequest(context, url, request) {
 }
 ```
 
-#### Map localhost to production
+### Map localhost to production
 
 ```javascript
 function onRequest(context, url, request) {
@@ -1059,12 +1061,12 @@ function onRequest(context, url, request) {
 }
 ```
 
-#### Map production to localhost
+### Map production to localhost
 
 ```javascript
 function onRequest(context, url, request) {
   
-  // Use production URL
+  // Use localhost URL
   request.scheme = "http";
   request.host = "localhost";
   request.port = 3000;
@@ -1077,10 +1079,10 @@ function onRequest(context, url, request) {
 ## Make async/await HTTP Request (macOS)
 
 {% hint style="info" %}
-This feature \`$http\` is available on the macOS version. To use on Windows, please check the next part.
+\`$http\` is available on macOS. For Windows/Linux, see the next section.
 {% endhint %}
 
-#### GET Request with Query
+### GET Request with Query
 
 ```javascript
 async function onResponse(context, url, request, response) {  
@@ -1102,7 +1104,7 @@ async function onResponse(context, url, request, response) {
 }
 ```
 
-#### POST Request with JSON Body
+### POST Request with JSON Body
 
 ```javascript
 async function onResponse(context, url, request, response) {  
@@ -1136,7 +1138,7 @@ async function onResponse(context, url, request, response) {
 }
 ```
 
-#### POST Request with application/x-www-form-urlencoded body
+### POST Request with application/x-www-form-urlencoded body
 
 ```javascript
 async function onResponse(context, url, request, response) {  
@@ -1169,7 +1171,7 @@ async function onResponse(context, url, request, response) {
 }
 ```
 
-#### PUT / PATCH / DELETE Request
+### PUT / PATCH / DELETE Request
 
 ```javascript
 async function onRequest(context, url, request) {  
@@ -1182,8 +1184,8 @@ async function onRequest(context, url, request) {
     },
     headers: {
       "Content-Type": "application/json"
+    }
   }
-
 
   var output = await $http.post("https://httpbin.proxyman.app/post", param);
   var output = await $http.put("https://httpbin.proxyman.app/put", param);
@@ -1209,11 +1211,11 @@ async function getUser() {
 }
 ```
 
-### Abort the request/response like Block List Tool
+## Abort the request/response like Block List Tool
 
 * Only available for Proxyman 3.11.0 and later
 
-#### Abort the request
+### Abort the request
 
 ```javascript
 function onRequest(context, url, request) {
@@ -1236,7 +1238,7 @@ function onRequest(context, url, request) {
 }
 ```
 
-#### Abort the response
+### Abort the response
 
 ```javascript
 function onResponse(context, url, request, response) {    
@@ -1245,7 +1247,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-### URL and URLSearchParams
+## URL and URLSearchParams
 
 From Proxyman 4.13.0 or later, [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) and [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) are natively supported.
 
@@ -1258,7 +1260,7 @@ function onRequest(context, url, request) {
   console.log(urlObj.search);
   console.log(urlObj.searchParams);
 
-  // URLSearchParmas
+  // URLSearchParams
   const params1 = new URLSearchParams("foo=1&bar=2");
   
   // Done
@@ -1266,11 +1268,11 @@ function onRequest(context, url, request) {
 }
 ```
 
-### Reload System Environment Variables
+## Reload System Environment Variables
 
 Proxyman macOS 4.15.0 or later.
 
-Make sure we enable the permission first, in the More Button -> Environment Variables -> Allow all scripts to read env.
+Enable the permission first: **More** button -> **Environment Variables** -> **Allow all scripts to access Environment Variables**.
 
 ```javascript
 async function onRequest(context, url, request) {
@@ -1285,7 +1287,7 @@ async function onRequest(context, url, request) {
 }
 ```
 
-### Change Websocket URL, Requests/Response Header
+## Change Websocket URL, Requests/Response Header
 
 * Supported from Proxyman 6.2.0 or later for macOS.
 * `onRequest` and `onResponse` modify the URL and handshake headers. Message payloads cannot be modified; use [onWebsocket](snippet-code.md#log-websocket-messages-with-onwebsocket) to inspect and log them on macOS Proxyman 26.1.0 or later.
@@ -1328,7 +1330,7 @@ async function onRequest(context, url, request) {
 
 ```
 
-### Log WebSocket messages with onWebsocket
+## Log WebSocket messages with onWebsocket
 
 {% hint style="warning" %}
 These `onWebsocket` snippets require **macOS Proxyman 26.1.0 or later**. They are not available on Windows, Linux, or iOS.
@@ -1410,11 +1412,11 @@ function onWebsocket(context, url, request, response, message) {
 }
 ```
 
-#### Use \`npm install\`
+## Use \`npm install\`
 
 Read more at [use-npm-install.md](use-npm-install.md "mention")
 
-#### Install a package
+### Install a package
 
 Open Terminal and install packages into Proxyman's Application Support folder:
 
@@ -1431,7 +1433,7 @@ After installation, the package should exist in:
 ~/Library/Application Support/com.proxyman.NSProxy/node_modules
 ```
 
-#### Use a package in a script
+### Use a package in a script
 
 Use the package name with `require()`:
 

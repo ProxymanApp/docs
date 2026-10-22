@@ -1,12 +1,20 @@
 ---
-description: Interact with Proxyman via Command Line.
+description: >-
+  Use proxyman-cli to control Proxyman for macOS from Terminal: export and
+  import rules, toggle tools and the system proxy, export logs and manage certs.
 ---
 
 # Command-line
 
-Proxyman provides a useful command-line tool to enhance your onboarding experience ✅.
+Proxyman for macOS comes with `proxyman-cli`, a command-line tool to control Proxyman from Terminal and your own scripts ✅.
 
 You can access the tool at `/Applications/Proxyman.app/Contents/MacOS/proxyman-cli`
+
+To see all commands for your installed version, run:
+
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli --help
+```
 
 ## 1. Export Proxyman config
 
@@ -32,7 +40,7 @@ OPTIONS:
 By default, the `export` command will export all rules. To exclude particular rules, please uncheck the "Enabled" column in each debugging tool and use the `-m enabledRules`
 {% endhint %}
 
-#### For example:
+### For example:
 
 * Export all debugging tool rules:
 
@@ -63,10 +71,10 @@ OPTIONS:
 ```
 
 {% hint style="info" %}
-By default, new imported rules will be appended to the existing debugging rules. To override all rules, let use `-m override`
+By default, new imported rules will be appended to the existing debugging rules. To override all rules, use `-m override`
 {% endhint %}
 
-#### For example:
+### For example:
 
 * Import all debugging rules by appending them:
 
@@ -86,7 +94,7 @@ By default, new imported rules will be appended to the existing debugging rules.
 
 ## 3. Activate/Unlink License
 
-Please check out the command for activating and unlinking a license.
+See the License page for the commands to activate and unlink a license.
 
 {% content-ref url="license.md" %}
 [license.md](license.md)
@@ -94,7 +102,7 @@ Please check out the command for activating and unlinking a license.
 
 ## 4. Toggle HTTP System Proxy
 
-From Proxyman 4.8.0 and later, we can toggle the Proxy System by command line. It's useful for Raycast Extension
+From Proxyman 4.8.0 and later, you can turn the macOS System Proxy on or off from the command line. The [Raycast extension](raycast.md) uses it.
 
 ```bash
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli proxy on
@@ -105,7 +113,7 @@ Reference: [https://github.com/ProxymanApp/Proxyman/issues/1626#issuecomment-154
 
 ## 5. Clear Session
 
-* We can clear the current Session from the command line. Available for Proxyman 4.12.0 and later.
+* You can clear the current Session from the command line. Available for Proxyman 4.12.0 and later.
 
 ```bash
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli clear-session
@@ -129,9 +137,19 @@ Reference: [https://github.com/ProxymanApp/Proxyman/issues/1626#issuecomment-154
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli breakpoint off
 ```
 
+* From Proxyman macOS 6.3.0 or later, you can also toggle these tools the same way: `map-remote`, `block-list`, `allow-list`, `reverse-proxy`, `network-condition`, `no-caching`, and `dns-spoofing`.
+* Use `open` instead of `on` or `off` to open the tool window, for example `proxyman-cli map-remote open`. `no-caching` only supports `on` and `off`.
+* Proxyman must be running for these commands to work.
+
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli map-remote on
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli block-list off
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli network-condition open
+```
+
 ## 7. Install the Proxy Helper Tool by command line
 
-From macOS 4.12.0 or later, you can install the Helper Tool without GUI.
+From Proxyman macOS 4.12.0 or later, you can install the Helper Tool without the GUI.
 
 {% code overflow="wrap" %}
 ```bash
@@ -159,7 +177,7 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 ```
 {% endcode %}
 
-**From Proxyman macOS 5.20.0+, we can export with Raw or HAR format.**
+**From Proxyman macOS 5.20.0+, you can export with Raw or HAR format.**
 
 * Export All - RAW Request/Response Format
 
@@ -173,7 +191,7 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 
 {% code overflow="wrap" %}
 ```bash
-/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/output" --domains 'api.twitter.com' --domains 'www.producthunt.com' --format har
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m all -o "~/desktop/output" --format har
 ```
 {% endcode %}
 
@@ -181,7 +199,7 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 
 {% code overflow="wrap" %}
 ```bash
-/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m all -o "~/desktop/output" --format raw
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/output" --domains 'api.twitter.com' --domains 'www.producthunt.com' --format raw
 ```
 {% endcode %}
 
@@ -189,11 +207,13 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 
 {% code overflow="wrap" %}
 ```bash
-/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/output" --domains 'api.twitter.com' --domains 'www.producthunt.com' --format raw
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli export-log -m domains -o "~/desktop/output" --domains 'api.twitter.com' --domains 'www.producthunt.com' --format har
 ```
 {% endcode %}
 
-**From macOS 6.2.0+, we can export with a flag `--since <last_flow_id>` to only export from this flow ID.**
+**From Proxyman macOS 6.2.0+, you can add `--since <flow_id>` to export only the flows from this flow ID onward (the flow with this ID is included). It works with all export formats.**
+
+Supported formats for `--format` are `proxymansession` (default), `har`, and `raw`.
 
 ## 9. Import Custom Root Certificate
 
@@ -201,7 +221,7 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 * Automatically Trust the certificate in System Keychain (sudo required)
 * Available from Proxyman macOS 5.15.0 or later
 
-#### Install and trust
+### Install and trust
 
 {% code overflow="wrap" %}
 ```bash
@@ -209,7 +229,7 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 ```
 {% endcode %}
 
-#### Install but not trust (you might need to trust it manually in the Keychain)
+### Install but not trust (you might need to trust it manually in the Keychain)
 
 {% code overflow="wrap" %}
 ```bash
@@ -219,16 +239,19 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 
 ## 10. Export Current IP and Port
 
-* Available from macOS 7.6.0 or later
+* Available from Proxyman macOS 6.7.0 or later
 * Get the current Listening IP & Port in JSON format
 
 <pre class="language-bash"><code class="lang-bash"><strong>/Applications/Proxyman.app/Contents/MacOS/proxyman-cli proxy-host
 </strong></code></pre>
 
+The output has an `ip` and a `port` field, for example `{"ip":"192.168.1.10","port":9090}`. If Proxyman only listens on localhost, the IP is `127.0.0.1`.
+
 ## 11. Add, Remove, Replace the Custom certificates (Client and Server)&#x20;
 
-* Available on macOS 6.10.0 or later ✅
-* Support the P12 certificate with a password
+* Available on Proxyman macOS 6.10.0 or later ✅
+* Supports P12 certificates with a password
+* For client certificates, `--port` defaults to `443`
 
 {% code overflow="wrap" %}
 ```bash
@@ -248,9 +271,9 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 
 ## 12. External Proxy CLI
 
-* Proxyman macOS6.12.0 or later ✅
+* Proxyman macOS 6.12.0 or later ✅
 
-#### Enable
+### Enable
 
 Enable External Proxy without changing the saved configuration:
 
@@ -267,7 +290,7 @@ Enable External Proxy without changing the saved configuration:
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy enable pac --url https://example.com/proxy.pac
 ```
 
-#### Disable
+### Disable
 
 Disable the entire External Proxy feature:
 
@@ -282,6 +305,14 @@ Disable the entire External Proxy feature:
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy disable https
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy disable socks
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy disable pac
+```
+
+### Open the settings
+
+Open the External Proxy settings window in Proxyman:
+
+```bash
+/Applications/Proxyman.app/Contents/MacOS/proxyman-cli external-proxy open
 ```
 
 ## 13. CRUD for all debugging tools
@@ -319,6 +350,8 @@ Replace `<tool>` with one of the supported tools and `<id>` with a rule ID from 
 
 `enable <id>` also turns on its tool when needed. Turning off a tool keeps each rule's own enabled setting. Updates change only the fields you send; delete removes the rule right away.
 
+`map-local`, `map-remote`, `breakpoint`, and `scripting` also have a `folders` command to manage rule folders, and their `list` and `create` commands accept `--folder <name or id>`. Run `/Applications/Proxyman.app/Contents/MacOS/proxyman-cli rules map-local folders --help` to see the options.
+
 ### Create a rule
 
 These are the smallest create commands. Optional flags let you set more fields. Run `/Applications/Proxyman.app/Contents/MacOS/proxyman-cli rules <tool> create --help` to see them.
@@ -344,7 +377,7 @@ Common rule flags include `--name`, `--enabled true|false`, `--method`, `--match
 For create and update, use `--input <file>` to send a JSON object. Use `--input -` to read JSON from standard input. Do not mix `--input` with field flags.
 
 ```bash
-printf '%s' '{"url":"https://api.example.com/*","name":"Local API","enabled":true}' \\
+printf '%s' '{"url":"https://api.example.com/*","name":"Local API","enabled":true}' \
   | /Applications/Proxyman.app/Contents/MacOS/proxyman-cli rules map-local create --input -
 
 /Applications/Proxyman.app/Contents/MacOS/proxyman-cli rules map-local update <id> --input ./map-local-change.json
@@ -352,14 +385,12 @@ printf '%s' '{"url":"https://api.example.com/*","name":"Local API","enabled":tru
 
 When Proxyman is closed, the command returns JSON with `ok: false` and the `app_not_running` error code. Input errors use exit code `2`; other errors use exit code `1`.
 
-
-
 ## 14. Company Policy
 
 ### MCP (Proxyman macOS 6.15.0+)
 
-* Enable/Disable the MCP feature
-* Can't enable the MCP in the GUI if it's disabled by command line
+* Enable or disable the [MCP](mcp.md) feature, even when Proxyman is closed
+* If MCP is disabled from the command line, users can't enable it again in the Settings
 
 Disable MCP and lock the Settings toggle:
 

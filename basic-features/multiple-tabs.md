@@ -1,5 +1,5 @@
 ---
-description: Organize traffic in Safari-style tabs with separate filters and selections in Proxyman for macOS.
+description: Use Proxyman Tab View on macOS to organize traffic in Safari-style tabs, each with its own source, filters and selected request.
 ---
 
 # Tab View
@@ -76,3 +76,7 @@ Use **⌘⇧1–9** for numbered tab selection. Proxyman uses **⌘1–6** for r
 * [Content Filter](content-filter.md)
 * [Horizontal/Vertical/Window Layout](horizontal-vertical-layout.md)
 * [License](../license.md)
+
+## Learn more
+
+* [HTTP/2 is finally here in Proxyman v26.0.0](https://proxyman.com/posts/2026-09-19-http2-is-finally-here) (introduces Tab View and Split View)

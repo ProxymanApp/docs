@@ -1,18 +1,18 @@
 ---
-description: Describe all security Compliance from Proxyman, such as SOC 2
+description: >-
+  Proxyman is SOC 2 Type 2 compliant. Learn what the audit covers, what it means
+  for customers and resellers, and where to find Proxyman security policies.
 ---
 
 # Security Compliance
 
-### Exciting News: Proxyman Achieves SOC 2 Type 2 Compliance!
+## Exciting News: Proxyman Achieves SOC 2 Type 2 Compliance!
 
-
-
-<figure><img src=".gitbook/assets/Frame 8.jpg" alt=""><figcaption><p>Proxyman is now SOC 2 Compliant</p></figcaption></figure>
+<figure><img src=".gitbook/assets/Frame 8.jpg" alt="Proxyman app icon next to the AICPA SOC badge with the text Proxyman is now SOC-2 Compliant"><figcaption><p>Proxyman is now SOC 2 Compliant</p></figcaption></figure>
 
 ## What is SOC 2 Type 2 Compliance?
 
-SOC 2 is a stringent audit by the AICPA. A Type 1 report confirms our security controls are well-designed at a specific time, evaluating five key criteria:
+SOC 2 is a strict audit by the AICPA. A Type 2 report confirms that our security controls are well designed and that they worked well over a period of time. The audit checks five key criteria:
 
 * **Security**: Protects against unauthorized access.
 * **Availability**: Ensures system availability for use.
@@ -22,7 +22,7 @@ SOC 2 is a stringent audit by the AICPA. A Type 1 report confirms our security c
 
 ## Why SOC 2 Type 2 Compliance Matters
 
-In today's digital world, strong security is essential. For a debugging proxy tool managing sensitive data, SOC 2 compliance:
+Strong security is essential. For a debugging proxy tool that handles sensitive data, SOC 2 compliance:
 
 * Validates security controls.
 * Shows commitment to data protection.
@@ -33,7 +33,7 @@ In today's digital world, strong security is essential. For a debugging proxy to
 
 ### **As a Customer**
 
-* **Enhanced Security**: Your data enjoys robust protection.
+* **Enhanced Security**: Your data has strong, verified protection.
 * **Privacy Assurance**: Your information is handled responsibly.
 * **Transparency**: Security practices are verified.
 * **Trust**: Confidently use Proxyman in enterprises.
@@ -45,16 +45,24 @@ In today's digital world, strong security is essential. For a debugging proxy to
 * **Compliance**: Meet vendor assessment needs.
 * **Documentation**: Access for sales support.
 
+{% hint style="info" %}
+A SOC 2 Type 2 report checks how controls worked during an audit period. Normal Proxyman captures are stored on your device. Please review optional features such as [Share Log online](team-workspace/share-log-online.md) and [Team Workspace](team-workspace/team-workspace.md) under your company policy before you use them.
+{% endhint %}
+
 ## Privacy Statement
 
-#### You can find our [Privacy Policy](https://proxyman.io/privacy)&#x20;
+You can find our [Privacy Policy](https://proxyman.com/privacy).&#x20;
 
 ## What's Next?
 
 This milestone is the first step. Our focus includes:
 
-* Maintain SOC 2 Type 2 compliance.
+* Maintaining SOC 2 Type 2 compliance.
 * Conducting regular audits.
-* Continuously enhancing security practices.
+* Continuously improving security practices.
 
-For more about our security and privacy policies, visit our Privacy Policy, Terms of Service, and SDLC Policy. Questions? Reach us at support@proxyman.com
+For more about our security and privacy policies, see our [Privacy Policy](https://proxyman.com/privacy), [Terms of Service](https://proxyman.com/terms-of-use), and [SDLC Policy](https://proxyman.com/software-development-lifecycle-policy). Questions? Reach us at support@proxyman.com
+
+## Learn more
+
+* [Proxyman SOC 2 Type II Compliance](https://proxyman.com/posts/2024-12-21-Proxyman-is-now-SOC-2-Type-1-Compliant)

@@ -1,46 +1,46 @@
 ---
 description: >-
-  Explain why you get SSL Errors in Proxyman. Problems can be Your certificate
-  isn't installed or trusted on your device
+  Fix "SSL Handshake Failed" and other SSL errors in Proxyman. Check that the
+  Proxyman certificate is installed and trusted, and rule out SSL pinning.
 ---
 
 # SSL Error from HTTPS Request/Response
 
 ## 1. Problems
 
-* You could not see any HTTPS traffic on the Proxyman app
-* You get SSL Error from HTTPS Requests and Responses.
-* You get **SSL Handshake Failed**
+* You can't see any HTTPS traffic in the Proxyman app.
+* You get SSL errors from HTTPS requests and responses.
+* You get **SSL Handshake Failed** or **Possible Certificate Pinning** in the Response panel.
 
-![](<../.gitbook/assets/Screen Shot 2020-04-25 at 19.52.38.png>)
+![Proxyman Response panel showing Client SSL Handshake Failed with error code -9806](<../.gitbook/assets/Screen Shot 2020-04-25 at 19.52.38.png>)
 
 ## 2. Solution
 
-There are many reasons why SSL Handshake Failed, please walk through the below steps to address the problem.
+There are many reasons for an SSL handshake failure. Walk through the steps below to find the problem.
 
 ## 2.1 Mobile devices
 
 ### iOS Device
 
-* Follow this [iOS Setup Guide](../debug-devices/ios-device.md) -> Make sure you've installed & trusted the Proxyman CA Certificate on your device.
-* If you're intercepting some popular apps (e.g. Facebook, Instagram, Apple, Whatsapp, ...): They are protected by SSL Pinning -> Impossible to intercept them.
-* Verify that your iOS app doesn't have SSL Pinning. If yes, please disable it.
+* Follow the [iOS Setup Guide](../debug-devices/ios-device.md) -> Make sure you've installed and trusted the Proxyman CA certificate on your device.
+* If you're intercepting popular apps (for example Facebook, Instagram, Apple, WhatsApp, ...): They are protected by SSL pinning -> It's not possible to intercept them.
+* Verify that your iOS app doesn't use SSL pinning. If it does, disable it.
 
 ### iOS Simulator
 
-Follow this [iOS Simulator Setup Guide](../debug-devices/ios-simulator.md) -> Make sure you've installed & trusted the Proxyman CA Certificate on your device.
+Follow the [iOS Simulator Setup Guide](../debug-devices/ios-simulator.md) -> Make sure you've installed and trusted the Proxyman CA certificate on your simulator.
 
 ### Android Device
 
-* Follow this [Android Device Setup Guide](../debug-devices/android-device/) -> Make sure you've installed & trusted the Proxyman CA Certificate on your device.
-* Verify that the 5th step is completed (by adding your domain to two files: **res/xml/network\_security\_config.xml** and **AndroidManifest.xml**)
-* If you're trying to intercept Android apps that you're not an owner -> It isn't possible to intercept -> ❌
+* Follow the [Android Device Setup Guide](../debug-devices/android-device/) -> Make sure you've installed and trusted the Proxyman CA certificate on your device.
+* Verify that the 5th step is completed (add your domain to two files: **res/xml/network\_security\_config.xml** and **AndroidManifest.xml**).
+* If you're trying to intercept Android apps that you don't own -> It isn't possible to intercept them -> ❌
 
 ### Android Emulator
 
-* Follow this [Android Emulator Setup Guide](../debug-devices/android-device/automatic-script-for-android-emulator.md) -> Make sure you've installed & trusted the Proxyman CA Certificate on your device.
-* Verify that the 5th step is completed (by adding your domain to two files: **res/xml/network\_security\_config.xml** and **AndroidManifest.xml**)
-* If you're trying to intercept Android apps that you're not an owner -> It isn't possible to intercept -> ❌
+* Follow the [Android Emulator Setup Guide](../debug-devices/android-device/automatic-script-for-android-emulator.md) -> Make sure you've installed and trusted the Proxyman CA certificate on your emulator.
+* Verify that the 5th step is completed (add your domain to two files: **res/xml/network\_security\_config.xml** and **AndroidManifest.xml**).
+* If you're trying to intercept Android apps that you don't own -> It isn't possible to intercept them -> ❌
 
 ### React Native app
 
@@ -48,55 +48,65 @@ Follow this [iOS Simulator Setup Guide](../debug-devices/ios-simulator.md) -> Ma
 
 ### Flutter
 
-* Please follow [Flutter Setup Guide](../debug-devices/flutter.md)
+* Follow the [Flutter Setup Guide](../debug-devices/flutter.md).
 
-If you've tried and verified all the above steps, but still get SSL Errors?
+Have you tried and verified all the steps above, but still get SSL errors?
 
 ### Verify that you're able to see HTTPS Request/Response from https://google.com without any errors
 
-1. Get your devices
-2. Open the Web Browser (Safari on iOS or Google Chrome on Android)
+1. Get your device.
+2. Open the web browser (Safari on iOS or Google Chrome on Android).
 3. Visit **https://google.com**
-4. Select "Enable SSL Proxying" on this domain on the Proxyman app for macOS
-5. Verify if you're able to see the HTTPS Response or not.
+4. In Proxyman for macOS, right-click the request and select **Enable SSL Proxying** for this domain. Then reload the page.
+5. Check whether you can see the HTTPS response.
 
 #### ✅ Success
 
-1. You're able to see https://google.com HTTPS Response, which means you set up the Certificate correctly -> It's good ✅
-2. The problem might be from your apps. Let's try again on your domains/apps -> If the SSL Error still happens, a high chance that this app is protected by the SSL Pinning.
-3. If you believe that it's not an SSL Pinning case, please open a ticket on [Github](https://github.com/ProxymanApp/Proxyman/issues) (Please mention what device, OS Version, app name, etc)
+1. You can see the HTTPS response from https://google.com, which means you set up the certificate correctly ✅
+2. The problem might be in your app. Try again with your domains or apps -> If the SSL error still happens, the app is most likely protected by SSL pinning.
+3. If you believe it's not an SSL pinning case, open a ticket on [GitHub](https://github.com/ProxymanApp/Proxyman/issues) (mention your device, OS version, app name, etc.).
 
 #### ❌ Failed!
 
-* It seems Proxyman Certificate is not installed or trusted correctly in your devices. Please go back to the [2.1 Mobile Device](get-ssl-error-from-https-request-and-response.md#2.1-mobile-devices) section and follow it.
-* If you verify that everything is done, but the SSL Error still happens, please open a ticket on [Github](https://github.com/ProxymanApp/Proxyman/issues) (Please mention what device, OS Version, app name, etc)
+* The Proxyman certificate is probably not installed or trusted correctly on your device. Go back to the [2.1 Mobile devices](get-ssl-error-from-https-request-and-response.md#2.1-mobile-devices) section and follow it.
+* If everything is done, but the SSL error still happens, open a ticket on [GitHub](https://github.com/ProxymanApp/Proxyman/issues) (mention your device, OS version, app name, etc.).
 
-## 2.2 Macbook or Windows PC
+## 2.2 MacBook or Windows PC
 
-I get SSL Errors from:
+I get SSL errors from:
 
-* **Mac devices (Macbook, Mac Mini, Mac Studio)** -> Install & Trust the Certificate on your Macbook -> Follow [macOS Guide](../debug-devices/macos.md)
-* **Windows** -> Install and trust the certificate on your Windows machine -> Follow [Windows guide](https://app.gitbook.com/s/-LlPt_6BePnJ3oK3saP1/proxyman-windows)
-* Java -> Follow [Java VM Guide](../debug-devices/java.md)
-* Firefox -> Follow [Firefox Guide](../debug-devices/firefox.md)
-* Python -> Follow [Python Guide](../debug-devices/python.md)
-* Ruby -> Follow [Ruby Guide](../debug-devices/ruby.md)
+* **Mac (MacBook, Mac mini, Mac Studio)** -> Install and trust the certificate on your Mac -> Follow the [macOS guide](../debug-devices/macos.md)
+* **Windows** -> Install and trust the certificate on your Windows machine -> Follow the [Windows guide](../proxyman-windows/install-certificate.md)
+* Java -> Follow the [Java VM guide](../debug-devices/java.md)
+* Firefox -> Follow the [Firefox guide](../debug-devices/firefox.md)
+* Python -> Follow the [Python guide](../debug-devices/python.md)
+* Ruby -> Follow the [Ruby guide](../debug-devices/ruby.md)
 
 {% hint style="warning" %}
-Some networking libraries (Ruby, NodeJS, Python, Golang) don't trust the self-signed certificate by default. We have to explicitly tell the library to trust the certificate.
+Some networking libraries (Ruby, NodeJS, Python, Golang) don't trust the self-signed certificate by default. You have to tell the library to trust the certificate.
 
-\=> To fix it, please google **"\<Your framework/library> self-signed certificate",** a found some answers on StackOverflow.
+\=> To fix it, use [Automatic Setup](../automatic-setup/automatic-setup.md): open **Setup** -> **Automatic Setup…** -> **Open New Terminal…**, then run your script in that terminal. It sets up certificate trust for supported NodeJS, Python, Ruby and Golang libraries. For other libraries, search for **"\<Your framework/library> self-signed certificate"**.
 {% endhint %}
 
 ## 2.3 SSL-Pinning?
 
-* You're still unable to see HTTPS Response on your app, it seems that your app is protected by [SSL-Pinning](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning), which prevents MitM apps from seeing the content. All popular apps (Facebook, Apple, Instagram, Messenger, etc.) have this feature.
-* Please temporarily **disable SSL-Pinning** and try again.
+* If you still can't see the HTTPS response from your app, your app is probably protected by [SSL pinning](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning), which prevents MitM apps from seeing the content. Most popular apps (Facebook, Apple, Instagram, Messenger, etc.) use it.
+* Temporarily **disable SSL pinning** in your app and try again.
 
-Read more about SSL-Pining: [https://www.raywenderlich.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning](https://www.raywenderlich.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning)
+Read more about SSL pinning: [Preventing Man-in-the-Middle Attacks in iOS with SSL Pinning](https://www.kodeco.com/1484288-preventing-man-in-the-middle-attacks-in-ios-with-ssl-pinning)
 
 {% hint style="info" %}
-If you've tried everything but are not sure what is wrong? Please open a [Github ticket](https://app.gitbook.com/o/-LlPtWiscJCRFiRPxWvB/s/-LlPt_6BePnJ3oK3saP1/).
+Tried everything and still not sure what is wrong? Open a [GitHub ticket](https://github.com/ProxymanApp/Proxyman/issues).
 
-Please also mention: Proxyman macOS/Windows, Proxyman version, your iOS/Android device, etc.
+Please also mention: Proxyman macOS/Windows, your Proxyman version, your iOS/Android device, etc.
 {% endhint %}
+
+## Video
+
+{% embed url="https://proxyman.com/videos/capture-http-https-traffic" %}
+Capture HTTP and HTTPS traffic with Proxyman
+{% endembed %}
+
+## Learn more
+
+* [Can we bypass SSL pinning?](https://proxyman.com/posts/2019-11-15-Can-we-bypass-ssl-pinning)

@@ -1,56 +1,54 @@
 ---
 description: >-
-  Use JavaScript to modify HTTP requests and responses and inspect WebSocket
-  messages with the Scripting tool.
+  Use the Proxyman Scripting tool to modify HTTP requests and responses with
+  JavaScript, mock APIs, and log WebSocket messages with onWebsocket.
 ---
 
 # Scripting
 
-### 1. What's it?
+## 1. What's it?
 
-Proxyman offers a scripting feature that the developer could write the JS code to manipulate the Request/Response in a flexible way.&#x20;
+Proxyman offers a Scripting tool. You can write JavaScript code to change the request and response in a flexible way.
 
-### 2. Benefits
+## 2. Benefits
 
-* Implement Map Local / Map Remote / Breakpoint by JS Code. **100x Faster**
+* Implement Map Local / Map Remote / Breakpoint with JS code. **100x Faster**
 * Change the **Request Content**, including Domain, Host, Scheme, Port, Path, HTTP Method, HTTP Headers, Query, Body (Encoded-Form, JSON, plain-text)
 * Log and inspect WebSocket messages with `onWebsocket` (**macOS Proxyman 26.1.0 or later**).
 * Change the **Response Content**, including HTTP Status Code, HTTP Headers, and Body (JSON, Encoded-Form, plain-text, binary...)
-* Provide plenty of built-in addons and libraries for common tasks, such as Hashing, Encode/Decode, JSON-Text transformer, Beautify,...
-* Able to **write your own JS Addons or Libraries**
+* Plenty of built-in addons and libraries for common tasks, such as Hashing, Encode/Decode, JSON-Text transformer, Beautify, ...
+* **Write your own JS Addons or Libraries**
 * Designed to replace Rewrite GUI Tool from Charles Proxy
-* Assign and receive shared States between each script or current session with [ShareState or Environment Variables](environment-variables.md)
+* Share state between scripts in the current session with [Shared State or Environment Variables](environment-variables.md)
 
-
-
-<figure><img src="../.gitbook/assets/Screenshot 2024-01-07 at 14.52.47.jpg" alt=""><figcaption><p>Scripting Tool</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-01-07 at 14.52.47.jpg" alt="Proxyman Script Editor with matching rule, Request and Response checkboxes, onRequest and onResponse code"><figcaption><p>Scripting Tool</p></figcaption></figure>
 
 {% content-ref url="snippet-code.md" %}
 [snippet-code.md](snippet-code.md)
 {% endcontent-ref %}
 
-### 3. How to use it?
+## 3. How to use it?
 
 You can access the Scripting Tool by:
 
-* Script Menu -> Script List (⌥⌘I)
-* Open Menu Context from Right Click on the Flow -> Tools -> Scripting
+* **Scripting** menu -> **Script List…** (⌥⌘I)
+* Right-click a flow -> **Tools** -> **Scripting…**
 
-Please check out the [Snippet Code](snippet-code.md) to see a collection of snippet JS codes for the Scripting Tool.
+Check out the [Snippet Code](snippet-code.md) page for a collection of JS snippets for the Scripting Tool.
 
-### 4. Scripting with GraphQL Requests
+## 4. Scripting with GraphQL Requests
 
-From Proxyman 2.27.0+, the Scripting Tool can work with a GraphQL Request by a specific QueryName. Please check out the following GraphQL Document.
+From Proxyman 2.27.0+, the Scripting Tool can match a GraphQL request by its QueryName. Check out the following GraphQL document.
 
 {% content-ref url="../advanced-features/graphql.md" %}
 [graphql.md](../advanced-features/graphql.md)
 {% endcontent-ref %}
 
-### 4.1 Scripting with Websocket
+## 4.1 Scripting with Websocket
 
 From Proxyman 6.2.0 for macOS, use `onRequest` and `onResponse` to modify the WebSocket request URL and handshake headers. See [Change the WebSocket URL and headers](snippet-code.md#change-websocket-url-requests-response-header).
 
-#### Log messages with onWebsocket
+### Log messages with onWebsocket
 
 {% hint style="warning" %}
 `onWebsocket` is available **only in macOS Proxyman 26.1.0 or later**. It is not available on Windows, Linux, or iOS.
@@ -97,15 +95,15 @@ Keep all five arguments in order. `context` and `url` describe the flow and matc
 
 See [WebSocket message snippets](snippet-code.md#log-websocket-messages-with-onwebsocket) for text, JSON, binary, ping/pong, and close examples.
 
-### 5. Examples
+## 5. Examples
 
-The following guide will show you how to write JS code to change the Request domain from Production to Localhost and change the Response Body
+The following guide shows how to write JS code to change the request domain from production to localhost and change the response body.
 
-1. Make sure you enable SSL for this domain before creating the script.
-2. Open the Scripting Tool and create a new Script Entry (⌘N). You can right-click on the Request -> Tools -> Scripting => Proxyman will create a Script too
-3. Give the name and define a Matching Rule.&#x20;
+1. Make sure you enable SSL Proxying for this domain before creating the script.
+2. Open the Scripting Tool and create a new Script Entry (⌘N). You can also right-click the request -> Tools -> Scripting… => Proxyman creates a script for you.
+3. Give it a name and define a Matching Rule.
 4. Ex: **Name**=Test on Localhost endpoint, **URL**=https://proxyman.io
-5. Enable Run Script on **Request** and **Response** **checkbox**
+5. Enable the **Request** and **Response** checkboxes in **Run Script on**
 6. Start writing JS code for `onRequest` function
 
 **onRequest(context, url, request) {}**
@@ -145,7 +143,7 @@ function onRequest(context, url, request) {
 }
 ```
 
-### onRequest() Object Format
+## onRequest() Object Format
 
 `context`, `url` and `request` Objects are defined by:
 
@@ -158,7 +156,7 @@ function onRequest(context, url, request) {
     "isEnableOnRequest": "Bool",
     "isEnableOnResponse": "Bool",
     "filePath": "<String> Script path",
-    "flow": { // Availble from 2.16.0+
+    "flow": { // Available from 2.16.0+
         "serverPort": "443",
         "serverIpAddress": "104.18.230.83",
         "clientIpAddress": "192.168.0.102",
@@ -201,10 +199,10 @@ You can change any value of the request obj except `rawBody`
 Set `request.upstream` in `onRequest`. See [Upstream ALPN and HTTP/2 settings](snippet-code.md#upstream-alpn-and-http2-settings) for an example and supported fields.
 
 {% hint style="info" %}
-If the **body** variable is invalid format due to incorrect Content-Type in the Header. Please consider using the **rawBody** and manually parse the string.
+If the **body** has an invalid format because of an incorrect Content-Type header, use **rawBody** and parse the string manually.
 {% endhint %}
 
-The type of `request.body` replies on the Content-Type Header.
+The type of `request.body` depends on the Content-Type header.
 
 | Content-Type Header                                                                 | request.body      |
 | ----------------------------------------------------------------------------------- | ----------------- |
@@ -213,7 +211,7 @@ The type of `request.body` replies on the Content-Type Header.
 | plain-text or text-based Content-Type, Ex: application/js, text/css, text/html, ... | String            |
 | The rest: Binary Data (application/zip, application/octet-stream)                   | Uint8Array        |
 
-Check out common JS code from Snipped Code Page
+Check out common JS code on the Snippet Code page:
 
 {% content-ref url="snippet-code.md" %}
 [snippet-code.md](snippet-code.md)
@@ -244,7 +242,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-### onResponse() Objects Format
+## onResponse() Objects Format
 
 `context`, `url`, `request`, and `response` objects are defined by:
 
@@ -272,12 +270,12 @@ You can change `statusCode`, `headers` and `body` from the response Obj
 {% endhint %}
 
 {% hint style="info" %}
-If the **body** variable is invalid format due to incorrect Content-Type in the Header. Please consider using **rawBody** and manually parse the string.
+If the **body** has an invalid format because of an incorrect Content-Type header, use **rawBody** and parse the string manually.
 {% endhint %}
 
-The type of `response.body` replies on the Content-Type Header
+The type of `response.body` depends on the Content-Type header.
 
-| Content-Type Header                                                                 | request.body      |
+| Content-Type Header                                                                 | response.body     |
 | ----------------------------------------------------------------------------------- | ----------------- |
 | application/json or JSON families                                                   | Javascript Object |
 | application/x-www-form-urlencoded                                                   | Javascript Object |
@@ -285,12 +283,12 @@ The type of `response.body` replies on the Content-Type Header
 | The rest (application/zip, application/octet-stream)                                | Uint8Array        |
 
 {% hint style="info" %}
-You must return `request` and `response` object in `onRequest` and `onResponse` function
+You must return the `request` and `response` objects in the `onRequest` and `onResponse` functions.
 {% endhint %}
 
-### 6. Built-in Addons and Libraries
+## 6. Built-in Addons and Libraries
 
-Proxyman provides plenty of addons and libraries that help you achieve common tasks: Hashing, Encode/Decode, ...
+Proxyman provides plenty of addons and libraries for common tasks: Hashing, Encode/Decode, ...
 
 {% content-ref url="addons.md" %}
 [addons.md](addons.md)
@@ -304,22 +302,22 @@ Proxyman provides plenty of addons and libraries that help you achieve common ta
 [snippet-code.md](snippet-code.md)
 {% endcontent-ref %}
 
-### 7. Debugging JS Error
+## 7. Debugging JS Error
 
-On certain occasions, you might encounter Javascript errors due to syntax errors, invalid code, ... You can debug by looking at error messages on the console or using `console.log().`
+Sometimes you might get JavaScript errors because of syntax errors, invalid code, etc. You can debug by reading the error messages in the console or by using `console.log()`.
 
-### 8. Use Scripting as a Mock API
+## 8. Use Scripting as a Mock API
 
-From Proxyman 2.32.0, we can use the Scripting Tool as a Mock API. It means your request would never hit the server, and you have to define a Response Body. This behavior is the same with Map Local.
+From Proxyman 2.32.0, you can use the Scripting Tool as a Mock API. Your request never hits the server, and you define the response body yourself. This works the same way as Map Local.
 
-This feature is useful when the actual Restful API is not available yet. You can define and test it locally.
+This is useful when the real REST API is not available yet. You can define and test it locally.
 
 To enable the Mock API:
 
 1. Open the Scripting Tool -> Select the Script
-2. Enable Run as Mock API checkbox.
+2. Enable the **Run as Mock API** checkbox.
 
-![Enable Mock API](../.gitbook/assets/Screen_Shot_2021-09-17_at_14_59_30.png)
+![Proxyman Scripting window with the Run as Mock API checkbox enabled for a script](../.gitbook/assets/Screen_Shot_2021-09-17_at_14_59_30.png)
 
 Then you can define a Response as usual:
 
@@ -339,8 +337,13 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-### 9. Notes
+## 9. Notes
 
-* You must return `request` and `response` Object in `onRequest` and `onResponse` function.
+* You must return the `request` and `response` objects in the `onRequest` and `onResponse` functions.
 * **Proxyman 4.16.0 or later**: Proxyman now converts the Binary Data to **Uint8Array**
-* Proxyman 4.15.0 or earlier: Since Javascript doesn't have the Data object type, the Data Body will convert to **Base64 Encoded String** in Javascript. To pass Uint8Array, blob, or ArrayBuffer to the body, make sure you convert to **Base64 Encoded String.**
+* Proxyman 4.15.0 or earlier: JavaScript doesn't have a Data type, so a binary body is converted to a **Base64 Encoded String** in JavaScript. To pass a Uint8Array, blob, or ArrayBuffer to the body, convert it to a **Base64 Encoded String** first.
+
+## Learn more
+
+* [How to map a Local Response for GraphQL Requests?](https://proxyman.com/posts/2021-01-24-How-To-Map_Response_For_GraphQL_Requests)
+* [How to by-pass CORS Policy](https://proxyman.com/posts/2020-08-31-How-to-by-pass-CORS-policy)

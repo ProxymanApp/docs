@@ -1,5 +1,5 @@
 ---
-description: Capture HTTP/2 traffic in Proxyman for macOS and inspect requests, responses, trailers, and negotiated protocols.
+description: Turn on HTTP/2 in Proxyman for macOS to capture HTTP/2 traffic and inspect requests, responses, trailers, and the negotiated protocol.
 ---
 
 # HTTP/2

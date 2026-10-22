@@ -1,26 +1,28 @@
 ---
-description: "Create reusable JavaScript addons for Proxyman scripts using the custom addons folder and built-in libraries."
+description: >-
+  Write your own JavaScript addon for Proxyman Scripting, save it in the custom
+  addons folder, and import it into any script with require().
 ---
 
 # Write your own Addons
 
 ## 1. What's it?
 
-You can write your own Addon to achieve what Proxyman hasn't provided yet. You can do:
+You can write your own addon to do what the built-in addons don't do yet. You can:
 
-* Write your own Javascript Addon.
+* Write your own JavaScript addon.
 * Use [Built-in Libraries](built-in-js-libraries.md).
-* Write your library and share it with your colleauges.
+* Write your library and share it with your colleagues.
 
-## 2. How to write an addon?&#x20;
+## 2. How to write an addon?
 
-1. Open User Addon folder at `~/Library/Application\ Support/com.proxyman.NSProxy/users` or you can open by opening the More Button -> Documentations -> Open Custom Addons Folder...
+1. Open the user addons folder at `~/Library/Application\ Support/com.proxyman.NSProxy/users`. Or, in the Script Editor, click **More** -> **Documentations** -> **Open Custom Addons Folder...**
 
-![](<../.gitbook/assets/Screen Shot 2021-08-13 at 20.37.39.png>)
+![Proxyman Script Editor More menu with Documentations and Open Custom Addons Folder](<../.gitbook/assets/Screen Shot 2021-08-13 at 20.37.39.png>)
 
-2\. Duplicate `HelloWorld.js` file and rename it to **MyAwesomeAddon.js**
+2\. Duplicate the `HelloWorld.js` file and rename it to **MyAwesomeAddon.js**
 
-3\. Open the file and you can see the template.
+3\. Open the file to see the template.
 
 4\. Change the metadata and write your JS Code
 
@@ -47,17 +49,17 @@ exports.sayHello = sayHello;
 
 ```
 
-* You can import built-in addons by using **require(@"addons/\<name.js>")**
+* You can import built-in addons with **require("@addons/\<name.js>")**
 
 ```javascript
 const { md5 } = require("@addons/MD5.js");
 ```
 
 {% hint style="info" %}
-Check out the [built-in addons ](addons.md#2-built-in-addons)that Proxyman provides
+Check out the [built-in addons](addons.md#2-built-in-addons) that Proxyman provides
 {% endhint %}
 
-* You can import a built-in library by using **require(@"lib/\<name.js>")**
+* You can import a built-in library with **require("@libs/\<name.js>")**
 
 {% hint style="info" %}
 Check out the [built-in library](built-in-js-libraries.md) that Proxyman provides
@@ -65,11 +67,11 @@ Check out the [built-in library](built-in-js-libraries.md) that Proxyman provide
 
 5\. Save the file
 
-6\. Open your Script in Proxyman app and import the script&#x20;
+6\. Open your script in Proxyman and import the addon
 
 ```javascript
 // Import your addon
-// Make sure you imports the function that you exports in the addons
+// Make sure you import the functions that you export in the addon
 const { sayHello } = require("@users/MyAwesomeAddon.js");
 
 // Usage
@@ -77,15 +79,13 @@ sayHello();
 ```
 
 {% hint style="info" %}
-**require("@users/MyAwesomeAddon.js")** is your addon directory
-
-@users is the Custom Addons Folder.
+In **require("@users/MyAwesomeAddon.js")**, `@users` is the Custom Addons Folder.
 {% endhint %}
 
 ## 3. Note
 
 {% hint style="info" %}
-Your own scripts are stored at **\~/Library/Application\ Support/com.proxyman.NSProxy/users**
+Your own addons are stored at **\~/Library/Application\ Support/com.proxyman.NSProxy/users**
 
 This folder is safe. It's never overridden or removed by Proxyman.
 {% endhint %}

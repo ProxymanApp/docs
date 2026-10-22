@@ -1,67 +1,69 @@
 ---
-description: "Mock HTTP/HTTPS responses on your iPhone with Proxyman Map Local to test app behavior with local files."
+description: >-
+  Step-by-step tutorial: mock HTTP/HTTPS responses on your iPhone with Proxyman
+  for iOS Map Local and change the status code, headers and body.
 ---
 
 # Map Local for iOS Tutorial
 
-## M**anipulate HTTP(s) response on iPhone using Proxyman Map Local Tool**
+## Manipulate HTTP(s) responses on iPhone with Proxyman Map Local
 
-Since version 2.0.0, Proxyman has introduced Map Local Tool which enables developers to use the content of local files as a response to your requests, as they match with your rules.
+Since version 2.0.0, Proxyman for iOS has the Map Local tool. It lets you use the content of a local file as the response to requests that match your rules.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt="Proxyman for iOS Map Local Editor with name, URL httpbin.org, method ANY, status code, headers and body"><figcaption><p>Map Local Editor</p></figcaption></figure>
 
-Map Local Tool could significantly boost your speed development and provide the capability to rapidly test on several edge-cased without explicitly updating the data in your server. It’s also the must-have tool for QAs or Developers if you would like to test the app’s behavior with various responses. Some of the testing scenarios:
+Map Local helps you develop faster. You can quickly test edge cases without changing the data on your server. It's also a must-have tool for QA and developers who want to test the app's behavior with different responses. Some testing scenarios:
 
-* Define a Response and use it as a Response for matched Requests
+* Define a response and use it for matching requests.
 * Quickly try new parameters in responses.
-* Test the app’s behaviors with different parameters in the responses.
+* Test the app's behavior with different parameters in the responses.
 * Test the UI layout with unusual content.
-* Quickly reproduce the bug with specific parameters in responses.
-* Mock Fake API with a local File: It's useful for developers would try out the testing APIs which are not in production.
+* Quickly reproduce a bug with specific parameters in responses.
+* Mock an API with a local file. It's useful when you want to try test APIs that are not in production yet.
 
 ## Prerequisites
 
-* Already downloaded the latest version of Proxyman on AppStore: [https://apps.apple.com/us/app/proxyman/id1551292695](https://apps.apple.com/us/app/proxyman/id1551292695)
-* Already installed and trusted Proxyman Certificate on iOS device (If you’re new to Proxyman, please follow [this tutorial](https://proxyman.io/posts/2021-10-17-Getting-Started-With-Proxyman-For-iOS) on how to start intercepting HTTP traffic on your iPhone).
+* Download the latest version of Proxyman from the App Store: [https://apps.apple.com/us/app/proxyman/id1551292695](https://apps.apple.com/us/app/proxyman/id1551292695)
+* Install and trust the Proxyman certificate on your iOS device. If you're new to Proxyman, follow [Capture and inspect HTTPS traffic from iPhone](https://proxyman.com/posts/2021-10-17-Getting-Started-With-Proxyman-For-iOS) to start capturing HTTP traffic on your iPhone.
 
 ## Create Map Local Rules
 
-There are 2 ways that we can define a Breakpoint rule:
+There are 2 ways to create a Map Local rule:
 
-1. From Setting screen
+1. From the More tab
 
-* Go to Setting → map Local → Tap on + button.
-* From here we will need to manually fill in all required fields for the Rule, including Title, Method, Matching URL, and include Subpaths or not.
+* Go to the **More** tab → **Map Local** → tap the **+** button.
+* Fill in the fields for the rule: Name, URL, Method, and whether to include subpaths.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt="Proxyman for iOS Map Local rule list with a plus button that opens an empty Map Local Editor"><figcaption><p>Create a new Map Local rule manually</p></figcaption></figure>
 
-2. From the Menu context
+2. From the context menu
 
-* Long tap on the Request → Add to Map Local List.
-* It will automatically fill in all fields to define the Rule based on the selected Request.
+* Long-press the request → **Add to Map Local**.
+* Proxyman fills in all fields of the rule from the selected request.
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt="Proxyman for iOS context menu with Add to Map Local, which opens a Map Local Editor filled from the request"><figcaption><p>Create a Map Local rule from a request</p></figcaption></figure>
 
-#### Modify Header, Status Code and Body
+### Modify Header, Status Code and Body
 
-From the Map Local Editor screen, we can freely manipulate the Headers, Status Code and Body data. If we alternate the Body with the new data type, Proxyman will auto-detect the Content-Type and update Headers for us.
+In the Map Local Editor, you can change the headers, status code, and body. If you replace the body with a new data type, Proxyman detects the Content-Type and updates the headers for you.
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt="Proxyman for iOS screens to pick a status code, edit response headers, and edit the response body"><figcaption><p>Modify the status code, headers and body</p></figcaption></figure>
 
 ## Manipulate Response with Map Local Tool
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt="Proxyman for iOS Map Local Editor with status 201 Created next to the enabled Map Local rule list"><figcaption><p>Enable Map Local and the rule</p></figcaption></figure>
 
-And you’re all set, it’s time to make another request to see how it works.
+You're all set. Make another request to see how it works.
 
-If the URL of incoming requests are matching with the **pre-defined matching Rule**, and the Local file is valid => The body response of those matching requests is automatically replaced with the content of the local file.
+If the URL of an incoming request matches a **pre-defined matching rule** and the local file is valid, Proxyman replaces the response body of that request with the content of the local file.
 
-If the requests are not matching any rules, the entire Response's content remains on the server.
+If a request doesn't match any rule, the response from the server stays the same.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt="Proxyman for iOS flow list, request details executed by Map Local, and the response body replaced by a local file"><figcaption><p>The response is modified by Map Local</p></figcaption></figure>
 
-Nicely done! If you look into the flow list, you will find a small blue icon to indicate that this flow has been modified. As you can see, both the Response content has been updated with the local file.
+Nicely done! In the flow list, a small blue icon shows that this flow has been modified. The response content has been replaced with the local file.
 
-## What’s next
+## What's next
 
-Map Local tool allows you to try various types of responses to test the layout or content from your devices, thus boosting your debugging productivity, but limited by the capability of modifying Response content only. If you'd like to modify the Request content, you might want to check out our [Breakpoint tutorial](https://docs.proxyman.io/proxyman-ios/tutorial-for-ios/breakpoint-for-ios-tutorial) that enables us to manipulate both the Request and Response on the fly without changing any logic from your client.
+Map Local lets you try different responses to test the layout or content on your device. But it can only modify the response. If you'd like to modify the request too, check out the [Breakpoint for iOS tutorial](breakpoint-for-ios-tutorial.md). Breakpoint lets you change both the request and the response on the fly without changing any logic in your app.

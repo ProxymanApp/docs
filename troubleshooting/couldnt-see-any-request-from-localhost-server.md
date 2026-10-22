@@ -1,69 +1,71 @@
 ---
-description: Fix why localhost request/response doesn't appear on Proxyman
+description: >-
+  localhost:3000 requests not showing in Proxyman? Capture localhost traffic from
+  Google Chrome with Automatic Setup, or use /etc/hosts or localhost.proxyman.io.
 ---
 
 # I could not see any requests from my localhost server
 
 ## 1. Problem
 
-I develop a local NodeJS, Ruby, or Python Backend at **http://localhost:3000**, but when I visit **http://localhost:3000** from Google Chrome or Safari, there is no traffic on the Proxyman app.
+I develop a local NodeJS, Ruby, or Python backend at **http://localhost:3000**, but when I visit **http://localhost:3000** in Google Chrome or Safari, there is no traffic in the Proxyman app.
 
-**Why does this happen?** By default, on macOS, all localhost requests don't go through the System HTTP Proxy. Therefore, there is no traffic recorded by the Proxyman app.
+**Why does this happen?** By default, on macOS, localhost requests don't go through the system HTTP proxy. Therefore, Proxyman doesn't record any traffic.
 
-<figure><img src="../.gitbook/assets/capture_http_localhost_chrome_2.jpeg" alt="Proxyman can not capture any http localhost traffic"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/capture_http_localhost_chrome_2.jpeg" alt="Google Chrome open at localhost:4000 while the Proxyman request list stays empty"><figcaption><p>localhost traffic doesn't appear in Proxyman by default</p></figcaption></figure>
 
 ## 2. Solution
 
-### 2.1 ✅ New Solution for v6.3.0
+### 2.1 ✅ New solution for v6.3.0
 
 From Proxyman macOS v6.3.0, Proxyman can:
 
-* Capture `http://locahost:3000` or any localhost traffic in Google Chrome / Firefox without modifying the /etc/host file
+* Capture `http://localhost:3000` or any localhost traffic in Google Chrome / Firefox without changing the /etc/hosts file
 * Works with a single click
-* Tutorial: [https://proxyman.com/posts/how-to-capture-http-localhost-traffic-from-google-chrome](https://proxyman.com/posts/how-to-capture-http-localhost-traffic-from-google-chrome)
+* Tutorial: [How to capture HTTP localhost traffic from Google Chrome](https://proxyman.com/posts/how-to-capture-http-localhost-traffic-from-google-chrome)
 
-### How to do it
+#### How to do it
 
-1. In Proxyman app -> Go to the Setup Menu -> Automatic Setup -> Click on the "Google Chrome" button
-2. New Google Chrome will appear
-3. Done. Visit http://localhost:3000 and Proxyman can capture it
+1. In Proxyman, open the **Setup** menu -> **Automatic Setup…** -> In the Web Browsers section, click **Google Chrome…**
+2. A new Google Chrome window appears.
+3. Done. Visit http://localhost:3000 and Proxyman captures it.
 
-<figure><img src="../.gitbook/assets/capture_http_localhost_chrome_1.jpeg" alt="capture HTTPS traffic from Google Chrome with Proxyman"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/capture_http_localhost_chrome_1.jpeg" alt="Proxyman captures localhost:3000 and localhost:4000 requests from Google Chrome"><figcaption><p>Capture localhost traffic from Google Chrome</p></figcaption></figure>
 
-## 2.2 Old solution
+### 2.2 Old solution
 
-There are two solutions to fix it: You should follow either one of the following solutions.
+There are two solutions. Follow either one of them.
 
-### Solution 1: Map **localhost** to the domain name in `/etc/hosts`&#x20;
+#### Solution 1: Map **localhost** to a domain name in `/etc/hosts`&#x20;
 
-1. Open `etc/hosts` file with Vim or VS Code.
+1. Open the `/etc/hosts` file with Vim or VS Code.
 
 ```
 $ sudo vim /etc/hosts
 ```
 
-2\. Add Domain Name with both **IPv4** and **IPv6** (You can change the `proxyman.debug` with your name)
+2\. Add a domain name for both **IPv4** and **IPv6** (you can replace `proxyman.debug` with any name)
 
 ```
 127.0.0.1 proxyman.debug
 ::1 proxyman.debug
 ```
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-09-01 at 22.11.30.png" alt=""><figcaption><p>Add proxyman.debug in /etc/host</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-09-01 at 22.11.30.png" alt="The /etc/hosts file in VS Code with proxyman.debug mapped to 127.0.0.1 and ::1"><figcaption><p>Add proxyman.debug in /etc/hosts</p></figcaption></figure>
 
-3\. Save the file with `sudo` permission
+3\. Save the file with `sudo` permission.
 
-4\. Access your localhost server by **http://proxyman.debug:3000** (replace 3000 with your localhost ports)&#x20;
+4\. Access your localhost server at **http://proxyman.debug:3000** (replace 3000 with your localhost port).&#x20;
 
-6\. Enjoy debugging!
+5\. Enjoy debugging!
 
-![](<../.gitbook/assets/Screen Shot 2020-04-25 at 16.55.18.png>)
+![Proxyman capturing a cURL request to a local server at http://proxyman.dev:3000](<../.gitbook/assets/Screen Shot 2020-04-25 at 16.55.18.png>)
 
 {% hint style="info" %}
-If you use a `local` as a suffix, e.g. proxyman.local, make sure to remove the \`\*.local\` from the Bypass Proxy List ([Instruction](https://docs.proxyman.io/troubleshooting/.local-doesnt-appear-in-proxyman#2-solution)).
+If you use `local` as a suffix, for example proxyman.local, make sure to remove `*.local` from the Bypass Proxy List ([how to do it](.local-doesnt-appear-in-proxyman.md#2.-solution)).
 {% endhint %}
 
-### Solution 2: Use **localhost.proxyman.io** instead of **localhost**
+#### Solution 2: Use **localhost.proxyman.io** instead of **localhost**
 
 Proxyman uses Cloudflare and sets the DNS of **localhost.proxyman.io** to 127.0.0.1 (localhost). As a result, Proxyman can capture the local traffic as usual ✅&#x20;
 

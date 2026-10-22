@@ -1,41 +1,43 @@
 ---
-description: How to use Custom Filter to save your filter criteria
+description: >-
+  Save your current Proxyman filters as a custom filter button on the filter
+  bar, then reuse, override, rename, or delete it with one click.
 ---
 
 # Custom Filters
 
 ## 1. What's it?
 
-From Proxyman 4.11.0 or later, users can create a filter to save current filter configs and access it later.
+From Proxyman 4.11.0 or later, you can save your current filter settings as a custom filter and use it again later.
 
-* Able to create a custom Filter button on the Toolbar with the current filter config
-* Manage the filter buttons: Create new, Override, Delete, and Rename.
+* Create a custom filter button on the filter bar from your current filter settings
+* Manage the filter buttons: create, override, delete, and rename
 * Save time ✅
 
 ## 2. How to use
 
-#### Create new filter
+### Create new filter
 
-1. Setup your filter config (Support Single or Multiple filters)
-2. Click on the Save button -> Save -> Enter the name
-3. A New Filter is added to the Filter Toolbar.
+1. Set up your filter (single or [multiple filters](multiple-filters.md))
+2. Click the **Save** button -> **New Filter…** -> enter a name
+3. The new filter is added to the filter bar.
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-09-12 at 10.14.31@2x.jpg" alt=""><figcaption><p>Create new custom filter</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/CleanShot 2023-09-12 at 10.14.31@2x.jpg" alt="Proxyman filter bar with two filters and the Save button to create a custom filter"><figcaption><p>Create new custom filter</p></figcaption></figure>
 
-#### Override&#x20;
+### Override
 
-1. Change your filter config
-2. Save button -> Override -> Select the filter that you'd like to override
+1. Change your filter settings
+2. Click the **Save** button -> **Override** -> select the filter you want to override
 
 <div data-full-width="true">
 
-<figure><img src="../.gitbook/assets/2.jpg" alt="" width="375"><figcaption><p>Override current filter</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/2.jpg" alt="Proxyman Save menu with the Override submenu listing a saved custom filter" width="375"><figcaption><p>Override an existing filter</p></figcaption></figure>
 
 </div>
 
-#### Delete or Rename
+### Delete or Rename
 
-1. Right-click on the filter button&#x20;
-2. Delete or Rename
+1. Right-click on the filter button
+2. Select **Delete** or **Rename…**
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-09-12 at 10.15.18.jpg" alt="" width="375"><figcaption><p>Delete or Rename</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-09-12 at 10.15.18.jpg" alt="Right-click menu on a custom filter button in Proxyman with Delete and Rename options" width="375"><figcaption><p>Delete or rename a custom filter</p></figcaption></figure>

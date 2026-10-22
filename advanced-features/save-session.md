@@ -1,30 +1,30 @@
 ---
-description: "Save captured requests, responses, apps, domains, and devices as a Proxyman session to reopen or share with teammates."
+description: "Use Proxyman Save Session to save captured requests, responses, apps, domains, and devices to a file you can reopen later or share with teammates."
 ---
 
 # Save Session
 
-### 1. What's it?
+## 1. What's it?
 
-It's a handy tool to save entire your working Session, so you can open it later without losing any debugging information, which includes:
+It's a handy tool to save your entire working session, so you can open it later without losing any debugging information, including:
 
 * All Request and Response flows
-* All App and Domains
+* All Apps and Domains
 * All Remote Devices
 
-### 2. What's for?
+## 2. What's for?
 
-* Save entire Session and open it later
-* Share your Debugging Session to your QA or Teammates
+* Save the entire session and open it later
+* Share your debugging session with your QA team or teammates
 
-### 2. How to use?
+## 3. How to use?
 
-#### 2.1 Save current Session
+### 3.1 Save current Session
 
-* File menu -> Save Session As then selecting the save location
+* **File** menu -> **Save Session…**, then select the save location.
 
-![](<../.gitbook/assets/Screen Shot 2020-04-25 at 16.21.50.png>)
+![Proxyman File menu with New Session, Open, Open Recent and Save Session As items](<../.gitbook/assets/Screen Shot 2020-04-25 at 16.21.50.png>)
 
-#### 2.2 Restore previous Session
+### 3.2 Restore previous Session
 
-* File Menu -> Open or Open Recent
+* **File** menu -> **Open…** or **Open Recent**

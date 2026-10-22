@@ -1,5 +1,5 @@
 ---
-description: "Inspect DNS lookups, TCP connections, TLS handshakes, certificates, and HTTP headers in Proxyman's Connection Log."
+description: "Use the Proxyman Connection Log to inspect DNS lookups, TCP connections, TLS handshakes, certificates, and HTTP headers for each request."
 ---
 
 # Connection Log
@@ -69,7 +69,7 @@ The log lists the details available for the selected request.
 * A text response body preview, when available.
 * Messages explaining when a body was decoded, modified, or shortened for display.
 
-Use the **Timing Chart** tab when you want to compare DNS, TCP, and TLS durations.
+Use the **Timing** tab when you want to compare DNS, TCP, and TLS durations.
 
 ## 5. How to read it?
 
@@ -98,3 +98,7 @@ A reused connection may not show a new DNS lookup or TLS handshake for every req
 * Proxyman saves the recorded events and builds the displayed log when you open the tab.
 * Certificate details are saved as text fields. Full certificates, certificate chains, and private keys are not saved with the connection details.
 * Older captures without connection details can still open. The log shows the saved HTTP data and explains that connection details were not recorded.
+
+## Learn more
+
+* [HTTP/2 is finally here in Proxyman v26.0.0](https://proxyman.com/posts/2026-09-19-http2-is-finally-here)

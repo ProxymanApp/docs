@@ -1,25 +1,25 @@
 ---
 description: >-
-  How to use Breakpoint Tools for Proxyman iOS. Useful to change the Request and
-  Response, including Status Code, URL, Headers, and the Body
+  Use Breakpoint in Proxyman for iOS to pause a request or response on your
+  iPhone and edit its URL, method, status code, headers and body on the fly.
 ---
 
 # Breakpoint for iOS
 
 ## 1. What's it?
 
-Breakpoint is a tool to help developers:
+Breakpoint is a tool that helps developers:
 
-* Modify the Request Content: URL, Method, Header, and the Body
-* Modify the Response Content: Status Code, Headers, and the Body
+* Modify the request content: URL, method, headers, and body
+* Modify the response content: status code, headers, and body
 
-on the fly, without depending on Proxyman for macOS.
+on the fly, without Proxyman for macOS.
 
-<figure><img src="../.gitbook/assets/1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/1 (1).png" alt="Proxyman for iOS Breakpoint Request Editor with method, URL, header, query and body of a paused POST request"><figcaption><p>Breakpoint Request Editor on iOS</p></figcaption></figure>
 
 ## 2. Tutorial
 
-Please checkout the Breakpoint for iOS Tutorial.
+Check out the Breakpoint for iOS tutorial.
 
 {% content-ref url="tutorial-for-ios/breakpoint-for-ios-tutorial.md" %}
 [breakpoint-for-ios-tutorial.md](tutorial-for-ios/breakpoint-for-ios-tutorial.md)

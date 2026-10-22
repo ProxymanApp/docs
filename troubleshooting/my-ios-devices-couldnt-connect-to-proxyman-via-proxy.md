@@ -1,42 +1,41 @@
 ---
 description: >-
-  A troubleshooting page to show how to make iOS/Android device to connect to
-  Proxyman
+  iPhone or Android has no internet after setting the Wi-Fi proxy, or can't open
+  proxy.man/ssl? Check the IP, port, VPN and firewall to connect to Proxyman.
 ---
 
 # My Remote Devices (iOS/Android) could not connect to Proxyman?
 
 ## **1.** Problems
 
-* ❌ My iOS or Android Devices could not access the Internet after changing the Proxy Config in the Wifi Setting.
+* ❌ My iOS or Android device can't access the internet after I change the proxy setting in the Wi-Fi settings.
 * ❌ I can't download the certificate from **http://cert.proxyman.io** or **http://proxy.man/ssl**
 
 {% hint style="info" %}
-For Android, please follow the [second section](my-ios-devices-couldnt-connect-to-proxyman-via-proxy.md#android-devices-and-android-emulator)
+For Android, follow the [Android Devices and Android Emulators](my-ios-devices-couldnt-connect-to-proxyman-via-proxy.md#android-devices-and-android-emulators) section.
 {% endhint %}
 
 ## 2. Solution: iOS devices
 
-Please make sure to double-check the following steps:
+Double-check the following steps:
 
 ### 0. Issue with iOS 16 Physical Devices / Simulator
 
-Some reports from Proxyman's users, that **Proxyman** and **Charles Proxy** could not capture any traffic from iOS 16 devices/simulator, even though they config the HTTP Proxy.
+Some users report that **Proxyman** and **Charles Proxy** could not capture any traffic from iOS 16 devices or simulators, even though the HTTP proxy is set.
 
-It's a bug from iOS, we have to wait for the Apple team to fix it.
+It's an iOS bug. If you see it on iOS 17, iOS 18 or iOS 26, use the same fix.
 
-To workaround:
+Workarounds:
 
-#### iOS 16 physical devices:&#x20;
+#### iOS physical devices
 
-* Forget the network and try to connect again.
-* Use [Atlantis Framework](https://github.com/ProxymanApp/atlantis) to capture the traffic
-* Use iOS 15 devices
+* Forget the Wi-Fi network, connect again, and set the HTTP proxy again.
+* Use the [Atlantis framework](https://github.com/ProxymanApp/atlantis) to capture the traffic.
 
-#### iOS 16 Simulator:
+#### iOS Simulator
 
-* Use iOS 15 Simulators
-* Use [Atlantis Framework](https://github.com/ProxymanApp/atlantis) to capture the traffic.
+* Follow the [iOS Simulator setup guide](../debug-devices/ios-simulator.md).
+* Use the [Atlantis framework](https://github.com/ProxymanApp/atlantis) to capture the traffic.
 
 {% content-ref url="ios-16-devices-issues.md" %}
 [ios-16-devices-issues.md](ios-16-devices-issues.md)
@@ -44,67 +43,69 @@ To workaround:
 
 ### 1. Make sure your Mac device and iOS/Android devices are on the same network
 
-If they're on a different network, they are unable to connect to each other.
+If they're on different networks, they can't connect to each other.
 
-### 2. Make sure the server IP and Port number must match with Proxyman
+### 2. Make sure the server IP and port match Proxyman
 
-![](../.gitbook/assets/IMG_4110.png)
+<figure><img src="../.gitbook/assets/IMG_4110.png" alt="iOS Configure Proxy screen set to Manual with server 192.168.0.101 and port 9090" width="375"><figcaption><p>Proxy settings on the iPhone</p></figcaption></figure>
 
-![](../.gitbook/assets/Screen_Shot_2020-03-10_at_20_37_01.png)
+<figure><img src="../.gitbook/assets/Screen_Shot_2020-03-10_at_20_37_01.png" alt="Proxyman iOS setup guide showing the same server 192.168.0.101 and port 9090"><figcaption><p>The same IP and port in Proxyman</p></figcaption></figure>
 
-### 3. Turn OFF all VPN apps from macOS and iOS/Android devices
+### 3. Turn OFF all VPN apps on macOS and iOS/Android devices
 
-By default, the VPN app will **force** all traffic through the VPN server instead of the Proxyman Proxy server (at 9090). Therefore, there are no requests that appear on the Proxyman app.
+By default, a VPN app **forces** all traffic through the VPN server instead of the Proxyman proxy server (port 9090). Therefore, no requests appear in Proxyman.
 
-Turn OFF all VPN apps will fix it:
+Turning OFF all VPN apps will fix it:
 
-* For **iOS** Devices: Navigate to Settings -> General -> VPN and make sure the VPN status is **OFF**
-* For **Android** Devices: Find the VPN setting on the Settings app and turn it OFF
-* For **macOS**: Quit all VPN apps
+* For **iOS** devices: Open Settings -> General -> VPN & Device Management -> VPN and make sure the VPN status is **Not Connected**.
+* For **Android** devices: Find the VPN setting in the Settings app and turn it OFF.
+* For **macOS**: Quit all VPN apps.
+
+If you can't turn off your VPN, see [Proxyman does not work with VPN apps](proxyman-does-not-work-with-vpn-apps.md).
 
 ### 4. Firewall settings (macOS)
 
-By default, a Firewall might block all incoming traffic to your mac. Thus, your remote devices might not be able to connect to Proxyman.
+The macOS firewall might block incoming connections to your Mac. Then your remote devices can't connect to Proxyman.
 
-On **macOS**: Navigate to **System Preference -> Security & Privacy -> Firewall tab -> Option**
+On **macOS**: Open **System Settings -> Network -> Firewall -> Options…**
 
 **Verify that:**
 
-* Block All incoming connections is **OFF**
-* Proxyman app **allows incoming connection**
-* If there is no Proxyman app, please add the Proxyman app by clicking on + button
-* Automatically allow built-in software to receive incoming connection is **ON**
-* Automatically allowing downloaded signed software to receive incoming connections is **ON**
+* Block all incoming connections is **OFF**
+* The Proxyman app is set to **Allow incoming connections**
+* If Proxyman is not in the list, add it with the **+** button
+* Automatically allow built-in software to receive incoming connections is **ON**
+* Automatically allow downloaded signed software to receive incoming connections is **ON**
 
-![Firewall setting on macOS](../.gitbook/assets/Screen_Shot_2020-03-10_at_20_46_17.png)
+![macOS Firewall options with Block all incoming connections off and Proxyman allowed](../.gitbook/assets/Screen_Shot_2020-03-10_at_20_46_17.png)
 
-### 4. Firewall Setting (Windows 10/11)
+### 5. Firewall settings (Windows 10/11)
 
-Windows 10/11 might block Proxyman, and iPhone/Android devices could not connect to the app. To fix it:
+Windows 10/11 might block Proxyman, so iPhone and Android devices can't connect to the app. To fix it:
 
-1. Search and open the "Windows Defender Firewall" app -> Click the "Advanced Setting" on the left panel
-2. &#x20;Select "Inbound Rules"
-3. Find Proxyman.exe -> Double-click to open the setting
-4. Select "Allow the Connection" in the General Tab
-5. Click OK
+1. Search for and open the "Windows Defender Firewall" app, then click "Advanced settings" on the left panel.
+2. Select "Inbound Rules".
+3. Find proxyman.exe and double-click it to open its settings.
+4. Select "Allow the connection" in the General tab.
+5. Click OK.
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-01-05 at 09.26.50@2x.png" alt=""><figcaption><p>Allow Proxyman on Windows Firewall</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/CleanShot 2023-01-05 at 09.26.50@2x.png" alt="Windows Defender Firewall inbound rule for proxyman.exe set to Allow the connection"><figcaption><p>Allow Proxyman in Windows Firewall</p></figcaption></figure>
 
-### 5. If you're using the Company Network, ask the Security team to open Proxyman's port 9090
+### 6. If you're on a company network, ask the Security team to open Proxyman's port 9090
 
-Some companies block certain ports by default. Therefore, your iOS devices couldn't access to Proxyman's port at 9090.&#x20;
+Some companies block certain ports by default. Then your iOS devices can't reach Proxyman on port 9090.
 
-### 6. Use Private Browser on Safari to open http://cert.proxyman.io or http://proxy.man/ssl
+### 7. Use a Private tab in Safari to open http://cert.proxyman.io or http://proxy.man/ssl
 
-### 7. I'm still unable to connect.
+### 8. I'm still unable to connect
 
-If you follow all the above steps and all configuration is correct but it hasn't resolved your cases yet.
+If you followed all the steps above and the configuration is correct, but it still doesn't work:
 
-Please try to **ON/OFF your Wifi, Forget the Wifi Network (iOS),** and **Restart the Computer**.
+Try to **turn Wi-Fi off and on, forget the Wi-Fi network (iOS),** and **restart your computer**.
 
-### 8. Still does not work? (iOS app only)
+### 9. Still doesn't work? (iOS app only)
 
-Manual Override the HTTP Proxy, install and trust Proxyman on iOS devices is hard. We understand that. Let's try Atlantis, which is an iOS framework that helps you do it automatically.
+Setting the HTTP proxy by hand and installing and trusting the Proxyman certificate on iOS devices is hard. We understand that. Try Atlantis, an iOS framework that does it for you.
 
 {% content-ref url="../atlantis/atlantis-for-ios.md" %}
 [atlantis-for-ios.md](../atlantis/atlantis-for-ios.md)
@@ -112,47 +113,47 @@ Manual Override the HTTP Proxy, install and trust Proxyman on iOS devices is har
 
 ## Android Devices and Android Emulators
 
-### 1. After setting HTTP Proxy in Wifi Setting, I could not open http://proxy.man/ssl
+### 1. After setting the HTTP proxy in the Wi-Fi settings, I can't open http://proxy.man/ssl
 
-* [Please follow the above troubleshooting](my-ios-devices-couldnt-connect-to-proxyman-via-proxy.md#1-make-sure-your-mac-device-and-ios-devices-are-on-the-same-network) ☝️&#x20;
-* Double-check the Wifi Connection in the Emulator. It must be Connected Status (not Limited Connection or No Internet)
+* [Follow the troubleshooting steps above](my-ios-devices-couldnt-connect-to-proxyman-via-proxy.md#1.-make-sure-your-mac-device-and-ios-android-devices-are-on-the-same-network) ☝️&#x20;
+* Double-check the Wi-Fi connection in the emulator. It must show Connected (not Limited Connection or No Internet).
 
-If it happens, please try to **forget the network** and **re-connect the Wifi.**
+If it doesn't, **forget the network** and **reconnect to the Wi-Fi.**
 
-<div align="center"><img src="../.gitbook/assets/Screen_Shot_2020-09-29_at_8_52_45_PM (1).png" alt="" width="375"></div>
+<div align="center"><img src="../.gitbook/assets/Screen_Shot_2020-09-29_at_8_52_45_PM (1).png" alt="Android Emulator Wi-Fi network details showing Connected status" width="375"></div>
 
-### 2. Install and trust Proxyman CA for Android with API 30+
+### 2. Install and trust the Proxyman CA on Android API 30+
 
-From Android Emulator API 30+, it requires extra steps to trust the Proxyman Certificate
+From Android Emulator API 30+, you need extra steps to trust the Proxyman certificate:
 
-* Open http://proxy.man/ssl from Google Chrome to download the certificate
-* Setting app -> Security -> Encryption & Credentials -> Install a Certificate -> CA Certificate -> Install Anyway and Select CA Proxyman Certificate in your storage
+* Open http://proxy.man/ssl in Google Chrome to download the certificate.
+* Open the Settings app -> Security -> Encryption & Credentials -> Install a certificate -> CA certificate -> Install anyway, and select the Proxyman CA certificate in your storage.
 
-You can verify that by opening Trusted Credentials -> User Tab
+You can verify it in Trusted credentials -> User tab.
 
-![Trust the Certificate](../.gitbook/assets/Screen_Shot_2020-09-29_at_9_00_46_PM.png)
+![Android Trusted credentials User tab listing the installed Proxyman CA certificate](../.gitbook/assets/Screen_Shot_2020-09-29_at_9_00_46_PM.png)
 
-### 3. My Android Physical Devices or Emulator connection is not stable.
+### 3. My Android physical device or emulator connection is not stable
 
-It probably dues to the Android devices/emulators, the only way might fix it is to change the DNS from your Mac or Android Device to **8.8.8.8**
+It's probably caused by the Android device or emulator. A possible fix is to change the DNS on your Mac or Android device to **8.8.8.8**.
 
-* **On macOS**: Open System Preference -> Network -> Select Wifi -> Advanced -> Select DNS Tab -> Enter **8.8.8.8** on DNS Server Table
-* **On Android Device**: Open Wifi Setting -> Set DNS as **8.8.8.8**
+* **On macOS**: Open System Settings -> Network -> Wi-Fi -> Details… -> DNS, then add **8.8.8.8** to the DNS Servers list.
+* **On an Android device**: Open the Wi-Fi settings and set the DNS to **8.8.8.8**.
 
-Read more at [https://github.com/ProxymanApp/Proxyman/issues/636](https://github.com/ProxymanApp/Proxyman/issues/636)
+Read more in [GitHub issue #636](https://github.com/ProxymanApp/Proxyman/issues/636).
 
-![](../.gitbook/assets/Screen_Shot_2020-10-12_at_08_18_35.png)
+![macOS Wi-Fi DNS settings with 8.8.8.8 added to DNS Servers](../.gitbook/assets/Screen_Shot_2020-10-12_at_08_18_35.png)
 
-### 4. The `adb` command not FOUND! when using Android Emulator Automatic Script
+### 4. The `adb` command is not found when using the Android Emulator automatic script
 
-If you attempt to override Android Emulator and get the following error:
+If you try to override the Android Emulator and get the following error:
 
 ```
 adb command line could not be found!!!
 ```
 
-Please install the `adb` command line then try again!&#x20;
+Install the `adb` command line tool, then try again.
 
-* [How to install ADB](../debug-devices/android-device/automatic-script-for-android-emulator.md#4-how-does-it-work)
+* [How to install ADB](../debug-devices/android-device/automatic-script-for-android-emulator.md#3.-how-to-use-it)
 
-### 5. If you debug with Android Emulator and could not know how to install and trust Proxyman Certificate, please consider using[ Automatic Script for Android Emulator](../debug-devices/android-device/automatic-script-for-android-emulator.md)
+### 5. Not sure how to install and trust the Proxyman certificate on an Android Emulator? Use the [Automatic Script for Android Emulator](../debug-devices/android-device/automatic-script-for-android-emulator.md)

@@ -1,24 +1,24 @@
 ---
 description: >-
-  Prevent caching HTTP Content and tell Proxyman to fetch your up-to-date
-  content from servers.
+  Use Proxyman No Caching to strip and override cache headers, so your app
+  always gets the latest HTTP response from the server instead of a cache.
 ---
 
 # No Caching
 
 ## 1. What's it?
 
-Prevent the server or client from caching your Request or Response, and you always get the latest change from the server.
+No Caching prevents the server or client from caching your requests and responses, so you always get the latest change from the server.
 
-No Caching tools will affect all HTTP Request and Response, which enabled SSL Proxying.
+The No Caching tool affects all HTTP requests and responses, and HTTPS traffic that has SSL Proxying enabled.
 
 ## 2. What's for?
 
-* If you would like to **see the latest HTTP Response changes** from the Server or Client and ignore all caching layers
+* When you would like to **see the latest HTTP Response changes** from the server or client and ignore all caching layers.
 
 ## 3. How it works
 
-No Caching tool will manipulate all requests by adding or removing caching HTTP Headers, which are described in the following table.
+The No Caching tool changes every request and response by adding or removing the caching HTTP headers in the following table.
 
 | HTTP Message | Remove                                       | Add                                                  |
 | ------------ | -------------------------------------------- | ---------------------------------------------------- |
@@ -27,9 +27,10 @@ No Caching tool will manipulate all requests by adding or removing caching HTTP 
 
 ## 4. How to use
 
-* Enable in **Tool Menu -> No Caching**
+* Enable it in **Tools** menu -> **No Caching**
+* When it's on, a **No Caching** badge shows at the bottom right of the main window.
 
-![No Caching Status on the bottom right of Proxyman app](<../.gitbook/assets/Screen Shot 2020-04-25 at 15.48.05.png>)
+![No Caching badge in the Proxyman status bar at the bottom right of the main window](<../.gitbook/assets/Screen Shot 2020-04-25 at 15.48.05.png>)
 
 {% hint style="info" %}
 **⌥⌘N:** Toggle the No Caching Tool.

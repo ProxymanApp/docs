@@ -1,41 +1,47 @@
 ---
-description: Read Charles Proxy Log file and import to Proxyman app
+description: >-
+  Convert Charles Proxy .chls session files to HAR and open them in Proxyman,
+  so you can keep working with traffic you captured in Charles.
 ---
 
 # Charles Proxy Converter
 
 ## 1. What's it?
 
-Proxyman is capable of converting and reading the `chls` files from Charles Proxy app to `har` format that Proxyman can understand.
+Proxyman can convert `chls` files from the Charles Proxy app to the `har` format, which Proxyman can read.
 
 {% hint style="success" %}
-It requires that Charles Proxy beis already installed in order to convert `chls` files&#x20;
+Charles Proxy must be installed on your Mac to convert `chls` files.
 {% endhint %}
 
-You can manually convert the files from the File menu -> Convert -> `chls` to `har`
+You can also convert files manually from the **File** menu -> **Convert** -> **From .chls to .har**.
 
-![](<../.gitbook/assets/Screen Shot 2020-05-03 at 18.31.39.png>)
+![Proxyman Converter sheet with the Charles Proxy app path, a source .chls file and the output .har file](<../.gitbook/assets/Screen Shot 2020-05-03 at 18.31.39.png>)
 
 ## 2. How does it work?
 
-In general, Proxyman uses [Convert CLI from Charles Proxy](https://www.charlesproxy.com/documentation/tools/command-line-tools/) to convert .chls to .har, which Proxyman can understand.
+Proxyman uses the [Charles Proxy command-line convert tool](https://www.charlesproxy.com/documentation/tools/command-line-tools/) to convert `.chls` files to `.har` files, which Proxyman can read.
 
-1.  As soon as you open `chls` file, Proxyman tries to find the Charles Proxy app, which has a bundle ID is&#x20;
+1.  When you open a `chls` file, Proxyman looks for the Charles Proxy app by its bundle ID:
 
     `com.xk72.Charles`
-2. Convert by using the convert command
+2. Proxyman converts the file with the `convert` command:
 
 ```
-$ ./Applications/Charles.app/Contents/MacOS/Charles convert ~/Desktop/input.chls ~/Desktop/output.har
+$ /Applications/Charles.app/Contents/MacOS/Charles convert ~/Desktop/input.chls ~/Desktop/output.har
 
 ```
 
-3\. The output is `har` formatted in your Desktop directory
+3\. The output is a `har` file. In this example, it's saved to your Desktop folder.
 
 ## 3. How to use?
 
 There are several ways to open `chls` files:
 
-* Open the `chls` file directly (Double-Click on the file, or Open With from Finder app)
-* Drag and drop the file to the Proxyman app
-* File -> Open and select `chls` files
+* Open the `chls` file directly (double-click the file, or use **Open With** in Finder)
+* Drag and drop the file into the Proxyman app
+* **File** -> **Open…** and select the `chls` file
+
+## Learn more
+
+* [Migrate from Charles to Proxyman](https://proxyman.com/posts/2020-07-03-Migrate_From_Charles_To_Proxyman)

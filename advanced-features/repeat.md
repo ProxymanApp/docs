@@ -1,36 +1,39 @@
 ---
-description: Quick make a request with the same param and body
+description: >-
+  Use Proxyman Repeat to resend a captured HTTP or HTTPS request with the same
+  headers and body, so you can check the latest server response fast.
 ---
 
 # Repeat
 
-### 1. What's it?
+## 1. What's it?
 
-Repeat tool is a useful tool for quickly making a new HTTP request with the same HTTP Header and Body for seeing the new response without changing from your browsers or clients.
+The Repeat tool sends a captured HTTP request again with the same HTTP headers and body. You can see the new response without going back to your browser or client app.
 
-### 2. What's it for?
+## 2. What's it for?
 
-* Quickly make an HTTP/HTTPS Request for testing the newest response from the server.
-* It's useful for developers to test the change of the server without repeating the request manually.
+* Quickly send an HTTP/HTTPS request again to see the newest response from the server.
+* Test a change on your server without repeating the request by hand.
 
 {% hint style="info" %}
-Repeat tool only supports HTTP/HTTPS Requests. Repeat on WS/WSS traffic might be failed.
+The Repeat tool only supports HTTP/HTTPS requests. Repeating WS/WSS traffic may fail.
 {% endhint %}
 
 {% hint style="info" %}
-Repeated requests can be modified by the Breakpoint, Map Local, and Scripting tool if it matches any rules.
+The Breakpoint, Map Local, and Scripting tools can modify repeated requests if they match any rules.
 {% endhint %}
 
-### 3. How to use
+## 3. How to use
 
-* Right-Click on a single or multiple Request(s) -> **Repeat**
+* Right-click on one or more requests -> **Repeat**
 
-![Quickly repeat the current requests](../.gitbook/assets/Screen\_Shot\_2022-06-23\_at\_14\_49\_23.jpg)
+![Proxyman context menu on a captured request with Repeat highlighted](../.gitbook/assets/Screen\_Shot\_2022-06-23\_at\_14\_49\_23.jpg)
 
 {% hint style="info" %}
-⌘ ⏎ : Repeat the current selected request.
+⌘ ⏎ : Repeat the selected request.
 {% endhint %}
 
-### &#x20;4. Settings
+## 4. Settings
 
-* **Request Timeout**: In Setting -> Tools Tab -> Request Timeout: Define a second that the Request will timeout. Use 0 to disable it. Available on Proxyman 4.13.0 or later
+* **Request Timeout**: Open the [Compose](compose.md) window -> click the **⋯** button at the bottom -> **Request Timeout**. Pick 15, 30, or 60 seconds, a custom value, or **0 (No Timeout)**. Repeated requests use the same timeout. Available on Proxyman 4.13.0 or later.
+* **Use No-Cache on Repeated Requests**: In **Settings** -> **Tools**. Repeated requests ignore caching and always fetch the response from the server.

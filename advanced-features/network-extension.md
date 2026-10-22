@@ -1,7 +1,7 @@
 ---
 description: >-
-  Capture HTTP/HTTPS traffic from Mac apps that ignore proxy settings with
-  Proxyman Network Extension.
+  Use Proxyman Network Extension to capture HTTP and HTTPS traffic from every
+  app on your Mac, including apps and scripts that ignore proxy settings.
 ---
 
 # Network Extension
@@ -36,21 +36,15 @@ Regular proxy mode relies on apps sending their requests through the proxy.
 
 ## 4. How to install the Network Extension?
 
-1. There are 2 way to do it
+1. Turn on Network Extension in one of two ways:
 
-* Open Proxyman -> **Settings** -> **Network Extension**.
+* Open Proxyman -> **Settings** -> **Network Extension**. Turn on **Enable Network Extension**. Click **Install and Enable** if shown.
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-10-01 at 19.56.42.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2026-10-01 at 19.56.42.jpg" alt="Proxyman Settings with the Network Extension pane and the Enable Network Extension toggle"><figcaption><p>Turn on Network Extension in Settings</p></figcaption></figure>
 
-* Turn on **Enable Network Extension**. Click **Install and Enable** if shown.
+* Or click the status bar at the top of the main window (Proxyman | Listening on ...) and turn on **Network Extension**.
 
-or
-
-* Click in the Status Bar and switch the Network Extension ON
-
-<figure><img src="../.gitbook/assets/Screenshot 2026-10-01 at 19.56.31.jpg" alt="" width="563"><figcaption></figcaption></figure>
-
-
+<figure><img src="../.gitbook/assets/Screenshot 2026-10-01 at 19.56.31.jpg" alt="Proxyman status popover with the Recording, macOS proxy and Network Extension toggles" width="563"><figcaption><p>Turn on Network Extension from the status popover</p></figcaption></figure>
 
 2. Open **System Settings** -> **General** -> **Login Items & Extensions**. Under **Extensions**, select **By Category** -> **Network Extensions**, then enable Proxyman.
 3. When macOS asks to add the network configuration, click **Allow**.
@@ -59,12 +53,12 @@ or
 
 <figure><img src="../.gitbook/assets/install_proxyman_network_extension_step_2.jpeg" alt="Enable the Proxyman toggle in Network Extensions"><figcaption><p>Allow Proxyman Network Extension</p></figcaption></figure>
 
-5. Wait until Proxyman shows "Capturing HTTP and HTTPS from local applications."
+4. Wait until Proxyman shows "Capturing HTTP and HTTPS from local applications."
 
 ## 5. How to use?
 
 1. Keep Proxyman open with Network Extension enabled.
-2. From this point, The network extension will capture all traffic from your Mac, and proxy to Proxyman
+2. Network Extension now captures traffic from the apps on your Mac and sends it to Proxyman.
 3. To read HTTPS content, [install and trust the Proxyman certificate](../debug-devices/macos.md), then enable [SSL Proxying](../basic-features/ssl-proxying.md) for the app or domain.
 4. Make a new request from your app, browser, or script. The request appears in Proxyman.
 
@@ -103,3 +97,7 @@ Uninstalling stops capture and closes connections using the extension. It also r
 Use `proxyman-cli network-extension` to read status, install, uninstall, enable, disable, or retry. Proxyman must be open. Use `install` to install without turning capture on, or `enable` to start capture and install the extension if needed. macOS approval or a restart may still be required.
 
 See the [Network Extension command-line guide](../command-line.md#16.-network-extension) for commands, JSON status fields, and exit codes.
+
+## Learn more
+
+* [Introducing Network Extension: capture Mac traffic without proxy setup](https://proxyman.com/posts/2026-10-06-introducing-network-extension)

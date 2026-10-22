@@ -4,21 +4,21 @@ description: "Capture HTTP/HTTPS traffic from Docker services and configure cont
 
 # Docker
 
-### 1. Capture traffic from your Docker Container
+## 1. Capture traffic from your Docker Container
 
-By default, Proxyman can capture all traffic that you access from your Docker Container if you access it from your Mac Devices.
+By default, Proxyman can capture the requests that you send from your Mac to a service running in a Docker container.
 
-To elaborate, here is the sample Docker Container:
+For example, here is a sample Docker container:
 
-1. Set up a simple HTTP Server by NodeJS + Express. Then Dockerizing it. You can find it at [https://nodejs.org/en/docs/guides/nodejs-docker-webapp/](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
-2. Makes sure we expose your server via port 8080.
-3. You can verify it by opening http://localhost:8080 on Safari.
+1. Set up a simple HTTP server with NodeJS + Express, then Dockerize it. You can find a guide at [https://nodejs.org/en/docs/guides/nodejs-docker-webapp/](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
+2. Make sure you expose your server on port 8080.
+3. You can verify it by opening http://localhost:8080 in Safari.
 
-### 2. Capture traffic inside Docker Containers
+## 2. Capture traffic inside Docker Containers
 
-Read more at [https://github.com/ProxymanApp/Proxyman/issues/419#issuecomment-1059096490](https://github.com/ProxymanApp/Proxyman/issues/419#issuecomment-1059096490)
+Read the steps in [GitHub issue #419](https://github.com/ProxymanApp/Proxyman/issues/419#issuecomment-1059096490).
 
-### 3. Alternative Solution:
+## 3. Alternative Solution:
 
 1. Add docker-compose.proxyman.yml. Replace \<php8.1-fpm-xdebug> with your service
 
@@ -33,7 +33,7 @@ services:
       https_proxy: host.docker.internal:9090
 ```
 
-2. Start the Docker:
+2. Start Docker:
 
 `docker-compose -f docker-compose.yml -f docker-compose.proxyman.yml up -d`
 

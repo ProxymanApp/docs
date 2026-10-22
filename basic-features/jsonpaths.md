@@ -1,28 +1,30 @@
 ---
-description: Query your JSON Body with JSON Path Syntax easily
+description: >-
+  Query JSON request and response bodies in Proxyman with JSONPath. Learn the
+  syntax, filter operators, and path examples you can copy.
 ---
 
 # JSONPath
 
 ## 1. What's it?
 
-JSONPath is a tool for quickly filtering from JSON data.
+JSONPath is a query language that quickly filters JSON data. In Proxyman, you can use it in the JSON tab, the Treeview tab, and [custom columns](custom-header-column.md).
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-08-25 at 14.04.30.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2026-08-25 at 14.04.30.jpg" alt="Proxyman JSON tab filtering a response body with a JSON Path expression"><figcaption></figcaption></figure>
 
-### 2. How to use
+## 2. How to use
 
-1. In the Request / Response Panel -> Click the "+" button
-2. Select JSON Tab
-3. The filter bar will appear on top of the JSON Body
-4. You can select JSON Path or JQ filter mode
+1. In the Request or Response panel, click the **+** button
+2. Select **JSON** to add the JSON tab
+3. The filter bar appears above the JSON body
+4. Select the **JSON Path** or **jq** filter mode
 
-### 3. Syntax
+## 3. Syntax
 
 | Operator                  | Description                                                         |
 | ------------------------- | ------------------------------------------------------------------- |
 | `$`                       | The root element to query. This starts all path expressions.        |
-| `@`                       | The current node is being processed by a filter predicate.          |
+| `@`                       | The current node being processed by a filter predicate.             |
 | `*`                       | Wildcard. Available anywhere a name or numeric are required.        |
 | `..`                      | Deep scan. Available anywhere a name is required.                   |
 | `.<name>`                 | Dot-notated child                                                   |
@@ -45,7 +47,7 @@ Filters are logical expressions used to filter arrays. A typical filter would be
 | >=       | left is greater than or equal to the right                           |
 | =\~      | left matches regular expression \[?(@.name =\~ /foo.\*?/i)]          |
 | in       | left exists in right \[?(@.size in \['S', 'M'])]                     |
-| nin      | left does not exists in right                                        |
+| nin      | left does not exist in right                                         |
 | subsetof | left is a subset of right \[?(@.sizes subsetof \['S', 'M', 'L'])]    |
 | anyof    | left has an intersection with right \[?(@.sizes anyof \['M', 'L'])]  |
 | noneof   | left has no intersection with right \[?(@.sizes noneof \['M', 'L'])] |
@@ -108,7 +110,7 @@ Given the JSON Data.
 | $..book\[:2]                            | All books from index 0 (inclusive) until index 2 (exclusive) |
 | $..book\[1:2]                           | All books from index 1 (inclusive) until index 2 (exclusive) |
 | $..book\[-2:]                           | Last two books                                               |
-| $..book\[2:]                            | Book number two from tail                                    |
+| $..book\[2:]                            | All books from index 2 (inclusive) to the end                |
 | $..book\[?(@.isbn)]                     | All books with an ISBN number                                |
 | $.store.book\[?(@.price < 10)]          | All books in store cheaper than 10                           |
 | $..book\[?(@.price <= $\['expensive'])] | All books in store that are not "expensive"                  |
@@ -116,6 +118,6 @@ Given the JSON Data.
 | $..\*                                   | Give me everything                                           |
 | $..book.length()                        | The number of books                                          |
 
-### Reference
+## Reference
 
-* [https://github.com/json-path/JsonPath](https://github.com/json-path/JsonPath)
+* [Jayway JsonPath on GitHub](https://github.com/json-path/JsonPath)

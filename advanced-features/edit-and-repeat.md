@@ -1,25 +1,24 @@
 ---
-description: "Edit and resend captured HTTP requests in Proxyman to test changes to URLs, queries, headers, and bodies."
+description: "Use Proxyman Edit & Repeat to change the URL, query, headers, or body of a captured HTTP request, send it again, and check the new response."
 ---
 
 # Edit & Repeat
 
-### 1. What's it?
+## 1. What's it?
 
-Edit & Repeat is a handy tool for developers who need to test the Endpoint directly on Proxyman app without making a new request from your browser or client app.
+Edit & Repeat is a handy tool to test an endpoint directly in the Proxyman app, without making a new request from your browser or client app.
 
-* Rapidly change a **Query**, **Header**, **Body** of the selected request and test the Response from the server
-* Easily reproduce the bug from the server with a different set of params.
-* Support Form and JSON format.
-* Edit by Raw Message
-* Review Response data on the Right Panel (Proxyman 3.6.0+).
+* Quickly change the **Query**, **Header**, or **Body** of the selected request and test the response from the server.
+* Easily reproduce a server bug with a different set of parameters.
+* Supports Form and JSON formats.
+* Edit the Raw Message.
+* Review the response data on the right panel (Proxyman 3.6.0+).
 
-![Edit and repeat the request](../.gitbook/assets/174536780-6ced0dc3-df59-4c51-a1a5-dc72cb30140f.jpeg)
+![Proxyman Compose window with an edited request on the left and the JSON response on the right](../.gitbook/assets/174536780-6ced0dc3-df59-4c51-a1a5-dc72cb30140f.jpeg)
 
-### 2. How to use it?
+## 2. How to use it?
 
-1. Simply select your request -> Right Click -> Edit & Repeat
-2. The request data (Header, URL, Query, Body) is preserved and it's ready to edit
+1. Select your request -> Right-click -> **Edit and Repeat…** (⌥⌘⏎)
+2. Proxyman keeps the request data (Header, URL, Query, Body), so it's ready to edit.
 
-![Edit and repeat on the selected request](<../.gitbook/assets/Screen Shot 2022-06-23 at 14.58.23.png>)
-
+![Proxyman context menu on a captured request with Edit and Repeat highlighted](<../.gitbook/assets/Screen Shot 2022-06-23 at 14.58.23.png>)

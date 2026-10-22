@@ -1,30 +1,34 @@
 ---
 description: >-
-  Explain how to use Command Palette on Proxyman to quickly find and open any
-  Tools, features with few clicks
+  Open the Proxyman Command Palette with ⌘P to search and toggle debugging
+  tools, open setup guides, and pin the actions you use most.
 ---
 
 # Command Palette
 
 ## 1. What's it?
 
-Introduce a global Command Palette that helps developers:
+The global Command Palette helps you:
 
-* Quickly search Debugging Tools
-* Toggle Debugging Tools
-* Open a new Guideline for iOS, Simulator, Android, and Emulators&#x20;
-* Pin your most used action
+* Quickly search debugging tools
+* Turn debugging tools on or off
+* Open setup guides for iOS devices, iOS Simulators, Android devices, and Android Emulators&#x20;
+* Pin your most-used actions
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-10-03 at 20.39.57.jpg" alt="Proxyman with Command Palette"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-10-03 at 20.39.57.jpg" alt="Proxyman Command Palette searching for simulator with iOS, tvOS and visionOS Simulator setup guides"><figcaption></figcaption></figure>
 
 {% hint style="success" %}
-Use ⌘⇧P to open the Command Palette Windows
+Press ⌘P, or select **View** → **Show Command Palette**, to open the Command Palette. In Proxyman 6.0.0 to 6.10.0, the shortcut is ⌘⇧P.
 {% endhint %}
 
 {% hint style="warning" %}
-Command Palette is available on Proxyman macOS 5.26.0 or later
+Command Palette is available on Proxyman for macOS 6.0.0 or later.
 {% endhint %}
 
 ## 2. Missing your shortcut?
 
-If you could not find your shortcut in the Command Palette view, please request it in our GitHub Public Tracker at [https://github.com/ProxymanApp/Proxyman/issues](https://github.com/ProxymanApp/Proxyman/issues)
+If you can't find your shortcut in the Command Palette, please request it on our [GitHub public issue tracker](https://github.com/ProxymanApp/Proxyman/issues).
+
+## Learn more
+
+* [Useful shortcuts that boost your productivity](https://proxyman.com/posts/2019-08-20-Useful-shortcuts-that-boost-your-productivity)

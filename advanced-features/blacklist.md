@@ -27,7 +27,7 @@ Block List supports a few block actions to suit your needs:
 
 <table><thead><tr><th width="238.87890625">Block Action</th><th>Description</th></tr></thead><tbody><tr><td>Block &#x26; Hide Request</td><td>Matched requests are blocked and don't show in the app.</td></tr><tr><td>Block &#x26; Display Requests</td><td>Matched requests are blocked, but the blocked requests still show in the app.</td></tr><tr><td>Hide, but not Block</td><td>Only hides the matched requests without blocking them. Useful when you want to hide annoying requests but not block them.</td></tr></tbody></table>
 
-![Proxyman Block List rule editor with a wildcard matching rule and the Block and Hide Request action](<../.gitbook/assets/Screen Shot 2022-01-10 at 14.43.38.png>)
+<figure><img src="../.gitbook/assets/proxyman-block-list-rule-editor.jpg" alt="Proxyman Block List rule editor with the Action menu: Block &#x26; Hide, Block &#x26; Display, and Hide, but not Block"><figcaption><p>Choose a block action</p></figcaption></figure>
 
 ## 3. How to use it?
 

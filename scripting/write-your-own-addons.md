@@ -18,7 +18,7 @@ You can write your own addon to do what the built-in addons don't do yet. You ca
 
 1. Open the user addons folder at `~/Library/Application\ Support/com.proxyman.NSProxy/users`. Or, in the Script Editor, click **More** -> **Documentations** -> **Open Custom Addons Folder...**
 
-![Proxyman Script Editor More menu with Documentations and Open Custom Addons Folder](<../.gitbook/assets/Screen Shot 2021-08-13 at 20.37.39.png>)
+<figure><img src="../.gitbook/assets/proxyman-script-open-custom-addons-folder.jpg" alt="Proxyman Script Editor More menu with Documentations open and Open Custom Addons Folder highlighted"><figcaption><p>Open the Custom Addons folder</p></figcaption></figure>
 
 2\. Duplicate the `HelloWorld.js` file and rename it to **MyAwesomeAddon.js**
 

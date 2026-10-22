@@ -17,7 +17,7 @@ The Bypass Proxy List helps developers to:
 1. Open the Bypass Proxy List from **Tools** → **Proxy Settings** → **Bypass Proxy Settings…**. You can also open **Tools** → **SSL Proxying List…** and click **Bypass Proxy Setting…**
 2. Enter your list of domains, separated by commas. Simple wildcards (`*` and `?`) are supported.
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-06-27 at 08.28.08@2x.jpg" alt="Proxyman Bypass Proxy Settings sheet with a comma-separated list of domains over the SSL Proxying List window"><figcaption><p>Define the Bypass Proxy List</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-bypass-proxy-settings.jpg" alt="Proxyman Bypass Proxy Settings sheet with a comma-separated domain list and a note that * and ? wildcards work"><figcaption><p>Define the Bypass Proxy List</p></figcaption></figure>
 
 ## 3. How does it work?
 

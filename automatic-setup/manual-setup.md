@@ -40,7 +40,7 @@ You have to read the technical documentation of each library and manually config
 4. Done ✅
 5. Start your backend server or run a script => Proxyman automatically captures all HTTP/HTTPS traffic
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-04-22 at 15.23.20@2x.jpg" alt="Proxyman Manual Setup window with the command to copy, next to iTerm running the pasted command"><figcaption><p>Manual Setup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-manual-setup-window.jpg" alt="Proxyman Manual Setup window with the source command for your Terminal and the Copy to Clipboard button"><figcaption><p>Copy the command to your Terminal</p></figcaption></figure>
 
 ### Support Libraries:
 

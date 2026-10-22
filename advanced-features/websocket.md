@@ -38,8 +38,6 @@ Proxyman automatically captures your WS/WSS traffic from Google Chrome, without 
 2. Make some WS/WSS traffic, for example on [https://echo.websocket.org/.ws](https://echo.websocket.org/.ws)
 3. Inspect the WS/WSS data in Proxyman
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-01-31 at 09.41.12.png" alt="Proxyman Websocket tab listing sent and received text frames with their times"><figcaption><p>Proxyman captures WebSocket traffic</p></figcaption></figure>
-
 ### Websocket with Protobuf Payload
 
 From Proxyman macOS 6.5.0 or later, Proxyman can decode Protobuf in your WebSocket messages.
@@ -65,7 +63,7 @@ If your iOS app uses **URLSessionWebSocketTask** or iOS WebSocket libraries, suc
 2. In Proxyman: **Tools** -> **Proxy Settings** -> **SOCKS Proxy Settings…** -> enable it. Take note of the port.
 3. In the main Proxyman window, take note of the current IP in the toolbar.
 
-<figure><img src="../.gitbook/assets/proxyman_capture_websocket_4.jpeg" alt="Proxyman status popover showing the Mac IP address, proxy port and SOCKS port"><figcaption><p>Get Proxyman current IP</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-status-popover.jpg" alt="Proxyman status popover with IP 192.168.64.4, Proxy Port 9090, and Recording, macOS proxy and Network Extension toggles"><figcaption><p>Get Proxyman current IP</p></figcaption></figure>
 
 4. In your app: Configure a SOCKS proxy. Make sure it's only on for debug builds, for example with a switch. You don't want this setting in your release build.
 

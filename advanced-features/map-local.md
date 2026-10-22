@@ -27,7 +27,7 @@ Mock API responses with Map Local
 * Define a response with a Status Code, Headers, and Body, and map it to a given request. You can test edge cases without waiting for a server update.
 * **Mock a fake API with a local file**: Try out test APIs that are not in production yet.&#x20;
 
-![Proxyman Map Local editor with the matching URL, status code, response headers and JSON body](../.gitbook/assets/Screen\_Shot\_2021-08-09\_at\_11\_28\_40.png)
+<figure><img src="../.gitbook/assets/proxyman-map-local-editor.jpg" alt="Proxyman Map Local editor for GET https://httpbin.proxyman.app/get in Local File mode with a 200 OK JSON response"><figcaption><p>Map Local editor</p></figcaption></figure>
 
 ### With an HTTP Message
 
@@ -59,7 +59,9 @@ Content-Type: application/json
 2. Change the response body directly in the editor.
 3. Make a request and check the new response body.
 
-<figure><img src="../.gitbook/assets/Screen_Shot_2022-09-23_at_13_23_11.jpg" alt="Proxyman context menu on a request with Tools and Map Local highlighted"><figcaption><p>Create a Map Local rule with the current response</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-map-local-context-menu.jpg" alt="Proxyman right-click menu on a request with Tools > Map Local... highlighted"><figcaption><p>Create a Map Local rule with the current response</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/proxyman-map-local-default-folder.jpg" alt="Proxyman Map Local More menu with Default Local File Folder open: Choose Folder, Use Default Folder, Reveal in Finder"><figcaption><p>Default Local File Folder</p></figcaption></figure>
 
 ## 4. Map Local with GraphQL Requests
 

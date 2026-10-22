@@ -49,8 +49,6 @@ If you've done this step, you can skip to the next step.
 * Search for Proxy and open the proxy settings
 * Select Use system proxy settings, or enter the Proxy IP and Port manually
 
-![Firefox Connection Settings with Use system proxy settings selected](../.gitbook/assets/Screen_Shot_2020-09-19_at_14_33_17.png)
-
 ### 3. Install Proxyman CA to Firefox
 
 1. Open `http://proxy.man/ssl` in Firefox and download the certificate to your Downloads folder
@@ -60,8 +58,6 @@ http://proxy.man/ssl is a local HTTP server, for better security. Please make su
 {% endhint %}
 
 2\. Open Firefox Settings (CMD+,) and open the View Certificates window
-
-![Firefox settings search for cert, with the View Certificates button](../.gitbook/assets/Screen_Shot_2020-06-23_at_10_27_27.png)
 
 3\. Open the Authorities tab and click the Import button
 

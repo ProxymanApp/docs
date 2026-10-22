@@ -10,7 +10,7 @@ description: >-
 
 From Proxyman 2.27.0, Proxyman shows a multipart/form-data body as a table in the **Multipart** tab of the Request panel.
 
-![Proxyman Multipart tab listing each part of a multipart/form-data request with Export buttons](../.gitbook/assets/119465504-ea9a5580-bd6d-11eb-9d4d-3725a37f09ec.png)
+<figure><img src="../.gitbook/assets/proxyman-multipart-form-data-tab.jpg" alt="Proxyman Multipart tab listing the parts of a POST request with Preview and Export buttons on each row"><figcaption><p>Multipart tab in the Request panel</p></figcaption></figure>
 
 ## 2. Benefit
 

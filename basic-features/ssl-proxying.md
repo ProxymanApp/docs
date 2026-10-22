@@ -27,7 +27,7 @@ You can define rules for:
 * **Include List**: Intercept the traffic from apps/domains in the Include List
 * **Exclude List**: Ignore all traffic from apps/domains in the Exclude List
 
-![Proxyman SSL Proxying List window with an Include List and an Exclude List of apps and domains](../.gitbook/assets/ssl\_proxying.png)
+<figure><img src="../.gitbook/assets/proxyman-ssl-proxying-list.jpg" alt="Proxyman SSL Proxying List window, Include List tab with jsonplaceholder.typicode.com, httpbin.proxyman.app and Safari"><figcaption><p>SSL Proxying Include List</p></figcaption></figure>
 
 {% hint style="info" %}
 Press ⌘⌥P to quickly open the SSL Proxying List.
@@ -55,14 +55,14 @@ You must set up the Proxyman Certificate before intercepting any HTTPS requests.
 
 ### How to enable SSL Proxying on a particular domain or app
 
-* Right-click the app or domain in the left panel → **Enable SSL Proxying**
+* Right-click the app or domain in the left panel → **Enable SSL Proxying**. If it is already on, the menu shows **Disable SSL Proxying** instead.
 
-<figure><img src="../.gitbook/assets/domain.jpeg" alt="Proxyman sidebar context menu on a domain with Enable SSL Proxying highlighted"><figcaption><p>Add a domain to the SSL Proxying List</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-open-as-new-tab-menu.jpg" alt="Proxyman sidebar right-click menu on a domain with the SSL Proxying toggle below Open as New Tab and Open as Split View"><figcaption><p>Sidebar menu for a domain</p></figcaption></figure>
 
 * Right-click the request in the main table → **Enable SSL Proxying**
 * Select the request and enable SSL Proxying in the Response panel.
 
-<figure><img src="../.gitbook/assets/2.jpeg" alt="Proxyman Response panel for an encrypted HTTPS response with buttons to enable SSL Proxying"><figcaption><p>Enable the entire app or a single domain</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-enable-ssl-proxying-response-panel.jpg" alt="Proxyman Response panel for an encrypted HTTPS response with Enable only this domain and Enable all domains buttons"><figcaption><p>Enable the entire app or a single domain</p></figcaption></figure>
 
 ## Learn more
 

@@ -571,7 +571,7 @@ function onResponse(context, url, request, response) {
 }
 ```
 
-![Proxyman main table with rows colored and commented by a script](../.gitbook/assets/Screen_Shot_2021-08-13_at_09_27_36.png)
+<figure><img src="../.gitbook/assets/proxyman-highlight-color-comment.jpg" alt="Proxyman request list with highlighted rows, one strikethrough row, and notes in the Comment column"><figcaption><p>Rows with colors and comments</p></figcaption></figure>
 
 ## Import Files with require()
 

@@ -34,7 +34,7 @@ Proxyman v4.7.0 or later can capture HTTP/HTTPS traffic from Python, Ruby, NodeJ
 1. Open Proxyman -> **Setup** menu -> **Automatic Setup…**
 2. Click **Open New Terminal…**
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-03-18 at 10.54.37.jpg" alt="Proxyman Automatic Setup window with the Open New Terminal button and supported Golang libraries"><figcaption><p>Start a pre-configured Terminal</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-automatic-setup-window.jpg" alt="Proxyman Automatic Setup window with Open New Terminal for NodeJS, Ruby, Python and Golang scripts"><figcaption><p>Start a pre-configured Terminal</p></figcaption></figure>
 
 3. Accept the AppleScript permission prompt if needed.
 4. A new Terminal window opens. Start your Python backend server or run your scripts there. Proxyman captures all their traffic.

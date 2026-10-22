@@ -31,7 +31,7 @@ Proxyman v4.7.0 or later can capture HTTP/HTTPS traffic from NodeJS, Python and 
 4. A new Terminal window opens. Start your Python backend server or run your scripts there. Proxyman captures all their traffic.
 5. Done ✅
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-04-22 at 15.18.19@2x.jpg" alt="Proxyman Automatic Setup window with the Open New Terminal button for NodeJS, Ruby and Python"><figcaption><p>Open a pre-configured Terminal with Automatic Setup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-automatic-setup-window.jpg" alt="Proxyman Automatic Setup window with Terminal App, Web Browsers and ElectronJS App sections"><figcaption><p>Open a pre-configured Terminal with Automatic Setup</p></figcaption></figure>
 
 See [I could not see any HTTP traffic from my NodeJS, Python, or Ruby scripts](i-could-not-see-any-http-traffic-from-my-nodejs-python-or-ruby-scripts.md) for more details.
 

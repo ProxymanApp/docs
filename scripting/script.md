@@ -21,7 +21,7 @@ Proxyman offers a Scripting tool. You can write JavaScript code to change the re
 * Designed to replace Rewrite GUI Tool from Charles Proxy
 * Share state between scripts in the current session with [Shared State or Environment Variables](environment-variables.md)
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-01-07 at 14.52.47.jpg" alt="Proxyman Script Editor with matching rule, Request and Response checkboxes, onRequest and onResponse code"><figcaption><p>Scripting Tool</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-script-editor.jpg" alt="Proxyman Script Editor with a POST rule, Request and Response checked, Run as Mock API, and onRequest and onResponse code"><figcaption><p>Scripting Tool</p></figcaption></figure>
 
 {% content-ref url="snippet-code.md" %}
 [snippet-code.md](snippet-code.md)
@@ -315,9 +315,7 @@ This is useful when the real REST API is not available yet. You can define and t
 To enable the Mock API:
 
 1. Open the Scripting Tool -> Select the Script
-2. Enable the **Run as Mock API** checkbox.
-
-![Proxyman Scripting window with the Run as Mock API checkbox enabled for a script](../.gitbook/assets/Screen_Shot_2021-09-17_at_14_59_30.png)
+2. Enable the **Run as Mock API** checkbox, next to the **Request** and **Response** checkboxes in the Script Editor (see the Script Editor screenshot above).
 
 Then you can define a Response as usual:
 

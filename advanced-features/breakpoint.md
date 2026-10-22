@@ -35,13 +35,13 @@ The Breakpoint tool stops an outgoing request or an incoming response, so you ca
 * Modify HTTP Body of Request/Response
 * Change Response HTTP Status Code.
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-06-28 at 19.24.54.jpg" alt="Proxyman Breakpoint window paused on a response with editable headers"><figcaption><p>Modify the headers, URL, status code, and body</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-breakpoint-window-edit-request.jpg" alt="Proxyman Breakpoint window paused on a POST request with editable headers and the Apply &#x26; Execute button"><figcaption><p>Modify the headers, URL, status code, and body</p></figcaption></figure>
 
 ### Raw HTTP Message
 
 From Proxyman macOS 6.12.0 or later, you can switch to the Raw tab to modify the Request/Response HTTP message. It lets you edit all the data in one place.
 
-<figure><img src="../.gitbook/assets/raw_tab.jpg" alt="Proxyman Breakpoint Raw tab with the full response status line, headers and JSON body"><figcaption><p>Edit the raw HTTP message</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-breakpoint-raw-tab.jpg" alt="Proxyman Breakpoint Raw tab with a valid POST request message, headers and JSON body"><figcaption><p>Edit the raw HTTP message</p></figcaption></figure>
 
 ### Breakpoint Actions
 
@@ -80,8 +80,6 @@ You can create a Breakpoint rule this way:
 5. Click **Add** to create the rule.
 6. Send the request again. Proxyman opens the Breakpoint window, and you can modify the data.
 7. Click **Apply & Execute** to send the request/response.
-
-<figure><img src="../.gitbook/assets/Screenshot 2026-06-28 at 19.24.05.jpg" alt="Proxyman Breakpoint rule for an httpbin.proxyman.app URL with Breakpoint on Response checked"><figcaption></figcaption></figure>
 
 ## Learn more
 

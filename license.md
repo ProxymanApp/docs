@@ -60,7 +60,7 @@ If you're the owner of the Proxyman license key, you can manage your devices by 
 6. Done ✅
 7. Try to activate the License Key again.
 
-<figure><img src=".gitbook/assets/CleanShot 2024-06-03 at 15.05.31@2x.jpg" alt="Proxyman External Proxy settings with Web Proxy (HTTP) and Secure Web Proxy (HTTPS) enabled and a host and port" width="563"><figcaption><p>How to use External Proxy to Activate Proxyman License key</p></figcaption></figure>
+<figure><img src=".gitbook/assets/proxyman-external-proxy-settings.jpg" alt="Proxyman External Proxy settings with Web Proxy (HTTP) and Secure Web Proxy (HTTPS) set to proxy.example.com:8080" width="563"><figcaption><p>Use External Proxy to activate your license key</p></figcaption></figure>
 
 ### iOS app
 

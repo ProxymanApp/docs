@@ -24,11 +24,11 @@ Here is what a published Gist looks like: [example Proxyman Gist](https://gist.g
 
 To choose between a private and a public Gist, open **Proxyman** -> **Settings** -> **GitHub**.
 
-![Proxyman GitHub settings with Gist permission authorized and options to publish a private or public Gist](<../.gitbook/assets/Screen Shot 2021-05-31 at 15.54.36.png>)
+<figure><img src="../.gitbook/assets/proxyman-settings-github-gist.jpg" alt="Proxyman Settings GitHub tab with the Authorize button and options to publish a Private or Public Gist"><figcaption><p>GitHub Gist settings</p></figcaption></figure>
 
 ## 3. How to use
 
 1. Select your requests on the main table view
 2. Right-click to open the context menu -> **Export** -> **Publish to Gist…**
 
-![Proxyman request context menu with Export > Publish to Gist selected](../.gitbook/assets/Screen\_Shot\_2021-05-31\_at\_15\_54\_31.png)
+<figure><img src="../.gitbook/assets/proxyman-publish-to-gist-menu.jpg" alt="Proxyman right-click menu on a request with Export > Publish to Gist... highlighted"><figcaption><p>Export > Publish to Gist</p></figcaption></figure>

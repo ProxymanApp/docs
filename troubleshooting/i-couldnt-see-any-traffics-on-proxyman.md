@@ -64,7 +64,7 @@ By default, Proxyman overrides the system HTTP proxy with the `networksetup` com
 
 \=> Install the Proxy Helper Tool. It overrides the system HTTP proxy properly. Open Proxyman **Settings** -> **Advanced** -> **Proxy Helper Tool** -> **Install**.
 
-![Proxyman Advanced settings showing the Proxy Helper Tool installed](../.gitbook/assets/Screen\_Shot\_2020-10-12\_at\_08\_24\_05.png)
+<figure><img src="../.gitbook/assets/proxyman-settings-advanced-proxy-helper-tool.jpg" alt="Proxyman Advanced settings with the Proxy Helper Tool installed (version 1.7.0) and an Uninstall button"><figcaption><p>Proxy Helper Tool installed</p></figcaption></figure>
 
 ### 2.4 Some HTTP/HTTPS requests are missing from Proxyman
 

@@ -41,7 +41,7 @@ Capture HTTP and HTTPS traffic on Android with the Proxyman for Android app
 
 For manual setup, configure the device proxy first, then install the certificate and configure certificate trust in your development app. Installing the certificate alone does not make every Android app trust it. Follow all steps below:
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-26 at 09.50.35.png" alt="Proxyman Android Setup Guide with the proxy server and port, certificate link and network security config" width="563"><figcaption><p>Setup Guide for Android Devices</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/proxyman-android-device-setup-guide.jpg" alt="Proxyman Android Setup Guide with Wi-Fi proxy server and port, proxy.man/ssl link, and network security config XML" width="563"><figcaption><p>Setup Guide for Android Devices</p></figcaption></figure>
 
 Open the guide from **Certificate** menu -> **Install Certificate on Android** -> **Physical Devices…**, then follow these steps:
 

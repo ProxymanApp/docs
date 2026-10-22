@@ -14,7 +14,7 @@ Each tab keeps its own selected source, filters, and request selection while you
 Tab View requires Proxyman PRO. The new Safari-style tab bar is available in Proxyman v26.0.0 or later for macOS.
 {% endhint %}
 
-<!-- IMAGE PLACEHOLDER: The new tab bar with several app or domain tabs and one selected tab. -->
+<figure><img src="../.gitbook/assets/proxyman-tab-view-tab-bar.jpg" alt="Proxyman tab bar with Apps, httpbin.proxyman.app and jsonplaceholder.typicode.com tabs, the last one selected"><figcaption><p>Tab View with three tabs</p></figcaption></figure>
 
 ## 2. Benefits
 
@@ -31,7 +31,7 @@ Tab View requires Proxyman PRO. The new Safari-style tab bar is available in Pro
 
 Select the source and filters you want in the new tab. Other tabs keep their own view settings.
 
-<!-- IMAGE PLACEHOLDER: Sidebar context menu with Open as New Tab. -->
+<figure><img src="../.gitbook/assets/proxyman-open-as-new-tab-menu.jpg" alt="Proxyman sidebar right-click menu on a domain with Open as New Tab highlighted above Open as Split View"><figcaption><p>Open a domain as a new tab</p></figcaption></figure>
 
 ## 4. Switch and organize tabs
 
@@ -52,7 +52,7 @@ Click a tab's close button, or right-click a tab and choose:
 
 Press **⌘W** to close the current tab when the main traffic window is active. Closing the last tab closes that window.
 
-<!-- IMAGE PLACEHOLDER: Tab context menu with the three close actions. -->
+<figure><img src="../.gitbook/assets/proxyman-tab-close-menu.jpg" alt="Proxyman tab right-click menu with New Tab, Close Tab, Close Other Tabs and Close Tabs to the Right"><figcaption><p>Close tabs from the tab menu</p></figcaption></figure>
 
 ## 6. Keyboard shortcuts
 

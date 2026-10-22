@@ -36,7 +36,7 @@ You can create an HTTP Message Template for the Breakpoint tool and reuse it lat
 2. Click **Templates** -> Request/Response -> select your template.
 3. Proxyman replaces the current data with the template.
 
-![Proxyman Breakpoint window with the Raw tab and Templates button for a response](../.gitbook/assets/153364160-7fde3bdb-2941-4cd1-a62f-77a4a4ba7013.png)
+<figure><img src="../.gitbook/assets/proxyman-breakpoint-raw-templates-menu.jpg" alt="Proxyman Breakpoint Raw tab with the Templates menu open: Requests, Response, Save as Template, Reset to the Original"><figcaption><p>Templates menu in the Breakpoint Raw tab</p></figcaption></figure>
 
 ## Learn more
 

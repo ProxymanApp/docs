@@ -14,6 +14,8 @@ You might see the following issue:
 
 * The icon doesn't change when you pick a new one in **Settings** -> **Appearance** -> **Proxyman Dock Icon**.
 
+<figure><img src="../.gitbook/assets/proxyman-settings-appearance-dock-icon.jpg" alt="Proxyman Appearance settings with the Dock Icon options On Earth, On Mars, Space Candy and Classic"><figcaption><p>Dock icon options in Appearance settings</p></figcaption></figure>
+
 ## 2. Solution
 
 1. Quit Proxyman, then open Activity Monitor.

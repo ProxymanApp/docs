@@ -26,6 +26,8 @@ By default, Proxyman uses your macOS system language. To change it:
 2. In **System Settings** → **General** → **Language & Region**, under **Applications**, add Proxyman and choose a language.
 3. Relaunch Proxyman to apply the change.
 
+<figure><img src="../.gitbook/assets/proxyman-settings-app-language.jpg" alt="Proxyman App Language menu with English, Chinese Simplified, Japanese, Portuguese Brazil and Spanish Latin America"><figcaption><p>Pick an app language</p></figcaption></figure>
+
 ## 3. Improve localization?
 
 If you find a poor translation in your language, please help us improve it on GitHub at [ProxymanApp/proxyman-localization](https://github.com/ProxymanApp/proxyman-localization).

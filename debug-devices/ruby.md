@@ -21,7 +21,7 @@ Proxyman v4.7.0 or later can capture HTTP/HTTPS traffic from Ruby with 1 click.
 4. A new Terminal window opens -> Start your Ruby backend server or run your scripts there => Proxyman captures all traffic automatically.
 5. Done ✅
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-04-22 at 15.18.19@2x.jpg" alt="Proxyman Automatic Setup window with the Open New Terminal button for Ruby, NodeJS and Python"><figcaption><p>Capture traffic from Ruby</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-automatic-setup-window.jpg" alt="Proxyman Automatic Setup window with the Open New Terminal button that captures Ruby libraries like net/http"><figcaption><p>Capture traffic from Ruby</p></figcaption></figure>
 
 ## 2. Old Solution (Not Recommended)
 

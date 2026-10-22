@@ -36,7 +36,7 @@ You can skip this step if you've already done it.
 
 * Certificate Menu -> Install Certificate on Java VMs -> Run Script...
 
-![Proxyman Certificate menu with Install Certificate on Java VMs and the Run Script item](../.gitbook/assets/Screen_Shot_2022-04-08_at_15_12_49.jpg)
+<figure><img src="../.gitbook/assets/proxyman-certificate-menu-java-run-script.jpg" alt="Proxyman Certificate menu with Install Certificate on Java VMs open and Run Script highlighted"><figcaption><p>Run the Java certificate script</p></figcaption></figure>
 
 * The script tries to find the KeyStore location from **JAVA\_HOME**, **SDKMAN**, or **$(/usr/libexec/java\_home)** and installs the CA Certificate if possible
 

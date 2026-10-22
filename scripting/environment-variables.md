@@ -85,7 +85,7 @@ export PROXYMAN_PATH=/Users/my_user/Desktop/file-mapper
 
 3\. Click **Reload** to load the latest env changes.
 
-![Proxyman Script Editor More menu with Environment Variables, the allow access option and Reload](../.gitbook/assets/Screen_Shot_2022-07-31_at_10_48_26.jpg)
+<figure><img src="../.gitbook/assets/proxyman-script-environment-variables-menu.jpg" alt="Proxyman Script Editor More menu with Environment Variables open: Allow all scripts to access Environment Variables, Reload"><figcaption><p>Allow scripts to read Environment Variables</p></figcaption></figure>
 
 4\. Access an env variable in your script with the `$` prefix
 

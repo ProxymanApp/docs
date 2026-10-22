@@ -24,7 +24,9 @@ If you would like to block certain domains, use the [Block List](blacklist.md) i
 * **Tools** menu -> **Allow List…**
 * Right-click on the selected request -> **Tools** -> **Allow List…**
 
-![Proxyman request context menu with Tools > Allow List selected](<../.gitbook/assets/Screen Shot 2020-06-16 at 11.24.12.png>)
+<figure><img src="../.gitbook/assets/proxyman-allow-list-context-menu.jpg" alt="Proxyman right-click menu on a request with Tools > Allow List... highlighted"><figcaption><p>Right-click > Tools > Allow List</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/proxyman-allow-list-window.jpg" alt="Proxyman Allow List window with an Only httpbin rule matching https://httpbin.proxyman.app/*"><figcaption><p>Allow List window</p></figcaption></figure>
 
 {% hint style="success" %}
 Press **⌥⌘]** to quickly open the Allow List window.

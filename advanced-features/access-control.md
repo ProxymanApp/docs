@@ -12,7 +12,7 @@ Open it from the **Tools** menu -> **Proxy Settings** -> **Access Control…**
 
 <table><thead><tr><th width="169">Mode</th><th>Description</th></tr></thead><tbody><tr><td>Allow All</td><td>All remote connections can connect to Proxyman (Default).</td></tr><tr><td>Disallow All</td><td>No remote connections are allowed to connect to Proxyman.</td></tr><tr><td>Specify Remote Devices by IP</td><td>Define which devices (by IP address) can connect to the Proxyman app.</td></tr></tbody></table>
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-01-23 at 09.25.40.png" alt="Proxyman Access Control window with Specify Remote Devices by IP selected and one allowed IP address"><figcaption><p>Access Control UI</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-access-control-window.jpg" alt="Proxyman Access Control window with Specify Remote Devices by IP selected and two allowed IP addresses"><figcaption><p>Access Control window</p></figcaption></figure>
 
 When **Prompt to allow unauthorized connections** is checked, Proxyman asks you to allow or deny a device that is not on the list.
 

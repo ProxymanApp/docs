@@ -14,13 +14,11 @@ Proxyman offers the Primary and Secondary Filters to quickly find the requests o
 **ESC**: Close the Filter Bar
 {% endhint %}
 
-![Proxyman filter bar with HTTP, JSON, Form, 2xx and 4xx filters selected at the same time](../.gitbook/assets/111282473-9e95ab00-8670-11eb-8d05-6e2c641a82bb.png)
+<figure><img src="../.gitbook/assets/proxyman-content-filter-bar.jpg" alt="Proxyman filter bar with HTTPS, JSON, Form, 2xx and 4xx selected, so only matching requests show in the list"><figcaption><p>Select several filters at once</p></figcaption></figure>
 
-![Proxyman filter bar with several content types and status codes selected by holding ⌘ and clicking](../.gitbook/assets/Screen\_Shot\_2021-03-22\_at\_22\_29\_07.png)
+<figure><img src="../.gitbook/assets/proxyman-filter-key-menu.jpg" alt="Proxyman Secondary Filter key menu with URL, Host, Query String, Header, Body, Method, Status Code, Comment and Color"><figcaption><p>Choose what to filter</p></figcaption></figure>
 
-![Proxyman Secondary Filter menu listing URL, Query String, Header, Body, Method, Status Code, Comment and Color](<../.gitbook/assets/CleanShot 2020-11-17 at 08.31.48@2x.png>)
-
-![Proxyman filter matching menu with Contains, Not Contains, Start With, End With, Equal, Not Equal and Regex](<../.gitbook/assets/CleanShot 2020-11-17 at 08.31.52@2x.png>)
+<figure><img src="../.gitbook/assets/proxyman-filter-matching-menu.jpg" alt="Proxyman filter matching menu with Contains, Start With, Equal, number comparisons, Match Wildcard and Match Regex"><figcaption><p>Choose how to match</p></figcaption></figure>
 
 ## Primary Filter
 
@@ -99,8 +97,6 @@ From Proxyman 2.34.0+, you can quickly filter the Header, Query, Auth, and Form 
 
 1. Click the view (e.g. the Header tab of the Request)
 2. Press ⌘F or right-click → **Show Filter** to open the filter
-
-![Proxyman Request Header tab filtered by the word json, showing only matching headers](../.gitbook/assets/Screen\_Shot\_2021-10-14\_at\_22\_59\_20.png)
 
 ## Learn more
 

@@ -23,8 +23,6 @@ The debugging tool first matches the original matching rule, then matches the Gr
 
 ![Proxyman Breakpoint rule editor with Use Wildcard > Advanced > GraphQL QueryName checked](../.gitbook/assets/Screen\_Shot\_2021-05-26\_at\_15\_46\_13.png)
 
-![Proxyman Breakpoint rule that matches a URL with a wildcard rule, then a GraphQL Query Name](../.gitbook/assets/Screen\_Shot\_2021-05-26\_at\_15\_48\_17.png)
-
 {% hint style="info" %}
 From build 3.0.0, Proxyman automatically fills in the GraphQL Query Name when you create a debugging tool rule.
 {% endhint %}
@@ -33,13 +31,13 @@ From build 3.0.0, Proxyman automatically fills in the GraphQL Query Name when yo
 
 From Proxyman 2.33.0, Proxyman can prettify (beautify) the GraphQL query. To turn it on, open the **Tools** menu -> **Custom Previewer Tab…** -> check the **GraphQL** checkbox.
 
-![Proxyman GraphQL tab with a prettified GraphQL query in the Request panel](../.gitbook/assets/Screen\_Shot\_2021-09-11\_at\_15\_58\_08.png)
+<figure><img src="../.gitbook/assets/proxyman-graphql-query-prettier.jpg" alt="Proxyman GraphQL tab in the Request panel with a prettified GetUser query and its GraphQL variables"><figcaption><p>Prettified GraphQL query</p></figcaption></figure>
 
 ## 3. Show GraphQL Query Name on the main table view
 
 Proxyman can extract and show the Query Name of each GraphQL request. Right-click on the column header and enable the **Query Name** column.
 
-![Proxyman main table with a Query Name column listing GraphQL query and mutation names](../.gitbook/assets/Screen\_Shot\_2021-03-13\_at\_16\_20\_42.png)
+<figure><img src="../.gitbook/assets/proxyman-graphql-query-name-column.jpg" alt="Proxyman main table with a Query Name column showing GetUser, ListPosts and CreatePost, next to a Comment column"><figcaption><p>Query Name column</p></figcaption></figure>
 
 {% content-ref url="../basic-features/custom-header-column.md" %}
 [custom-header-column.md](../basic-features/custom-header-column.md)

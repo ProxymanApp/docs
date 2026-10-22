@@ -24,7 +24,7 @@ Capture HTTPS from a native iOS app on the iOS 26 Simulator with Xcode 26
 
 ## 1. iOS Simulator Setup Guide
 
-![Proxyman iOS Simulators Setup window with the three steps: install on Mac, install on simulators, reboot](<../.gitbook/assets/Screen Shot 2022-07-11 at 08.15.26.png>)
+<figure><img src="../.gitbook/assets/proxyman-ios-simulators-setup.jpg" alt="Proxyman iOS Simulators Setup with three steps: certificate Installed &#x26; Trusted, Prepare Simulators, and Reboot"><figcaption><p>iOS Simulators Setup</p></figcaption></figure>
 
 {% hint style="info" %}
 It works for iOS, iPadOS, tvOS, watchOS and visionOS.
@@ -82,13 +82,9 @@ If the request list is empty, first check recording, filters, and proxy settings
 
 If you get errors when you click the button in Step 2, open Xcode -> Settings -> Locations tab -> Select your Xcode in Command Line Tools.
 
-![Xcode Settings, Locations tab, with the current Xcode selected in Command Line Tools](../.gitbook/assets/Screen\_Shot\_2022-07-11\_at\_08\_12\_33.png)
-
 ### 2. Get SSL Error from HTTPS Response
 
 * Open the Settings app -> General -> About -> Certificate Trust Settings and verify that the Proxyman Certificate is installed and trusted.
-
-![iOS Simulator Certificate Trust Settings with full trust turned on for Proxyman CA](<../.gitbook/assets/Screen Shot 2021-03-05 at 13.32.25.png>)
 
 If it's not installed:
 

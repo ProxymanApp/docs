@@ -16,7 +16,7 @@ Quick Preview lets you preview selected text anywhere in the app.
 * Decode JWT tokens
 * In the Body and Raw tabs, you can also prettify XML and convert timestamps
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-03-22 at 15.26.10@2x.jpg" alt="Proxyman Quick View popover showing prettified JSON from inline JSON selected in the Raw tab"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-quick-preview-jwt.jpg" alt="Proxyman Quick Preview decoding a JWT selected in the Raw tab into Header, Payload and Signature"><figcaption><p>Decode a JWT with Quick Preview</p></figcaption></figure>
 
 ## 2. How to use it?
 
@@ -24,6 +24,4 @@ Quick Preview lets you preview selected text anywhere in the app.
 2. Right-click to show the context menu
 3. Choose a **Text Selection** mode, for example **Text Selection: Decode Base64**. In other text views, the modes are under **Text Selection: View as**.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-03-22 at 15.19.32.jpg" alt="Raw tab context menu with Text Selection: View as and options to prettify JSON, decode Base64, show key-value or decode JWT"><figcaption><p>Quick View on the Raw tab</p></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-03-22 at 15.19.59.jpg" alt="Body tab context menu with Text Selection modes to prettify JSON, decode Base64, display a table, or decode JWT"><figcaption><p>Quick View on the Body tab</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-quick-preview-raw-tab-menu.jpg" alt="Proxyman Raw tab right-click menu with Text Selection options: Prettify JSON, Decode Base64, Decode JWT and more"><figcaption><p>Quick Preview on the Raw tab</p></figcaption></figure>

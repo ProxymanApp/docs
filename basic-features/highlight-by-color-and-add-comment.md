@@ -16,7 +16,7 @@ You can:
 * Filter by color or comment (⌘F)
 * Export with colors and comments. Colors are kept only in the Proxyman Log format.
 
-![Proxyman table with rows highlighted by color, strikethrough requests and a Comment column](../.gitbook/assets/highligh_by_colors.png)
+<figure><img src="../.gitbook/assets/proxyman-highlight-color-comment.jpg" alt="Proxyman request list with green and red rows, one strikethrough request, and notes in the Comment column"><figcaption><p>Colored rows and comments</p></figcaption></figure>
 
 ## 2. Benefit?
 

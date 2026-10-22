@@ -59,8 +59,6 @@ If you're using an Android Emulator or an iOS Simulator, you can use `String pro
 
 You can find \<YOUR\_LOCAL\_IP> in Proxyman -> Certificate menu -> Install Certificate on iOS -> Physical Devices…
 
-<figure><img src="../.gitbook/assets/1 (1).jpg" alt="Proxyman iOS Setup Guide showing the Mac's server IP address and port 9090"><figcaption><p>Use the current IP</p></figcaption></figure>
-
 Use the settings below for the network library that your Flutter app uses:
 
 #### Dart HTTPClient Class
@@ -170,7 +168,7 @@ Dio dio = Dio();
 2. In Proxyman -> Certificate menu -> Install Certificate on iOS -> Simulators…
 3. Follow all steps below
 
-<figure><img src="../.gitbook/assets/2 (1).jpg" alt="Proxyman iOS Simulators Setup with the certificate installed and one booted simulator found"><figcaption><p>Install &#x26; trust Proxyman certificate to your iOS Simulators</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-ios-simulators-setup.jpg" alt="Proxyman iOS Simulators Setup with three steps: certificate Installed &#x26; Trusted, Prepare Simulators, and Reboot"><figcaption><p>Install &#x26; trust Proxyman certificate to your iOS Simulators</p></figcaption></figure>
 
 4. ✅ Done. Proxyman can capture your HTTPS traffic.
 

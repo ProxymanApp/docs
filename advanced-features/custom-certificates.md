@@ -14,7 +14,7 @@ Proxyman supports custom **Root Certificates**, **Server Certificates**, and **C
 | **Client Certificate**  | For intercepting HTTPS Traffic from clients that use Mutual Authentication                        | Use this certificate for SSL-Handshake to specific Server |
 | **Root Certificate**    | For intercepting HTTPS Traffic from clients and servers without using local Proxyman certificates | SSL Handshake for both clients & servers                  |
 
-![Proxyman Custom Certificates window with a custom root certificate that is installed and trusted](<../.gitbook/assets/Screen Shot 2020-09-09 at 15.52.42.png>)
+<figure><img src="../.gitbook/assets/proxyman-custom-root-certificate.jpg" alt="Proxyman Custom Certificates window on the Root Certificate tab with the Proxyman CA certificate Installed &#x26; Trusted"><figcaption><p>Root Certificate tab</p></figcaption></figure>
 
 {% hint style="info" %}
 The Proxyman Root Certificate is generated locally on your Mac. You can also generate your own root certificate and add it to Proxyman. See [how to generate a self-signed root certificate](custom-certificates.md#6-how-to-generate-self-signed-certificates-for-custom-root-certificate-that-comply-with-new-apples-security-requirements).
@@ -70,8 +70,6 @@ If this is too complicated, let Proxyman do it for you. Open the **Certificate**
 ## 5. How to use
 
 * Open the **Certificate** menu -> **Add Custom Certificates…**
-
-![Proxyman Certificate menu with Add Custom Certificates selected](<../.gitbook/assets/Screen Shot 2021-07-31 at 20.21.35.png>)
 
 ## 6. How to generate self-signed certificates for Custom Root Certificate that comply with new Apple's Security Requirements
 
@@ -147,8 +145,6 @@ Reference: [MAC verification failed during PKCS12 import (Stack Overflow)](https
 ![macOS Keychain Access certificate window with Trust set to Always Trust](<../.gitbook/assets/Screen Shot 2020-09-09 at 06.30.51.png>)
 
 5\. Check that you see the green check mark, which means the certificate is installed and trusted.
-
-![Proxyman Custom Certificates window showing the custom root certificate as Installed & Trusted](<../.gitbook/assets/Screen Shot 2020-09-09 at 20.52.39.png>)
 
 ## 8. Import as a Server/Client Certificate
 

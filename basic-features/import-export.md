@@ -69,7 +69,7 @@ There are many ways to export the selected requests to files:
 * Right-click the app or domain in the sidebar → **Export**&#x20;
 * Select requests → **Flow** → **Export** in the menu bar
 
-![Proxyman request context menu with the Export submenu showing as Proxyman Log, HAR, CSV and Postman](../.gitbook/assets/Screen\_Shot\_2021-08-27\_at\_13\_56\_53.png)
+<figure><img src="../.gitbook/assets/proxyman-export-requests-menu.jpg" alt="Proxyman request context menu with the Export submenu: Share Online, Proxyman Log, HAR, CSV, Postman, Gist and OpenAPI"><figcaption><p>Export the selected requests</p></figcaption></figure>
 
 ## Learn more
 

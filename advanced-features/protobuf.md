@@ -103,11 +103,7 @@ Alternatively, you can right-click on your request -> **Tools** -> **Protobuf…
 If the Request and Response use different Protobuf Message Types, select the \`Use different Message Type for Request / Response\` checkbox.
 {% endhint %}
 
-![Proxyman Protobuf rule editor with the Message Type field and the Auto, Single Message and Delimited List payload types](<../.gitbook/assets/Screenshot 2026-01-31 at 10.04.50.png>)
-
 4\. Click **Add** and see the body in JSON format.
-
-![Proxyman request body decoded from Protobuf into JSON with named fields](<../.gitbook/assets/Screen Shot 2020-04-25 at 22.08.07.png>)
 
 ### 4.2 Read from Content-Type Header
 

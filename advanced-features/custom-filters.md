@@ -22,7 +22,7 @@ From Proxyman 4.11.0 or later, you can save your current filter settings as a cu
 2. Click the **Save** button -> **New Filter…** -> enter a name
 3. The new filter is added to the filter bar.
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-09-12 at 10.14.31@2x.jpg" alt="Proxyman filter bar with two filters and the Save button to create a custom filter"><figcaption><p>Create new custom filter</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-custom-filter-save-button.jpg" alt="Proxyman filter bar with a saved httpbin POST custom filter, URL and Method filters, and the Save button"><figcaption><p>Create new custom filter</p></figcaption></figure>
 
 ### Override
 
@@ -40,4 +40,4 @@ From Proxyman 4.11.0 or later, you can save your current filter settings as a cu
 1. Right-click on the filter button
 2. Select **Delete** or **Rename…**
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-09-12 at 10.15.18.jpg" alt="Right-click menu on a custom filter button in Proxyman with Delete and Rename options" width="375"><figcaption><p>Delete or rename a custom filter</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-custom-filter-rename-delete.jpg" alt="Right-click menu on the httpbin POST custom filter in Proxyman with Delete and Rename... options"><figcaption><p>Delete or rename a custom filter</p></figcaption></figure>

@@ -28,9 +28,12 @@ The No Caching tool changes every request and response by adding or removing the
 ## 4. How to use
 
 * Enable it in **Tools** menu -> **No Caching**
+
+<figure><img src="../.gitbook/assets/proxyman-tools-menu-no-caching.jpg" alt="Proxyman Tools menu with No Caching (⌥⌘N) checked and highlighted"><figcaption><p>Tools menu > No Caching</p></figcaption></figure>
+
 * When it's on, a **No Caching** badge shows at the bottom right of the main window.
 
-![No Caching badge in the Proxyman status bar at the bottom right of the main window](<../.gitbook/assets/Screen Shot 2020-04-25 at 15.48.05.png>)
+<figure><img src="../.gitbook/assets/proxyman-no-caching-status-badge.jpg" alt="No Caching badge in the Proxyman status bar next to memory and network speed"><figcaption><p>No Caching badge</p></figcaption></figure>
 
 {% hint style="info" %}
 **⌥⌘N:** Toggle the No Caching Tool.

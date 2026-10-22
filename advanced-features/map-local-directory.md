@@ -16,6 +16,8 @@ If you would like to map a single local file, check out the Map Local (File) pag
 
 ## 2. How to use
 
+<figure><img src="../.gitbook/assets/proxyman-map-local-directory-editor.jpg" alt="Proxyman Map Local editor in Local Directory mode mapping https://httpbin.proxyman.app/anything/* to /Users/Shared/Demo/api"><figcaption><p>Map a URL to a local directory</p></figcaption></figure>
+
 ### 2.1 Map a path and its subdirectories
 
 `api.proxyman.io/build/v1/*` => All sub-paths after `/v1/` will map to a selected directory.

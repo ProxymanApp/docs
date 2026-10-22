@@ -11,7 +11,7 @@ DNS Spoofing lets developers:
 * Provide a custom DNS for particular domains
 * Map a domain to a different IP address or domain
 
-<figure><img src="../.gitbook/assets/1 (3).png" alt="Proxyman DNS Spoofing window with a rule that maps a hostname to a new IP address"><figcaption><p>DNS Spoofing</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-dns-spoofing-window.jpg" alt="Proxyman DNS Spoofing window with Enable DNS Spoofing checked and a rule that maps api.example.com to 127.0.0.1"><figcaption><p>DNS Spoofing window</p></figcaption></figure>
 
 ## 2. What is different with Map Remote?
 

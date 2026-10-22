@@ -28,7 +28,7 @@ From Proxyman v5.14.0 or later, Proxyman can export your requests and responses 
 
 Make sure Proxyman can capture and decrypt your HTTPS requests and responses.
 
-<figure><img src="../.gitbook/assets/CleanShot 2025-01-06 at 2 .47.34@2x.jpg" alt="Proxyman main window with decrypted HTTPS requests to x.com and a JSON response body"><figcaption><p>Capture your HTTPS requests and responses</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-export-openapi-menu.jpg" alt="Proxyman right-click menu with Export > OpenAPI open, showing YAML Schema... and HTML..."><figcaption><p>Export > OpenAPI</p></figcaption></figure>
 
 2. Select your requests on the main table -> right-click -> **Export** -> **OpenAPI** -> select **YAML Schema…** or **HTML…**
 3. Done :white\_check\_mark:

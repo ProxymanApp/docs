@@ -10,8 +10,6 @@ description: >-
 
 Since version 2.0.0, Proxyman for iOS has the Map Local tool. It lets you use the content of a local file as the response to requests that match your rules.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt="Proxyman for iOS Map Local Editor with name, URL httpbin.org, method ANY, status code, headers and body"><figcaption><p>Map Local Editor</p></figcaption></figure>
-
 Map Local helps you develop faster. You can quickly test edge cases without changing the data on your server. It's also a must-have tool for QA and developers who want to test the app's behavior with different responses. Some testing scenarios:
 
 * Define a response and use it for matching requests.
@@ -35,8 +33,6 @@ There are 2 ways to create a Map Local rule:
 * Go to the **More** tab → **Map Local** → tap the **+** button.
 * Fill in the fields for the rule: Name, URL, Method, and whether to include subpaths.
 
-<figure><img src="../../.gitbook/assets/image.png" alt="Proxyman for iOS Map Local rule list with a plus button that opens an empty Map Local Editor"><figcaption><p>Create a new Map Local rule manually</p></figcaption></figure>
-
 2. From the context menu
 
 * Long-press the request → **Add to Map Local**.
@@ -47,8 +43,6 @@ There are 2 ways to create a Map Local rule:
 ### Modify Header, Status Code and Body
 
 In the Map Local Editor, you can change the headers, status code, and body. If you replace the body with a new data type, Proxyman detects the Content-Type and updates the headers for you.
-
-<figure><img src="../../.gitbook/assets/image (11).png" alt="Proxyman for iOS screens to pick a status code, edit response headers, and edit the response body"><figcaption><p>Modify the status code, headers and body</p></figcaption></figure>
 
 ## Manipulate Response with Map Local Tool
 

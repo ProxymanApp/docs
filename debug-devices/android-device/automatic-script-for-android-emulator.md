@@ -45,8 +45,6 @@ Works with Android Emulators and Android Physical Devices via `adb` (Only for Pr
 
 * Install Proxyman Certificate to the system-level Store.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 15.12.07.jpg" alt="Android Emulator Trusted credentials, System tab, listing Proxyman CA"><figcaption><p>Install Proxyman Certificate to the system-level Store.</p></figcaption></figure>
-
 ### ✅ Flutter / React Native app
 
 From Proxyman macOS 6.4.0 or later, Proxyman can capture HTTPS traffic from Flutter apps without any code change.
@@ -64,21 +62,11 @@ brew install android-platform-tools
 2. Open your Android app with Android Studio
 3. Create a new Emulator in the Android Virtual Device Manager. **Make sure it's not a Google Play image. It must be a Google APIs image.**
 
-![Android Studio Virtual Device Manager with an empty Play Store column for each emulator](../../.gitbook/assets/Screen_Shot_2020-10-19_at_13_50_31.png)
-
 * ✅ NEW: Proxyman can now root Google Play Store Emulators. Please read [google-play-android-emulator-with-magisk.md](google-play-android-emulator-with-magisk.md "mention")
-
-![Android Studio System Image list with Google APIs images for API 30 and lower](../../.gitbook/assets/Screen_Shot_2020-10-19_at_13_50_48.png)
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-09-19 at 20.01.37.jpg" alt="Android Studio Add Device dialog with the Google APIs ARM 64 system image for API 36 selected"><figcaption></figcaption></figure>
 
 4. Open Proxyman -> Certificate Menu -> Install Certificate on Android -> Emulators… -> Click the Override All Emulators button
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 14.54.51.jpg" alt="Proxyman Android Emulator Setup Guide with the Override All Emulators button"><figcaption><p>Capture all HTTPS from Emulators with 1 click</p></figcaption></figure>
-
 5. Wait until the Terminal script completes
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-02-10 at 15.02.06.png" alt="Terminal output of the Proxyman Android Emulator script with proxy and certificate installed"><figcaption></figcaption></figure>
 
 6. Relaunch your Android app from Android Studio
 7. Proxyman will capture all HTTPS data ✅

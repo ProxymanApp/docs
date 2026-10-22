@@ -44,12 +44,8 @@ Regular proxy mode relies on apps sending their requests through the proxy.
 
 * Or click the status bar at the top of the main window (Proxyman | Listening on ...) and turn on **Network Extension**.
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-10-01 at 19.56.31.jpg" alt="Proxyman status popover with the Recording, macOS proxy and Network Extension toggles" width="563"><figcaption><p>Turn on Network Extension from the status popover</p></figcaption></figure>
-
 2. Open **System Settings** -> **General** -> **Login Items & Extensions**. Under **Extensions**, select **By Category** -> **Network Extensions**, then enable Proxyman.
 3. When macOS asks to add the network configuration, click **Allow**.
-
-<figure><img src="../.gitbook/assets/install_proxyman_network_extension_step_1.jpg" alt="Open General, Login Items &#x26; Extensions, By Category, then Network Extensions in System Settings"><figcaption><p>Find Network Extensions in System Settings</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/install_proxyman_network_extension_step_2.jpeg" alt="Enable the Proxyman toggle in Network Extensions"><figcaption><p>Allow Proxyman Network Extension</p></figcaption></figure>
 

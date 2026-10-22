@@ -27,7 +27,7 @@ In this case, you may have to set up Proxyman to send all connections to the Ext
 * Proxyman also supports **Basic Authentication**.
 * To turn the External Proxy on or off, use **Tools** -> **Proxy Settings** -> **Use External Proxy** (⌥⌘E).
 
-![Proxyman External Proxy settings with HTTP, HTTPS, SOCKS and PAC options, inclusive list and bypass list](<../.gitbook/assets/Screen Shot 2022-02-24 at 11.39.19.png>)
+<figure><img src="../.gitbook/assets/proxyman-external-proxy-settings.jpg" alt="Proxyman External Proxy settings with HTTP and HTTPS proxy at proxy.example.com:8080, inclusive list and bypass list"><figcaption><p>External Proxy settings</p></figcaption></figure>
 
 {% hint style="info" %}
 External SOCKS Proxy with authentication is not supported.&#x20;

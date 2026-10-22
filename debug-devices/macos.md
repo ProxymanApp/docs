@@ -34,7 +34,7 @@ Proxyman can **automatically** install and trust the certificate in Keychain. Fo
 
 To verify capture, make a new HTTPS request from your browser with Proxyman running and SSL Proxying enabled for that domain. Confirm that you can read the request and response. If nothing appears, use the [missing-traffic checklist](../troubleshooting/i-couldnt-see-any-traffics-on-proxyman.md); if certificate installation fails, continue with Manual Mode below.
 
-![Proxyman Mac Setup Guide, Automatic tab, showing the certificate as Installed & Trusted](../.gitbook/assets/proxyman_install_ca_certificate.jpg)
+<figure><img src="../.gitbook/assets/proxyman-mac-setup-guide-automatic.jpg" alt="Proxyman Mac Setup Guide, Automatic tab, with the certificate shown as Installed &#x26; Trusted"><figcaption><p>Certificate installed and trusted</p></figcaption></figure>
 
 {% hint style="info" %}
 **Automatic mode** requires **root privileges** to run the installation script. If you're not sure, please consider using Manual mode.
@@ -67,7 +67,7 @@ Manual mode gives advanced users more control if they want to install and trust 
 If you've done it correctly, Proxyman will display the " ✅ Installed and Trusted" status.
 {% endhint %}
 
-![Proxyman Mac Setup Guide, Manual tab, with steps to trust Proxyman CA in Keychain Access](../.gitbook/assets/proxyman_install_manual.jpeg)
+<figure><img src="../.gitbook/assets/proxyman-mac-setup-guide-manual.jpg" alt="Proxyman Mac Setup Guide, Manual tab, with steps to set Proxyman CA to Always Trust in Keychain Access"><figcaption><p>Manual mode: trust the certificate in Keychain</p></figcaption></figure>
 
 {% hint style="info" %}
 If you'd like to use your own custom Root Certificate, please check out the [Custom Certificate Doc](../advanced-features/custom-certificates.md#6-how-to-generate-self-signed-certificates-for-custom-root-certificate-that-comply-with-new-apples-security-requirements)

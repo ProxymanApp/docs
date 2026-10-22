@@ -15,4 +15,4 @@ Clear the current working session, including all Requests, Domains, and Clients.
 
 * **Flow** menu -> **Clear Session** (⌥⇧⌘⌫)
 
-![Proxyman Tools menu with Clear Session highlighted](<../.gitbook/assets/Screen Shot 2020-04-25 at 20.32.51.png>)
+<figure><img src="../.gitbook/assets/proxyman-flow-menu-clear-session.jpg" alt="Proxyman Flow menu with Clear Session (⌥⇧⌘⌫) highlighted"><figcaption><p>Clear Session in the Flow menu</p></figcaption></figure>

@@ -31,3 +31,5 @@ Proxyman intercepts and decrypts all of that traffic, which leads to high memory
 3. Remove all web browsers and `*` wildcards if they exist.
 4. Enable SSL Proxying only on the domains you need.
 5. Keep **Automatically Remove Older Requests** on in **Settings** -> **Advanced**. It removes older requests when memory goes over the limit. Click **Edit…** to change the limit.
+
+<figure><img src="../.gitbook/assets/proxyman-settings-advanced-proxy-helper-tool.jpg" alt="Proxyman Advanced settings with Automatically Remove Older Requests turned on and an Edit button"><figcaption><p>Automatically Remove Older Requests</p></figcaption></figure>

@@ -27,7 +27,7 @@ The Breakpoint, Map Local, and Scripting tools can modify repeated requests if t
 
 * Right-click on one or more requests -> **Repeat**
 
-![Proxyman context menu on a captured request with Repeat highlighted](../.gitbook/assets/Screen\_Shot\_2022-06-23\_at\_14\_49\_23.jpg)
+<figure><img src="../.gitbook/assets/proxyman-repeat-request-context-menu.jpg" alt="Proxyman right-click menu on a captured request with Repeat (⌘⏎) highlighted"><figcaption><p>Right-click > Repeat</p></figcaption></figure>
 
 {% hint style="info" %}
 ⌘ ⏎ : Repeat the selected request.

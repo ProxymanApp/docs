@@ -59,8 +59,6 @@ $ sudo vim /etc/hosts
 
 5\. Enjoy debugging!
 
-![Proxyman capturing a cURL request to a local server at http://proxyman.dev:3000](<../.gitbook/assets/Screen Shot 2020-04-25 at 16.55.18.png>)
-
 {% hint style="info" %}
 If you use `local` as a suffix, for example proxyman.local, make sure to remove `*.local` from the Bypass Proxy List ([how to do it](.local-doesnt-appear-in-proxyman.md#2.-solution)).
 {% endhint %}

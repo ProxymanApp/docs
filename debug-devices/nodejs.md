@@ -27,7 +27,7 @@ $ npm start
 
 Done ✅
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-04-22 at 15.18.19@2x.jpg" alt="Proxyman Automatic Setup window with the Open New Terminal button for NodeJS, Ruby and Python"><figcaption><p>Capture NodeJS Traffic</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-automatic-setup-window.jpg" alt="Proxyman Automatic Setup window with the Open New Terminal button that captures NodeJS libraries like axios and fetch"><figcaption><p>Capture NodeJS Traffic</p></figcaption></figure>
 
 Please check out the Automatic Setup page:
 

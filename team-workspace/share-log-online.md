@@ -41,8 +41,6 @@ To export a Proxyman Log in the Proxyman app: Select the requests that you'd lik
 
 3. Set sharing permissions
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-01-20 at 16.26.49.png" alt="Share Log dialog with the share link, Public Access, Team Access and Specific Users settings" width="563"><figcaption></figcaption></figure>
-
 ### Sharing & permissions model
 
 Each log can be shared as:

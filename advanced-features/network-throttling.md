@@ -42,7 +42,7 @@ To better simulate real life, the download/upload bandwidth is not fixed. It cha
 
 Open the **Tools** menu -> **Network Conditions…** (⌥⌘J), or right-click a request -> **Tools** -> **Network Conditions…**
 
-![Proxyman Network Conditions rule editor that applies the 3G profile to one host](<../.gitbook/assets/Screen Shot 2021-03-14 at 09.59.23.png>)
+<figure><img src="../.gitbook/assets/proxyman-network-conditions-rule-editor.jpg" alt="Proxyman Network Conditions rule Simulate 3G with the 3G profile, bandwidth, packet loss, delay and Custom Profile... button"><figcaption><p>Simulate a 3G network</p></figcaption></figure>
 
 ## 4. Alternative
 

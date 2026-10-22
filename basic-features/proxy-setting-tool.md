@@ -24,7 +24,7 @@ You can see the difference by starting the app with and without the Proxy Helper
 
 On first launch, Proxyman asks you to install the Proxy Helper Tool. You can skip it and install it later in **Settings** → **Advanced**.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-10-25 at 10.11.32.png" alt="Proxyman Install Proxy Helper Tool window with the Install Helper Tool button"><figcaption><p>Install the Proxy Helper Tool</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-settings-advanced-proxy-helper-tool.jpg" alt="Proxyman Settings Advanced tab showing Proxy Helper Tool installed, version 1.7.0, with an Uninstall button"><figcaption><p>Proxy Helper Tool in Settings, Advanced</p></figcaption></figure>
 
 {% hint style="info" %}
 After the installation, you can find the Helper Tool at `/Library/PrivilegedHelperTools/com.proxyman.NSProxy.HelperTool`
@@ -81,8 +81,6 @@ sudo /Applications/Proxyman.app/Contents/MacOS/proxyman --install-privileged-com
 
 * Comply with new macOS 13 Ventura Requirements for Helper Tool
 * Show App Icon & App Name on the Login-Items
-
-<figure><img src="../.gitbook/assets/197530484-0f897b6f-7905-4d65-bdc3-86d2fc8abebe.png" alt="Allow in the Background list in macOS Login Items showing the Proxyman icon and name"><figcaption><p>Display correct Proxyman icon and App Name</p></figcaption></figure>
 
 {% hint style="info" %}
 On macOS Ventura or later, helper tools, launch daemons, and launch agents are listed under **Allow in the Background**, even though Proxyman only runs in the foreground.

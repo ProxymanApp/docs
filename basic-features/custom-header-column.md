@@ -17,8 +17,6 @@ The Custom Header Column feature lets you add your own columns to the main table
 * Resize, sort, and reorder the columns.
 * Proxyman remembers your columns and restores them in your next session.
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-08-25 at 13.23.32.jpg" alt="Proxyman main table with custom deviceName and $.Data.Build columns from a query and a JSON body"><figcaption></figcaption></figure>
-
 ## 3. Custom Column
 
 You can create a custom column from:
@@ -46,7 +44,7 @@ To learn how to query JSON data with JSON Path or jq, read:
 
 Proxyman can show the query name of each GraphQL request in the **Query Name** column. Right-click the table header and select **Query Name (GraphQL)** to show it.
 
-![Proxyman table with a Query Name column that shows the GraphQL operation name of each request](../.gitbook/assets/Screen_Shot_2021-03-13_at_16_20_42.png)
+<figure><img src="../.gitbook/assets/proxyman-graphql-query-name-column.jpg" alt="Proxyman table with a Query Name column showing GetUser, ListPosts and CreatePost for GraphQL requests"><figcaption><p>GraphQL Query Name column</p></figcaption></figure>
 
 ## Learn more
 

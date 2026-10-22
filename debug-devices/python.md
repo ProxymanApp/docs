@@ -21,7 +21,7 @@ Proxyman v4.7.0 or later can capture HTTP/HTTPS traffic from Python with 1 click
 4. A new Terminal window opens -> Start your Python backend server or run your scripts there => Proxyman captures all traffic automatically.
 5. Done ✅
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-04-22 at 15.18.19@2x.jpg" alt="Proxyman Automatic Setup window with the Open New Terminal button for Python, NodeJS and Ruby"><figcaption><p>Capture Python traffic with Proxyman Automatic Setup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-automatic-setup-window.jpg" alt="Proxyman Automatic Setup window with the Open New Terminal button that captures Python libraries like aiohttp and httplib"><figcaption><p>Capture Python traffic with Proxyman Automatic Setup</p></figcaption></figure>
 
 Please check out the Automatic Setup page:
 

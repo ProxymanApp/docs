@@ -19,7 +19,7 @@ Proxyman macOS v5.17.0 or later can capture HTTP/HTTPS traffic from Golang with 
 2. Select your favorite Terminal -> Click the "Open New Terminal" button
 3. Accept the AppleScript permission prompt if needed
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-03-18 at 10.54.37.jpg" alt="Proxyman Automatic Setup window with Golang libraries listed and the Open New Terminal button"><figcaption><p>Open a pre-configured Terminal to intercept HTTPS from Go</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-automatic-setup-window.jpg" alt="Proxyman Automatic Setup window listing Golang libraries such as net/http and resty, with the Open New Terminal button"><figcaption><p>Open a pre-configured Terminal to intercept HTTPS from Go</p></figcaption></figure>
 
 4. A new Terminal window opens -> Start your Golang backend server or run your scripts there => Proxyman captures all traffic automatically.
 5. For example:&#x20;

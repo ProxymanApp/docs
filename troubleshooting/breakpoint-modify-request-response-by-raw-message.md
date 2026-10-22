@@ -6,7 +6,9 @@ description: >-
 
 # \[Breakpoint] Modify Request/Response by Raw Message
 
-When you edit a request or response in the **Raw** tab of a [Breakpoint](../advanced-features/breakpoint.md), Proxyman checks the HTTP message as you type. If the syntax is wrong, it shows **Invalid Request HTTP Message** or **Invalid Response HTTP Message**, and your change is not applied until the message is valid again.
+When you edit a request or response in the **Raw** tab of a [Breakpoint](../advanced-features/breakpoint.md), Proxyman checks the HTTP message as you type. If the syntax is wrong, it shows an error at the bottom of the editor, such as **Invalid Header**, **Invalid Request HTTP Message** or **Invalid Response HTTP Message**. Your change is not applied until the message is valid again.
+
+<figure><img src="../.gitbook/assets/proxyman-breakpoint-raw-invalid-header.jpg" alt="Proxyman Breakpoint Raw tab showing an Invalid Header error for the line X-Debug true, which has no colon"><figcaption><p>A header line without a colon is invalid</p></figcaption></figure>
 
 ## How to fix it
 

@@ -42,7 +42,7 @@ You have to read the technical documentation of each library and manually config
 4. The new Terminal window opens -> Start your backend server or run your scripts => Proxyman automatically captures all traffic.
 5. Done ✅
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-04-22 at 15.18.19@2x.jpg" alt="Proxyman Automatic Setup window with the Open New Terminal button and the Web Browsers section"><figcaption><p>Start the pre-configured Terminal app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-automatic-setup-window.jpg" alt="Proxyman Automatic Setup window with Apple Terminal and Open New Terminal, plus Web Browsers and ElectronJS App sections"><figcaption><p>Start the pre-configured Terminal app</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/CleanShot 2023-04-26 at 15.53.00@2x.jpg" alt="Terminal window showing the Proxyman Automatic Setup scripts message, ready to start a backend server"><figcaption><p>New Terminal app is launched</p></figcaption></figure>
 

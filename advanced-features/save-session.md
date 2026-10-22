@@ -23,7 +23,7 @@ It's a handy tool to save your entire working session, so you can open it later 
 
 * **File** menu -> **Save Session…**, then select the save location.
 
-![Proxyman File menu with New Session, Open, Open Recent and Save Session As items](<../.gitbook/assets/Screen Shot 2020-04-25 at 16.21.50.png>)
+<figure><img src="../.gitbook/assets/proxyman-file-menu-save-session.jpg" alt="Proxyman File menu with Save Session... highlighted, plus New Session, Open and Open Recent"><figcaption><p>File > Save Session</p></figcaption></figure>
 
 ### 3.2 Restore previous Session
 

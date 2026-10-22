@@ -21,7 +21,7 @@ From version 2.3.0, Proxyman supports **Wildcard** and **Regex** (match whole wo
 
 It helps you define exactly which requests trigger the tool.
 
-![Proxyman Map Remote rule list with Regex and Wildcard matching rules](<../.gitbook/assets/Screen Shot 2020-07-19 at 10.17.34.png>)
+<figure><img src="../.gitbook/assets/proxyman-map-remote-rules.jpg" alt="Proxyman Map Remote rule list with one Regex rule and two Wildcard rules in the Matching Rule column"><figcaption><p>Wildcard and Regex rules</p></figcaption></figure>
 
 ## 2. Test your URL (New feature 🎉)
 
@@ -31,7 +31,7 @@ From Proxyman v4.8.0, you can quickly test your rule (Wildcard or Regex).
 * **Save time**: You don't need to go back and forth to check your URL.
 * Make fewer mistakes.
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-05-09 at 09.54.22@2x.jpg" alt="Proxyman Test Rules window checking a wildcard rule against four URLs with Matched and Not Matched results"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-test-rules-window.jpg" alt="Proxyman Test Rules window checking the wildcard http://localhost:3000/* against three URLs, Matched or Not Matched"><figcaption><p>Test a rule against your URLs</p></figcaption></figure>
 
 #### How to use it?
 
@@ -85,8 +85,6 @@ Check your regex on [regex101.com](https://regex101.com) and make sure it fully 
 {% endhint %}
 
 * Select **Use Regex** when you create a rule.
-
-![Map Remote rule editor with Use Regex selected for the matching rule](<../.gitbook/assets/Screen Shot 2020-07-19 at 10.17.44.png>)
 
 {% hint style="info" %}
 With regular expressions, `?` and `*` mean something different than in wildcards. The wildcard `?` is the regex `.` and the wildcard `*` is the regex `.*`

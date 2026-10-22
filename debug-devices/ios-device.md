@@ -18,7 +18,7 @@ This setup guide works with all real physical devices, including iPhone, iPad, A
 
 ## iOS Setup Guide
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-10-28 at 21.29.31.png" alt="Proxyman iOS Setup Guide with the Wi-Fi proxy server, port, certificate download links and trust steps"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-ios-setup-guide.jpg" alt="Proxyman iOS Setup Guide with the Wi-Fi proxy server and port, proxy.man/ssl link, and install and trust steps"><figcaption><p>iOS Setup Guide for physical devices</p></figcaption></figure>
 
 Follow these steps:
 

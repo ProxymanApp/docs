@@ -15,7 +15,7 @@ The global Command Palette helps you:
 * Open setup guides for iOS devices, iOS Simulators, Android devices, and Android Emulators&#x20;
 * Pin your most-used actions
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-10-03 at 20.39.57.jpg" alt="Proxyman Command Palette searching for simulator with iOS, tvOS and visionOS Simulator setup guides"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-command-palette.jpg" alt="Proxyman Command Palette searching for simulator, listing iOS, tvOS and visionOS Simulator and Flutter setup guides"><figcaption><p>Search the Command Palette</p></figcaption></figure>
 
 {% hint style="success" %}
 Press ⌘P, or select **View** → **Show Command Palette**, to open the Command Palette. In Proxyman 6.0.0 to 6.10.0, the shortcut is ⌘⇧P.

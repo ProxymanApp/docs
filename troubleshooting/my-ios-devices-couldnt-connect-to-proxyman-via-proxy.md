@@ -49,7 +49,7 @@ If they're on different networks, they can't connect to each other.
 
 <figure><img src="../.gitbook/assets/IMG_4110.png" alt="iOS Configure Proxy screen set to Manual with server 192.168.0.101 and port 9090" width="375"><figcaption><p>Proxy settings on the iPhone</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screen_Shot_2020-03-10_at_20_37_01.png" alt="Proxyman iOS setup guide showing the same server 192.168.0.101 and port 9090"><figcaption><p>The same IP and port in Proxyman</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/proxyman-ios-setup-guide.jpg" alt="Proxyman iOS Setup Guide with Wi-Fi proxy server 192.168.64.4, port 9090 and certificate install steps"><figcaption><p>Server IP and port in the iOS Setup Guide</p></figcaption></figure>
 
 ### 3. Turn OFF all VPN apps on macOS and iOS/Android devices
 
@@ -76,8 +76,6 @@ On **macOS**: Open **System Settings -> Network -> Firewall -> Options…**
 * If Proxyman is not in the list, add it with the **+** button
 * Automatically allow built-in software to receive incoming connections is **ON**
 * Automatically allow downloaded signed software to receive incoming connections is **ON**
-
-![macOS Firewall options with Block all incoming connections off and Proxyman allowed](../.gitbook/assets/Screen_Shot_2020-03-10_at_20_46_17.png)
 
 ### 5. Firewall settings (Windows 10/11)
 
@@ -120,8 +118,6 @@ Setting the HTTP proxy by hand and installing and trusting the Proxyman certific
 
 If it doesn't, **forget the network** and **reconnect to the Wi-Fi.**
 
-<div align="center"><img src="../.gitbook/assets/Screen_Shot_2020-09-29_at_8_52_45_PM (1).png" alt="Android Emulator Wi-Fi network details showing Connected status" width="375"></div>
-
 ### 2. Install and trust the Proxyman CA on Android API 30+
 
 From Android Emulator API 30+, you need extra steps to trust the Proxyman certificate:
@@ -131,8 +127,6 @@ From Android Emulator API 30+, you need extra steps to trust the Proxyman certif
 
 You can verify it in Trusted credentials -> User tab.
 
-![Android Trusted credentials User tab listing the installed Proxyman CA certificate](../.gitbook/assets/Screen_Shot_2020-09-29_at_9_00_46_PM.png)
-
 ### 3. My Android physical device or emulator connection is not stable
 
 It's probably caused by the Android device or emulator. A possible fix is to change the DNS on your Mac or Android device to **8.8.8.8**.
@@ -141,8 +135,6 @@ It's probably caused by the Android device or emulator. A possible fix is to cha
 * **On an Android device**: Open the Wi-Fi settings and set the DNS to **8.8.8.8**.
 
 Read more in [GitHub issue #636](https://github.com/ProxymanApp/Proxyman/issues/636).
-
-![macOS Wi-Fi DNS settings with 8.8.8.8 added to DNS Servers](../.gitbook/assets/Screen_Shot_2020-10-12_at_08_18_35.png)
 
 ### 4. The `adb` command is not found when using the Android Emulator automatic script
 

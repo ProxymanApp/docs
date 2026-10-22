@@ -14,7 +14,7 @@ From build 2.22.0+, you can combine many filters at one time.
 * Many filter types: URL, Host, Query String, Request Header, Response Header, Request Body, Response Body, Status Code, Method, Client, IP Address, GraphQL, Color, Comment, Duration, and Body Size
 * Combine all filters with AND / OR
 
-![Proxyman main window with URL, Status Code and Request Header filters combined with AND all filters](../.gitbook/assets/ExYFSpHUcAYVbKp.jpeg)
+<figure><img src="../.gitbook/assets/proxyman-multiple-filters.jpg" alt="Proxyman filter bar with URL contains httpbin.proxyman.app AND Method equal POST, showing only POST requests"><figcaption><p>Combine two filters with AND</p></figcaption></figure>
 
 ## 2. Shortcut
 

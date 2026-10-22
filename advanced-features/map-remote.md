@@ -10,7 +10,7 @@ Map Remote (**⌥⌘R**) changes the location of an HTTP request to a new destin
 
 Map Remote also supports mapping from HTTP to HTTPS and vice versa.
 
-![Proxyman Map Remote window with a list of rules, methods, matching rules and destinations](<../.gitbook/assets/Screen Shot 2020-07-19 at 10.17.34.png>)
+<figure><img src="../.gitbook/assets/proxyman-map-remote-rules.jpg" alt="Proxyman Map Remote window with Localhost to Production, Staging to Production and a Regex rule"><figcaption><p>Map Remote rules</p></figcaption></figure>
 
 {% hint style="info" %}
 Check out common [Map Remote Config](map-remote.md#7.-common-usages) when mapping from HTTP <-> HTTPS.
@@ -67,7 +67,7 @@ For matched requests, Proxyman attempts to:
 * Replace the Protocol, Host, Port, Path, and Query, if they are set
 * If a component is empty, it won't change that component of the matched request
 
-![Proxyman Map Remote rule editor with a Regex matching rule and the Map To protocol, host and port fields](<../.gitbook/assets/Screen Shot 2020-07-19 at 10.17.44.png>)
+<figure><img src="../.gitbook/assets/proxyman-map-remote-rule-editor.jpg" alt="Proxyman Map Remote rule editor that maps http://localhost:3000/* to https://httpbin.proxyman.app"><figcaption><p>Map Remote rule editor</p></figcaption></figure>
 
 {% hint style="info" %}
 * Leave a text field blank to keep that part unchanged from the matched request
@@ -82,8 +82,6 @@ To find which Map Remote rule matches your URL, open the request's Summary tab:
 2. **Summary** tab -> **Debugging Tools**
 3. Check the mapped URL
 
-<figure><img src="../.gitbook/assets/CleanShot 2023-02-15 at 09.23.58@2x.jpg" alt="Proxyman Summary tab with the Debugging Tool section showing the Map Remote rule and the mapped URL"><figcaption><p>How to debug Map Remote</p></figcaption></figure>
-
 ### Preserve Host Header
 
 By default, Proxyman overrides the Host header to match the new host in Map Remote. This is needed for most requests to succeed.
@@ -94,13 +92,11 @@ If you would like to keep the original Host header, check the "Preserve Host Hea
 
 * Right-click on the selected request -> **Tools** -> **Map Remote…**. Proxyman fills in the needed data from the selected request.
 
-![Proxyman context menu on a request with Tools and Map Remote highlighted](<../.gitbook/assets/Screen Shot 2020-04-25 at 16.18.59.png>)
+<figure><img src="../.gitbook/assets/proxyman-map-remote-context-menu.jpg" alt="Proxyman right-click menu on a request with Tools > Map Remote... highlighted"><figcaption><p>Create a Map Remote rule from a request</p></figcaption></figure>
 
 ## 7. Common Usages
 
 ### 7.1 Map Localhost (HTTP) to Production (HTTPS)
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-02-15 at 09.34.02.png" alt="Proxyman Map Remote rule that maps http://localhost:3000 to https://proxyman.io on port 443"><figcaption><p>Map Remote Config</p></figcaption></figure>
 
 **Result:**
 
@@ -112,8 +108,6 @@ If you would like to keep the original Host header, check the "Preserve Host Hea
 | **POST** http://localhost:3000/login                | **POST** https://proxyman.io/login                |
 
 ### 7.2 Map Production (HTTPS) to localhost (HTTP)
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-02-15 at 09.39.50.png" alt="Proxyman Map Remote rule that maps https://proxyman.io to http://localhost:3000"><figcaption><p>Map Remote Config</p></figcaption></figure>
 
 | Original URL                                      | To URL                                              |
 | ------------------------------------------------- | --------------------------------------------------- |
@@ -144,16 +138,12 @@ If you would like to keep the original Host header, check the "Preserve Host Hea
 
 ### 7.4 Map Websocket from localhost to Production
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-02-15 at 09.29.05.png" alt="Proxyman Map Remote rule that maps the WebSocket localhost:4000 to wss://ws.postman-echo.com"><figcaption><p>Map Remote Config</p></figcaption></figure>
-
 | Original URL                  | To URL                              |
 | ----------------------------- | ----------------------------------- |
 | ws://localhost:4000           | wss://ws.postman-echo.com           |
 | ws://localhost:4000/websocket | wss://ws.postman-echo.com/websocket |
 
 ### 7.5 Map Websocket from Production to Localhost
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-02-15 at 09.38.19.png" alt="Proxyman Map Remote rule that maps wss://ws.postman-echo.com to ws://localhost:3000"><figcaption><p>Map Remote Config</p></figcaption></figure>
 
 | Original URL                        | To URL                        |
 | ----------------------------------- | ----------------------------- |

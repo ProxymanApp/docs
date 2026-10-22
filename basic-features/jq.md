@@ -15,7 +15,7 @@ description: >-
 - You can use the jq filter in the JSON tab and the Treeview tab. To add the JSON tab, click the + button on the Request or Response toolbar and select JSON.
 {% endhint %}
 
-<div align="center" data-full-width="false"><figure><img src="../.gitbook/assets/481323588-7ae7cb0a-ca66-4199-a16d-e171960a9814.jpg" alt="Proxyman JSON tab with the jq filter mode and the .json[] expression applied to a response"><figcaption></figcaption></figure></div>
+<figure><img src="../.gitbook/assets/proxyman-treeview-jq.jpg" alt="Proxyman Treeview tab in jq mode with .slideshow.slides[] | {title, type} returning the title and type of each slide"><figcaption><p>Filter JSON with jq</p></figcaption></figure>
 
 ## 2. Syntax
 

@@ -33,9 +33,9 @@ Reverse Proxy is available on Proxyman 2.29.0+.
 4. In your client app, change the URL to http://localhost:\<local\_port> (e.g. http://localhost:10000)
 5. Make a request and inspect the traffic in the Proxyman app.
 
-![Proxyman Reverse Proxy window with two entries that map local ports to remote hosts on port 443](<../.gitbook/assets/Screen Shot 2021-06-26 at 17.05.42.png>)
+<figure><img src="../.gitbook/assets/proxyman-reverse-proxy-window.jpg" alt="Proxyman Reverse Proxy window with an httpbin entry that maps local port 10000 to httpbin.proxyman.app on port 443"><figcaption><p>Reverse Proxy window</p></figcaption></figure>
 
-![Proxyman Reverse Proxy entry editor with name, local port, remote host, remote port and Preserve Host option](<../.gitbook/assets/Screen Shot 2021-06-26 at 17.05.45.png>)
+<figure><img src="../.gitbook/assets/proxyman-reverse-proxy-entry-editor.jpg" alt="Proxyman Reverse Proxy entry editor with local port 10000, remote host httpbin.proxyman.app and remote port 443"><figcaption><p>Reverse Proxy entry</p></figcaption></figure>
 
 {% hint style="info" %}
 Proxyman performs the SSL handshake with your remote server if the Remote Port is 443. Otherwise, it treats the remote server as a plain HTTP web server.

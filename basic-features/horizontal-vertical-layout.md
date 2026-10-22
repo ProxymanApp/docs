@@ -14,7 +14,9 @@ You can change the layout of the Request and Response panels to make more room f
 * **Vertical**: Show the Request and Response panels on the right of the request list
 * **Horizontal**: Show the Request and Response panels below the request list
 
-![Proxyman toolbar layout buttons for the detachable window, Source List, Horizontal and Vertical layout](../.gitbook/assets/02.png)
+<figure><img src="../.gitbook/assets/proxyman-toolbar-layout-buttons.jpg" alt="Proxyman toolbar with the layout buttons on the right for Source List, Detachable Window, Horizontal and Vertical"><figcaption><p>Layout buttons in the toolbar</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/proxyman-vertical-layout.jpg" alt="Proxyman in Vertical layout with the Request and Response panels docked to the right of the request list"><figcaption><p>Vertical layout</p></figcaption></figure>
 
 You can also use these shortcuts or the **View** menu:
 

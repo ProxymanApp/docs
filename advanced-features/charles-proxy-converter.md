@@ -16,7 +16,7 @@ Charles Proxy must be installed on your Mac to convert `chls` files.
 
 You can also convert files manually from the **File** menu -> **Convert** -> **From .chls to .har**.
 
-![Proxyman Converter sheet with the Charles Proxy app path, a source .chls file and the output .har file](<../.gitbook/assets/Screen Shot 2020-05-03 at 18.31.39.png>)
+<figure><img src="../.gitbook/assets/proxyman-charles-chls-to-har-converter.jpg" alt="Proxyman Converter sheet with the Charles Proxy app path, a From .chls File field and the To .har File output"><figcaption><p>Convert .chls to .har</p></figcaption></figure>
 
 ## 2. How does it work?
 
